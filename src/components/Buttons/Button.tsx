@@ -14,6 +14,10 @@ const BabalButton = ({title,onclick,style,width,height,icon}:buttonProps) => {
 
     const defaultStyles: React.CSSProperties = {
         backgroundColor: "#280154",
+        display:'flex',
+        justifyContent:"center",
+        alignItems:"center",
+        gap:"8px",
         color: "white",
         border:"1px solid #280154",
         padding:"0.8rem",
@@ -22,7 +26,7 @@ const BabalButton = ({title,onclick,style,width,height,icon}:buttonProps) => {
       };
       const combinedStyle = {...defaultStyles,...style}
   return (
-    <button onClick={onclick} style={combinedStyle}>{title}{icon}</button>
+    <button  onClick={onclick} style={combinedStyle}>{title}{icon}</button>
   )
 }
 

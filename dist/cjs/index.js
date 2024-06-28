@@ -2805,6 +2805,10 @@ var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 const BabalButton = ({ title, onclick, style, width, height, icon }) => {
     const defaultStyles = {
         backgroundColor: "#280154",
+        display: 'flex',
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "8px",
         color: "white",
         border: "1px solid #280154",
         padding: "0.8rem",

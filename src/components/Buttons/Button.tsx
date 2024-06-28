@@ -14,6 +14,7 @@ hoverStyle?:React.CSSProperties;
 }
 
 const BabalButton = ({title,onclick,style,width,height,icon,hover,hoverStyle}:buttonProps) => {
+    const[isHover,setIsHover] = useState<boolean>(false)
    
 
     const defaultStyles: React.CSSProperties = {
@@ -27,7 +28,7 @@ const BabalButton = ({title,onclick,style,width,height,icon,hover,hoverStyle}:bu
         padding:"0.8rem",
         height, // Set the height from props
         width ,  // Set the width from props
-        ...(hover?hoverStyle:{})
+        ...(hover && isHover ? hoverStyle:{})
       };
       const combinedStyle = {...defaultStyles,...style}
   return (

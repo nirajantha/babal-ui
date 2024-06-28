@@ -13,25 +13,33 @@ export default [
             {
                 file: packageJson.main,
                 format: "cjs",
+                sourcemap: true
 
             },
             {
                 file: packageJson.module,
                 format: "esm",
+                sourcemap: true
 
             },
         ],
         plugins: [
             resolve(),
             commonjs(),
-            typescript({tsconfig: "./tsconfig.json"}),
+            typescript({
+                tsconfig: "./tsconfig.json",
+                declaration: true,
+                declarationDir: "dist/types",
+            }),
 
         ],
+        external: ["react", "react-dom"],
     },
     {
         input: "dist/esm/types/index.d.ts",
         output: [{ file: "dist/index.d.ts", format: "esm" }],
         plugins: [dts()],
+        external: [/\.css$/]
     },
 
 ];

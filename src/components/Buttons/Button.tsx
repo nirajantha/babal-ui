@@ -7,10 +7,14 @@ onclick?:()=>void;
 style?:React.CSSProperties;
 width?:string | number;
 height?:string | number;
-icon?:React.ReactNode
+icon?:React.ReactNode;
+hover?:boolean;
+hoverStyle?:React.CSSProperties;
+
 }
 
-const BabalButton = ({title,onclick,style,width,height,icon}:buttonProps) => {
+const BabalButton = ({title,onclick,style,width,height,icon,hover,hoverStyle}:buttonProps) => {
+    const[isHover,setIsHover] = useState<boolean>(false)
 
     const defaultStyles: React.CSSProperties = {
         backgroundColor: "#280154",
@@ -23,10 +27,11 @@ const BabalButton = ({title,onclick,style,width,height,icon}:buttonProps) => {
         padding:"0.8rem",
         height, // Set the height from props
         width ,  // Set the width from props
+        ...(hover && isHover?hoverStyle:{})
       };
       const combinedStyle = {...defaultStyles,...style}
   return (
-    <button  onClick={onclick} style={combinedStyle}>{title}{icon}</button>
+    <button  onClick={onclick} onMouseEnter={()=>{setIsHover(true)}} onMouseLeave={()=>{setIsHover(false)}} style={combinedStyle}>{title}{icon}</button>
   )
 }
 

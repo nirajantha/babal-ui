@@ -24,7 +24,7 @@ const BabalButton = ({title,onclick,style,width,height,hover,hoverStyle}:buttonP
       };
       const combinedStyle = {...defaultStyles,...style}
   return (
-    <button onClick={onclick} style={combinedStyle}>{title}</button>
+    <button onClick={onclick} onMouseEnter={()=>{setIsHovered(true)}} onMouseLeave={()=>{setIsHovered(false)}} style={combinedStyle} >{title}</button>
   )
 }
 

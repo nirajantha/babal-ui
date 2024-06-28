@@ -2806,4 +2806,4 @@ const BabalButton = ({ title, onclick }) => {
     return (React.createElement("button", { onClick: onclick, style: { backgroundColor: "blue", color: "white", padding: "2rem" } }, title));
 };
 
-exports.Button = BabalButton;
+exports.BabalButton = BabalButton;

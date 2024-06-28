@@ -6,4 +6,4 @@ interface buttonProps {
 }
 declare const BabalButton: ({ title, onclick }: buttonProps) => React.JSX.Element;
 
-export { BabalButton as Button };
+export { BabalButton };

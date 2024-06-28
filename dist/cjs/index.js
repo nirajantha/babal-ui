@@ -2802,8 +2802,8 @@ if (process.env.NODE_ENV === 'production') {
 var reactExports = react.exports;
 var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
-const BabalButton = ({ title, onclick }) => {
-    return (React.createElement("button", { onClick: onclick, style: { backgroundColor: "blue", color: "white", padding: "2rem" } }, title));
+const BabalButton = ({ title, onclick, style }) => {
+    return (React.createElement("button", { onClick: onclick, style: style }, title));
 };
 
 exports.BabalButton = BabalButton;

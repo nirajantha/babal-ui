@@ -4,11 +4,13 @@ import React from 'react'
 export interface buttonProps{
 title:string;
 onclick:()=>void;
+style?:React.CSSProperties
+
 }
 
-const BabalButton = ({title,onclick}:buttonProps) => {
+const BabalButton = ({title,onclick,style}:buttonProps) => {
   return (
-    <button onClick={onclick} style={{backgroundColor:"blue",color:"white",padding:"2rem"}}>{title}</button>
+    <button onClick={onclick} style={style}>{title}</button>
   )
 }
 

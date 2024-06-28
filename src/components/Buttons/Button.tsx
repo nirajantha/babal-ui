@@ -3,12 +3,13 @@ import React from 'react'
 
 export interface buttonProps{
 title:string;
+onclick:()=>void;
 }
 
-const Button = ({title}:buttonProps) => {
+const BabalButton = ({title,onclick}:buttonProps) => {
   return (
-    <button>{title}</button>
+    <button onClick={onclick} style={{backgroundColor:"blue",color:"white",padding:"2rem"}}>{title}</button>
   )
 }
 
-export default Button
+export default BabalButton

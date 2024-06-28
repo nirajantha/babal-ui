@@ -2,7 +2,8 @@ import React from 'react';
 
 interface buttonProps {
     title: string;
+    onclick: () => void;
 }
-declare const Button: ({ title }: buttonProps) => React.JSX.Element;
+declare const BabalButton: ({ title, onclick }: buttonProps) => React.JSX.Element;
 
-export { Button };
+export { BabalButton as Button };

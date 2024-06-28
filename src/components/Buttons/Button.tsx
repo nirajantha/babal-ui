@@ -5,12 +5,21 @@ export interface buttonProps{
 title:string;
 onclick:()=>void;
 style?:React.CSSProperties;
-
+width?:string | number;
+height?:string | number;
 }
 
-const BabalButton = ({title,onclick,style}:buttonProps) => {
+const BabalButton = ({title,onclick,style,width,height}:buttonProps) => {
+    const defaultStyles: React.CSSProperties = {
+        backgroundColor: "#280154",
+        color: "white",
+        padding:"0.8rem",
+        height, // Set the height from props
+        width   // Set the width from props
+      };
+      const combinedStyle = {...defaultStyles,...style}
   return (
-    <button onClick={onclick} style={{...style}}>{title}</button>
+    <button onClick={onclick} style={combinedStyle}>{title}</button>
   )
 }
 

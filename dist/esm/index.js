@@ -2800,8 +2800,16 @@ if (process.env.NODE_ENV === 'production') {
 var reactExports = react.exports;
 var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
-const BabalButton = ({ title, onclick, style }) => {
-    return (React.createElement("button", { onClick: onclick, style: Object.assign({}, style) }, title));
+const BabalButton = ({ title, onclick, style, width, height }) => {
+    const defaultStyles = {
+        backgroundColor: "#280154",
+        color: "white",
+        padding: "0.8rem",
+        height, // Set the height from props
+        width // Set the width from props
+    };
+    const combinedStyle = Object.assign(Object.assign({}, defaultStyles), style);
+    return (React.createElement("button", { onClick: onclick, style: combinedStyle }, title));
 };
 
 export { BabalButton };

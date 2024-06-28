@@ -4,7 +4,9 @@ interface buttonProps {
     title: string;
     onclick: () => void;
     style?: React.CSSProperties;
+    width?: string | number;
+    height?: string | number;
 }
-declare const BabalButton: ({ title, onclick, style }: buttonProps) => React.JSX.Element;
+declare const BabalButton: ({ title, onclick, style, width, height }: buttonProps) => React.JSX.Element;
 
 export { BabalButton };

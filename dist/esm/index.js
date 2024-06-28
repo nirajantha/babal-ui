@@ -2805,7 +2805,7 @@ const BabalButton = ({ title, onclick, style, width, height, hover, hoverStyle }
     const defaultStyles = Object.assign({ backgroundColor: "#280154", color: "white", border: "1px solid #280154", padding: "0.8rem", height, // Set the height from props
         width }, (hover && IsHovered ? { hoverStyle } : {}));
     const combinedStyle = Object.assign(Object.assign({}, defaultStyles), style);
-    return (React.createElement("button", { onClick: onclick, style: combinedStyle }, title));
+    return (React.createElement("button", { onClick: onclick, onMouseEnter: () => { setIsHovered(true); }, onMouseLeave: () => { setIsHovered(false); }, style: combinedStyle }, title));
 };
 
 export { BabalButton };

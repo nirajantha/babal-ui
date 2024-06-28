@@ -7,9 +7,10 @@ onclick?:()=>void;
 style?:React.CSSProperties;
 width?:string | number;
 height?:string | number;
+icon?:React.ReactNode
 }
 
-const BabalButton = ({title,onclick,style,width,height}:buttonProps) => {
+const BabalButton = ({title,onclick,style,width,height,icon}:buttonProps) => {
 
     const defaultStyles: React.CSSProperties = {
         backgroundColor: "#280154",
@@ -21,7 +22,7 @@ const BabalButton = ({title,onclick,style,width,height}:buttonProps) => {
       };
       const combinedStyle = {...defaultStyles,...style}
   return (
-    <button onClick={onclick} style={combinedStyle}>{title}</button>
+    <button onClick={onclick} style={combinedStyle}>{title}{icon}</button>
   )
 }
 

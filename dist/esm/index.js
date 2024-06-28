@@ -2801,7 +2801,7 @@ var reactExports = react.exports;
 var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
 const BabalButton = ({ title, onclick, style }) => {
-    return (React.createElement("button", { onClick: onclick, style: style }, title));
+    return (React.createElement("button", { onClick: onclick, style: Object.assign({}, style) }, title));
 };
 
 export { BabalButton };

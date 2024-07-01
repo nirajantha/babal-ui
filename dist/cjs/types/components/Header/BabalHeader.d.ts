@@ -1,6 +1,11 @@
 import React from 'react';
 export interface headerProps {
-    menus: string[];
+    menus: [
+        {
+            link: string;
+            name: string;
+        }
+    ];
     logo: string;
 }
 declare const BabalHeader: ({ menus, logo }: headerProps) => React.JSX.Element;

@@ -4,7 +4,10 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 
 
 export interface headerProps{
-menus:string[];
+menus:[{
+  link:string,
+  name:string
+}];
 logo:string;
 }
 
@@ -24,18 +27,18 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1.5rem;
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.color};
 `
 const Menu = styled.ul`
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 `;
 const Logo = styled.img`
-  height: 10px;
-  width: 10px;
+  height: 2rem;
+  width: 2rem;
 `;
 
 const MenuItem = styled.li`
@@ -65,7 +68,7 @@ const BabalHeader = ({menus,logo}:headerProps) => {
         <Menu>
           {
             menus.map((menu,index)=>(
-              <MenuItem key={index}>{menu}</MenuItem>
+              <MenuItem key={index}><a href={menu.link}></a>{menu.name}</MenuItem>
             ))
           }
           </Menu>

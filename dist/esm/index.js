@@ -1001,6 +1001,7 @@ const darkTheme = {
     color: '#fff',
 };
 const HeaderWrapper = pt.header `
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1026,7 +1027,7 @@ const ThemeToggle = pt.button `
   cursor: pointer;
   color: inherit;
 `;
-const BabalHeader = ({ menus }) => {
+const BabalHeader = ({ menus, logo }) => {
     const [theme, setTheme] = useState(lightTheme);
     const toggleTheme = () => {
         setTheme((prevTheme) => (prevTheme === lightTheme ? darkTheme : lightTheme));
@@ -1034,7 +1035,7 @@ const BabalHeader = ({ menus }) => {
     return (o.createElement(o.Fragment, null,
         o.createElement(nt, { theme: theme },
             o.createElement(HeaderWrapper, null,
-                o.createElement(Logo, null),
+                o.createElement(Logo, { src: logo }),
                 o.createElement(Menu, null, menus.map((menu, index) => (o.createElement(MenuItem, { key: index }, menu)))),
                 o.createElement(ThemeToggle, { onClick: toggleTheme }, theme === lightTheme ? o.createElement(FaMoon, null) : o.createElement(FaSun, null))))));
 };

@@ -5,6 +5,7 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 
 export interface headerProps{
 menus:string[];
+logo:string;
 }
 
 
@@ -19,6 +20,7 @@ const darkTheme = {
 };
 
 const HeaderWrapper = styled.header`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,7 +51,7 @@ const ThemeToggle = styled.button`
 
 
 
-const BabalHeader = ({menus}:headerProps) => {
+const BabalHeader = ({menus,logo}:headerProps) => {
   const [theme, setTheme] = useState(lightTheme);
 
   const toggleTheme = () => {
@@ -59,7 +61,7 @@ const BabalHeader = ({menus}:headerProps) => {
     <>
     <ThemeProvider theme={theme}>
       <HeaderWrapper>
-        <Logo/>
+        <Logo src={logo}/>
         <Menu>
           {
             menus.map((menu,index)=>(

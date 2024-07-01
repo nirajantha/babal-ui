@@ -14,7 +14,8 @@ declare const BabalButton: ({ title, onclick, style, width, height, icon, hover,
 
 interface headerProps {
     menus: string[];
+    logo: string;
 }
-declare const BabalHeader: ({ menus }: headerProps) => React.JSX.Element;
+declare const BabalHeader: ({ menus, logo }: headerProps) => React.JSX.Element;
 
 export { BabalButton, BabalHeader };

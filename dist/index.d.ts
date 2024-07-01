@@ -12,13 +12,12 @@ interface buttonProps {
 }
 declare const BabalButton: ({ title, onclick, style, width, height, icon, hover, hoverStyle }: buttonProps) => React.JSX.Element;
 
+interface menuItems {
+    itemName: string;
+    itemLink: string;
+}
 interface headerProps {
-    menus: [
-        {
-            link: string;
-            name: string;
-        }
-    ];
+    menus: menuItems[];
     logo: string;
 }
 declare const BabalHeader: ({ menus, logo }: headerProps) => React.JSX.Element;

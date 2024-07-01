@@ -3,11 +3,12 @@ import styled, { ThemeProvider } from 'styled-components';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
 
-export interface headerProps{
-menus:[{
-  link:string,
-  name:string
-}];
+interface menuItems{
+  itemName:string;
+  itemLink:string
+}
+interface headerProps{
+menus:menuItems[];
 logo:string;
 }
 
@@ -68,7 +69,7 @@ const BabalHeader = ({menus,logo}:headerProps) => {
         <Menu>
           {
             menus.map((menu,index)=>(
-              <MenuItem key={index}><a href={menu.link}></a>{menu.name}</MenuItem>
+              <MenuItem key={index}><a href={menu.itemLink}></a>{menu.itemName}</MenuItem>
             ))
           }
           </Menu>

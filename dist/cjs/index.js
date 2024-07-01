@@ -1039,8 +1039,8 @@ const BabalHeader = ({ menus, logo }) => {
             React.createElement(HeaderWrapper, null,
                 React.createElement(Logo, { src: logo }),
                 React.createElement(Menu, null, menus.map((menu, index) => (React.createElement(MenuItem, { key: index },
-                    React.createElement("a", { href: menu.link }),
-                    menu.name)))),
+                    React.createElement("a", { href: menu.itemLink }),
+                    menu.itemName)))),
                 React.createElement(ThemeToggle, { onClick: toggleTheme }, theme === lightTheme ? React.createElement(FaMoon, null) : React.createElement(FaSun, null))))));
 };
 

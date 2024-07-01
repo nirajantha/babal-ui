@@ -1003,11 +1003,10 @@ const darkTheme = {
     color: '#fff',
 };
 const HeaderWrapper = pt.header `
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding: 2rem;
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.color};
 `;
@@ -1015,13 +1014,16 @@ const Menu = pt.ul `
   list-style: none;
   display: flex;
   gap: 2rem;
+  background-color: aquamarine;
 `;
 const Logo = pt.img `
   height: 2rem;
   width: 2rem;
+  mix-blend-mode: multiply;
 `;
 const MenuItem = pt.li `
   cursor: pointer;
+  background-color: red;
 `;
 const ThemeToggle = pt.button `
   background: none;

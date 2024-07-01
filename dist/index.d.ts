@@ -12,4 +12,9 @@ interface buttonProps {
 }
 declare const BabalButton: ({ title, onclick, style, width, height, icon, hover, hoverStyle }: buttonProps) => React.JSX.Element;
 
-export { BabalButton };
+interface headerProps {
+    menus: string[];
+}
+declare const BabalHeader: ({ menus }: headerProps) => React.JSX.Element;
+
+export { BabalButton, BabalHeader };

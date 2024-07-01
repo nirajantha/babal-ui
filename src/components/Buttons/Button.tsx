@@ -16,7 +16,6 @@ hoverStyle?:React.CSSProperties;
 const BabalButton = ({title,onclick,style,width,height,icon,hover,hoverStyle}:buttonProps) => {
     const[isHover,setIsHover] = useState<boolean>(false)
    
-
     const defaultStyles: React.CSSProperties = {
         backgroundColor: "#280154",
         display:'flex',

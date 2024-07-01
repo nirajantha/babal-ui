@@ -1,6 +1,6 @@
 {
   "name": "babal-ui-npm",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "this ui provides the awesome elements and hooks",
   "scripts": {
     "build": "rollup -c"

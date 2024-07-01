@@ -1012,7 +1012,7 @@ const Menu = pt.ul `
   list-style: none;
   display: flex;
   gap: 2rem;
-  background-color: aquamarine;
+
 `;
 const Logo = pt.img `
   height: 2rem;
@@ -1021,7 +1021,6 @@ const Logo = pt.img `
 `;
 const MenuItem = pt.li `
   cursor: pointer;
-  background-color: red;
 `;
 const ThemeToggle = pt.button `
   background: none;

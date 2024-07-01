@@ -35,7 +35,7 @@ const Menu = styled.ul`
   list-style: none;
   display: flex;
   gap: 2rem;
-  background-color: aquamarine;
+
 `;
 const Logo = styled.img`
   height: 2rem;
@@ -45,7 +45,6 @@ const Logo = styled.img`
 
 const MenuItem = styled.li`
   cursor: pointer;
-  background-color: red;
 `;
 
 const ThemeToggle = styled.button`

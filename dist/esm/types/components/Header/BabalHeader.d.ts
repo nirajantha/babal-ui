@@ -10,6 +10,7 @@ interface headerProps {
     toggleTheme?: () => void;
     theme: {};
     mode?: boolean;
+    type?: boolean;
 }
-declare const BabalHeader: ({ menus, logo, toggleTheme, theme, mode }: headerProps) => React.JSX.Element;
+declare const BabalHeader: ({ menus, logo, toggleTheme, theme, mode, type }: headerProps) => React.JSX.Element;
 export default BabalHeader;

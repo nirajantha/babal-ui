@@ -6,9 +6,6 @@ import styled from "styled-components";
 import { MdCancel } from "react-icons/md";
 import { useNumberContext } from "../context/CreateContext";
 
-// interface footerProps{
-//   mobNumber:string
-// }
 
 const FooterContainer = styled.section`
   display: flex;

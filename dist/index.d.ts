@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 
 interface buttonProps {
     title: string;
-    key: string;
+    licenseKey: string;
     onclick?: () => void;
     style?: React.CSSProperties;
     width?: string | number;
@@ -11,7 +11,7 @@ interface buttonProps {
     hover?: boolean;
     hoverStyle?: React.CSSProperties;
 }
-declare const BabalButton: ({ title, key, onclick, style, width, height, icon, hover, hoverStyle }: buttonProps) => React.JSX.Element | undefined;
+declare const BabalButton: ({ title, licenseKey, onclick, style, width, height, icon, hover, hoverStyle }: buttonProps) => React.JSX.Element;
 
 interface menuItems {
     itemName: string;
@@ -24,8 +24,9 @@ interface headerProps {
     toggleTheme?: () => void;
     theme: {};
     mode?: boolean;
+    type?: boolean;
 }
-declare const BabalHeader: ({ menus, logo, toggleTheme, theme, mode }: headerProps) => React.JSX.Element;
+declare const BabalHeader: ({ menus, logo, toggleTheme, theme, mode, type }: headerProps) => React.JSX.Element;
 
 interface containerProps {
     children: ReactNode;
@@ -48,9 +49,12 @@ declare class BabalUi {
     static Dialer(logo: string, theme: {
         background: string;
         color: string;
-        inputOnChange?: void;
-    }, key: string): React.JSX.Element;
+    }, key: string, inputOnChange?: void): React.JSX.Element;
     static Button(title: string, onClick: () => void, key: string): React.JSX.Element;
+    static Header(menus: menuItems[], theme: {
+        background: string;
+        color: string;
+    }, logo: string, onchange: void, type: boolean, key: string): React.JSX.Element;
     static ContentWrapper(key: string, children: ReactNode, style?: React.CSSProperties): React.JSX.Element;
     static verticalWrapper(key: string, children: React.ReactNode, style?: React.CSSProperties): React.JSX.Element;
 }

@@ -7,15 +7,6 @@ import BabalInputs from "../inputs/BabalInputs";
 import { NumberProvider } from "../context/NumberProvider";
 import { useNumberContext } from "../context/CreateContext";
 
-//  const lightTheme = {
-//     background: "#fff",
-//     color: "#000",
-//   };
-  
-//  const darkTheme = {
-//     background: "#333",
-//     color: "#fff",
-//   };
 
 interface dialerProps {
   logo?: string;
@@ -25,7 +16,6 @@ interface dialerProps {
 const InputStyledDiv = styled.div`
     width: 350px;
     background: ${({ theme }) => theme.background};
-    /* border-bottom: 1px solid black; */
     padding: 1rem;
 `
 const DialerWrapper = styled.section`
@@ -73,26 +63,19 @@ export const StyledNumber = styled.div<styledNumberProps>`
 
 const BabalDialer: React.FC<dialerProps> = ({ logo, inputOnChange,theme }) => {
   const {state,dispatch} = useNumberContext()
-  // const[digit,setDigit] = useState('')
-  // const[number,setNumber] = useState('')
 
-    const [mode, setMode] = useState<boolean>(false);
-    const toggleTheme = () => {
-        setMode(!mode)
-      };
+    // const [mode, setMode] = useState<boolean>(false);
+    // const toggleTheme = () => {
+    //     setMode(!mode)
+    //   };
       const handleClick = (digit:string)=>{
-        console.log("digit k xa>>",digit)
         dispatch({type:"PressNumber",payload:digit})
-        // setDigit(digit)
-        // setNumber((prev)=>prev + digit)
       }
-      console.log("state>>>",state)
-      console.log("dispatch>>",dispatch)
   return (
     <>
        <ThemeProvider theme={theme}>
       <DialerWrapper>
-        <BabalHeader logo={logo}  theme={theme}/>
+        <BabalHeader logo={logo}  theme={theme} type={false}/>
         <InputStyledDiv>
             <BabalInputs handleChange={inputOnChange}/>
         </InputStyledDiv>

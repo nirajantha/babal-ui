@@ -1,17 +1,17 @@
 import React, { useState, useMemo, useRef, useDebugValue, createElement, useContext, createContext, useReducer } from 'react';
 
-const BabalButton = ({ title, key, onclick, style, width, height, icon, hover, hoverStyle }) => {
+const BabalButton = ({ title, licenseKey, onclick, style, width, height, icon, hover, hoverStyle }) => {
     const [isHover, setIsHover] = useState(false);
     const defaultStyles = Object.assign({ backgroundColor: "#280154", display: 'flex', justifyContent: "center", alignItems: "center", gap: "8px", color: "white", border: "1px solid #280154", padding: "0.8rem", height, // Set the height from props
         width }, (hover && isHover ? hoverStyle : {}));
     const combinedStyle = Object.assign(Object.assign({}, defaultStyles), style);
-    if (key === MY_KEY) {
+    if (licenseKey === MY_KEY) {
         return (React.createElement("button", { onClick: onclick, onMouseEnter: () => { setIsHover(true); }, onMouseLeave: () => { setIsHover(false); }, style: combinedStyle },
             title,
             icon));
     }
     else {
-        alert("Invalid license key. Please contact support.");
+        throw new Error("License Key not matched contact to the support");
     }
 };
 
@@ -1008,17 +1008,17 @@ const HeaderWrapper = pt.header `
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.color};
 `;
-pt.ul `
+const Menu = pt.ul `
   list-style: none;
   display: flex;
   gap: 2rem;
 `;
-pt.img `
+const Logo = pt.img `
   height: 2rem;
   width: 2rem;
   mix-blend-mode: multiply;
 `;
-pt.li `
+const MenuItem = pt.li `
   cursor: pointer;
 `;
 const ThemeToggle = pt.button `
@@ -1027,12 +1027,15 @@ const ThemeToggle = pt.button `
   cursor: pointer;
   color: inherit;
 `;
-const BabalHeader = ({ menus, logo, toggleTheme, theme, mode }) => {
-    console.log("mode>>>", mode);
+const BabalHeader = ({ menus, logo, toggleTheme, theme, mode, type }) => {
     return (React.createElement(React.Fragment, null,
         React.createElement(nt, { theme: theme },
             React.createElement(HeaderWrapper, { mode: mode },
-                React.createElement("h3", null, "Dialer"),
+                type ? React.createElement(React.Fragment, null,
+                    React.createElement(Logo, { src: logo }),
+                    React.createElement(Menu, null, menus === null || menus === void 0 ? void 0 : menus.map((menu, index) => (React.createElement(MenuItem, { key: index },
+                        React.createElement("a", { href: menu.itemLink }),
+                        menu.itemName))))) : React.createElement("h3", null, "Dialer"),
                 React.createElement(ThemeToggle, { onClick: toggleTheme }, theme === theme ? React.createElement(FaMoon, null) : React.createElement(FaSun, null))))));
 };
 
@@ -1073,9 +1076,6 @@ const NumberContext = createContext({
 });
 const useNumberContext = () => useContext(NumberContext);
 
-// interface footerProps{
-//   mobNumber:string
-// }
 const FooterContainer = pt.section `
   display: flex;
   justify-content: center;
@@ -1117,7 +1117,6 @@ const BabalInputs = ({ handleChange }) => {
 const InputStyledDiv = pt.div `
     width: 350px;
     background: ${({ theme }) => theme.background};
-    /* border-bottom: 1px solid black; */
     padding: 1rem;
 `;
 const DialerWrapper = pt.section `
@@ -1161,21 +1160,17 @@ const StyledNumber = pt.div `
 `;
 const BabalDialer = ({ logo, inputOnChange, theme }) => {
     const { state, dispatch } = useNumberContext();
-    // const[digit,setDigit] = useState('')
-    // const[number,setNumber] = useState('')
-    useState(false);
+    // const [mode, setMode] = useState<boolean>(false);
+    // const toggleTheme = () => {
+    //     setMode(!mode)
+    //   };
     const handleClick = (digit) => {
-        console.log("digit k xa>>", digit);
         dispatch({ type: "PressNumber", payload: digit });
-        // setDigit(digit)
-        // setNumber((prev)=>prev + digit)
     };
-    console.log("state>>>", state);
-    console.log("dispatch>>", dispatch);
     return (React.createElement(React.Fragment, null,
         React.createElement(nt, { theme: theme },
             React.createElement(DialerWrapper, null,
-                React.createElement(BabalHeader, { logo: logo, theme: theme }),
+                React.createElement(BabalHeader, { logo: logo, theme: theme, type: false }),
                 React.createElement(InputStyledDiv, null,
                     React.createElement(BabalInputs, { handleChange: inputOnChange })),
                 React.createElement(Display, null, state.number),
@@ -1227,10 +1222,8 @@ const BabalDialer = ({ logo, inputOnChange, theme }) => {
 const reducer = (state, action) => {
     switch (action.type) {
         case "PressNumber":
-            console.log("state before PressNumber>>", state);
             return Object.assign(Object.assign({}, state), { number: state.number + action.payload });
         case "ClearNumber":
-            console.log("state>>", state);
             return Object.assign(Object.assign({}, state), { number: state.number.slice(0, -1) });
         default:
             return state;
@@ -1252,20 +1245,19 @@ class BabalUi {
             throw new Error("Invalid license key. Please contact support.");
         }
     }
-    static Dialer(logo, theme, key) {
+    static Dialer(logo, theme, key, inputOnChange) {
         BabalUi.initialize(key);
         return (React.createElement(NumberProvider, null,
-            React.createElement(BabalDialer, { logo: logo, theme: theme })));
+            React.createElement(BabalDialer, { logo: logo, theme: theme, inputOnChange: inputOnChange })));
     }
     static Button(title, onClick, key) {
         BabalUi.initialize(key);
-        return React.createElement(BabalButton, { title: title, onclick: onClick, key: key });
+        return React.createElement(BabalButton, { title: title, onclick: onClick, licenseKey: key });
     }
-    // static Header(menus: menuItems[], logo: string,onchange:void) {
-    //   return (
-    //       <BabalHeader menus={menus} logo={logo} onchange={onchange}/>
-    //   );
-    // }
+    static Header(menus, theme, logo, onchange, type, key) {
+        BabalUi.initialize(key);
+        return (React.createElement(BabalHeader, { theme: theme, type: type, menus: menus, logo: logo, onchange: onchange }));
+    }
     static ContentWrapper(key, children, style) {
         BabalUi.initialize(key);
         return React.createElement(BabalContainer, { style: style }, children);

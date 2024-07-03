@@ -5,9 +5,9 @@ import {
   BabalDialer,
   BabalHeader,
 } from "./components";
-import { menuItems } from "./components/header/BabalHeader";
 import { VerticalWrapper } from "./components/container/BabalContainer";
 import { NumberProvider } from "./components/context/NumberProvider";
+import { menuItems } from "./components/header/BabalHeader";
 
 export const MY_KEY = "123";
 
@@ -24,25 +24,26 @@ export class BabalUi {
     }
   }
 
-  static Dialer(logo: string,theme: { background: string; color: string; inputOnChange?: void },key:string) {
+  static Dialer(logo:string,theme: { background: string; color: string; },key:string, inputOnChange?:void) {
     BabalUi.initialize(key);
     return (
       <NumberProvider>
-        <BabalDialer logo={logo} theme={theme} />
+        <BabalDialer logo={logo} theme={theme} inputOnChange={inputOnChange} />
       </NumberProvider>
     );
   }
 
   static Button(title: string, onClick: () => void,key:string) {
     BabalUi.initialize(key);
-    return <BabalButton title={title} onclick={onClick} key={key}/>;
+    return <BabalButton title={title} onclick={onClick} licenseKey={key} />;
   }
 
-  // static Header(menus: menuItems[], logo: string,onchange:void) {
-  //   return (
-  //       <BabalHeader menus={menus} logo={logo} onchange={onchange}/>
-  //   );
-  // }
+  static Header(menus: menuItems[],theme: { background: string; color: string; }, logo: string,onchange:void,type:boolean,key:string) {
+    BabalUi.initialize(key);
+    return (
+        <BabalHeader theme={theme} type={type} menus={menus} logo={logo} onchange={onchange}/>
+    );
+  }
 
   static ContentWrapper(key:string,children: ReactNode, style?: React.CSSProperties,) {
     BabalUi.initialize(key);

@@ -11,8 +11,9 @@ interface headerProps {
   logo?: string;
   onchange?:void;
   toggleTheme?:()=>void;
-  theme:{}
-  mode?:boolean
+  theme:{};
+  mode?:boolean;
+  type?:boolean;
 }
 
 
@@ -49,23 +50,25 @@ const ThemeToggle = styled.button`
   color: inherit;
 `;
 
-const BabalHeader = ({ menus,logo,toggleTheme,theme,mode }: headerProps) => {
-  console.log("mode>>>",mode)
+const BabalHeader = ({ menus,logo,toggleTheme,theme,mode,type }: headerProps) => {
+
 
   return (
     <>
       <ThemeProvider theme={theme}>
         <HeaderWrapper mode={mode}>
-          <h3>Dialer</h3>
-          {/* <Logo src={logo} /> */}
-          {/* <Menu>
-            {menus.map((menu, index) => (
-              <MenuItem key={index}>
-                <a href={menu.itemLink}></a>
-                {menu.itemName}
-              </MenuItem>
-            ))}
-          </Menu> */}
+          {
+            type?<><Logo src={logo} />
+            <Menu>
+              {menus?.map((menu, index) => (
+                <MenuItem key={index}>
+                  <a href={menu.itemLink}></a>
+                  {menu.itemName}
+                </MenuItem>
+              ))}
+            </Menu></>: <h3>Dialer</h3>
+          }
+          
           <ThemeToggle onClick={toggleTheme}>
             {theme === theme ? <FaMoon /> : <FaSun />}
           </ThemeToggle>

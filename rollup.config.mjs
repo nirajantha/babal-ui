@@ -4,6 +4,7 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 
 import packageJson from "./package.json" assert { type: "json" };
+import json from "@rollup/plugin-json";
 
 
 export default [
@@ -26,6 +27,7 @@ export default [
         plugins: [
             resolve(),
             commonjs(),
+            json(),
             typescript({
                 tsconfig: "./tsconfig.json",
                 declaration: true,

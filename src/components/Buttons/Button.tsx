@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-
+import { MY_KEY } from '../../SDK';
 
 export interface buttonProps{
 title:string;
+key:string;
 onclick?:()=>void;
 style?:React.CSSProperties;
 width?:string | number;
@@ -13,7 +14,7 @@ hoverStyle?:React.CSSProperties;
 
 }
 
-const BabalButton = ({title,onclick,style,width,height,icon,hover,hoverStyle}:buttonProps) => {
+const BabalButton = ({title,key,onclick,style,width,height,icon,hover,hoverStyle}:buttonProps) => {
     const[isHover,setIsHover] = useState<boolean>(false)
    
     const defaultStyles: React.CSSProperties = {
@@ -30,9 +31,14 @@ const BabalButton = ({title,onclick,style,width,height,icon,hover,hoverStyle}:bu
         ...(hover && isHover ? hoverStyle:{})
       };
       const combinedStyle = {...defaultStyles,...style}
-  return (
-    <button  onClick={onclick} onMouseEnter={()=>{setIsHover(true)}} onMouseLeave={()=>{setIsHover(false)}} style={combinedStyle}>{title}{icon}</button>
-  )
+      if(key === MY_KEY){
+        return (
+          <button onClick={onclick} onMouseEnter={()=>{setIsHover(true)}} onMouseLeave={()=>{setIsHover(false)}} style={combinedStyle}>{title}{icon}</button>
+        )
+      }else{
+        alert("Invalid license key. Please contact support.");
+      }
+ 
 }
 
 export default BabalButton

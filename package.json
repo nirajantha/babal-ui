@@ -10,12 +10,13 @@
     "url": "git+https://github.com/nirajantha/babal-ui.git"
   },
   "author": "nirajan thapa",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nirajantha/babal-ui/issues"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/react": "^18.3.3",
@@ -35,5 +36,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "axios": "^1.7.2"
+  }
 }

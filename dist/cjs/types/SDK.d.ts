@@ -10,6 +10,7 @@ export declare class BabalUi {
         color: string;
     }, key: string, inputOnChange?: void): React.JSX.Element;
     static Button(title: string, onClick: () => void, key: string): React.JSX.Element;
+    static Form(key: string): React.JSX.Element;
     static Header(menus: menuItems[], theme: {
         background: string;
         color: string;

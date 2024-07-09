@@ -11,7 +11,7 @@ interface buttonProps {
     hover?: boolean;
     hoverStyle?: React.CSSProperties;
 }
-declare const BabalButton: ({ title, licenseKey, onclick, style, width, height, icon, hover, hoverStyle }: buttonProps) => React.JSX.Element;
+declare const BabalButton: ({ title, licenseKey, onclick, style, width, height, icon, hover, hoverStyle, }: buttonProps) => React.JSX.Element;
 
 interface menuItems {
     itemName: string;
@@ -51,6 +51,7 @@ declare class BabalUi {
         color: string;
     }, key: string, inputOnChange?: void): React.JSX.Element;
     static Button(title: string, onClick: () => void, key: string): React.JSX.Element;
+    static Form(key: string): React.JSX.Element;
     static Header(menus: menuItems[], theme: {
         background: string;
         color: string;

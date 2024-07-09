@@ -6,42 +6,37 @@ import dts from "rollup-plugin-dts";
 import packageJson from "./package.json" assert { type: "json" };
 import json from "@rollup/plugin-json";
 
-
 export default [
-    {
-        input: "src/index.ts",
-        output: [
-            {
-                file: packageJson.main,
-                format: "cjs",
-                sourcemap: true
-
-            },
-            {
-                file: packageJson.module,
-                format: "esm",
-                sourcemap: true
-
-            },
-        ],
-        plugins: [
-            resolve(),
-            commonjs(),
-            json(),
-            typescript({
-                tsconfig: "./tsconfig.json",
-                declaration: true,
-                declarationDir: "dist/types",
-            }),
-
-        ],
-        external: ["react", "react-dom"],
-    },
-    {
-        input: "dist/esm/types/index.d.ts",
-        output: [{ file: "dist/index.d.ts", format: "esm" }],
-        plugins: [dts()],
-        external: [/\.css$/]
-    },
-
+  {
+    input: "src/index.ts",
+    output: [
+      {
+        file: packageJson.main,
+        format: "cjs",
+        sourcemap: true,
+      },
+      {
+        file: packageJson.module,
+        format: "esm",
+        sourcemap: true,
+      },
+    ],
+    plugins: [
+      resolve(),
+      commonjs(),
+      json(),
+      typescript({
+        tsconfig: "./tsconfig.json",
+        declaration: true,
+        declarationDir: "dist/types",
+      }),
+    ],
+    external: ["react", "react-dom"],
+  },
+  {
+    input: "dist/esm/types/index.d.ts",
+    output: [{ file: "dist/index.d.ts", format: "esm" }],
+    plugins: [dts()],
+    external: [/\.css$/],
+  },
 ];

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 export interface buttonProps {
     title: string;
     licenseKey: string;
@@ -10,5 +10,5 @@ export interface buttonProps {
     hover?: boolean;
     hoverStyle?: React.CSSProperties;
 }
-declare const BabalButton: ({ title, licenseKey, onclick, style, width, height, icon, hover, hoverStyle }: buttonProps) => React.JSX.Element;
+declare const BabalButton: ({ title, licenseKey, onclick, style, width, height, icon, hover, hoverStyle, }: buttonProps) => React.JSX.Element;
 export default BabalButton;

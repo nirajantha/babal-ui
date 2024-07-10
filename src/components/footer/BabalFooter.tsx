@@ -1,10 +1,10 @@
 import React from "react";
 import BabalContainer from "../container/BabalContainer";
-import { StyledNumber } from "../dialer/BabalDialer";
 import { IoIosCall, IoIosContact } from "react-icons/io";
 import styled from "styled-components";
 import { MdCancel } from "react-icons/md";
 import { useNumberContext } from "../context/CreateContext";
+import { StyledNumber } from "../styled/StyledComponents";
 
 const FooterContainer = styled.section`
   display: flex;

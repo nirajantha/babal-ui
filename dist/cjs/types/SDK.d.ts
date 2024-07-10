@@ -3,14 +3,15 @@ import { BabalButton, BabalContainer, BabalDialer, BabalHeader } from "./compone
 import { menuItems } from "./components/header/BabalHeader";
 export declare const MY_KEY = "123";
 export declare class BabalUi {
+    constructor();
     private static isValidKey;
-    static initialize(key: string): void;
+    private static initialize;
+    static AlertMessage(message: string, key: string): void;
     static Dialer(logo: string, theme: {
         background: string;
         color: string;
     }, key: string, inputOnChange?: void): React.JSX.Element;
     static Button(title: string, onClick: () => void, key: string): React.JSX.Element;
-    static Form(key: string): React.JSX.Element;
     static Header(menus: menuItems[], theme: {
         background: string;
         color: string;

@@ -3,30 +3,33 @@ import {
   BabalButton,
   BabalContainer,
   BabalDialer,
-  BabalForm,
   BabalHeader,
 } from "./components";
 import { VerticalWrapper } from "./components/container/BabalContainer";
 import { NumberProvider } from "./components/context/NumberProvider";
 import { menuItems } from "./components/header/BabalHeader";
-import axios from "axios";
 
 export const MY_KEY = "123";
 
 export class BabalUi {
+  constructor() {}
   // static async isKeyValid (key:string){
   //   const res = await axios.post("http://localhost:3000/verify",key)
   //   console.log("res>>>",res)
   // }
-
   private static isValidKey(key: string): boolean {
     return key === MY_KEY;
   }
 
-  static initialize(key: string): void {
+  private static initialize(key: string): void {
     if (!BabalUi.isValidKey(key)) {
       throw new Error("Invalid license key. Please contact support.");
     }
+  }
+
+  static AlertMessage(message: string, key: string) {
+    BabalUi.initialize(key);
+    alert(message);
   }
 
   static Dialer(
@@ -35,7 +38,6 @@ export class BabalUi {
     key: string,
     inputOnChange?: void
   ) {
-    // BabalUi.isKeyValid(key)
     BabalUi.initialize(key);
     return (
       <NumberProvider>
@@ -48,10 +50,10 @@ export class BabalUi {
     BabalUi.initialize(key);
     return <BabalButton title={title} onclick={onClick} licenseKey={key} />;
   }
-  static Form(key: string) {
-    BabalUi.initialize(key);
-    return <BabalForm />;
-  }
+  // static Form(key: string) {
+  //   BabalUi.initialize(key);
+  //   return <BabalForm />;
+  // }
 
   static Header(
     menus: menuItems[],
@@ -88,10 +90,6 @@ export class BabalUi {
   ) {
     BabalUi.initialize(key);
     return <VerticalWrapper style={style}>{children}</VerticalWrapper>;
-  }
-
-  async toMakeCall() {
-    console.log("calling");
   }
 }
 

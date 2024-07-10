@@ -1282,7 +1282,7 @@ class BabalUi {
             throw new Error("Invalid license key. Please contact support.");
         }
     }
-    static AlertMessage(message, key) {
+    AlertMessage(message, key) {
         BabalUi.initialize(key);
         alert(message);
     }

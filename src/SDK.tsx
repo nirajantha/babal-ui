@@ -27,7 +27,7 @@ export class BabalUi {
     }
   }
 
-  static AlertMessage(message: string, key: string) {
+  AlertMessage(message: string, key: string) {
     BabalUi.initialize(key);
     alert(message);
   }

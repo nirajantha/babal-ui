@@ -47,7 +47,7 @@ declare class BabalUi {
     constructor();
     private static isValidKey;
     private static initialize;
-    static AlertMessage(message: string, key: string): void;
+    AlertMessage(message: string, key: string): void;
     static Dialer(logo: string, theme: {
         background: string;
         color: string;

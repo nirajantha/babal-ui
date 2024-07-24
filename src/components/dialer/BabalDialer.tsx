@@ -3,7 +3,7 @@ import BabalContainer from "../container/BabalContainer";
 import BabalHeader from "../header/BabalHeader";
 import styled, { ThemeProvider } from "styled-components";
 import BabalFooter from "../footer/BabalFooter";
-import BabalInputs from "../inputs/BabalInputs";
+import BabalSearch from "../search/BabalSearch";
 import { useNumberContext } from "../context/CreateContext";
 import {
   DialerWrapper,
@@ -34,7 +34,7 @@ const BabalDialer: React.FC<dialerProps> = ({ logo, inputOnChange, theme }) => {
         <DialerWrapper>
           <BabalHeader logo={logo} theme={theme} type={false} />
           <InputStyledDiv>
-            <BabalInputs handleChange={inputOnChange} />
+            <BabalSearch handleChange={inputOnChange} />
           </InputStyledDiv>
           <Display>{state.number}</Display>
           <div

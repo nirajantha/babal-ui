@@ -42,12 +42,14 @@ interface dialerProps {
 }
 declare const BabalDialer: React.FC<dialerProps>;
 
+declare const BabalInput: React.FC;
+
 declare const MY_KEY = "123";
 declare class BabalUi {
     constructor();
     private static isValidKey;
     private static initialize;
-    AlertMessage(message: string, key: string): void;
+    toMakeCall(number1: string, number2: string, key: string): void;
     static Dialer(logo: string, theme: {
         background: string;
         color: string;
@@ -61,4 +63,4 @@ declare class BabalUi {
     static verticalWrapper(key: string, children: React.ReactNode, style?: React.CSSProperties): React.JSX.Element;
 }
 
-export { BabalButton, BabalContainer, BabalDialer, BabalHeader, BabalUi, MY_KEY };
+export { BabalButton, BabalContainer, BabalDialer, BabalHeader, BabalInput, BabalUi, MY_KEY };

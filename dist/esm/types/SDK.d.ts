@@ -1,12 +1,12 @@
 import React, { ReactNode } from "react";
-import { BabalButton, BabalContainer, BabalDialer, BabalHeader } from "./components";
+import { BabalButton, BabalContainer, BabalDialer, BabalHeader, BabalInput } from "./components";
 import { menuItems } from "./components/header/BabalHeader";
 export declare const MY_KEY = "123";
 export declare class BabalUi {
     constructor();
     private static isValidKey;
     private static initialize;
-    AlertMessage(message: string, key: string): void;
+    toMakeCall(number1: string, number2: string, key: string): void;
     static Dialer(logo: string, theme: {
         background: string;
         color: string;
@@ -19,4 +19,4 @@ export declare class BabalUi {
     static ContentWrapper(key: string, children: ReactNode, style?: React.CSSProperties): React.JSX.Element;
     static verticalWrapper(key: string, children: React.ReactNode, style?: React.CSSProperties): React.JSX.Element;
 }
-export { BabalButton, BabalHeader, BabalContainer, BabalDialer };
+export { BabalButton, BabalHeader, BabalContainer, BabalDialer, BabalInput };

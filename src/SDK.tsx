@@ -4,6 +4,7 @@ import {
   BabalContainer,
   BabalDialer,
   BabalHeader,
+  BabalInput,
 } from "./components";
 import { VerticalWrapper } from "./components/container/BabalContainer";
 import { NumberProvider } from "./components/context/NumberProvider";
@@ -27,9 +28,8 @@ export class BabalUi {
     }
   }
 
-  AlertMessage(message: string, key: string) {
+  toMakeCall(number1: string, number2: string, key: string) {
     BabalUi.initialize(key);
-    alert(message);
   }
 
   static Dialer(
@@ -93,4 +93,4 @@ export class BabalUi {
   }
 }
 
-export { BabalButton, BabalHeader, BabalContainer, BabalDialer };
+export { BabalButton, BabalHeader, BabalContainer, BabalDialer, BabalInput };

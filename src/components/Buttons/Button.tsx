@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { MY_KEY } from "../../SDK";
+import styled from "styled-components";
+import { StyledSpinner } from "../styled/StyledComponents";
+// import { MY_KEY } from "../../SDK";
 
 export interface buttonProps {
+  type?: string;
   title: string;
   licenseKey: string;
-  onclick?: () => void;
+  click: () => void;
   style?: React.CSSProperties;
   width?: string | number;
   height?: string | number;
@@ -16,15 +19,25 @@ export interface buttonProps {
 const BabalButton = ({
   title,
   licenseKey,
-  onclick,
+  click,
   style,
   width,
   height,
   icon,
   hover,
   hoverStyle,
+  type,
 }: buttonProps) => {
+  const [spin, setSpin] = useState<boolean>(false);
   const [isHover, setIsHover] = useState<boolean>(false);
+
+  const handleClick = () => {
+    setSpin(true);
+    click();
+    setTimeout(() => {
+      setSpin(false);
+    }, 2000);
+  };
 
   const defaultStyles: React.CSSProperties = {
     backgroundColor: "#280154",
@@ -41,25 +54,22 @@ const BabalButton = ({
   };
   const combinedStyle = { ...defaultStyles, ...style };
 
-  if (licenseKey === MY_KEY) {
-    return (
-      <button
-        onClick={onclick}
-        onMouseEnter={() => {
-          setIsHover(true);
-        }}
-        onMouseLeave={() => {
-          setIsHover(false);
-        }}
-        style={combinedStyle}
-      >
-        {title}
-        {icon}
-      </button>
-    );
-  } else {
-    throw new Error("License Key not matched contact to the support");
-  }
+  return (
+    <button
+      disabled={spin}
+      onClick={handleClick}
+      onMouseEnter={() => {
+        setIsHover(true);
+      }}
+      onMouseLeave={() => {
+        setIsHover(false);
+      }}
+      style={combinedStyle}
+    >
+      {icon}
+      {spin ? <StyledSpinner /> : title}
+    </button>
+  );
 };
 
 export default BabalButton;

@@ -17,7 +17,7 @@ const SearchInput = styled.input`
 `;
 
 interface inputProps {
-  handleChange: void;
+  handleChange: () => void;
 }
 
 const BabalSearch = ({ handleChange }: inputProps) => {

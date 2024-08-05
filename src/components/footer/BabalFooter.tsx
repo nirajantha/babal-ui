@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BabalContainer from "../container/BabalContainer";
 import { IoIosCall, IoIosContact } from "react-icons/io";
 import styled from "styled-components";
@@ -13,7 +13,11 @@ const FooterContainer = styled.section`
   margin-top: 10px;
 `;
 
-const BabalFooter = () => {
+interface footerProps {
+  handleCall: () => void;
+}
+
+const BabalFooter = ({ handleCall }: footerProps) => {
   const { state, dispatch } = useNumberContext();
 
   const editNumber = (e: React.MouseEvent) => {
@@ -24,7 +28,7 @@ const BabalFooter = () => {
     <FooterContainer>
       <BabalContainer>
         <IoIosContact size={40} />
-        <StyledNumber background="green">
+        <StyledNumber onClick={handleCall} digitColor="green">
           <IoIosCall size={40} />
         </StyledNumber>
         <MdCancel size={40} onClick={(e) => editNumber(e)} />

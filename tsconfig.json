@@ -32,7 +32,7 @@
     "strict": true,
     "skipLibCheck": true,
     "sourceMap": true, // Include source maps for easier debugging
-    "lib": ["DOM", "ESNext"] // Ensure DOM and ESNext libraries are included
+    "lib": ["DOM", "ESNext"] ,// Ensure DOM and ESNext libraries are included
   },
   "include": ["src"]
 }

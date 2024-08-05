@@ -1,3 +1,6 @@
 import React from "react";
-declare const BabalFooter: () => React.JSX.Element;
+interface footerProps {
+    handleCall: () => void;
+}
+declare const BabalFooter: ({ handleCall }: footerProps) => React.JSX.Element;
 export default BabalFooter;

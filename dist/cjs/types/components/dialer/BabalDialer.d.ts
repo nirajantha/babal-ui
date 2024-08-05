@@ -1,8 +1,9 @@
 import React from "react";
-interface dialerProps {
+interface DialerProps {
     logo?: string;
-    inputOnChange?: void;
-    theme: {};
+    inputOnChange?: (value: string) => void;
+    digitColor?: string;
+    width: string | number;
 }
-declare const BabalDialer: React.FC<dialerProps>;
+declare const BabalDialer: React.FC<DialerProps>;
 export default BabalDialer;

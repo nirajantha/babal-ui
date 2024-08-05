@@ -9,8 +9,9 @@ import {
 import { VerticalWrapper } from "./components/container/BabalContainer";
 import { NumberProvider } from "./components/context/NumberProvider";
 import { menuItems } from "./components/header/BabalHeader";
-
-export const MY_KEY = "123";
+import { MY_KEY } from "./constant/Constant";
+import { TwilioProvider } from "./context/TwilioContext";
+import { ThemeProvider } from "styled-components";
 
 export class BabalUi {
   constructor() {}
@@ -33,22 +34,32 @@ export class BabalUi {
   }
 
   static Dialer(
+    width: string | number,
     logo: string,
-    theme: { background: string; color: string },
+    theme: {
+      background: string;
+      color: string;
+      textColor: string;
+    },
     key: string,
+    digitColor?: string,
     inputOnChange?: void
   ) {
     BabalUi.initialize(key);
     return (
-      <NumberProvider>
-        <BabalDialer logo={logo} theme={theme} inputOnChange={inputOnChange} />
-      </NumberProvider>
+      // <TwilioProvider>
+      <ThemeProvider theme={theme}>
+        <NumberProvider>
+          <BabalDialer width={width} logo={logo} digitColor={digitColor} />
+        </NumberProvider>
+      </ThemeProvider>
+      // </TwilioProvider>
     );
   }
 
   static Button(title: string, onClick: () => void, key: string) {
     BabalUi.initialize(key);
-    return <BabalButton title={title} onclick={onClick} licenseKey={key} />;
+    return <BabalButton title={title} click={onClick} licenseKey={key} />;
   }
   // static Form(key: string) {
   //   BabalUi.initialize(key);
@@ -57,20 +68,20 @@ export class BabalUi {
 
   static Header(
     menus: menuItems[],
-    theme: { background: string; color: string },
     logo: string,
-    onchange: void,
     type: boolean,
-    key: string
+    key: string,
+    width: string | number,
+    height: string | number
   ) {
     BabalUi.initialize(key);
     return (
       <BabalHeader
-        theme={theme}
+        height={height}
+        width={width}
         type={type}
         menus={menus}
         logo={logo}
-        onchange={onchange}
       />
     );
   }

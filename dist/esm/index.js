@@ -1,4 +1,4 @@
-import * as React$k from 'react';
+import * as React$r from 'react';
 import React__default, { useMemo as useMemo$3, useRef, useDebugValue, createElement, useContext, useState, createContext, version as version$3, isValidElement, useLayoutEffect as useLayoutEffect$1, useEffect, cloneElement as cloneElement$1, forwardRef, useImperativeHandle, useReducer } from 'react';
 import ReactDOM$1 from 'react-dom';
 
@@ -1559,13 +1559,13 @@ function qe(e) {
 var He = function He(e) {
     return null == e || !1 === e || "" === e;
   },
-  Ue = function Ue(t) {
+  _Ue = function Ue(t) {
     var n,
       o,
       r = [];
     for (var s in t) {
       var i = t[s];
-      t.hasOwnProperty(s) && !He(i) && (Array.isArray(i) && i.isCss || re(i) ? r.push("".concat(qe(s), ":"), i, ";") : ce(i) ? r.push.apply(r, __spreadArray(__spreadArray(["".concat(s, " {")], Ue(i), !1), ["}"], !1)) : r.push("".concat(qe(s), ": ").concat((n = s, null == (o = i) || "boolean" == typeof o || "" === o ? "" : "number" != typeof o || 0 === o || n in unitlessKeys$1 || n.startsWith("--") ? String(o).trim() : "".concat(o, "px")), ";")));
+      t.hasOwnProperty(s) && !He(i) && (Array.isArray(i) && i.isCss || re(i) ? r.push("".concat(qe(s), ":"), i, ";") : ce(i) ? r.push.apply(r, __spreadArray(__spreadArray(["".concat(s, " {")], _Ue(i), !1), ["}"], !1)) : r.push("".concat(qe(s), ": ").concat((n = s, null == (o = i) || "boolean" == typeof o || "" === o ? "" : "number" != typeof o || 0 === o || n in unitlessKeys$1 || n.startsWith("--") ? String(o).trim() : "".concat(o, "px")), ";")));
     }
     return r;
   };
@@ -1578,7 +1578,7 @@ function Je(e, t, n, o) {
     return "production" === process.env.NODE_ENV || "object" != _typeof$2(r) || Array.isArray(r) || r instanceof Ye || ce(r) || null === r || console.error("".concat(B(e), " is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.")), Je(r, t, n, o);
   }
   var s;
-  return e instanceof Ye ? n ? (e.inject(n, o), [e.getName(o)]) : [e] : ce(e) ? Ue(e) : Array.isArray(e) ? Array.prototype.concat.apply(_, e.map(function (e) {
+  return e instanceof Ye ? n ? (e.inject(n, o), [e.getName(o)]) : [e] : ce(e) ? _Ue(e) : Array.isArray(e) ? Array.prototype.concat.apply(_, e.map(function (e) {
     return Je(e, t, n, o);
   })) : [e.toString()];
 }
@@ -1784,8 +1784,8 @@ A.forEach(function (e) {
 var gt = "__sc-".concat(f, "__");
 "production" !== process.env.NODE_ENV && "test" !== process.env.NODE_ENV && "undefined" != typeof window && (window[gt] || (window[gt] = 0), 1 === window[gt] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window[gt] += 1);
 
-var _templateObject$3, _templateObject2$1, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12;
-var HeaderWrapper = pt.header(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  box-sizing: border-box;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem;\n  height: ", ";\n  border-top-right-radius: 8px;\n  border-top-left-radius: 8px;\n  background: red;\n"])), function (props) {
+var _templateObject$3, _templateObject2$1, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14;
+var HeaderWrapper = pt.header(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  box-sizing: border-box;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem;\n  height: ", ";\n  border-top-right-radius: 8px;\n  /* border-top-left-radius: 8px; */\n  background: red;\n"])), function (props) {
   return props.width;
 }, function (props) {
   return props.height;
@@ -1798,22 +1798,30 @@ var ThemeToggleBtn = pt.button(_templateObject6 || (_templateObject6 = _taggedTe
 var StyledNumber = pt.div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  width: 4rem;\n  height: 4rem;\n  background: ", ";\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\n  backdrop-filter: blur(2.5px);\n  -webkit-backdrop-filter: blur(2.5px);\n  border-radius: 50%;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  font-size: large;\n  font-weight: 600;\n  text-align: center;\n  align-items: center;\n  display: flex;\n  gap: 0;\n  flex-direction: column;\n  justify-content: center;\n"])), function (props) {
   return props.digitColor ? props.digitColor : "rgba(255, 255, 255, 0.25)";
 });
-var InputStyledDiv = pt.div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  width: 350px;\n  background: ", ";\n  padding: 1rem;\n"])), function (_ref) {
+pt.div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  width: 350px;\n  background: ", ";\n  padding: 1rem;\n"])), function (_ref) {
   var theme = _ref.theme;
   return theme.background;
 });
-var DialerWrapper = pt.section(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  position: relative;\n  width: ", ";\n  height: fit-content;\n  border-radius: 8px;\n  border: 1px solid #a6a4a4;\n  overflow-x: hidden;\n  padding-bottom: 20px;\n  background-color: ", ";\n  color: ", ";\n"])), function (props) {
+var DialerMainWrapper = pt.section(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  display: flex;\n  width: ", ";\n  border-radius: 8px;\n  border: 1px solid #a6a4a4;\n"])), function (props) {
   return props.width;
-}, function (_ref2) {
+});
+var DialerWrapper = pt.div(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100%;\n  height: fit-content;\n  overflow-x: hidden;\n  padding-bottom: 20px;\n  background-color: ", ";\n  color: ", ";\n"])), function (_ref2) {
   var theme = _ref2.theme;
   return theme.background;
 }, function (_ref3) {
   var theme = _ref3.theme;
   return theme.color;
 });
-var Display = pt.div(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n  width: inherit;\n  height: 10vh;\n  background-color: white;\n  color: black;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 600;\n  font-size: medium;\n"])));
-var CalledUi = pt.div(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 20vh;\n  width: 350px;\n"])));
-var StyledSpinner = pt.div(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n  height: 10px;\n  width: 10px;\n  border-radius: 50%;\n  border: 4px solid;\n  border-color: white white white black;\n  animation: spin 1.5s linear infinite;\n\n  @keyframes spin {\n    from {\n      transform: rotate(0deg);\n    }\n    to {\n      transform: rotate(360deg);\n    }\n  }\n"])));
+var Display = pt.div(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n  width: inherit;\n  height: 10vh;\n  background-color: white;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 600;\n  font-size: medium;\n"])), function (_ref4) {
+  var theme = _ref4.theme;
+  return theme.textColor;
+});
+var CalledUi = pt.div(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 20vh;\n  width: 350px;\n"])));
+var TextSpan = pt.span(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["\n  font-size: 15px;\n  color: ", ";\n"])), function (_ref5) {
+  var theme = _ref5.theme;
+  return theme.color;
+});
+var StyledSpinner = pt.div(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["\n  height: 10px;\n  width: 10px;\n  border-radius: 50%;\n  border: 4px solid;\n  border-color: white white white black;\n  animation: spin 1.5s linear infinite;\n\n  @keyframes spin {\n    from {\n      transform: rotate(0deg);\n    }\n    to {\n      transform: rotate(360deg);\n    }\n  }\n"])));
 
 var BabalButton = function BabalButton(_ref) {
   var title = _ref.title;
@@ -1875,12 +1883,12 @@ var DefaultContext = {
   style: undefined,
   attr: undefined
 };
-var IconContext = React__default.createContext && /*#__PURE__*/React__default.createContext(DefaultContext);
+var IconContext$1 = React__default.createContext && /*#__PURE__*/React__default.createContext(DefaultContext);
 
-var _excluded$a = ["attr", "size", "title"];
+var _excluded$c = ["attr", "size", "title"];
 function _objectWithoutProperties$1(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$1(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 function _objectWithoutPropertiesLoose$1(source, excluded) { if (source == null) return {}; var target = {}; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } } return target; }
-function _extends$1() { _extends$1 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$1.apply(this, arguments); }
+function _extends$2() { _extends$2 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$2.apply(this, arguments); }
 function ownKeys$1(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys$1(Object(t), !0).forEach(function (r) { _defineProperty$1(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$1(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty$1(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1892,23 +1900,23 @@ function Tree2Element(tree) {
   }, node.attr), Tree2Element(node.child)));
 }
 function GenIcon(data) {
-  return props => /*#__PURE__*/React__default.createElement(IconBase$1, _extends$1({
+  return props => /*#__PURE__*/React__default.createElement(IconBase$2, _extends$2({
     attr: _objectSpread({}, data.attr)
   }, props), Tree2Element(data.child));
 }
-function IconBase$1(props) {
+function IconBase$2(props) {
   var elem = conf => {
     var {
         attr,
         size,
         title
       } = props,
-      svgProps = _objectWithoutProperties$1(props, _excluded$a);
+      svgProps = _objectWithoutProperties$1(props, _excluded$c);
     var computedSize = size || conf.size || "1em";
     var className;
     if (conf.className) className = conf.className;
     if (props.className) className = (className ? className + " " : "") + props.className;
-    return /*#__PURE__*/React__default.createElement("svg", _extends$1({
+    return /*#__PURE__*/React__default.createElement("svg", _extends$2({
       stroke: "currentColor",
       fill: "currentColor",
       strokeWidth: "0"
@@ -1922,11 +1930,13 @@ function IconBase$1(props) {
       xmlns: "http://www.w3.org/2000/svg"
     }), title && /*#__PURE__*/React__default.createElement("title", null, title), props.children);
   };
-  return IconContext !== undefined ? /*#__PURE__*/React__default.createElement(IconContext.Consumer, null, conf => elem(conf)) : elem(DefaultContext);
+  return IconContext$1 !== undefined ? /*#__PURE__*/React__default.createElement(IconContext$1.Consumer, null, conf => elem(conf)) : elem(DefaultContext);
 }
 
 // THIS FILE IS AUTO GENERATED
-function FaMoon (props) {
+function FaRocketchat (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 576 512"},"child":[{"tag":"path","attr":{"d":"M284.046,224.8a34.114,34.114,0,1,0,34.317,34.113A34.217,34.217,0,0,0,284.046,224.8Zm-110.45,0a34.114,34.114,0,1,0,34.317,34.113A34.217,34.217,0,0,0,173.6,224.8Zm220.923,0a34.114,34.114,0,1,0,34.317,34.113A34.215,34.215,0,0,0,394.519,224.8Zm153.807-55.319c-15.535-24.172-37.31-45.57-64.681-63.618-52.886-34.817-122.374-54-195.666-54a405.975,405.975,0,0,0-72.032,6.357,238.524,238.524,0,0,0-49.51-36.588C99.684-11.7,40.859.711,11.135,11.421A14.291,14.291,0,0,0,5.58,34.782C26.542,56.458,61.222,99.3,52.7,138.252c-33.142,33.9-51.112,74.776-51.112,117.337,0,43.372,17.97,84.248,51.112,118.148,8.526,38.956-26.154,81.816-47.116,103.491a14.284,14.284,0,0,0,5.555,23.34c29.724,10.709,88.549,23.147,155.324-10.2a238.679,238.679,0,0,0,49.51-36.589A405.972,405.972,0,0,0,288,460.14c73.313,0,142.8-19.159,195.667-53.975,27.371-18.049,49.145-39.426,64.679-63.619,17.309-26.923,26.07-55.916,26.07-86.125C574.394,225.4,565.634,196.43,548.326,169.485ZM284.987,409.9a345.65,345.65,0,0,1-89.446-11.5l-20.129,19.393a184.366,184.366,0,0,1-37.138,27.585,145.767,145.767,0,0,1-52.522,14.87c.983-1.771,1.881-3.563,2.842-5.356q30.258-55.68,16.325-100.078c-32.992-25.962-52.778-59.2-52.778-95.4,0-83.1,104.254-150.469,232.846-150.469s232.867,67.373,232.867,150.469C517.854,342.525,413.6,409.9,284.987,409.9Z"},"child":[]}]})(props);
+}function FaMoon (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"},"child":[]}]})(props);
 }function FaSun (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"},"child":[]}]})(props);
@@ -1978,10 +1988,14 @@ function IoIosCall (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M436.9 364.8c-14.7-14.7-50-36.8-67.4-45.1-20.2-9.7-27.6-9.5-41.9.8-11.9 8.6-19.6 16.6-33.3 13.6-13.7-2.9-40.7-23.4-66.9-49.5-26.2-26.2-46.6-53.2-49.5-66.9-2.9-13.8 5.1-21.4 13.6-33.3 10.3-14.3 10.6-21.7.8-41.9C184 125 162 89.8 147.2 75.1c-14.7-14.7-18-11.5-26.1-8.6 0 0-12 4.8-23.9 12.7-14.7 9.8-22.9 18-28.7 30.3-5.7 12.3-12.3 35.2 21.3 95 27.1 48.3 53.7 84.9 93.2 124.3l.1.1.1.1c39.5 39.5 76 66.1 124.3 93.2 59.8 33.6 82.7 27 95 21.3 12.3-5.7 20.5-13.9 30.3-28.7 7.9-11.9 12.7-23.9 12.7-23.9 2.9-8.1 6.2-11.4-8.6-26.1z"},"child":[]}]})(props);
 }function IoIosContact (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M256 48C148.5 48 60.1 129.5 49.2 234.1c-.8 7.2-1.2 14.5-1.2 21.9 0 7.4.4 14.7 1.2 21.9C60.1 382.5 148.5 464 256 464c114.9 0 208-93.1 208-208S370.9 48 256 48zm135.8 326.1c-22.7-8.6-59.5-21.2-82.4-28-2.4-.7-2.7-.9-2.7-10.7 0-8.1 3.3-16.3 6.6-23.3 3.6-7.5 7.7-20.2 9.2-31.6 4.2-4.9 10-14.5 13.6-32.9 3.2-16.2 1.7-22.1-.4-27.6-.2-.6-.5-1.2-.6-1.7-.8-3.8.3-23.5 3.1-38.8 1.9-10.5-.5-32.8-14.9-51.3-9.1-11.7-26.6-26-58.5-28h-17.5c-31.4 2-48.8 16.3-58 28-14.5 18.5-16.9 40.8-15 51.3 2.8 15.3 3.9 35 3.1 38.8-.2.7-.4 1.2-.6 1.8-2.1 5.5-3.7 11.4-.4 27.6 3.7 18.4 9.4 28 13.6 32.9 1.5 11.4 5.7 24 9.2 31.6 2.6 5.5 3.8 13 3.8 23.6 0 9.9-.4 10-2.6 10.7-23.7 7-58.9 19.4-80 27.8C91.6 341.4 76 299.9 76 256c0-48.1 18.7-93.3 52.7-127.3S207.9 76 256 76c48.1 0 93.3 18.7 127.3 52.7S436 207.9 436 256c0 43.9-15.6 85.4-44.2 118.1z"},"child":[]}]})(props);
+}function IoIosKeypad (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M394.6 341.2c-29.5 0-53.4 23.9-53.4 53.4s23.9 53.4 53.4 53.4 53.4-23.9 53.4-53.4-23.9-53.4-53.4-53.4zM256 341.2c-29.5 0-53.4 23.9-53.4 53.4S226.5 448 256 448s53.4-23.9 53.4-53.4-23.9-53.4-53.4-53.4zM117.4 341.2c-29.5 0-53.4 23.9-53.4 53.4S87.9 448 117.4 448s53.4-23.9 53.4-53.4-23.9-53.4-53.4-53.4zM394.6 202.6c-29.5 0-53.4 23.9-53.4 53.4s23.9 53.4 53.4 53.4S448 285.5 448 256s-23.9-53.4-53.4-53.4zM256 202.6c-29.5 0-53.4 23.9-53.4 53.4s23.9 53.4 53.4 53.4 53.4-23.9 53.4-53.4-23.9-53.4-53.4-53.4zM117.4 202.6C87.9 202.6 64 226.5 64 256s23.9 53.4 53.4 53.4 53.4-23.9 53.4-53.4-23.9-53.4-53.4-53.4zM394.6 64c-29.5 0-53.4 23.9-53.4 53.4s23.9 53.4 53.4 53.4 53.4-23.9 53.4-53.4S424.1 64 394.6 64zM256 64c-29.5 0-53.4 23.9-53.4 53.4s23.9 53.4 53.4 53.4 53.4-23.9 53.4-53.4S285.5 64 256 64zM117.4 64C87.9 64 64 87.9 64 117.4s23.9 53.4 53.4 53.4 53.4-23.9 53.4-53.4S146.9 64 117.4 64z"},"child":[]}]})(props);
 }
 
 // THIS FILE IS AUTO GENERATED
-function MdCancel (props) {
+function MdContactPhone (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"fill":"none","d":"M0 0h24v24H0z"},"child":[]},{"tag":"path","attr":{"d":"M22 3H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 1.99-.9 1.99-2L24 5c0-1.1-.9-2-2-2zM8 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H2v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1zm3.85-4h1.64L21 16l-1.99 1.99A7.512 7.512 0 0 1 16.28 14c-.18-.64-.28-1.31-.28-2s.1-1.36.28-2a7.474 7.474 0 0 1 2.73-3.99L21 8l-1.51 2h-1.64c-.22.63-.35 1.3-.35 2s.13 1.37.35 2z"},"child":[]}]})(props);
+}function MdCancel (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"fill":"none","d":"M0 0h24v24H0z"},"child":[]},{"tag":"path","attr":{"d":"M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"},"child":[]}]})(props);
 }
 
@@ -2026,6 +2040,36 @@ var BabalFooter = function BabalFooter(_ref) {
   })));
 };
 
+var SideMenu = function SideMenu() {
+  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement("div", {
+    className: "side",
+    style: {
+      width: "50px",
+      padding: "10px",
+      backgroundColor: "white",
+      display: "flex",
+      borderTopLeftRadius: "8px",
+      borderBottomLeftRadius: "8px"
+    }
+  }, /*#__PURE__*/React__default.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React__default.createElement("span", null, /*#__PURE__*/React__default.createElement(IoIosKeypad, {
+    color: "black",
+    size: 50
+  })), /*#__PURE__*/React__default.createElement("span", null, /*#__PURE__*/React__default.createElement(MdContactPhone, {
+    color: "black",
+    size: 50
+  })), /*#__PURE__*/React__default.createElement("span", null, /*#__PURE__*/React__default.createElement(FaRocketchat, {
+    color: "black",
+    size: 50
+  })))));
+};
+
 var _templateObject;
 var NumberGrid = pt.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  gap: 10px;\n  flex-direction: column;\n  margin-top: 10px;\n"])));
 var BabalDialer = function BabalDialer(_ref) {
@@ -2055,9 +2099,9 @@ var BabalDialer = function BabalDialer(_ref) {
       payload: digit
     });
   };
-  return /*#__PURE__*/React__default.createElement(DialerWrapper, {
+  return /*#__PURE__*/React__default.createElement(DialerMainWrapper, {
     width: width
-  }, /*#__PURE__*/React__default.createElement(BabalHeader, {
+  }, /*#__PURE__*/React__default.createElement(SideMenu, null), /*#__PURE__*/React__default.createElement(DialerWrapper, null, /*#__PURE__*/React__default.createElement(BabalHeader, {
     height: "60px",
     width: "inherit",
     logo: logo,
@@ -2067,7 +2111,7 @@ var BabalDialer = function BabalDialer(_ref) {
   }, /*#__PURE__*/React__default.createElement(IoIosCall, {
     size: 40,
     color: "red"
-  })))) : ( /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement(InputStyledDiv, null), /*#__PURE__*/React__default.createElement(Display, null, state.number), /*#__PURE__*/React__default.createElement(NumberGrid, null, ["123", "456", "789", "*0#"].map(function (row, rowIndex) {
+  })))) : ( /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement(Display, null, state.number), /*#__PURE__*/React__default.createElement(NumberGrid, null, ["123", "456", "789", "*0#"].map(function (row, rowIndex) {
     return /*#__PURE__*/React__default.createElement(BabalContainer, {
       key: rowIndex
     }, row.split("").map(function (digit) {
@@ -2077,16 +2121,11 @@ var BabalDialer = function BabalDialer(_ref) {
         onClick: function onClick() {
           return handleClick(digit);
         }
-      }, digit, digit !== "*" && digit !== "0" && digit !== "#" && ( /*#__PURE__*/React__default.createElement("span", {
-        style: {
-          color: "#c0b9b9",
-          fontSize: "12px"
-        }
-      }, String.fromCharCode(65 + (parseInt(digit) - 1) * 3) + String.fromCharCode(65 + (parseInt(digit) - 1) * 3 + 2))));
+      }, digit, digit !== "*" && digit !== "0" && digit !== "#" && ( /*#__PURE__*/React__default.createElement(TextSpan, null, String.fromCharCode(65 + (parseInt(digit) - 1) * 3) + String.fromCharCode(65 + (parseInt(digit) - 1) * 3 + 2))));
     }));
   })), /*#__PURE__*/React__default.createElement(BabalFooter, {
     handleCall: handleCall
-  }))));
+  })))));
 };
 
 var style$6 = {};
@@ -2206,7 +2245,7 @@ function ownKeys(e, r) {
   }
   return t;
 }
-function _objectSpread2$5(e) {
+function _objectSpread2$7(e) {
   for (var r = 1; r < arguments.length; r++) {
     var t = null != arguments[r] ? arguments[r] : {};
     r % 2 ? ownKeys(Object(t), !0).forEach(function (r) {
@@ -2413,7 +2452,7 @@ function updateCSS$1(css, key) {
   var originOption = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
   var container = getContainer$1(originOption);
   var styles = findStyles$1(container);
-  var option = _objectSpread2$5(_objectSpread2$5({}, originOption), {}, {
+  var option = _objectSpread2$7(_objectSpread2$7({}, originOption), {}, {
     styles: styles
   });
 
@@ -2459,7 +2498,7 @@ function _objectWithoutProperties(e, t) {
 }
 
 function useMemo$2(getValue, condition, shouldUpdate) {
-  var cacheRef = React$k.useRef({});
+  var cacheRef = React$r.useRef({});
   if (!('value' in cacheRef.current) || shouldUpdate(cacheRef.current.condition, condition)) {
     cacheRef.current.value = getValue();
     cacheRef.current.condition = condition;
@@ -2490,7 +2529,7 @@ var preMessage$1 = function preMessage(fn) {
  * warning(1 === 2, 'some error'); // print some error
  * ```
  */
-function warning$5(valid, message) {
+function warning$6(valid, message) {
   if (process.env.NODE_ENV !== 'production' && !valid && console !== undefined) {
     var finalMessage = preWarningFns$1.reduce(function (msg, preMessageFn) {
       return preMessageFn(msg !== null && msg !== void 0 ? msg : '', 'warning');
@@ -2524,7 +2563,7 @@ function call$1(method, valid, message) {
 
 /** @see Same as {@link warning}, but only warn once for the same message */
 function warningOnce$1(valid, message) {
-  call$1(warning$5, valid, message);
+  call$1(warning$6, valid, message);
 }
 
 /** @see Same as {@link warning}, but only warn once for the same message */
@@ -2653,7 +2692,7 @@ var Entity = /*#__PURE__*/function () {
   return Entity;
 }();
 
-var _excluded$9 = ["children"];
+var _excluded$b = ["children"];
 var ATTR_TOKEN = 'data-token-hash';
 var ATTR_MARK = 'data-css-hash';
 var ATTR_CACHE_PATH = 'data-cache-path';
@@ -2693,17 +2732,17 @@ function createCache() {
   }
   return new Entity(cssinjsInstanceId);
 }
-var StyleContext = /*#__PURE__*/React$k.createContext({
+var StyleContext = /*#__PURE__*/React$r.createContext({
   hashPriority: 'low',
   cache: createCache(),
   defaultCache: true
 });
 var StyleProvider = function StyleProvider(props) {
   var children = props.children,
-    restProps = _objectWithoutProperties(props, _excluded$9);
-  var parentContext = React$k.useContext(StyleContext);
+    restProps = _objectWithoutProperties(props, _excluded$b);
+  var parentContext = React$r.useContext(StyleContext);
   var context = useMemo$2(function () {
-    var mergedContext = _objectSpread2$5({}, parentContext);
+    var mergedContext = _objectSpread2$7({}, parentContext);
     Object.keys(restProps).forEach(function (key) {
       var value = restProps[key];
       if (restProps[key] !== undefined) {
@@ -2717,7 +2756,7 @@ var StyleProvider = function StyleProvider(props) {
   }, [parentContext, restProps], function (prev, next) {
     return !isEqual$2(prev[0], next[0], true) || !isEqual$2(prev[1], next[1], true);
   });
-  return /*#__PURE__*/React$k.createElement(StyleContext.Provider, {
+  return /*#__PURE__*/React$r.createElement(StyleContext.Provider, {
     value: context
   }, children);
 };
@@ -2780,19 +2819,19 @@ function _createSuper(t) {
   };
 }
 
-var AbstractCalculator = /*#__PURE__*/_createClass(function AbstractCalculator() {
+var AbstractCalculator$1 = /*#__PURE__*/_createClass(function AbstractCalculator() {
   _classCallCheck(this, AbstractCalculator);
 });
 
-var CALC_UNIT = 'CALC_UNIT';
-var regexp$1 = new RegExp(CALC_UNIT, 'g');
-function unit$1(value) {
+var CALC_UNIT$1 = 'CALC_UNIT';
+var regexp$2 = new RegExp(CALC_UNIT$1, 'g');
+function unit$2(value) {
   if (typeof value === 'number') {
-    return "".concat(value).concat(CALC_UNIT);
+    return "".concat(value).concat(CALC_UNIT$1);
   }
   return value;
 }
-var CSSCalculator = /*#__PURE__*/function (_AbstractCalculator) {
+var CSSCalculator$1 = /*#__PURE__*/function (_AbstractCalculator) {
   _inherits(CSSCalculator, _AbstractCalculator);
   var _super = _createSuper(CSSCalculator);
   function CSSCalculator(num, unitlessCssVar) {
@@ -2807,7 +2846,7 @@ var CSSCalculator = /*#__PURE__*/function (_AbstractCalculator) {
     if (num instanceof CSSCalculator) {
       _this.result = "(".concat(num.result, ")");
     } else if (numType === 'number') {
-      _this.result = unit$1(num);
+      _this.result = unit$2(num);
     } else if (numType === 'string') {
       _this.result = num;
     }
@@ -2819,7 +2858,7 @@ var CSSCalculator = /*#__PURE__*/function (_AbstractCalculator) {
       if (num instanceof CSSCalculator) {
         this.result = "".concat(this.result, " + ").concat(num.getResult());
       } else if (typeof num === 'number' || typeof num === 'string') {
-        this.result = "".concat(this.result, " + ").concat(unit$1(num));
+        this.result = "".concat(this.result, " + ").concat(unit$2(num));
       }
       this.lowPriority = true;
       return this;
@@ -2830,7 +2869,7 @@ var CSSCalculator = /*#__PURE__*/function (_AbstractCalculator) {
       if (num instanceof CSSCalculator) {
         this.result = "".concat(this.result, " - ").concat(num.getResult());
       } else if (typeof num === 'number' || typeof num === 'string') {
-        this.result = "".concat(this.result, " - ").concat(unit$1(num));
+        this.result = "".concat(this.result, " - ").concat(unit$2(num));
       }
       this.lowPriority = true;
       return this;
@@ -2882,7 +2921,7 @@ var CSSCalculator = /*#__PURE__*/function (_AbstractCalculator) {
       })) {
         mergedUnit = false;
       }
-      this.result = this.result.replace(regexp$1, mergedUnit ? 'px' : '');
+      this.result = this.result.replace(regexp$2, mergedUnit ? 'px' : '');
       if (typeof this.lowPriority !== 'undefined') {
         return "calc(".concat(this.result, ")");
       }
@@ -2890,9 +2929,9 @@ var CSSCalculator = /*#__PURE__*/function (_AbstractCalculator) {
     }
   }]);
   return CSSCalculator;
-}(AbstractCalculator);
+}(AbstractCalculator$1);
 
-var NumCalculator = /*#__PURE__*/function (_AbstractCalculator) {
+var NumCalculator$1 = /*#__PURE__*/function (_AbstractCalculator) {
   _inherits(NumCalculator, _AbstractCalculator);
   var _super = _createSuper(NumCalculator);
   function NumCalculator(num) {
@@ -2954,10 +2993,10 @@ var NumCalculator = /*#__PURE__*/function (_AbstractCalculator) {
     }
   }]);
   return NumCalculator;
-}(AbstractCalculator);
+}(AbstractCalculator$1);
 
-var genCalc = function genCalc(type, unitlessCssVar) {
-  var Calculator = type === 'css' ? CSSCalculator : NumCalculator;
+var genCalc$1 = function genCalc(type, unitlessCssVar) {
+  var Calculator = type === 'css' ? CSSCalculator$1 : NumCalculator$1;
   return function (num) {
     return new Calculator(num, unitlessCssVar);
   };
@@ -3116,7 +3155,7 @@ var Theme = /*#__PURE__*/function () {
     this.derivatives = Array.isArray(derivatives) ? derivatives : [derivatives];
     this.id = uuid;
     if (derivatives.length === 0) {
-      warning$5(derivatives.length > 0, '[Ant Design CSS-in-JS] Theme should have at least one derivative function.');
+      warning$6(derivatives.length > 0, '[Ant Design CSS-in-JS] Theme should have at least one derivative function.');
     }
     uuid += 1;
   }
@@ -3252,7 +3291,7 @@ function supportLogicProps() {
   return canLogic;
 }
 var isClientSide = canUseDom$2();
-function unit(num) {
+function unit$1(num) {
   if (typeof num === 'number') {
     return "".concat(num, "px");
   }
@@ -3264,7 +3303,7 @@ function toStyleStr(style, tokenKey, styleId) {
   if (plain) {
     return style;
   }
-  var attrs = _objectSpread2$5(_objectSpread2$5({}, customizeAttrs), {}, _defineProperty(_defineProperty({}, ATTR_TOKEN, tokenKey), ATTR_MARK, styleId));
+  var attrs = _objectSpread2$7(_objectSpread2$7({}, customizeAttrs), {}, _defineProperty(_defineProperty({}, ATTR_TOKEN, tokenKey), ATTR_MARK, styleId));
   var attrStr = Object.keys(attrs).map(function (attr) {
     var val = attrs[attr];
     return val ? "".concat(attr, "=\"").concat(val, "\"") : null;
@@ -3314,9 +3353,9 @@ var transformToken = function transformToken(token, themeKey, config) {
 /**
  * Wrap `React.useLayoutEffect` which will not throw warning message in test env
  */
-var useInternalLayoutEffect = process.env.NODE_ENV !== 'test' && canUseDom$2() ? React$k.useLayoutEffect : React$k.useEffect;
+var useInternalLayoutEffect = process.env.NODE_ENV !== 'test' && canUseDom$2() ? React$r.useLayoutEffect : React$r.useEffect;
 var useLayoutEffect = function useLayoutEffect(callback, deps) {
-  var firstMountRef = React$k.useRef(true);
+  var firstMountRef = React$r.useRef(true);
   useInternalLayoutEffect(function () {
     return callback(firstMountRef.current);
   }, deps);
@@ -3339,7 +3378,7 @@ var useLayoutUpdateEffect = function useLayoutUpdateEffect(callback, deps) {
 
 // We need fully clone React function here
 // to avoid webpack warning React 17 do not export `useId`
-var fullClone$3 = _objectSpread2$5({}, React$k);
+var fullClone$3 = _objectSpread2$7({}, React$r);
 var useInsertionEffect$1 = fullClone$3.useInsertionEffect;
 /**
  * Polyfill `useInsertionEffect` for React < 18
@@ -3348,7 +3387,7 @@ var useInsertionEffect$1 = fullClone$3.useInsertionEffect;
  * @param deps
  */
 var useInsertionEffectPolyfill = function useInsertionEffectPolyfill(renderEffect, effect, deps) {
-  React$k.useMemo(renderEffect, deps);
+  React$r.useMemo(renderEffect, deps);
   useLayoutEffect(function () {
     return effect(true);
   }, deps);
@@ -3366,7 +3405,7 @@ var useCompatibleInsertionEffect = useInsertionEffect$1 ? function (renderEffect
   }, deps);
 } : useInsertionEffectPolyfill;
 
-var fullClone$2 = _objectSpread2$5({}, React$k);
+var fullClone$2 = _objectSpread2$7({}, React$r);
 var useInsertionEffect = fullClone$2.useInsertionEffect;
 
 // DO NOT register functions in useEffect cleanup function, or functions that registered will never be called.
@@ -3376,13 +3415,13 @@ var useCleanupRegister = function useCleanupRegister(deps) {
   function register(fn) {
     if (cleanupFlag) {
       if (process.env.NODE_ENV !== 'production') {
-        warning$5(false, '[Ant Design CSS-in-JS] You are registering a cleanup function after unmount, which will not have any effect.');
+        warning$6(false, '[Ant Design CSS-in-JS] You are registering a cleanup function after unmount, which will not have any effect.');
       }
       return;
     }
     effectCleanups.push(fn);
   }
-  React$k.useEffect(function () {
+  React$r.useEffect(function () {
     // Compatible with strict mode
     cleanupFlag = false;
     return function () {
@@ -3433,7 +3472,7 @@ if (process.env.NODE_ENV !== 'production' && typeof module !== 'undefined' && mo
 function useGlobalCache(prefix, keyPath, cacheFn, onCacheRemove,
 // Add additional effect trigger by `useInsertionEffect`
 onCacheEffect) {
-  var _React$useContext = React$k.useContext(StyleContext),
+  var _React$useContext = React$r.useContext(StyleContext),
     globalCache = _React$useContext.cache;
   var fullPath = [prefix].concat(_toConsumableArray(keyPath));
   var fullPathStr = pathKey(fullPath);
@@ -3462,7 +3501,7 @@ onCacheEffect) {
   };
 
   // Create cache
-  React$k.useMemo(function () {
+  React$r.useMemo(function () {
     buildCache();
   }, /* eslint-disable react-hooks/exhaustive-deps */
   [fullPathStr]
@@ -3564,7 +3603,7 @@ var getComputedToken$1 = function getComputedToken(originToken, overrideToken, t
   var derivativeToken = theme.getDerivativeToken(originToken);
 
   // Merge with override
-  var mergedDerivativeToken = _objectSpread2$5(_objectSpread2$5({}, derivativeToken), overrideToken);
+  var mergedDerivativeToken = _objectSpread2$7(_objectSpread2$7({}, derivativeToken), overrideToken);
 
   // Format if needed
   if (format) {
@@ -3605,7 +3644,7 @@ function useCacheToken(theme, tokens) {
     var mergedDerivativeToken = compute ? compute(mergedToken, override, theme) : getComputedToken$1(mergedToken, override, theme, formatToken);
 
     // Replace token value with css variables
-    var actualToken = _objectSpread2$5({}, mergedDerivativeToken);
+    var actualToken = _objectSpread2$7({}, mergedDerivativeToken);
     var cssVarsStr = '';
     if (!!cssVar) {
       var _transformToken = transformToken(mergedDerivativeToken, cssVar.key, {
@@ -3675,14 +3714,14 @@ var extract$2 = function extract(cache, effectStyles, options) {
   return [order, styleId, styleText];
 };
 
-function _extends() {
-  return _extends = Object.assign ? Object.assign.bind() : function (n) {
+function _extends$1() {
+  return _extends$1 = Object.assign ? Object.assign.bind() : function (n) {
     for (var e = 1; e < arguments.length; e++) {
       var t = arguments[e];
       for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
     }
     return n;
-  }, _extends.apply(null, arguments);
+  }, _extends$1.apply(null, arguments);
 }
 
 var unitlessKeys = {
@@ -4607,7 +4646,7 @@ var parseStyle = function parseStyle(interpolation) {
             _parseStyle4 = _slicedToArray(_parseStyle3, 2),
             _parsedStr2 = _parseStyle4[0],
             childEffectStyle = _parseStyle4[1];
-          effectStyle = _objectSpread2$5(_objectSpread2$5({}, effectStyle), childEffectStyle);
+          effectStyle = _objectSpread2$7(_objectSpread2$7({}, effectStyle), childEffectStyle);
           styleStr += "".concat(mergedKey).concat(_parsedStr2);
         } else {
           var _value;
@@ -4687,7 +4726,7 @@ function useStyleRegister(info, styleFn) {
     clientOnly = info.clientOnly,
     _info$order = info.order,
     order = _info$order === void 0 ? 0 : _info$order;
-  var _React$useContext = React$k.useContext(StyleContext),
+  var _React$useContext = React$r.useContext(StyleContext),
     autoClear = _React$useContext.autoClear,
     mock = _React$useContext.mock,
     defaultCache = _React$useContext.defaultCache,
@@ -4789,7 +4828,7 @@ function useStyleRegister(info, styleFn) {
         // ================= Inject Layer Style =================
         // Inject layer style
         effectLayerKeys.forEach(function (effectKey) {
-          updateCSS$1(normalizeStyle(effectStyle[effectKey]), "_layer-".concat(effectKey), _objectSpread2$5(_objectSpread2$5({}, mergedCSSConfig), {}, {
+          updateCSS$1(normalizeStyle(effectStyle[effectKey]), "_layer-".concat(effectKey), _objectSpread2$7(_objectSpread2$7({}, mergedCSSConfig), {}, {
             prepend: true
           }));
         });
@@ -4821,15 +4860,15 @@ function useStyleRegister(info, styleFn) {
   return function (node) {
     var styleNode;
     if (!ssrInline || isMergedClientSide || !defaultCache) {
-      styleNode = /*#__PURE__*/React$k.createElement(Empty, null);
+      styleNode = /*#__PURE__*/React$r.createElement(Empty, null);
     } else {
-      styleNode = /*#__PURE__*/React$k.createElement("style", _extends({}, _defineProperty(_defineProperty({}, ATTR_TOKEN, cachedTokenKey), ATTR_MARK, cachedStyleId), {
+      styleNode = /*#__PURE__*/React$r.createElement("style", _extends$1({}, _defineProperty(_defineProperty({}, ATTR_TOKEN, cachedTokenKey), ATTR_MARK, cachedStyleId), {
         dangerouslySetInnerHTML: {
           __html: cachedStyleStr
         }
       }));
     }
-    return /*#__PURE__*/React$k.createElement(React$k.Fragment, null, styleNode, node);
+    return /*#__PURE__*/React$r.createElement(React$r.Fragment, null, styleNode, node);
   };
 }
 var extract$1 = function extract(cache, effectStyles, options) {
@@ -5207,7 +5246,7 @@ var transform = function transform() {
     return "".concat(fixedVal, "rem");
   };
   var visit = function visit(cssObj) {
-    var clone = _objectSpread2$5({}, cssObj);
+    var clone = _objectSpread2$7({}, cssObj);
     Object.entries(cssObj).forEach(function (_ref) {
       var _ref2 = _slicedToArray(_ref, 2),
         key = _ref2[0],
@@ -5243,7 +5282,7 @@ var _experimental = {
   }
 };
 
-var es$6 = /*#__PURE__*/Object.freeze({
+var es$7 = /*#__PURE__*/Object.freeze({
   __proto__: null,
   Keyframes: Keyframe,
   NaNLinter: linter$1,
@@ -5253,7 +5292,7 @@ var es$6 = /*#__PURE__*/Object.freeze({
   createCache: createCache,
   createTheme: createTheme,
   extractStyle: extractStyle,
-  genCalc: genCalc,
+  genCalc: genCalc$1,
   getComputedToken: getComputedToken$1,
   legacyLogicalPropertiesTransformer: transform$1,
   legacyNotSelectorLinter: linter$3,
@@ -5261,13 +5300,13 @@ var es$6 = /*#__PURE__*/Object.freeze({
   parentSelectorLinter: linter,
   px2remTransformer: transform,
   token2CSSVar: token2CSSVar,
-  unit: unit,
+  unit: unit$1,
   useCSSVarRegister: useCSSVarRegister,
   useCacheToken: useCacheToken,
   useStyleRegister: useStyleRegister
 });
 
-var require$$0 = /*@__PURE__*/getAugmentedNamespace(es$6);
+var require$$0 = /*@__PURE__*/getAugmentedNamespace(es$7);
 
 var style$5 = {};
 
@@ -5509,57 +5548,6 @@ function genCompactItemStyle(token) {
 
 var internal = {};
 
-var interopRequireWildcard = {exports: {}};
-
-var _typeof = {exports: {}};
-
-(function (module) {
-	function _typeof(o) {
-	  "@babel/helpers - typeof";
-
-	  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-	    return typeof o;
-	  } : function (o) {
-	    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-	  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
-	}
-	module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports; 
-} (_typeof));
-
-var _typeofExports = _typeof.exports;
-
-(function (module) {
-	var _typeof = _typeofExports["default"];
-	function _getRequireWildcardCache(e) {
-	  if ("function" != typeof WeakMap) return null;
-	  var r = new WeakMap(),
-	    t = new WeakMap();
-	  return (_getRequireWildcardCache = function _getRequireWildcardCache(e) {
-	    return e ? t : r;
-	  })(e);
-	}
-	function _interopRequireWildcard(e, r) {
-	  if (!r && e && e.__esModule) return e;
-	  if (null === e || "object" != _typeof(e) && "function" != typeof e) return {
-	    "default": e
-	  };
-	  var t = _getRequireWildcardCache(r);
-	  if (t && t.has(e)) return t.get(e);
-	  var n = {
-	      __proto__: null
-	    },
-	    a = Object.defineProperty && Object.getOwnPropertyDescriptor;
-	  for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) {
-	    var i = a ? Object.getOwnPropertyDescriptor(e, u) : null;
-	    i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u];
-	  }
-	  return n["default"] = e, t && t.set(e, n), n;
-	}
-	module.exports = _interopRequireWildcard, module.exports.__esModule = true, module.exports["default"] = module.exports; 
-} (interopRequireWildcard));
-
-var interopRequireWildcardExports = interopRequireWildcard.exports;
-
 var interopRequireDefault = {exports: {}};
 
 (function (module) {
@@ -5572,6 +5560,1210 @@ var interopRequireDefault = {exports: {}};
 } (interopRequireDefault));
 
 var interopRequireDefaultExports = interopRequireDefault.exports;
+
+var AbstractCalculator = /*#__PURE__*/_createClass(function AbstractCalculator() {
+  _classCallCheck(this, AbstractCalculator);
+});
+
+var CALC_UNIT = 'CALC_UNIT';
+var regexp$1 = new RegExp(CALC_UNIT, 'g');
+function unit(value) {
+  if (typeof value === 'number') {
+    return "".concat(value).concat(CALC_UNIT);
+  }
+  return value;
+}
+var CSSCalculator = /*#__PURE__*/function (_AbstractCalculator) {
+  _inherits(CSSCalculator, _AbstractCalculator);
+  var _super = _createSuper(CSSCalculator);
+  function CSSCalculator(num, unitlessCssVar) {
+    var _this;
+    _classCallCheck(this, CSSCalculator);
+    _this = _super.call(this);
+    _defineProperty(_assertThisInitialized(_this), "result", '');
+    _defineProperty(_assertThisInitialized(_this), "unitlessCssVar", void 0);
+    _defineProperty(_assertThisInitialized(_this), "lowPriority", void 0);
+    var numType = _typeof$1(num);
+    _this.unitlessCssVar = unitlessCssVar;
+    if (num instanceof CSSCalculator) {
+      _this.result = "(".concat(num.result, ")");
+    } else if (numType === 'number') {
+      _this.result = unit(num);
+    } else if (numType === 'string') {
+      _this.result = num;
+    }
+    return _this;
+  }
+  _createClass(CSSCalculator, [{
+    key: "add",
+    value: function add(num) {
+      if (num instanceof CSSCalculator) {
+        this.result = "".concat(this.result, " + ").concat(num.getResult());
+      } else if (typeof num === 'number' || typeof num === 'string') {
+        this.result = "".concat(this.result, " + ").concat(unit(num));
+      }
+      this.lowPriority = true;
+      return this;
+    }
+  }, {
+    key: "sub",
+    value: function sub(num) {
+      if (num instanceof CSSCalculator) {
+        this.result = "".concat(this.result, " - ").concat(num.getResult());
+      } else if (typeof num === 'number' || typeof num === 'string') {
+        this.result = "".concat(this.result, " - ").concat(unit(num));
+      }
+      this.lowPriority = true;
+      return this;
+    }
+  }, {
+    key: "mul",
+    value: function mul(num) {
+      if (this.lowPriority) {
+        this.result = "(".concat(this.result, ")");
+      }
+      if (num instanceof CSSCalculator) {
+        this.result = "".concat(this.result, " * ").concat(num.getResult(true));
+      } else if (typeof num === 'number' || typeof num === 'string') {
+        this.result = "".concat(this.result, " * ").concat(num);
+      }
+      this.lowPriority = false;
+      return this;
+    }
+  }, {
+    key: "div",
+    value: function div(num) {
+      if (this.lowPriority) {
+        this.result = "(".concat(this.result, ")");
+      }
+      if (num instanceof CSSCalculator) {
+        this.result = "".concat(this.result, " / ").concat(num.getResult(true));
+      } else if (typeof num === 'number' || typeof num === 'string') {
+        this.result = "".concat(this.result, " / ").concat(num);
+      }
+      this.lowPriority = false;
+      return this;
+    }
+  }, {
+    key: "getResult",
+    value: function getResult(force) {
+      return this.lowPriority || force ? "(".concat(this.result, ")") : this.result;
+    }
+  }, {
+    key: "equal",
+    value: function equal(options) {
+      var _this2 = this;
+      var _ref = options || {},
+        cssUnit = _ref.unit;
+      var mergedUnit = true;
+      if (typeof cssUnit === 'boolean') {
+        mergedUnit = cssUnit;
+      } else if (Array.from(this.unitlessCssVar).some(function (cssVar) {
+        return _this2.result.includes(cssVar);
+      })) {
+        mergedUnit = false;
+      }
+      this.result = this.result.replace(regexp$1, mergedUnit ? 'px' : '');
+      if (typeof this.lowPriority !== 'undefined') {
+        return "calc(".concat(this.result, ")");
+      }
+      return this.result;
+    }
+  }]);
+  return CSSCalculator;
+}(AbstractCalculator);
+
+var NumCalculator = /*#__PURE__*/function (_AbstractCalculator) {
+  _inherits(NumCalculator, _AbstractCalculator);
+  var _super = _createSuper(NumCalculator);
+  function NumCalculator(num) {
+    var _this;
+    _classCallCheck(this, NumCalculator);
+    _this = _super.call(this);
+    _defineProperty(_assertThisInitialized(_this), "result", 0);
+    if (num instanceof NumCalculator) {
+      _this.result = num.result;
+    } else if (typeof num === 'number') {
+      _this.result = num;
+    }
+    return _this;
+  }
+  _createClass(NumCalculator, [{
+    key: "add",
+    value: function add(num) {
+      if (num instanceof NumCalculator) {
+        this.result += num.result;
+      } else if (typeof num === 'number') {
+        this.result += num;
+      }
+      return this;
+    }
+  }, {
+    key: "sub",
+    value: function sub(num) {
+      if (num instanceof NumCalculator) {
+        this.result -= num.result;
+      } else if (typeof num === 'number') {
+        this.result -= num;
+      }
+      return this;
+    }
+  }, {
+    key: "mul",
+    value: function mul(num) {
+      if (num instanceof NumCalculator) {
+        this.result *= num.result;
+      } else if (typeof num === 'number') {
+        this.result *= num;
+      }
+      return this;
+    }
+  }, {
+    key: "div",
+    value: function div(num) {
+      if (num instanceof NumCalculator) {
+        this.result /= num.result;
+      } else if (typeof num === 'number') {
+        this.result /= num;
+      }
+      return this;
+    }
+  }, {
+    key: "equal",
+    value: function equal() {
+      return this.result;
+    }
+  }]);
+  return NumCalculator;
+}(AbstractCalculator);
+
+var genCalc = function genCalc(type, unitlessCssVar) {
+  var Calculator = type === 'css' ? CSSCalculator : NumCalculator;
+  return function (num) {
+    return new Calculator(num, unitlessCssVar);
+  };
+};
+
+var getCompVarPrefix = function getCompVarPrefix(component, prefix) {
+  return "".concat([prefix, component.replace(/([A-Z]+)([A-Z][a-z]+)/g, '$1-$2').replace(/([a-z])([A-Z])/g, '$1-$2')].filter(Boolean).join('-'));
+};
+
+function useEvent(callback) {
+  var fnRef = React$r.useRef();
+  fnRef.current = callback;
+  var memoFn = React$r.useCallback(function () {
+    var _fnRef$current;
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    return (_fnRef$current = fnRef.current) === null || _fnRef$current === void 0 ? void 0 : _fnRef$current.call.apply(_fnRef$current, [fnRef].concat(args));
+  }, []);
+  return memoFn;
+}
+
+/**
+ * Same as React.useState but `setState` accept `ignoreDestroy` param to not to setState after destroyed.
+ * We do not make this auto is to avoid real memory leak.
+ * Developer should confirm it's safe to ignore themselves.
+ */
+function useSafeState(defaultValue) {
+  var destroyRef = React$r.useRef(false);
+  var _React$useState = React$r.useState(defaultValue),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    value = _React$useState2[0],
+    setValue = _React$useState2[1];
+  React$r.useEffect(function () {
+    destroyRef.current = false;
+    return function () {
+      destroyRef.current = true;
+    };
+  }, []);
+  function safeSetState(updater, ignoreDestroy) {
+    if (ignoreDestroy && destroyRef.current) {
+      return;
+    }
+    setValue(updater);
+  }
+  return [value, safeSetState];
+}
+
+/** We only think `undefined` is empty */
+function hasValue(value) {
+  return value !== undefined;
+}
+
+/**
+ * Similar to `useState` but will use props value if provided.
+ * Note that internal use rc-util `useState` hook.
+ */
+function useMergedState(defaultStateValue, option) {
+  var _ref = option || {},
+    defaultValue = _ref.defaultValue,
+    value = _ref.value,
+    onChange = _ref.onChange,
+    postState = _ref.postState;
+
+  // ======================= Init =======================
+  var _useState = useSafeState(function () {
+      if (hasValue(value)) {
+        return value;
+      } else if (hasValue(defaultValue)) {
+        return typeof defaultValue === 'function' ? defaultValue() : defaultValue;
+      } else {
+        return typeof defaultStateValue === 'function' ? defaultStateValue() : defaultStateValue;
+      }
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    innerValue = _useState2[0],
+    setInnerValue = _useState2[1];
+  var mergedValue = value !== undefined ? value : innerValue;
+  var postMergedValue = postState ? postState(mergedValue) : mergedValue;
+
+  // ====================== Change ======================
+  var onChangeFn = useEvent(onChange);
+  var _useState3 = useSafeState([mergedValue]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    prevValue = _useState4[0],
+    setPrevValue = _useState4[1];
+  useLayoutUpdateEffect(function () {
+    var prev = prevValue[0];
+    if (innerValue !== prev) {
+      onChangeFn(innerValue, prev);
+    }
+  }, [prevValue]);
+
+  // Sync value back to `undefined` when it from control to un-control
+  useLayoutUpdateEffect(function () {
+    if (!hasValue(value)) {
+      setInnerValue(value);
+    }
+  }, [value]);
+
+  // ====================== Update ======================
+  var triggerChange = useEvent(function (updater, ignoreDestroy) {
+    setInnerValue(updater, ignoreDestroy);
+    setPrevValue([mergedValue], ignoreDestroy);
+  });
+  return [postMergedValue, triggerChange];
+}
+
+var reactIs = {exports: {}};
+
+var reactIs_production_min = {};
+
+/**
+ * @license React
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var hasRequiredReactIs_production_min;
+
+function requireReactIs_production_min () {
+	if (hasRequiredReactIs_production_min) return reactIs_production_min;
+	hasRequiredReactIs_production_min = 1;
+var b=Symbol.for("react.element"),c=Symbol.for("react.portal"),d=Symbol.for("react.fragment"),e=Symbol.for("react.strict_mode"),f=Symbol.for("react.profiler"),g=Symbol.for("react.provider"),h=Symbol.for("react.context"),k=Symbol.for("react.server_context"),l=Symbol.for("react.forward_ref"),m=Symbol.for("react.suspense"),n=Symbol.for("react.suspense_list"),p=Symbol.for("react.memo"),q=Symbol.for("react.lazy"),t=Symbol.for("react.offscreen"),u;u=Symbol.for("react.module.reference");
+	function v(a){if("object"===typeof a&&null!==a){var r=a.$$typeof;switch(r){case b:switch(a=a.type,a){case d:case f:case e:case m:case n:return a;default:switch(a=a&&a.$$typeof,a){case k:case h:case l:case q:case p:case g:return a;default:return r}}case c:return r}}}reactIs_production_min.ContextConsumer=h;reactIs_production_min.ContextProvider=g;reactIs_production_min.Element=b;reactIs_production_min.ForwardRef=l;reactIs_production_min.Fragment=d;reactIs_production_min.Lazy=q;reactIs_production_min.Memo=p;reactIs_production_min.Portal=c;reactIs_production_min.Profiler=f;reactIs_production_min.StrictMode=e;reactIs_production_min.Suspense=m;
+	reactIs_production_min.SuspenseList=n;reactIs_production_min.isAsyncMode=function(){return !1};reactIs_production_min.isConcurrentMode=function(){return !1};reactIs_production_min.isContextConsumer=function(a){return v(a)===h};reactIs_production_min.isContextProvider=function(a){return v(a)===g};reactIs_production_min.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===b};reactIs_production_min.isForwardRef=function(a){return v(a)===l};reactIs_production_min.isFragment=function(a){return v(a)===d};reactIs_production_min.isLazy=function(a){return v(a)===q};reactIs_production_min.isMemo=function(a){return v(a)===p};
+	reactIs_production_min.isPortal=function(a){return v(a)===c};reactIs_production_min.isProfiler=function(a){return v(a)===f};reactIs_production_min.isStrictMode=function(a){return v(a)===e};reactIs_production_min.isSuspense=function(a){return v(a)===m};reactIs_production_min.isSuspenseList=function(a){return v(a)===n};
+	reactIs_production_min.isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===d||a===f||a===e||a===m||a===n||a===t||"object"===typeof a&&null!==a&&(a.$$typeof===q||a.$$typeof===p||a.$$typeof===g||a.$$typeof===h||a.$$typeof===l||a.$$typeof===u||void 0!==a.getModuleId)?!0:!1};reactIs_production_min.typeOf=v;
+	return reactIs_production_min;
+}
+
+var reactIs_development = {};
+
+/**
+ * @license React
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var hasRequiredReactIs_development;
+
+function requireReactIs_development () {
+	if (hasRequiredReactIs_development) return reactIs_development;
+	hasRequiredReactIs_development = 1;
+
+	if (process.env.NODE_ENV !== "production") {
+	  (function() {
+
+	// ATTENTION
+	// When adding new symbols to this file,
+	// Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
+	// The Symbol used to tag the ReactElement-like types.
+	var REACT_ELEMENT_TYPE = Symbol.for('react.element');
+	var REACT_PORTAL_TYPE = Symbol.for('react.portal');
+	var REACT_FRAGMENT_TYPE = Symbol.for('react.fragment');
+	var REACT_STRICT_MODE_TYPE = Symbol.for('react.strict_mode');
+	var REACT_PROFILER_TYPE = Symbol.for('react.profiler');
+	var REACT_PROVIDER_TYPE = Symbol.for('react.provider');
+	var REACT_CONTEXT_TYPE = Symbol.for('react.context');
+	var REACT_SERVER_CONTEXT_TYPE = Symbol.for('react.server_context');
+	var REACT_FORWARD_REF_TYPE = Symbol.for('react.forward_ref');
+	var REACT_SUSPENSE_TYPE = Symbol.for('react.suspense');
+	var REACT_SUSPENSE_LIST_TYPE = Symbol.for('react.suspense_list');
+	var REACT_MEMO_TYPE = Symbol.for('react.memo');
+	var REACT_LAZY_TYPE = Symbol.for('react.lazy');
+	var REACT_OFFSCREEN_TYPE = Symbol.for('react.offscreen');
+
+	// -----------------------------------------------------------------------------
+
+	var enableScopeAPI = false; // Experimental Create Event Handle API.
+	var enableCacheElement = false;
+	var enableTransitionTracing = false; // No known bugs, but needs performance testing
+
+	var enableLegacyHidden = false; // Enables unstable_avoidThisFallback feature in Fiber
+	// stuff. Intended to enable React core members to more easily debug scheduling
+	// issues in DEV builds.
+
+	var enableDebugTracing = false; // Track which Fiber(s) schedule render work.
+
+	var REACT_MODULE_REFERENCE;
+
+	{
+	  REACT_MODULE_REFERENCE = Symbol.for('react.module.reference');
+	}
+
+	function isValidElementType(type) {
+	  if (typeof type === 'string' || typeof type === 'function') {
+	    return true;
+	  } // Note: typeof might be other than 'symbol' or 'number' (e.g. if it's a polyfill).
+
+
+	  if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || enableDebugTracing  || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || enableLegacyHidden  || type === REACT_OFFSCREEN_TYPE || enableScopeAPI  || enableCacheElement  || enableTransitionTracing ) {
+	    return true;
+	  }
+
+	  if (typeof type === 'object' && type !== null) {
+	    if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || // This needs to include all possible module reference object
+	    // types supported by any Flight configuration anywhere since
+	    // we don't know which Flight build this will end up being used
+	    // with.
+	    type.$$typeof === REACT_MODULE_REFERENCE || type.getModuleId !== undefined) {
+	      return true;
+	    }
+	  }
+
+	  return false;
+	}
+
+	function typeOf(object) {
+	  if (typeof object === 'object' && object !== null) {
+	    var $$typeof = object.$$typeof;
+
+	    switch ($$typeof) {
+	      case REACT_ELEMENT_TYPE:
+	        var type = object.type;
+
+	        switch (type) {
+	          case REACT_FRAGMENT_TYPE:
+	          case REACT_PROFILER_TYPE:
+	          case REACT_STRICT_MODE_TYPE:
+	          case REACT_SUSPENSE_TYPE:
+	          case REACT_SUSPENSE_LIST_TYPE:
+	            return type;
+
+	          default:
+	            var $$typeofType = type && type.$$typeof;
+
+	            switch ($$typeofType) {
+	              case REACT_SERVER_CONTEXT_TYPE:
+	              case REACT_CONTEXT_TYPE:
+	              case REACT_FORWARD_REF_TYPE:
+	              case REACT_LAZY_TYPE:
+	              case REACT_MEMO_TYPE:
+	              case REACT_PROVIDER_TYPE:
+	                return $$typeofType;
+
+	              default:
+	                return $$typeof;
+	            }
+
+	        }
+
+	      case REACT_PORTAL_TYPE:
+	        return $$typeof;
+	    }
+	  }
+
+	  return undefined;
+	}
+	var ContextConsumer = REACT_CONTEXT_TYPE;
+	var ContextProvider = REACT_PROVIDER_TYPE;
+	var Element = REACT_ELEMENT_TYPE;
+	var ForwardRef = REACT_FORWARD_REF_TYPE;
+	var Fragment = REACT_FRAGMENT_TYPE;
+	var Lazy = REACT_LAZY_TYPE;
+	var Memo = REACT_MEMO_TYPE;
+	var Portal = REACT_PORTAL_TYPE;
+	var Profiler = REACT_PROFILER_TYPE;
+	var StrictMode = REACT_STRICT_MODE_TYPE;
+	var Suspense = REACT_SUSPENSE_TYPE;
+	var SuspenseList = REACT_SUSPENSE_LIST_TYPE;
+	var hasWarnedAboutDeprecatedIsAsyncMode = false;
+	var hasWarnedAboutDeprecatedIsConcurrentMode = false; // AsyncMode should be deprecated
+
+	function isAsyncMode(object) {
+	  {
+	    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+	      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+
+	      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
+	    }
+	  }
+
+	  return false;
+	}
+	function isConcurrentMode(object) {
+	  {
+	    if (!hasWarnedAboutDeprecatedIsConcurrentMode) {
+	      hasWarnedAboutDeprecatedIsConcurrentMode = true; // Using console['warn'] to evade Babel and ESLint
+
+	      console['warn']('The ReactIs.isConcurrentMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
+	    }
+	  }
+
+	  return false;
+	}
+	function isContextConsumer(object) {
+	  return typeOf(object) === REACT_CONTEXT_TYPE;
+	}
+	function isContextProvider(object) {
+	  return typeOf(object) === REACT_PROVIDER_TYPE;
+	}
+	function isElement(object) {
+	  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+	}
+	function isForwardRef(object) {
+	  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+	}
+	function isFragment(object) {
+	  return typeOf(object) === REACT_FRAGMENT_TYPE;
+	}
+	function isLazy(object) {
+	  return typeOf(object) === REACT_LAZY_TYPE;
+	}
+	function isMemo(object) {
+	  return typeOf(object) === REACT_MEMO_TYPE;
+	}
+	function isPortal(object) {
+	  return typeOf(object) === REACT_PORTAL_TYPE;
+	}
+	function isProfiler(object) {
+	  return typeOf(object) === REACT_PROFILER_TYPE;
+	}
+	function isStrictMode(object) {
+	  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+	}
+	function isSuspense(object) {
+	  return typeOf(object) === REACT_SUSPENSE_TYPE;
+	}
+	function isSuspenseList(object) {
+	  return typeOf(object) === REACT_SUSPENSE_LIST_TYPE;
+	}
+
+	reactIs_development.ContextConsumer = ContextConsumer;
+	reactIs_development.ContextProvider = ContextProvider;
+	reactIs_development.Element = Element;
+	reactIs_development.ForwardRef = ForwardRef;
+	reactIs_development.Fragment = Fragment;
+	reactIs_development.Lazy = Lazy;
+	reactIs_development.Memo = Memo;
+	reactIs_development.Portal = Portal;
+	reactIs_development.Profiler = Profiler;
+	reactIs_development.StrictMode = StrictMode;
+	reactIs_development.Suspense = Suspense;
+	reactIs_development.SuspenseList = SuspenseList;
+	reactIs_development.isAsyncMode = isAsyncMode;
+	reactIs_development.isConcurrentMode = isConcurrentMode;
+	reactIs_development.isContextConsumer = isContextConsumer;
+	reactIs_development.isContextProvider = isContextProvider;
+	reactIs_development.isElement = isElement;
+	reactIs_development.isForwardRef = isForwardRef;
+	reactIs_development.isFragment = isFragment;
+	reactIs_development.isLazy = isLazy;
+	reactIs_development.isMemo = isMemo;
+	reactIs_development.isPortal = isPortal;
+	reactIs_development.isProfiler = isProfiler;
+	reactIs_development.isStrictMode = isStrictMode;
+	reactIs_development.isSuspense = isSuspense;
+	reactIs_development.isSuspenseList = isSuspenseList;
+	reactIs_development.isValidElementType = isValidElementType;
+	reactIs_development.typeOf = typeOf;
+	  })();
+	}
+	return reactIs_development;
+}
+
+if (process.env.NODE_ENV === 'production') {
+  reactIs.exports = requireReactIs_production_min();
+} else {
+  reactIs.exports = requireReactIs_development();
+}
+
+var reactIsExports = reactIs.exports;
+
+var fillRef$1 = function fillRef(ref, node) {
+  if (typeof ref === 'function') {
+    ref(node);
+  } else if (_typeof$1(ref) === 'object' && ref && 'current' in ref) {
+    ref.current = node;
+  }
+};
+
+/**
+ * Merge refs into one ref function to support ref passing.
+ */
+var composeRef$1 = function composeRef() {
+  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
+    refs[_key] = arguments[_key];
+  }
+  var refList = refs.filter(Boolean);
+  if (refList.length <= 1) {
+    return refList[0];
+  }
+  return function (node) {
+    refs.forEach(function (ref) {
+      fillRef$1(ref, node);
+    });
+  };
+};
+var useComposeRef = function useComposeRef() {
+  for (var _len2 = arguments.length, refs = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+    refs[_key2] = arguments[_key2];
+  }
+  return useMemo$2(function () {
+    return composeRef$1.apply(void 0, refs);
+  }, refs, function (prev, next) {
+    return prev.length !== next.length || prev.every(function (ref, i) {
+      return ref !== next[i];
+    });
+  });
+};
+var supportRef$1 = function supportRef(nodeOrComponent) {
+  var _type$prototype, _nodeOrComponent$prot;
+  var type = reactIsExports.isMemo(nodeOrComponent) ? nodeOrComponent.type.type : nodeOrComponent.type;
+
+  // Function component node
+  if (typeof type === 'function' && !((_type$prototype = type.prototype) !== null && _type$prototype !== void 0 && _type$prototype.render) && type.$$typeof !== reactIsExports.ForwardRef) {
+    return false;
+  }
+
+  // Class component
+  if (typeof nodeOrComponent === 'function' && !((_nodeOrComponent$prot = nodeOrComponent.prototype) !== null && _nodeOrComponent$prot !== void 0 && _nodeOrComponent$prot.render) && nodeOrComponent.$$typeof !== reactIsExports.ForwardRef) {
+    return false;
+  }
+  return true;
+};
+function isReactElement$1(node) {
+  return /*#__PURE__*/isValidElement(node) && !reactIsExports.isFragment(node);
+}
+var supportNodeRef = function supportNodeRef(node) {
+  return isReactElement$1(node) && supportRef$1(node);
+};
+
+/**
+ * In React 19. `ref` is not a property from node.
+ * But a property from `props.ref`.
+ * To check if `props.ref` exist or fallback to `ref`.
+ */
+Number(version$3.split('.')[0]) >= 19 ?
+// >= React 19
+function (node) {
+  if (isReactElement$1(node)) {
+    return node.props.ref;
+  }
+  return null;
+} :
+// < React 19
+function (node) {
+  if (isReactElement$1(node)) {
+    return node.ref;
+  }
+  return null;
+};
+
+function get$2(entity, path) {
+  var current = entity;
+  for (var i = 0; i < path.length; i += 1) {
+    if (current === null || current === undefined) {
+      return undefined;
+    }
+    current = current[path[i]];
+  }
+  return current;
+}
+
+function _toArray$1(r) {
+  return _arrayWithHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableRest();
+}
+
+function internalSet$1(entity, paths, value, removeIfUndefined) {
+  if (!paths.length) {
+    return value;
+  }
+  var _paths = _toArray$1(paths),
+    path = _paths[0],
+    restPath = _paths.slice(1);
+  var clone;
+  if (!entity && typeof path === 'number') {
+    clone = [];
+  } else if (Array.isArray(entity)) {
+    clone = _toConsumableArray(entity);
+  } else {
+    clone = _objectSpread2$7({}, entity);
+  }
+
+  // Delete prop if `removeIfUndefined` and value is undefined
+  if (removeIfUndefined && value === undefined && restPath.length === 1) {
+    delete clone[path][restPath[0]];
+  } else {
+    clone[path] = internalSet$1(clone[path], restPath, value, removeIfUndefined);
+  }
+  return clone;
+}
+function set$2(entity, paths, value) {
+  var removeIfUndefined = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+  // Do nothing if `removeIfUndefined` and parent object not exist
+  if (paths.length && removeIfUndefined && value === undefined && !get$2(entity, paths.slice(0, -1))) {
+    return entity;
+  }
+  return internalSet$1(entity, paths, value, removeIfUndefined);
+}
+function isObject$1(obj) {
+  return _typeof$1(obj) === 'object' && obj !== null && Object.getPrototypeOf(obj) === Object.prototype;
+}
+function createEmpty$1(source) {
+  return Array.isArray(source) ? [] : {};
+}
+var keys$1 = typeof Reflect === 'undefined' ? Object.keys : Reflect.ownKeys;
+
+/**
+ * Merge objects which will create
+ */
+function merge$2() {
+  for (var _len = arguments.length, sources = new Array(_len), _key = 0; _key < _len; _key++) {
+    sources[_key] = arguments[_key];
+  }
+  var clone = createEmpty$1(sources[0]);
+  sources.forEach(function (src) {
+    function internalMerge(path, parentLoopSet) {
+      var loopSet = new Set(parentLoopSet);
+      var value = get$2(src, path);
+      var isArr = Array.isArray(value);
+      if (isArr || isObject$1(value)) {
+        // Only add not loop obj
+        if (!loopSet.has(value)) {
+          loopSet.add(value);
+          var originValue = get$2(clone, path);
+          if (isArr) {
+            // Array will always be override
+            clone = set$2(clone, path, []);
+          } else if (!originValue || _typeof$1(originValue) !== 'object') {
+            // Init container if not exist
+            clone = set$2(clone, path, createEmpty$1(value));
+          }
+          keys$1(value).forEach(function (key) {
+            internalMerge([].concat(_toConsumableArray(path), [key]), loopSet);
+          });
+        }
+      } else {
+        clone = set$2(clone, path, value);
+      }
+    }
+    internalMerge([]);
+  });
+  return clone;
+}
+
+var es$6 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  get: get$2,
+  set: set$2,
+  supportNodeRef: supportNodeRef,
+  supportRef: supportRef$1,
+  useComposeRef: useComposeRef,
+  useEvent: useEvent,
+  useMergedState: useMergedState,
+  warning: warningOnce$1
+});
+
+function getComponentToken(component, token, defaultToken, options) {
+  var customToken = _objectSpread2$7({}, token[component]);
+  if (options !== null && options !== void 0 && options.deprecatedTokens) {
+    var deprecatedTokens = options.deprecatedTokens;
+    deprecatedTokens.forEach(function (_ref) {
+      var _ref2 = _slicedToArray(_ref, 2),
+        oldTokenKey = _ref2[0],
+        newTokenKey = _ref2[1];
+      if (process.env.NODE_ENV !== 'production') {
+        warningOnce$1(!(customToken !== null && customToken !== void 0 && customToken[oldTokenKey]), "Component Token `".concat(String(oldTokenKey), "` of ").concat(String(component), " is deprecated. Please use `").concat(String(newTokenKey), "` instead."));
+      }
+
+      // Should wrap with `if` clause, or there will be `undefined` in object.
+      if (customToken !== null && customToken !== void 0 && customToken[oldTokenKey] || customToken !== null && customToken !== void 0 && customToken[newTokenKey]) {
+        var _customToken$newToken;
+        (_customToken$newToken = customToken[newTokenKey]) !== null && _customToken$newToken !== void 0 ? _customToken$newToken : customToken[newTokenKey] = customToken === null || customToken === void 0 ? void 0 : customToken[oldTokenKey];
+      }
+    });
+  }
+  var mergedToken = _objectSpread2$7(_objectSpread2$7({}, defaultToken), customToken);
+
+  // Remove same value as global token to minimize size
+  Object.keys(mergedToken).forEach(function (key) {
+    if (mergedToken[key] === token[key]) {
+      delete mergedToken[key];
+    }
+  });
+  return mergedToken;
+}
+
+var enableStatistic = process.env.NODE_ENV !== 'production' || typeof CSSINJS_STATISTIC !== 'undefined';
+var recording = true;
+
+/**
+ * This function will do as `Object.assign` in production. But will use Object.defineProperty:get to
+ * pass all value access in development. To support statistic field usage with alias token.
+ */
+function merge$1() {
+  for (var _len = arguments.length, objs = new Array(_len), _key = 0; _key < _len; _key++) {
+    objs[_key] = arguments[_key];
+  }
+  /* istanbul ignore next */
+  if (!enableStatistic) {
+    return Object.assign.apply(Object, [{}].concat(objs));
+  }
+  recording = false;
+  var ret = {};
+  objs.forEach(function (obj) {
+    if (_typeof$1(obj) !== 'object') return;
+    var keys = Object.keys(obj);
+    keys.forEach(function (key) {
+      Object.defineProperty(ret, key, {
+        configurable: true,
+        enumerable: true,
+        get: function get() {
+          return obj[key];
+        }
+      });
+    });
+  });
+  recording = true;
+  return ret;
+}
+
+/** @internal Internal Usage. Not use in your production. */
+var statistic = {};
+
+/* istanbul ignore next */
+function noop$1() {}
+
+/** Statistic token usage case. Should use `merge` function if you do not want spread record. */
+var statisticToken = function statisticToken(token) {
+  var tokenKeys;
+  var proxy = token;
+  var flush = noop$1;
+  if (enableStatistic && typeof Proxy !== 'undefined') {
+    tokenKeys = new Set();
+    proxy = new Proxy(token, {
+      get: function get(obj, prop) {
+        if (recording) {
+          tokenKeys.add(prop);
+        }
+        return obj[prop];
+      }
+    });
+    flush = function flush(componentName, componentToken) {
+      var _statistic$componentN;
+      statistic[componentName] = {
+        global: Array.from(tokenKeys),
+        component: _objectSpread2$7(_objectSpread2$7({}, (_statistic$componentN = statistic[componentName]) === null || _statistic$componentN === void 0 ? void 0 : _statistic$componentN.component), componentToken)
+      };
+    };
+  }
+  return {
+    token: proxy,
+    keys: tokenKeys,
+    flush: flush
+  };
+};
+
+function getDefaultComponentToken(component, token, getDefaultToken) {
+  if (typeof getDefaultToken === 'function') {
+    var _token$component;
+    return getDefaultToken(merge$1(token, (_token$component = token[component]) !== null && _token$component !== void 0 ? _token$component : {}));
+  }
+  return getDefaultToken !== null && getDefaultToken !== void 0 ? getDefaultToken : {};
+}
+
+function genMaxMin(type) {
+  if (type === 'js') {
+    return {
+      max: Math.max,
+      min: Math.min
+    };
+  }
+  return {
+    max: function max() {
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+      return "max(".concat(args.map(function (value) {
+        return unit$1(value);
+      }).join(','), ")");
+    },
+    min: function min() {
+      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+      return "min(".concat(args.map(function (value) {
+        return unit$1(value);
+      }).join(','), ")");
+    }
+  };
+}
+
+var BEAT_LIMIT = 1000 * 60 * 10;
+
+/**
+ * A helper class to map keys to values.
+ * It supports both primitive keys and object keys.
+ */
+var ArrayKeyMap = /*#__PURE__*/function () {
+  function ArrayKeyMap() {
+    _classCallCheck(this, ArrayKeyMap);
+    _defineProperty(this, "map", new Map());
+    // Use WeakMap to avoid memory leak
+    _defineProperty(this, "objectIDMap", new WeakMap());
+    _defineProperty(this, "nextID", 0);
+    _defineProperty(this, "lastAccessBeat", new Map());
+    // We will clean up the cache when reach the limit
+    _defineProperty(this, "accessBeat", 0);
+  }
+  _createClass(ArrayKeyMap, [{
+    key: "set",
+    value: function set(keys, value) {
+      // New set will trigger clear
+      this.clear();
+
+      // Set logic
+      var compositeKey = this.getCompositeKey(keys);
+      this.map.set(compositeKey, value);
+      this.lastAccessBeat.set(compositeKey, Date.now());
+    }
+  }, {
+    key: "get",
+    value: function get(keys) {
+      var compositeKey = this.getCompositeKey(keys);
+      var cache = this.map.get(compositeKey);
+      this.lastAccessBeat.set(compositeKey, Date.now());
+      this.accessBeat += 1;
+      return cache;
+    }
+  }, {
+    key: "getCompositeKey",
+    value: function getCompositeKey(keys) {
+      var _this = this;
+      var ids = keys.map(function (key) {
+        if (key && _typeof$1(key) === 'object') {
+          return "obj_".concat(_this.getObjectID(key));
+        }
+        return "".concat(_typeof$1(key), "_").concat(key);
+      });
+      return ids.join('|');
+    }
+  }, {
+    key: "getObjectID",
+    value: function getObjectID(obj) {
+      if (this.objectIDMap.has(obj)) {
+        return this.objectIDMap.get(obj);
+      }
+      var id = this.nextID;
+      this.objectIDMap.set(obj, id);
+      this.nextID += 1;
+      return id;
+    }
+  }, {
+    key: "clear",
+    value: function clear() {
+      var _this2 = this;
+      if (this.accessBeat > 10000) {
+        var now = Date.now();
+        this.lastAccessBeat.forEach(function (beat, key) {
+          if (now - beat > BEAT_LIMIT) {
+            _this2.map.delete(key);
+            _this2.lastAccessBeat.delete(key);
+          }
+        });
+        this.accessBeat = 0;
+      }
+    }
+  }]);
+  return ArrayKeyMap;
+}();
+var uniqueMap = new ArrayKeyMap();
+
+/**
+ * Like `useMemo`, but this hook result will be shared across all instances.
+ */
+function useUniqueMemo(memoFn, deps) {
+  return React__default.useMemo(function () {
+    var cachedValue = uniqueMap.get(deps);
+    if (cachedValue) {
+      return cachedValue;
+    }
+    var newValue = memoFn();
+    uniqueMap.set(deps, newValue);
+    return newValue;
+  }, deps);
+}
+
+/**
+ * Provide a default hook since not everyone need config this.
+ */
+var useDefaultCSP = function useDefaultCSP() {
+  return {};
+};
+
+function genStyleUtils$1(config) {
+  // Dependency inversion for preparing basic config.
+  var _config$useCSP = config.useCSP,
+    useCSP = _config$useCSP === void 0 ? useDefaultCSP : _config$useCSP,
+    useToken = config.useToken,
+    usePrefix = config.usePrefix,
+    getResetStyles = config.getResetStyles,
+    getCommonStyle = config.getCommonStyle,
+    getCompUnitless = config.getCompUnitless;
+  function genStyleHooks(component, styleFn, getDefaultToken, options) {
+    var componentName = Array.isArray(component) ? component[0] : component;
+    function prefixToken(key) {
+      return "".concat(String(componentName)).concat(key.slice(0, 1).toUpperCase()).concat(key.slice(1));
+    }
+
+    // Fill unitless
+    var originUnitless = (options === null || options === void 0 ? void 0 : options.unitless) || {};
+    var originCompUnitless = typeof getCompUnitless === 'function' ? getCompUnitless(component) : {};
+    var compUnitless = _objectSpread2$7(_objectSpread2$7({}, originCompUnitless), {}, _defineProperty({}, prefixToken('zIndexPopup'), true));
+    Object.keys(originUnitless).forEach(function (key) {
+      compUnitless[prefixToken(key)] = originUnitless[key];
+    });
+
+    // Options
+    var mergedOptions = _objectSpread2$7(_objectSpread2$7({}, options), {}, {
+      unitless: compUnitless,
+      prefixToken: prefixToken
+    });
+
+    // Hooks
+    var useStyle = genComponentStyleHook(component, styleFn, getDefaultToken, mergedOptions);
+    var useCSSVar = genCSSVarRegister(componentName, getDefaultToken, mergedOptions);
+    return function (prefixCls) {
+      var rootCls = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : prefixCls;
+      var _useStyle = useStyle(prefixCls, rootCls),
+        _useStyle2 = _slicedToArray(_useStyle, 2),
+        hashId = _useStyle2[1];
+      var _useCSSVar = useCSSVar(rootCls),
+        _useCSSVar2 = _slicedToArray(_useCSSVar, 2),
+        wrapCSSVar = _useCSSVar2[0],
+        cssVarCls = _useCSSVar2[1];
+      return [wrapCSSVar, hashId, cssVarCls];
+    };
+  }
+  function genCSSVarRegister(component, getDefaultToken, options) {
+    var compUnitless = options.unitless,
+      _options$injectStyle = options.injectStyle,
+      injectStyle = _options$injectStyle === void 0 ? true : _options$injectStyle,
+      prefixToken = options.prefixToken,
+      ignore = options.ignore;
+    var CSSVarRegister = function CSSVarRegister(_ref) {
+      var rootCls = _ref.rootCls,
+        _ref$cssVar = _ref.cssVar,
+        cssVar = _ref$cssVar === void 0 ? {} : _ref$cssVar;
+      var _useToken = useToken(),
+        realToken = _useToken.realToken;
+      useCSSVarRegister({
+        path: [component],
+        prefix: cssVar.prefix,
+        key: cssVar.key,
+        unitless: compUnitless,
+        ignore: ignore,
+        token: realToken,
+        scope: rootCls
+      }, function () {
+        var defaultToken = getDefaultComponentToken(component, realToken, getDefaultToken);
+        var componentToken = getComponentToken(component, realToken, defaultToken, {
+          deprecatedTokens: options === null || options === void 0 ? void 0 : options.deprecatedTokens
+        });
+        Object.keys(defaultToken).forEach(function (key) {
+          componentToken[prefixToken(key)] = componentToken[key];
+          delete componentToken[key];
+        });
+        return componentToken;
+      });
+      return null;
+    };
+    var useCSSVar = function useCSSVar(rootCls) {
+      var _useToken2 = useToken(),
+        cssVar = _useToken2.cssVar;
+      return [function (node) {
+        return injectStyle && cssVar ? /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement(CSSVarRegister, {
+          rootCls: rootCls,
+          cssVar: cssVar,
+          component: component
+        }), node) : node;
+      }, cssVar === null || cssVar === void 0 ? void 0 : cssVar.key];
+    };
+    return useCSSVar;
+  }
+  function genComponentStyleHook(componentName, styleFn, getDefaultToken) {
+    var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+    var cells = Array.isArray(componentName) ? componentName : [componentName, componentName];
+    var _cells = _slicedToArray(cells, 1),
+      component = _cells[0];
+    var concatComponent = cells.join('-');
+
+    // Return new style hook
+    return function (prefixCls) {
+      var rootCls = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : prefixCls;
+      var _useToken3 = useToken(),
+        theme = _useToken3.theme,
+        realToken = _useToken3.realToken,
+        hashId = _useToken3.hashId,
+        token = _useToken3.token,
+        cssVar = _useToken3.cssVar;
+      var _usePrefix = usePrefix(),
+        rootPrefixCls = _usePrefix.rootPrefixCls,
+        iconPrefixCls = _usePrefix.iconPrefixCls;
+      var csp = useCSP();
+      var type = cssVar ? 'css' : 'js';
+
+      // Use unique memo to share the result across all instances
+      var calc = useUniqueMemo(function () {
+        var unitlessCssVar = new Set();
+        if (cssVar) {
+          Object.keys(options.unitless || {}).forEach(function (key) {
+            // Some component proxy the AliasToken (e.g. Image) and some not (e.g. Modal)
+            // We should both pass in `unitlessCssVar` to make sure the CSSVar can be unitless.
+            unitlessCssVar.add(token2CSSVar(key, cssVar.prefix));
+            unitlessCssVar.add(token2CSSVar(key, getCompVarPrefix(component, cssVar.prefix)));
+          });
+        }
+        return genCalc(type, unitlessCssVar);
+      }, [type, component, cssVar === null || cssVar === void 0 ? void 0 : cssVar.prefix]);
+      var _genMaxMin = genMaxMin(type),
+        max = _genMaxMin.max,
+        min = _genMaxMin.min;
+
+      // Shared config
+      var sharedConfig = {
+        theme: theme,
+        token: token,
+        hashId: hashId,
+        nonce: function nonce() {
+          return csp.nonce;
+        },
+        clientOnly: options.clientOnly,
+        layer: {
+          name: 'antd'
+        },
+        // antd is always at top of styles
+        order: options.order || -999
+      };
+
+      // Generate style for all need reset tags.
+      useStyleRegister(_objectSpread2$7(_objectSpread2$7({}, sharedConfig), {}, {
+        clientOnly: false,
+        path: ['Shared', rootPrefixCls]
+      }), function () {
+        return typeof getResetStyles === 'function' ? getResetStyles(token) : [];
+      });
+      var wrapSSR = useStyleRegister(_objectSpread2$7(_objectSpread2$7({}, sharedConfig), {}, {
+        path: [concatComponent, prefixCls, iconPrefixCls]
+      }), function () {
+        if (options.injectStyle === false) {
+          return [];
+        }
+        var _statisticToken = statisticToken(token),
+          proxyToken = _statisticToken.token,
+          flush = _statisticToken.flush;
+        var defaultComponentToken = getDefaultComponentToken(component, realToken, getDefaultToken);
+        var componentCls = ".".concat(prefixCls);
+        var componentToken = getComponentToken(component, realToken, defaultComponentToken, {
+          deprecatedTokens: options.deprecatedTokens
+        });
+        if (cssVar && _typeof$1(defaultComponentToken) === 'object') {
+          Object.keys(defaultComponentToken).forEach(function (key) {
+            defaultComponentToken[key] = "var(".concat(token2CSSVar(key, getCompVarPrefix(component, cssVar.prefix)), ")");
+          });
+        }
+        var mergedToken = merge$1(proxyToken, {
+          componentCls: componentCls,
+          prefixCls: prefixCls,
+          iconCls: ".".concat(iconPrefixCls),
+          antCls: ".".concat(rootPrefixCls),
+          calc: calc,
+          // @ts-ignore
+          max: max,
+          // @ts-ignore
+          min: min
+        }, cssVar ? defaultComponentToken : componentToken);
+        var styleInterpolation = styleFn(mergedToken, {
+          hashId: hashId,
+          prefixCls: prefixCls,
+          rootPrefixCls: rootPrefixCls,
+          iconPrefixCls: iconPrefixCls
+        });
+        flush(component, componentToken);
+        var commonStyle = typeof getCommonStyle === 'function' ? getCommonStyle(mergedToken, prefixCls, rootCls, options.resetFont) : null;
+        return [options.resetStyle === false ? null : commonStyle, styleInterpolation];
+      });
+      return [wrapSSR, hashId];
+    };
+  }
+  function genSubStyleComponent(componentName, styleFn, getDefaultToken) {
+    var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+    var useStyle = genComponentStyleHook(componentName, styleFn, getDefaultToken, _objectSpread2$7({
+      resetStyle: false,
+      // Sub Style should default after root one
+      order: -998
+    }, options));
+    var StyledComponent = function StyledComponent(_ref2) {
+      var prefixCls = _ref2.prefixCls,
+        _ref2$rootCls = _ref2.rootCls,
+        rootCls = _ref2$rootCls === void 0 ? prefixCls : _ref2$rootCls;
+      useStyle(prefixCls, rootCls);
+      return null;
+    };
+    if (process.env.NODE_ENV !== 'production') {
+      StyledComponent.displayName = "SubStyle_".concat(String(Array.isArray(componentName) ? componentName.join('.') : componentName));
+    }
+    return StyledComponent;
+  }
+  return {
+    genStyleHooks: genStyleHooks,
+    genSubStyleComponent: genSubStyleComponent,
+    genComponentStyleHook: genComponentStyleHook
+  };
+}
+
+var es$5 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  genCalc: genCalc,
+  genStyleUtils: genStyleUtils$1,
+  mergeToken: merge$1,
+  statistic: statistic,
+  statisticToken: statisticToken
+});
+
+var require$$2$1 = /*@__PURE__*/getAugmentedNamespace(es$5);
 
 var _interface$4 = {};
 
@@ -5633,16 +6825,16 @@ Object.defineProperty(version$1, "__esModule", {
   value: true
 });
 version$1.default = void 0;
-version$1.default = '5.19.3';
+version$1.default = '5.20.0';
 
 /* eslint import/no-unresolved: 0 */
 // @ts-ignore
-var _interopRequireDefault$O = interopRequireDefaultExports.default;
+var _interopRequireDefault$W = interopRequireDefaultExports.default;
 Object.defineProperty(version$2, "__esModule", {
   value: true
 });
 version$2.default = void 0;
-var _version$1 = _interopRequireDefault$O(version$1);
+var _version$1 = _interopRequireDefault$W(version$1);
 version$2.default = _version$1.default;
 
 var context$3 = {};
@@ -7354,7 +8546,7 @@ function getValue$1(hsv, i, light) {
   }
   return Number(value.toFixed(2));
 }
-function generate(color) {
+function generate$1(color) {
   var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var patterns = [];
   var pColor = inputToRGB(color);
@@ -7491,7 +8683,7 @@ var presetDarkPalettes = {
   grey: greyDark
 };
 
-var es$5 = /*#__PURE__*/Object.freeze({
+var es$4 = /*#__PURE__*/Object.freeze({
   __proto__: null,
   blue: blue,
   blueDark: blueDark,
@@ -7499,7 +8691,7 @@ var es$5 = /*#__PURE__*/Object.freeze({
   cyanDark: cyanDark,
   geekblue: geekblue,
   geekblueDark: geekblueDark,
-  generate: generate,
+  generate: generate$1,
   gold: gold,
   goldDark: goldDark,
   gray: gray,
@@ -7526,7 +8718,7 @@ var es$5 = /*#__PURE__*/Object.freeze({
   yellowDark: yellowDark
 });
 
-var require$$2$1 = /*@__PURE__*/getAugmentedNamespace(es$5);
+var require$$8 = /*@__PURE__*/getAugmentedNamespace(es$4);
 
 var seed = {};
 
@@ -7749,12 +8941,12 @@ const genRadius = radiusBase => {
 };
 genRadius$1.default = genRadius;
 
-var _interopRequireDefault$N = interopRequireDefaultExports.default;
+var _interopRequireDefault$V = interopRequireDefaultExports.default;
 Object.defineProperty(genCommonMapToken$1, "__esModule", {
   value: true
 });
 genCommonMapToken$1.default = genCommonMapToken;
-var _genRadius = _interopRequireDefault$N(genRadius$1);
+var _genRadius = _interopRequireDefault$V(genRadius$1);
 function genCommonMapToken(token) {
   const {
     motionUnit,
@@ -7792,12 +8984,12 @@ genControlHeight$1.default = genControlHeight;
 
 var genFontMapToken$1 = {};
 
-var _interopRequireDefault$M = interopRequireDefaultExports.default;
+var _interopRequireDefault$U = interopRequireDefaultExports.default;
 Object.defineProperty(genFontMapToken$1, "__esModule", {
   value: true
 });
 genFontMapToken$1.default = void 0;
-var _genFontSizes = _interopRequireDefault$M(genFontSizes);
+var _genFontSizes = _interopRequireDefault$U(genFontSizes);
 const genFontMapToken = fontSize => {
   const fontSizePairs = (0, _genFontSizes.default)(fontSize);
   const fontSizes = fontSizePairs.map(pair => pair.size);
@@ -7886,10 +9078,10 @@ Object.defineProperty(colors, "__esModule", {
   value: true
 });
 colors.generateNeutralColorPalettes = colors.generateColorPalettes = void 0;
-var _colors$2 = require$$2$1;
+var _colors$4 = require$$8;
 var _colorAlgorithm = colorAlgorithm;
 const generateColorPalettes = baseColor => {
-  const colors = (0, _colors$2.generate)(baseColor);
+  const colors = (0, _colors$4.generate)(baseColor);
   return {
     1: colors[0],
     2: colors[1],
@@ -7932,25 +9124,25 @@ const generateNeutralColorPalettes = (bgBaseColor, textBaseColor) => {
 };
 colors.generateNeutralColorPalettes = generateNeutralColorPalettes;
 
-var _interopRequireDefault$L = interopRequireDefaultExports.default;
+var _interopRequireDefault$T = interopRequireDefaultExports.default;
 Object.defineProperty(_default$1, "__esModule", {
   value: true
 });
 _default$1.default = derivative;
-var _colors$1 = require$$2$1;
+var _colors$3 = require$$8;
 var _seed$3 = seed;
-var _genColorMapToken = _interopRequireDefault$L(genColorMapToken$1);
-var _genCommonMapToken = _interopRequireDefault$L(genCommonMapToken$1);
-var _genControlHeight = _interopRequireDefault$L(genControlHeight$1);
-var _genFontMapToken = _interopRequireDefault$L(genFontMapToken$1);
-var _genSizeMapToken = _interopRequireDefault$L(genSizeMapToken$1);
+var _genColorMapToken = _interopRequireDefault$T(genColorMapToken$1);
+var _genCommonMapToken = _interopRequireDefault$T(genCommonMapToken$1);
+var _genControlHeight = _interopRequireDefault$T(genControlHeight$1);
+var _genFontMapToken = _interopRequireDefault$T(genFontMapToken$1);
+var _genSizeMapToken = _interopRequireDefault$T(genSizeMapToken$1);
 var _colors2 = colors;
 function derivative(token) {
   // pink is deprecated name of magenta, keep this for backwards compatibility
-  _colors$1.presetPrimaryColors.pink = _colors$1.presetPrimaryColors.magenta;
-  _colors$1.presetPalettes.pink = _colors$1.presetPalettes.magenta;
+  _colors$3.presetPrimaryColors.pink = _colors$3.presetPrimaryColors.magenta;
+  _colors$3.presetPalettes.pink = _colors$3.presetPalettes.magenta;
   const colorPalettes = Object.keys(_seed$3.defaultPresetColors).map(colorKey => {
-    const colors = token[colorKey] === _colors$1.presetPrimaryColors[colorKey] ? _colors$1.presetPalettes[colorKey] : (0, _colors$1.generate)(token[colorKey]);
+    const colors = token[colorKey] === _colors$3.presetPrimaryColors[colorKey] ? _colors$3.presetPalettes[colorKey] : (0, _colors$3.generate)(token[colorKey]);
     return new Array(10).fill(1).reduce((prev, _, i) => {
       prev[`${colorKey}-${i + 1}`] = colors[i];
       prev[`${colorKey}${i + 1}`] = colors[i];
@@ -7967,16 +9159,16 @@ function derivative(token) {
   })), (0, _genFontMapToken.default)(token.fontSize)), (0, _genSizeMapToken.default)(token)), (0, _genControlHeight.default)(token)), (0, _genCommonMapToken.default)(token));
 }
 
-var _interopRequireDefault$K = interopRequireDefaultExports.default;
+var _interopRequireDefault$S = interopRequireDefaultExports.default;
 Object.defineProperty(context$3, "__esModule", {
   value: true
 });
 context$3.defaultTheme = context$3.defaultConfig = context$3.DesignTokenContext = void 0;
-var _react$o = _interopRequireDefault$K(React__default);
-var _cssinjs$7 = require$$0;
-var _default = _interopRequireDefault$K(_default$1);
-var _seed$2 = _interopRequireDefault$K(seed);
-context$3.defaultTheme = (0, _cssinjs$7.createTheme)(_default.default);
+var _react$p = _interopRequireDefault$S(React__default);
+var _cssinjs$5 = require$$0;
+var _default = _interopRequireDefault$S(_default$1);
+var _seed$2 = _interopRequireDefault$S(seed);
+context$3.defaultTheme = (0, _cssinjs$5.createTheme)(_default.default);
 // ================================ Context =================================
 // To ensure snapshot stable. We disable hashed in test env.
 const defaultConfig = context$3.defaultConfig = {
@@ -7986,7 +9178,7 @@ const defaultConfig = context$3.defaultConfig = {
   },
   hashed: true
 };
-context$3.DesignTokenContext = /*#__PURE__*/_react$o.default.createContext(defaultConfig);
+context$3.DesignTokenContext = /*#__PURE__*/_react$p.default.createContext(defaultConfig);
 
 var alias = {};
 
@@ -8039,14 +9231,14 @@ function getAlphaColor(frontColor, backgroundColor) {
 }
 getAlphaColor$1.default = getAlphaColor;
 
-var _interopRequireDefault$J = interopRequireDefaultExports.default;
+var _interopRequireDefault$R = interopRequireDefaultExports.default;
 Object.defineProperty(alias, "__esModule", {
   value: true
 });
 alias.default = formatToken;
 var _tinycolor$1 = require$$2;
-var _seed$1 = _interopRequireDefault$J(seed);
-var _getAlphaColor = _interopRequireDefault$J(getAlphaColor$1);
+var _seed$1 = _interopRequireDefault$R(seed);
+var _getAlphaColor = _interopRequireDefault$R(getAlphaColor$1);
 var __rest$a = function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
@@ -8221,18 +9413,18 @@ function formatToken(derivativeToken) {
   return aliasToken;
 }
 
-var _interopRequireDefault$I = interopRequireDefaultExports.default;
+var _interopRequireDefault$Q = interopRequireDefaultExports.default;
 Object.defineProperty(useToken$1, "__esModule", {
   value: true
 });
 useToken$1.default = useToken;
 useToken$1.unitless = useToken$1.ignore = useToken$1.getComputedToken = void 0;
-var _react$n = _interopRequireDefault$I(React__default);
-var _cssinjs$6 = require$$0;
-var _version = _interopRequireDefault$I(version$2);
+var _react$o = _interopRequireDefault$Q(React__default);
+var _cssinjs$4 = require$$0;
+var _version = _interopRequireDefault$Q(version$2);
 var _context$8 = context$3;
-var _seed = _interopRequireDefault$I(seed);
-var _alias = _interopRequireDefault$I(alias);
+var _seed = _interopRequireDefault$Q(seed);
+var _alias = _interopRequireDefault$Q(alias);
 var __rest$9 = function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
@@ -8253,7 +9445,8 @@ const unitless = useToken$1.unitless = {
   opacityLoading: true,
   fontWeightStrong: true,
   zIndexPopupBase: true,
-  zIndexBase: true
+  zIndexBase: true,
+  opacityImage: true
 };
 const ignore = useToken$1.ignore = {
   size: true,
@@ -8328,10 +9521,10 @@ function useToken() {
     theme,
     override,
     cssVar
-  } = _react$n.default.useContext(_context$8.DesignTokenContext);
+  } = _react$o.default.useContext(_context$8.DesignTokenContext);
   const salt = `${_version.default}-${hashed || ''}`;
   const mergedTheme = theme || _context$8.defaultTheme;
-  const [token, hashId, realToken] = (0, _cssinjs$6.useCacheToken)(mergedTheme, [_seed.default, rootDesignToken], {
+  const [token, hashId, realToken] = (0, _cssinjs$4.useCacheToken)(mergedTheme, [_seed.default, rootDesignToken], {
     salt,
     override,
     getComputedToken,
@@ -8349,730 +9542,67 @@ function useToken() {
   return [mergedTheme, realToken, hashed ? hashId : '', token, cssVar];
 }
 
-var genComponentStyleHook$1 = {};
+var genStyleUtils = {};
 
-function useEvent(callback) {
-  var fnRef = React$k.useRef();
-  fnRef.current = callback;
-  var memoFn = React$k.useCallback(function () {
-    var _fnRef$current;
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-    return (_fnRef$current = fnRef.current) === null || _fnRef$current === void 0 ? void 0 : _fnRef$current.call.apply(_fnRef$current, [fnRef].concat(args));
-  }, []);
-  return memoFn;
-}
+var interopRequireWildcard = {exports: {}};
 
-/**
- * Same as React.useState but `setState` accept `ignoreDestroy` param to not to setState after destroyed.
- * We do not make this auto is to avoid real memory leak.
- * Developer should confirm it's safe to ignore themselves.
- */
-function useSafeState(defaultValue) {
-  var destroyRef = React$k.useRef(false);
-  var _React$useState = React$k.useState(defaultValue),
-    _React$useState2 = _slicedToArray(_React$useState, 2),
-    value = _React$useState2[0],
-    setValue = _React$useState2[1];
-  React$k.useEffect(function () {
-    destroyRef.current = false;
-    return function () {
-      destroyRef.current = true;
-    };
-  }, []);
-  function safeSetState(updater, ignoreDestroy) {
-    if (ignoreDestroy && destroyRef.current) {
-      return;
-    }
-    setValue(updater);
-  }
-  return [value, safeSetState];
-}
-
-/** We only think `undefined` is empty */
-function hasValue(value) {
-  return value !== undefined;
-}
-
-/**
- * Similar to `useState` but will use props value if provided.
- * Note that internal use rc-util `useState` hook.
- */
-function useMergedState(defaultStateValue, option) {
-  var _ref = option || {},
-    defaultValue = _ref.defaultValue,
-    value = _ref.value,
-    onChange = _ref.onChange,
-    postState = _ref.postState;
-
-  // ======================= Init =======================
-  var _useState = useSafeState(function () {
-      if (hasValue(value)) {
-        return value;
-      } else if (hasValue(defaultValue)) {
-        return typeof defaultValue === 'function' ? defaultValue() : defaultValue;
-      } else {
-        return typeof defaultStateValue === 'function' ? defaultStateValue() : defaultStateValue;
-      }
-    }),
-    _useState2 = _slicedToArray(_useState, 2),
-    innerValue = _useState2[0],
-    setInnerValue = _useState2[1];
-  var mergedValue = value !== undefined ? value : innerValue;
-  var postMergedValue = postState ? postState(mergedValue) : mergedValue;
-
-  // ====================== Change ======================
-  var onChangeFn = useEvent(onChange);
-  var _useState3 = useSafeState([mergedValue]),
-    _useState4 = _slicedToArray(_useState3, 2),
-    prevValue = _useState4[0],
-    setPrevValue = _useState4[1];
-  useLayoutUpdateEffect(function () {
-    var prev = prevValue[0];
-    if (innerValue !== prev) {
-      onChangeFn(innerValue, prev);
-    }
-  }, [prevValue]);
-
-  // Sync value back to `undefined` when it from control to un-control
-  useLayoutUpdateEffect(function () {
-    if (!hasValue(value)) {
-      setInnerValue(value);
-    }
-  }, [value]);
-
-  // ====================== Update ======================
-  var triggerChange = useEvent(function (updater, ignoreDestroy) {
-    setInnerValue(updater, ignoreDestroy);
-    setPrevValue([mergedValue], ignoreDestroy);
-  });
-  return [postMergedValue, triggerChange];
-}
-
-var reactIs = {exports: {}};
-
-var reactIs_production_min = {};
-
-/**
- * @license React
- * react-is.production.min.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var hasRequiredReactIs_production_min;
-
-function requireReactIs_production_min () {
-	if (hasRequiredReactIs_production_min) return reactIs_production_min;
-	hasRequiredReactIs_production_min = 1;
-var b=Symbol.for("react.element"),c=Symbol.for("react.portal"),d=Symbol.for("react.fragment"),e=Symbol.for("react.strict_mode"),f=Symbol.for("react.profiler"),g=Symbol.for("react.provider"),h=Symbol.for("react.context"),k=Symbol.for("react.server_context"),l=Symbol.for("react.forward_ref"),m=Symbol.for("react.suspense"),n=Symbol.for("react.suspense_list"),p=Symbol.for("react.memo"),q=Symbol.for("react.lazy"),t=Symbol.for("react.offscreen"),u;u=Symbol.for("react.module.reference");
-	function v(a){if("object"===typeof a&&null!==a){var r=a.$$typeof;switch(r){case b:switch(a=a.type,a){case d:case f:case e:case m:case n:return a;default:switch(a=a&&a.$$typeof,a){case k:case h:case l:case q:case p:case g:return a;default:return r}}case c:return r}}}reactIs_production_min.ContextConsumer=h;reactIs_production_min.ContextProvider=g;reactIs_production_min.Element=b;reactIs_production_min.ForwardRef=l;reactIs_production_min.Fragment=d;reactIs_production_min.Lazy=q;reactIs_production_min.Memo=p;reactIs_production_min.Portal=c;reactIs_production_min.Profiler=f;reactIs_production_min.StrictMode=e;reactIs_production_min.Suspense=m;
-	reactIs_production_min.SuspenseList=n;reactIs_production_min.isAsyncMode=function(){return !1};reactIs_production_min.isConcurrentMode=function(){return !1};reactIs_production_min.isContextConsumer=function(a){return v(a)===h};reactIs_production_min.isContextProvider=function(a){return v(a)===g};reactIs_production_min.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===b};reactIs_production_min.isForwardRef=function(a){return v(a)===l};reactIs_production_min.isFragment=function(a){return v(a)===d};reactIs_production_min.isLazy=function(a){return v(a)===q};reactIs_production_min.isMemo=function(a){return v(a)===p};
-	reactIs_production_min.isPortal=function(a){return v(a)===c};reactIs_production_min.isProfiler=function(a){return v(a)===f};reactIs_production_min.isStrictMode=function(a){return v(a)===e};reactIs_production_min.isSuspense=function(a){return v(a)===m};reactIs_production_min.isSuspenseList=function(a){return v(a)===n};
-	reactIs_production_min.isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===d||a===f||a===e||a===m||a===n||a===t||"object"===typeof a&&null!==a&&(a.$$typeof===q||a.$$typeof===p||a.$$typeof===g||a.$$typeof===h||a.$$typeof===l||a.$$typeof===u||void 0!==a.getModuleId)?!0:!1};reactIs_production_min.typeOf=v;
-	return reactIs_production_min;
-}
-
-var reactIs_development = {};
-
-/**
- * @license React
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-var hasRequiredReactIs_development;
-
-function requireReactIs_development () {
-	if (hasRequiredReactIs_development) return reactIs_development;
-	hasRequiredReactIs_development = 1;
-
-	if (process.env.NODE_ENV !== "production") {
-	  (function() {
-
-	// ATTENTION
-	// When adding new symbols to this file,
-	// Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
-	// The Symbol used to tag the ReactElement-like types.
-	var REACT_ELEMENT_TYPE = Symbol.for('react.element');
-	var REACT_PORTAL_TYPE = Symbol.for('react.portal');
-	var REACT_FRAGMENT_TYPE = Symbol.for('react.fragment');
-	var REACT_STRICT_MODE_TYPE = Symbol.for('react.strict_mode');
-	var REACT_PROFILER_TYPE = Symbol.for('react.profiler');
-	var REACT_PROVIDER_TYPE = Symbol.for('react.provider');
-	var REACT_CONTEXT_TYPE = Symbol.for('react.context');
-	var REACT_SERVER_CONTEXT_TYPE = Symbol.for('react.server_context');
-	var REACT_FORWARD_REF_TYPE = Symbol.for('react.forward_ref');
-	var REACT_SUSPENSE_TYPE = Symbol.for('react.suspense');
-	var REACT_SUSPENSE_LIST_TYPE = Symbol.for('react.suspense_list');
-	var REACT_MEMO_TYPE = Symbol.for('react.memo');
-	var REACT_LAZY_TYPE = Symbol.for('react.lazy');
-	var REACT_OFFSCREEN_TYPE = Symbol.for('react.offscreen');
-
-	// -----------------------------------------------------------------------------
-
-	var enableScopeAPI = false; // Experimental Create Event Handle API.
-	var enableCacheElement = false;
-	var enableTransitionTracing = false; // No known bugs, but needs performance testing
-
-	var enableLegacyHidden = false; // Enables unstable_avoidThisFallback feature in Fiber
-	// stuff. Intended to enable React core members to more easily debug scheduling
-	// issues in DEV builds.
-
-	var enableDebugTracing = false; // Track which Fiber(s) schedule render work.
-
-	var REACT_MODULE_REFERENCE;
-
-	{
-	  REACT_MODULE_REFERENCE = Symbol.for('react.module.reference');
-	}
-
-	function isValidElementType(type) {
-	  if (typeof type === 'string' || typeof type === 'function') {
-	    return true;
-	  } // Note: typeof might be other than 'symbol' or 'number' (e.g. if it's a polyfill).
-
-
-	  if (type === REACT_FRAGMENT_TYPE || type === REACT_PROFILER_TYPE || enableDebugTracing  || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || enableLegacyHidden  || type === REACT_OFFSCREEN_TYPE || enableScopeAPI  || enableCacheElement  || enableTransitionTracing ) {
-	    return true;
-	  }
-
-	  if (typeof type === 'object' && type !== null) {
-	    if (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || // This needs to include all possible module reference object
-	    // types supported by any Flight configuration anywhere since
-	    // we don't know which Flight build this will end up being used
-	    // with.
-	    type.$$typeof === REACT_MODULE_REFERENCE || type.getModuleId !== undefined) {
-	      return true;
-	    }
-	  }
-
-	  return false;
-	}
-
-	function typeOf(object) {
-	  if (typeof object === 'object' && object !== null) {
-	    var $$typeof = object.$$typeof;
-
-	    switch ($$typeof) {
-	      case REACT_ELEMENT_TYPE:
-	        var type = object.type;
-
-	        switch (type) {
-	          case REACT_FRAGMENT_TYPE:
-	          case REACT_PROFILER_TYPE:
-	          case REACT_STRICT_MODE_TYPE:
-	          case REACT_SUSPENSE_TYPE:
-	          case REACT_SUSPENSE_LIST_TYPE:
-	            return type;
-
-	          default:
-	            var $$typeofType = type && type.$$typeof;
-
-	            switch ($$typeofType) {
-	              case REACT_SERVER_CONTEXT_TYPE:
-	              case REACT_CONTEXT_TYPE:
-	              case REACT_FORWARD_REF_TYPE:
-	              case REACT_LAZY_TYPE:
-	              case REACT_MEMO_TYPE:
-	              case REACT_PROVIDER_TYPE:
-	                return $$typeofType;
-
-	              default:
-	                return $$typeof;
-	            }
-
-	        }
-
-	      case REACT_PORTAL_TYPE:
-	        return $$typeof;
-	    }
-	  }
-
-	  return undefined;
-	}
-	var ContextConsumer = REACT_CONTEXT_TYPE;
-	var ContextProvider = REACT_PROVIDER_TYPE;
-	var Element = REACT_ELEMENT_TYPE;
-	var ForwardRef = REACT_FORWARD_REF_TYPE;
-	var Fragment = REACT_FRAGMENT_TYPE;
-	var Lazy = REACT_LAZY_TYPE;
-	var Memo = REACT_MEMO_TYPE;
-	var Portal = REACT_PORTAL_TYPE;
-	var Profiler = REACT_PROFILER_TYPE;
-	var StrictMode = REACT_STRICT_MODE_TYPE;
-	var Suspense = REACT_SUSPENSE_TYPE;
-	var SuspenseList = REACT_SUSPENSE_LIST_TYPE;
-	var hasWarnedAboutDeprecatedIsAsyncMode = false;
-	var hasWarnedAboutDeprecatedIsConcurrentMode = false; // AsyncMode should be deprecated
-
-	function isAsyncMode(object) {
-	  {
-	    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-	      hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-
-	      console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
-	    }
-	  }
-
-	  return false;
-	}
-	function isConcurrentMode(object) {
-	  {
-	    if (!hasWarnedAboutDeprecatedIsConcurrentMode) {
-	      hasWarnedAboutDeprecatedIsConcurrentMode = true; // Using console['warn'] to evade Babel and ESLint
-
-	      console['warn']('The ReactIs.isConcurrentMode() alias has been deprecated, ' + 'and will be removed in React 18+.');
-	    }
-	  }
-
-	  return false;
-	}
-	function isContextConsumer(object) {
-	  return typeOf(object) === REACT_CONTEXT_TYPE;
-	}
-	function isContextProvider(object) {
-	  return typeOf(object) === REACT_PROVIDER_TYPE;
-	}
-	function isElement(object) {
-	  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-	}
-	function isForwardRef(object) {
-	  return typeOf(object) === REACT_FORWARD_REF_TYPE;
-	}
-	function isFragment(object) {
-	  return typeOf(object) === REACT_FRAGMENT_TYPE;
-	}
-	function isLazy(object) {
-	  return typeOf(object) === REACT_LAZY_TYPE;
-	}
-	function isMemo(object) {
-	  return typeOf(object) === REACT_MEMO_TYPE;
-	}
-	function isPortal(object) {
-	  return typeOf(object) === REACT_PORTAL_TYPE;
-	}
-	function isProfiler(object) {
-	  return typeOf(object) === REACT_PROFILER_TYPE;
-	}
-	function isStrictMode(object) {
-	  return typeOf(object) === REACT_STRICT_MODE_TYPE;
-	}
-	function isSuspense(object) {
-	  return typeOf(object) === REACT_SUSPENSE_TYPE;
-	}
-	function isSuspenseList(object) {
-	  return typeOf(object) === REACT_SUSPENSE_LIST_TYPE;
-	}
-
-	reactIs_development.ContextConsumer = ContextConsumer;
-	reactIs_development.ContextProvider = ContextProvider;
-	reactIs_development.Element = Element;
-	reactIs_development.ForwardRef = ForwardRef;
-	reactIs_development.Fragment = Fragment;
-	reactIs_development.Lazy = Lazy;
-	reactIs_development.Memo = Memo;
-	reactIs_development.Portal = Portal;
-	reactIs_development.Profiler = Profiler;
-	reactIs_development.StrictMode = StrictMode;
-	reactIs_development.Suspense = Suspense;
-	reactIs_development.SuspenseList = SuspenseList;
-	reactIs_development.isAsyncMode = isAsyncMode;
-	reactIs_development.isConcurrentMode = isConcurrentMode;
-	reactIs_development.isContextConsumer = isContextConsumer;
-	reactIs_development.isContextProvider = isContextProvider;
-	reactIs_development.isElement = isElement;
-	reactIs_development.isForwardRef = isForwardRef;
-	reactIs_development.isFragment = isFragment;
-	reactIs_development.isLazy = isLazy;
-	reactIs_development.isMemo = isMemo;
-	reactIs_development.isPortal = isPortal;
-	reactIs_development.isProfiler = isProfiler;
-	reactIs_development.isStrictMode = isStrictMode;
-	reactIs_development.isSuspense = isSuspense;
-	reactIs_development.isSuspenseList = isSuspenseList;
-	reactIs_development.isValidElementType = isValidElementType;
-	reactIs_development.typeOf = typeOf;
-	  })();
-	}
-	return reactIs_development;
-}
-
-if (process.env.NODE_ENV === 'production') {
-  reactIs.exports = requireReactIs_production_min();
-} else {
-  reactIs.exports = requireReactIs_development();
-}
-
-var reactIsExports = reactIs.exports;
-
-var fillRef$1 = function fillRef(ref, node) {
-  if (typeof ref === 'function') {
-    ref(node);
-  } else if (_typeof$1(ref) === 'object' && ref && 'current' in ref) {
-    ref.current = node;
-  }
-};
-
-/**
- * Merge refs into one ref function to support ref passing.
- */
-var composeRef$1 = function composeRef() {
-  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
-    refs[_key] = arguments[_key];
-  }
-  var refList = refs.filter(Boolean);
-  if (refList.length <= 1) {
-    return refList[0];
-  }
-  return function (node) {
-    refs.forEach(function (ref) {
-      fillRef$1(ref, node);
-    });
-  };
-};
-var useComposeRef = function useComposeRef() {
-  for (var _len2 = arguments.length, refs = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-    refs[_key2] = arguments[_key2];
-  }
-  return useMemo$2(function () {
-    return composeRef$1.apply(void 0, refs);
-  }, refs, function (prev, next) {
-    return prev.length !== next.length || prev.every(function (ref, i) {
-      return ref !== next[i];
-    });
-  });
-};
-var supportRef$1 = function supportRef(nodeOrComponent) {
-  var _type$prototype, _nodeOrComponent$prot;
-  var type = reactIsExports.isMemo(nodeOrComponent) ? nodeOrComponent.type.type : nodeOrComponent.type;
-
-  // Function component node
-  if (typeof type === 'function' && !((_type$prototype = type.prototype) !== null && _type$prototype !== void 0 && _type$prototype.render) && type.$$typeof !== reactIsExports.ForwardRef) {
-    return false;
-  }
-
-  // Class component
-  if (typeof nodeOrComponent === 'function' && !((_nodeOrComponent$prot = nodeOrComponent.prototype) !== null && _nodeOrComponent$prot !== void 0 && _nodeOrComponent$prot.render) && nodeOrComponent.$$typeof !== reactIsExports.ForwardRef) {
-    return false;
-  }
-  return true;
-};
-function isReactElement$1(node) {
-  return /*#__PURE__*/isValidElement(node) && !reactIsExports.isFragment(node);
-}
-var supportNodeRef = function supportNodeRef(node) {
-  return isReactElement$1(node) && supportRef$1(node);
-};
-
-/**
- * In React 19. `ref` is not a property from node.
- * But a property from `props.ref`.
- * To check if `props.ref` exist or fallback to `ref`.
- */
-Number(version$3.split('.')[0]) >= 19 ?
-// >= React 19
-function (node) {
-  if (isReactElement$1(node)) {
-    return node.props.ref;
-  }
-  return null;
-} :
-// < React 19
-function (node) {
-  if (isReactElement$1(node)) {
-    return node.ref;
-  }
-  return null;
-};
-
-function get$2(entity, path) {
-  var current = entity;
-  for (var i = 0; i < path.length; i += 1) {
-    if (current === null || current === undefined) {
-      return undefined;
-    }
-    current = current[path[i]];
-  }
-  return current;
-}
-
-function _toArray$1(r) {
-  return _arrayWithHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableRest();
-}
-
-function internalSet$1(entity, paths, value, removeIfUndefined) {
-  if (!paths.length) {
-    return value;
-  }
-  var _paths = _toArray$1(paths),
-    path = _paths[0],
-    restPath = _paths.slice(1);
-  var clone;
-  if (!entity && typeof path === 'number') {
-    clone = [];
-  } else if (Array.isArray(entity)) {
-    clone = _toConsumableArray(entity);
-  } else {
-    clone = _objectSpread2$5({}, entity);
-  }
-
-  // Delete prop if `removeIfUndefined` and value is undefined
-  if (removeIfUndefined && value === undefined && restPath.length === 1) {
-    delete clone[path][restPath[0]];
-  } else {
-    clone[path] = internalSet$1(clone[path], restPath, value, removeIfUndefined);
-  }
-  return clone;
-}
-function set$2(entity, paths, value) {
-  var removeIfUndefined = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  // Do nothing if `removeIfUndefined` and parent object not exist
-  if (paths.length && removeIfUndefined && value === undefined && !get$2(entity, paths.slice(0, -1))) {
-    return entity;
-  }
-  return internalSet$1(entity, paths, value, removeIfUndefined);
-}
-function isObject$1(obj) {
-  return _typeof$1(obj) === 'object' && obj !== null && Object.getPrototypeOf(obj) === Object.prototype;
-}
-function createEmpty$1(source) {
-  return Array.isArray(source) ? [] : {};
-}
-var keys$1 = typeof Reflect === 'undefined' ? Object.keys : Reflect.ownKeys;
-
-/**
- * Merge objects which will create
- */
-function merge$2() {
-  for (var _len = arguments.length, sources = new Array(_len), _key = 0; _key < _len; _key++) {
-    sources[_key] = arguments[_key];
-  }
-  var clone = createEmpty$1(sources[0]);
-  sources.forEach(function (src) {
-    function internalMerge(path, parentLoopSet) {
-      var loopSet = new Set(parentLoopSet);
-      var value = get$2(src, path);
-      var isArr = Array.isArray(value);
-      if (isArr || isObject$1(value)) {
-        // Only add not loop obj
-        if (!loopSet.has(value)) {
-          loopSet.add(value);
-          var originValue = get$2(clone, path);
-          if (isArr) {
-            // Array will always be override
-            clone = set$2(clone, path, []);
-          } else if (!originValue || _typeof$1(originValue) !== 'object') {
-            // Init container if not exist
-            clone = set$2(clone, path, createEmpty$1(value));
-          }
-          keys$1(value).forEach(function (key) {
-            internalMerge([].concat(_toConsumableArray(path), [key]), loopSet);
-          });
-        }
-      } else {
-        clone = set$2(clone, path, value);
-      }
-    }
-    internalMerge([]);
-  });
-  return clone;
-}
-
-var es$4 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  get: get$2,
-  set: set$2,
-  supportNodeRef: supportNodeRef,
-  supportRef: supportRef$1,
-  useComposeRef: useComposeRef,
-  useEvent: useEvent,
-  useMergedState: useMergedState,
-  warning: warningOnce$1
-});
-
-var require$$3$1 = /*@__PURE__*/getAugmentedNamespace(es$4);
-
-var useUniqueMemo$1 = {};
-
-var classCallCheck = {exports: {}};
+var _typeof = {exports: {}};
 
 (function (module) {
-	function _classCallCheck(a, n) {
-	  if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function");
+	function _typeof(o) {
+	  "@babel/helpers - typeof";
+
+	  return (module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+	    return typeof o;
+	  } : function (o) {
+	    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+	  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _typeof(o);
 	}
-	module.exports = _classCallCheck, module.exports.__esModule = true, module.exports["default"] = module.exports; 
-} (classCallCheck));
+	module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports; 
+} (_typeof));
 
-var classCallCheckExports = classCallCheck.exports;
-
-var createClass = {exports: {}};
-
-var toPropertyKey = {exports: {}};
-
-var toPrimitive = {exports: {}};
+var _typeofExports = _typeof.exports;
 
 (function (module) {
 	var _typeof = _typeofExports["default"];
-	function toPrimitive(t, r) {
-	  if ("object" != _typeof(t) || !t) return t;
-	  var e = t[Symbol.toPrimitive];
-	  if (void 0 !== e) {
-	    var i = e.call(t, r || "default");
-	    if ("object" != _typeof(i)) return i;
-	    throw new TypeError("@@toPrimitive must return a primitive value.");
+	function _getRequireWildcardCache(e) {
+	  if ("function" != typeof WeakMap) return null;
+	  var r = new WeakMap(),
+	    t = new WeakMap();
+	  return (_getRequireWildcardCache = function _getRequireWildcardCache(e) {
+	    return e ? t : r;
+	  })(e);
+	}
+	function _interopRequireWildcard(e, r) {
+	  if (!r && e && e.__esModule) return e;
+	  if (null === e || "object" != _typeof(e) && "function" != typeof e) return {
+	    "default": e
+	  };
+	  var t = _getRequireWildcardCache(r);
+	  if (t && t.has(e)) return t.get(e);
+	  var n = {
+	      __proto__: null
+	    },
+	    a = Object.defineProperty && Object.getOwnPropertyDescriptor;
+	  for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) {
+	    var i = a ? Object.getOwnPropertyDescriptor(e, u) : null;
+	    i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u];
 	  }
-	  return ("string" === r ? String : Number)(t);
+	  return n["default"] = e, t && t.set(e, n), n;
 	}
-	module.exports = toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports; 
-} (toPrimitive));
+	module.exports = _interopRequireWildcard, module.exports.__esModule = true, module.exports["default"] = module.exports; 
+} (interopRequireWildcard));
 
-var toPrimitiveExports = toPrimitive.exports;
-
-(function (module) {
-	var _typeof = _typeofExports["default"];
-	var toPrimitive = toPrimitiveExports;
-	function toPropertyKey(t) {
-	  var i = toPrimitive(t, "string");
-	  return "symbol" == _typeof(i) ? i : i + "";
-	}
-	module.exports = toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports; 
-} (toPropertyKey));
-
-var toPropertyKeyExports = toPropertyKey.exports;
-
-(function (module) {
-	var toPropertyKey = toPropertyKeyExports;
-	function _defineProperties(e, r) {
-	  for (var t = 0; t < r.length; t++) {
-	    var o = r[t];
-	    o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, toPropertyKey(o.key), o);
-	  }
-	}
-	function _createClass(e, r, t) {
-	  return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
-	    writable: !1
-	  }), e;
-	}
-	module.exports = _createClass, module.exports.__esModule = true, module.exports["default"] = module.exports; 
-} (createClass));
-
-var createClassExports = createClass.exports;
-
-var _interopRequireDefault$H = interopRequireDefaultExports.default;
-Object.defineProperty(useUniqueMemo$1, "__esModule", {
-  value: true
-});
-useUniqueMemo$1.default = void 0;
-var _classCallCheck2 = _interopRequireDefault$H(classCallCheckExports);
-var _createClass2 = _interopRequireDefault$H(createClassExports);
-var _react$m = _interopRequireDefault$H(React__default);
-const BEAT_LIMIT = 1000 * 60 * 10;
-/**
- * A helper class to map keys to values.
- * It supports both primitive keys and object keys.
- */
-let ArrayKeyMap = /*#__PURE__*/function () {
-  function ArrayKeyMap() {
-    (0, _classCallCheck2.default)(this, ArrayKeyMap);
-    this.map = new Map();
-    // Use WeakMap to avoid memory leak
-    this.objectIDMap = new WeakMap();
-    this.nextID = 0;
-    this.lastAccessBeat = new Map();
-    // We will clean up the cache when reach the limit
-    this.accessBeat = 0;
-  }
-  return (0, _createClass2.default)(ArrayKeyMap, [{
-    key: "set",
-    value: function set(keys, value) {
-      // New set will trigger clear
-      this.clear();
-      // Set logic
-      const compositeKey = this.getCompositeKey(keys);
-      this.map.set(compositeKey, value);
-      this.lastAccessBeat.set(compositeKey, Date.now());
-    }
-  }, {
-    key: "get",
-    value: function get(keys) {
-      const compositeKey = this.getCompositeKey(keys);
-      const cache = this.map.get(compositeKey);
-      this.lastAccessBeat.set(compositeKey, Date.now());
-      this.accessBeat += 1;
-      return cache;
-    }
-  }, {
-    key: "getCompositeKey",
-    value: function getCompositeKey(keys) {
-      const ids = keys.map(key => {
-        if (key && typeof key === 'object') {
-          return `obj_${this.getObjectID(key)}`;
-        }
-        return `${typeof key}_${key}`;
-      });
-      return ids.join('|');
-    }
-  }, {
-    key: "getObjectID",
-    value: function getObjectID(obj) {
-      if (this.objectIDMap.has(obj)) {
-        return this.objectIDMap.get(obj);
-      }
-      const id = this.nextID;
-      this.objectIDMap.set(obj, id);
-      this.nextID += 1;
-      return id;
-    }
-  }, {
-    key: "clear",
-    value: function clear() {
-      if (this.accessBeat > 10000) {
-        const now = Date.now();
-        this.lastAccessBeat.forEach((beat, key) => {
-          if (now - beat > BEAT_LIMIT) {
-            this.map.delete(key);
-            this.lastAccessBeat.delete(key);
-          }
-        });
-        this.accessBeat = 0;
-      }
-    }
-  }]);
-}();
-const uniqueMap = new ArrayKeyMap();
-/**
- * Like `useMemo`, but this hook result will be shared across all instances.
- */
-function useUniqueMemo(memoFn, deps) {
-  return _react$m.default.useMemo(() => {
-    const cachedValue = uniqueMap.get(deps);
-    if (cachedValue) {
-      return cachedValue;
-    }
-    const newValue = memoFn();
-    uniqueMap.set(deps, newValue);
-    return newValue;
-  }, deps);
-}
-useUniqueMemo$1.default = useUniqueMemo;
+var interopRequireWildcardExports = interopRequireWildcard.exports;
 
 var context$2 = {};
 
-var _interopRequireWildcard$q = interopRequireWildcardExports.default;
+var _interopRequireWildcard$y = interopRequireWildcardExports.default;
 Object.defineProperty(context$2, "__esModule", {
   value: true
 });
 context$2.defaultPrefixCls = context$2.defaultIconPrefixCls = context$2.Variants = context$2.ConfigContext = context$2.ConfigConsumer = void 0;
-var React$j = _interopRequireWildcard$q(React__default);
+var React$q = _interopRequireWildcard$y(React__default);
 const defaultPrefixCls = context$2.defaultPrefixCls = 'ant';
 const defaultIconPrefixCls = context$2.defaultIconPrefixCls = 'anticon';
 context$2.Variants = ['outlined', 'borderless', 'filled'];
@@ -9083,7 +9613,7 @@ const defaultGetPrefixCls = (suffixCls, customizePrefixCls) => {
   return suffixCls ? `${defaultPrefixCls}-${suffixCls}` : defaultPrefixCls;
 };
 // zombieJ: 🚨 Do not pass `defaultRenderEmpty` here since it will cause circular dependency.
-const ConfigContext = context$2.ConfigContext = /*#__PURE__*/React$j.createContext({
+const ConfigContext = context$2.ConfigContext = /*#__PURE__*/React$q.createContext({
   // We provide a default function for Context without provider
   getPrefixCls: defaultGetPrefixCls,
   iconPrefixCls: defaultIconPrefixCls
@@ -9093,125 +9623,20 @@ const {
 } = ConfigContext;
 context$2.ConfigConsumer = ConfigConsumer;
 
-var maxmin = {};
-
-Object.defineProperty(maxmin, "__esModule", {
-  value: true
-});
-maxmin.default = genMaxMin;
-var _cssinjs$5 = require$$0;
-function genMaxMin(type) {
-  if (type === 'js') {
-    return {
-      max: Math.max,
-      min: Math.min
-    };
-  }
-  return {
-    max: function () {
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-      return `max(${args.map(value => (0, _cssinjs$5.unit)(value)).join(',')})`;
-    },
-    min: function () {
-      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
-      }
-      return `min(${args.map(value => (0, _cssinjs$5.unit)(value)).join(',')})`;
-    }
-  };
-}
-
-var statistic$1 = {};
-
-Object.defineProperty(statistic$1, "__esModule", {
-  value: true
-});
-statistic$1.default = statistic$1._statistic_build_ = void 0;
-statistic$1.merge = merge$1;
-statistic$1.statistic = void 0;
-const enableStatistic = process.env.NODE_ENV !== 'production' || typeof CSSINJS_STATISTIC !== 'undefined';
-let recording = true;
-/**
- * This function will do as `Object.assign` in production. But will use Object.defineProperty:get to
- * pass all value access in development. To support statistic field usage with alias token.
- */
-function merge$1() {
-  for (var _len = arguments.length, objs = new Array(_len), _key = 0; _key < _len; _key++) {
-    objs[_key] = arguments[_key];
-  }
-  /* istanbul ignore next */
-  if (!enableStatistic) {
-    return Object.assign.apply(Object, [{}].concat(objs));
-  }
-  recording = false;
-  const ret = {};
-  objs.forEach(obj => {
-    const keys = Object.keys(obj);
-    keys.forEach(key => {
-      Object.defineProperty(ret, key, {
-        configurable: true,
-        enumerable: true,
-        get: () => obj[key]
-      });
-    });
-  });
-  recording = true;
-  return ret;
-}
-/** @internal Internal Usage. Not use in your production. */
-const statistic = statistic$1.statistic = {};
-/** @internal Internal Usage. Not use in your production. */
-// eslint-disable-next-line camelcase
-statistic$1._statistic_build_ = {};
-/* istanbul ignore next */
-function noop$1() {}
-/** Statistic token usage case. Should use `merge` function if you do not want spread record. */
-const statisticToken = token => {
-  let tokenKeys;
-  let proxy = token;
-  let flush = noop$1;
-  if (enableStatistic && typeof Proxy !== 'undefined') {
-    tokenKeys = new Set();
-    proxy = new Proxy(token, {
-      get(obj, prop) {
-        if (recording) {
-          tokenKeys.add(prop);
-        }
-        return obj[prop];
-      }
-    });
-    flush = (componentName, componentToken) => {
-      var _a;
-      statistic[componentName] = {
-        global: Array.from(tokenKeys),
-        component: Object.assign(Object.assign({}, (_a = statistic[componentName]) === null || _a === void 0 ? void 0 : _a.component), componentToken)
-      };
-    };
-  }
-  return {
-    token: proxy,
-    keys: tokenKeys,
-    flush
-  };
-};
-statistic$1.default = statisticToken;
-
 var useResetIconStyle$1 = {};
 
-var _interopRequireDefault$G = interopRequireDefaultExports.default;
+var _interopRequireDefault$P = interopRequireDefaultExports.default;
 Object.defineProperty(useResetIconStyle$1, "__esModule", {
   value: true
 });
 useResetIconStyle$1.default = void 0;
-var _cssinjs$4 = require$$0;
+var _cssinjs$3 = require$$0;
 var _style$8 = style$5;
-var _useToken$2 = _interopRequireDefault$G(useToken$1);
+var _useToken$2 = _interopRequireDefault$P(useToken$1);
 const useResetIconStyle = (iconPrefixCls, csp) => {
   const [theme, token] = (0, _useToken$2.default)();
   // Generate style for icons
-  return (0, _cssinjs$4.useStyleRegister)({
+  return (0, _cssinjs$3.useStyleRegister)({
     theme,
     token,
     hashId: '',
@@ -9230,249 +9655,62 @@ const useResetIconStyle = (iconPrefixCls, csp) => {
 };
 useResetIconStyle$1.default = useResetIconStyle;
 
-var _interopRequireDefault$F = interopRequireDefaultExports.default;
-var _interopRequireWildcard$p = interopRequireWildcardExports.default;
-Object.defineProperty(genComponentStyleHook$1, "__esModule", {
+var _interopRequireDefault$O = interopRequireDefaultExports.default;
+var _interopRequireWildcard$x = interopRequireWildcardExports.default;
+Object.defineProperty(genStyleUtils, "__esModule", {
   value: true
 });
-genComponentStyleHook$1.default = genComponentStyleHook;
-genComponentStyleHook$1.genSubStyleComponent = genComponentStyleHook$1.genStyleHooks = void 0;
-var _react$l = _interopRequireWildcard$p(React__default);
-var _cssinjs$3 = require$$0;
-var _rcUtil$2 = require$$3$1;
-var _useUniqueMemo = _interopRequireDefault$F(useUniqueMemo$1);
+genStyleUtils.genSubStyleComponent = genStyleUtils.genStyleHooks = genStyleUtils.genComponentStyleHook = void 0;
+var _react$n = React__default;
+var _cssinjsUtils = require$$2$1;
 var _context$7 = context$2;
 var _style$7 = style$5;
-var _useToken$1 = _interopRequireWildcard$p(useToken$1);
-var _maxmin = _interopRequireDefault$F(maxmin);
-var _statistic = _interopRequireWildcard$p(statistic$1);
-var _useResetIconStyle = _interopRequireDefault$F(useResetIconStyle$1);
-const getDefaultComponentToken = (component, token, getDefaultToken) => {
-  var _a;
-  if (typeof getDefaultToken === 'function') {
-    return getDefaultToken((0, _statistic.merge)(token, (_a = token[component]) !== null && _a !== void 0 ? _a : {}));
-  }
-  return getDefaultToken !== null && getDefaultToken !== void 0 ? getDefaultToken : {};
-};
-const getComponentToken = (component, token, defaultToken, options) => {
-  const customToken = Object.assign({}, token[component]);
-  if (options === null || options === void 0 ? void 0 : options.deprecatedTokens) {
-    const {
-      deprecatedTokens
-    } = options;
-    deprecatedTokens.forEach(_ref => {
-      let [oldTokenKey, newTokenKey] = _ref;
-      var _a;
-      if (process.env.NODE_ENV !== 'production') {
-        process.env.NODE_ENV !== "production" ? (0, _rcUtil$2.warning)(!(customToken === null || customToken === void 0 ? void 0 : customToken[oldTokenKey]), `Component Token \`${String(oldTokenKey)}\` of ${component} is deprecated. Please use \`${String(newTokenKey)}\` instead.`) : void 0;
-      }
-      // Should wrap with `if` clause, or there will be `undefined` in object.
-      if ((customToken === null || customToken === void 0 ? void 0 : customToken[oldTokenKey]) || (customToken === null || customToken === void 0 ? void 0 : customToken[newTokenKey])) {
-        (_a = customToken[newTokenKey]) !== null && _a !== void 0 ? _a : customToken[newTokenKey] = customToken === null || customToken === void 0 ? void 0 : customToken[oldTokenKey];
-      }
-    });
-  }
-  const mergedToken = Object.assign(Object.assign({}, defaultToken), customToken);
-  // Remove same value as global token to minimize size
-  Object.keys(mergedToken).forEach(key => {
-    if (mergedToken[key] === token[key]) {
-      delete mergedToken[key];
-    }
-  });
-  return mergedToken;
-};
-const getCompVarPrefix = (component, prefix) => `${[prefix, component.replace(/([A-Z]+)([A-Z][a-z]+)/g, '$1-$2').replace(/([a-z])([A-Z])/g, '$1-$2')].filter(Boolean).join('-')}`;
-function genComponentStyleHook(componentName, styleFn, getDefaultToken) {
-  let options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
-  const cells = Array.isArray(componentName) ? componentName : [componentName, componentName];
-  const [component] = cells;
-  const concatComponent = cells.join('-');
-  // Return new style hook
-  return function (prefixCls) {
-    let rootCls = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : prefixCls;
-    const [theme, realToken, hashId, token, cssVar] = (0, _useToken$1.default)();
+var _useToken$1 = _interopRequireWildcard$x(useToken$1);
+var _useResetIconStyle = _interopRequireDefault$O(useResetIconStyle$1);
+const {
+  genStyleHooks,
+  genComponentStyleHook,
+  genSubStyleComponent
+} = (0, _cssinjsUtils.genStyleUtils)({
+  usePrefix: () => {
     const {
       getPrefixCls,
-      iconPrefixCls,
-      csp
-    } = (0, _react$l.useContext)(_context$7.ConfigContext);
+      iconPrefixCls
+    } = (0, _react$n.useContext)(_context$7.ConfigContext);
     const rootPrefixCls = getPrefixCls();
-    const type = cssVar ? 'css' : 'js';
-    // Use unique memo to share the result across all instances
-    const calc = (0, _useUniqueMemo.default)(() => {
-      const unitlessCssVar = new Set();
-      if (cssVar) {
-        Object.keys(options.unitless || {}).forEach(key => {
-          // Some component proxy the AliasToken (e.g. Image) and some not (e.g. Modal)
-          // We should both pass in `unitlessCssVar` to make sure the CSSVar can be unitless.
-          unitlessCssVar.add((0, _cssinjs$3.token2CSSVar)(key, cssVar.prefix));
-          unitlessCssVar.add((0, _cssinjs$3.token2CSSVar)(key, getCompVarPrefix(component, cssVar.prefix)));
-        });
-      }
-      return (0, _cssinjs$3.genCalc)(type, unitlessCssVar);
-    }, [type, component, cssVar === null || cssVar === void 0 ? void 0 : cssVar.prefix]);
-    const {
-      max,
-      min
-    } = (0, _maxmin.default)(type);
-    // Shared config
-    const sharedConfig = {
-      theme,
-      token,
-      hashId,
-      nonce: () => csp === null || csp === void 0 ? void 0 : csp.nonce,
-      clientOnly: options.clientOnly,
-      layer: {
-        name: 'antd'
-      },
-      // antd is always at top of styles
-      order: options.order || -999
+    return {
+      rootPrefixCls,
+      iconPrefixCls
     };
-    // Generate style for all a tags in antd component.
-    (0, _cssinjs$3.useStyleRegister)(Object.assign(Object.assign({}, sharedConfig), {
-      clientOnly: false,
-      path: ['Shared', rootPrefixCls]
-    }), () => [{
-      // Link
-      '&': (0, _style$7.genLinkStyle)(token)
-    }]);
+  },
+  useToken: () => {
+    const [theme, realToken, hashId, token, cssVar] = (0, _useToken$1.default)();
+    return {
+      theme,
+      realToken,
+      hashId,
+      token,
+      cssVar
+    };
+  },
+  useCSP: () => {
+    const {
+      csp,
+      iconPrefixCls
+    } = (0, _react$n.useContext)(_context$7.ConfigContext);
     // Generate style for icons
     (0, _useResetIconStyle.default)(iconPrefixCls, csp);
-    const wrapSSR = (0, _cssinjs$3.useStyleRegister)(Object.assign(Object.assign({}, sharedConfig), {
-      path: [concatComponent, prefixCls, iconPrefixCls]
-    }), () => {
-      if (options.injectStyle === false) {
-        return [];
-      }
-      const {
-        token: proxyToken,
-        flush
-      } = (0, _statistic.default)(token);
-      const defaultComponentToken = getDefaultComponentToken(component, realToken, getDefaultToken);
-      const componentCls = `.${prefixCls}`;
-      const componentToken = getComponentToken(component, realToken, defaultComponentToken, {
-        deprecatedTokens: options.deprecatedTokens
-      });
-      if (cssVar) {
-        Object.keys(defaultComponentToken).forEach(key => {
-          defaultComponentToken[key] = `var(${(0, _cssinjs$3.token2CSSVar)(key, getCompVarPrefix(component, cssVar.prefix))})`;
-        });
-      }
-      const mergedToken = (0, _statistic.merge)(proxyToken, {
-        componentCls,
-        prefixCls,
-        iconCls: `.${iconPrefixCls}`,
-        antCls: `.${rootPrefixCls}`,
-        calc,
-        // @ts-ignore
-        max,
-        // @ts-ignore
-        min
-      }, cssVar ? defaultComponentToken : componentToken);
-      const styleInterpolation = styleFn(mergedToken, {
-        hashId,
-        prefixCls,
-        rootPrefixCls,
-        iconPrefixCls
-      });
-      flush(component, componentToken);
-      return [options.resetStyle === false ? null : (0, _style$7.genCommonStyle)(mergedToken, prefixCls, rootCls, options.resetFont), styleInterpolation];
-    });
-    return [wrapSSR, hashId];
-  };
-}
-const genSubStyleComponent = (componentName, styleFn, getDefaultToken, options) => {
-  const useStyle = genComponentStyleHook(componentName, styleFn, getDefaultToken, Object.assign({
-    resetStyle: false,
-    // Sub Style should default after root one
-    order: -998
-  }, options));
-  const StyledComponent = _ref2 => {
-    let {
-      prefixCls,
-      rootCls = prefixCls
-    } = _ref2;
-    useStyle(prefixCls, rootCls);
-    return null;
-  };
-  if (process.env.NODE_ENV !== 'production') {
-    StyledComponent.displayName = `SubStyle_${Array.isArray(componentName) ? componentName.join('.') : componentName}`;
-  }
-  return StyledComponent;
-};
-genComponentStyleHook$1.genSubStyleComponent = genSubStyleComponent;
-const genCSSVarRegister = (component, getDefaultToken, options) => {
-  const {
-    unitless: compUnitless,
-    injectStyle = true,
-    prefixToken
-  } = options;
-  const CSSVarRegister = _ref3 => {
-    let {
-      rootCls,
-      cssVar
-    } = _ref3;
-    const [, realToken] = (0, _useToken$1.default)();
-    (0, _cssinjs$3.useCSSVarRegister)({
-      path: [component],
-      prefix: cssVar.prefix,
-      key: cssVar === null || cssVar === void 0 ? void 0 : cssVar.key,
-      unitless: compUnitless,
-      ignore: _useToken$1.ignore,
-      token: realToken,
-      scope: rootCls
-    }, () => {
-      const defaultToken = getDefaultComponentToken(component, realToken, getDefaultToken);
-      const componentToken = getComponentToken(component, realToken, defaultToken, {
-        deprecatedTokens: options === null || options === void 0 ? void 0 : options.deprecatedTokens
-      });
-      Object.keys(defaultToken).forEach(key => {
-        componentToken[prefixToken(key)] = componentToken[key];
-        delete componentToken[key];
-      });
-      return componentToken;
-    });
-    return null;
-  };
-  const useCSSVar = rootCls => {
-    const [,,,, cssVar] = (0, _useToken$1.default)();
-    return [node => injectStyle && cssVar ? ( /*#__PURE__*/_react$l.default.createElement(_react$l.default.Fragment, null, /*#__PURE__*/_react$l.default.createElement(CSSVarRegister, {
-      rootCls: rootCls,
-      cssVar: cssVar,
-      component: component
-    }), node)) : node, cssVar === null || cssVar === void 0 ? void 0 : cssVar.key];
-  };
-  return useCSSVar;
-};
-const genStyleHooks = (component, styleFn, getDefaultToken, options) => {
-  const componentName = Array.isArray(component) ? component[0] : component;
-  function prefixToken(key) {
-    return `${componentName}${key.slice(0, 1).toUpperCase()}${key.slice(1)}`;
-  }
-  // Fill unitless
-  const originUnitless = (options === null || options === void 0 ? void 0 : options.unitless) || {};
-  const compUnitless = Object.assign(Object.assign({}, _useToken$1.unitless), {
-    [prefixToken('zIndexPopup')]: true
-  });
-  Object.keys(originUnitless).forEach(key => {
-    compUnitless[prefixToken(key)] = originUnitless[key];
-  });
-  // Options
-  const mergedOptions = Object.assign(Object.assign({}, options), {
-    unitless: compUnitless,
-    prefixToken
-  });
-  // Hooks
-  const useStyle = genComponentStyleHook(component, styleFn, getDefaultToken, mergedOptions);
-  const useCSSVar = genCSSVarRegister(componentName, getDefaultToken, mergedOptions);
-  return function (prefixCls) {
-    let rootCls = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : prefixCls;
-    const [, hashId] = useStyle(prefixCls, rootCls);
-    const [wrapCSSVar, cssVarCls] = useCSSVar(rootCls);
-    return [wrapCSSVar, hashId, cssVarCls];
-  };
-};
-genComponentStyleHook$1.genStyleHooks = genStyleHooks;
+    return csp !== null && csp !== void 0 ? csp : {};
+  },
+  getResetStyles: token => [{
+    '&': (0, _style$7.genLinkStyle)(token)
+  }],
+  getCommonStyle: _style$7.genCommonStyle,
+  getCompUnitless: () => _useToken$1.unitless
+});
+genStyleUtils.genSubStyleComponent = genSubStyleComponent;
+genStyleUtils.genComponentStyleHook = genComponentStyleHook;
+genStyleUtils.genStyleHooks = genStyleHooks;
 
 var genPresetColor$1 = {};
 
@@ -9498,7 +9736,6 @@ function genPresetColor(token, genCss) {
 
 (function (exports) {
 
-	var _interopRequireWildcard = interopRequireWildcardExports.default;
 	var _interopRequireDefault = interopRequireDefaultExports.default;
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -9518,7 +9755,7 @@ function genPresetColor(token, genCss) {
 	Object.defineProperty(exports, "calc", {
 	  enumerable: true,
 	  get: function () {
-	    return _cssinjs.genCalc;
+	    return _cssinjsUtils.genCalc;
 	  }
 	});
 	Object.defineProperty(exports, "defaultConfig", {
@@ -9530,7 +9767,7 @@ function genPresetColor(token, genCss) {
 	Object.defineProperty(exports, "genComponentStyleHook", {
 	  enumerable: true,
 	  get: function () {
-	    return _genComponentStyleHook.default;
+	    return _genStyleUtils.genComponentStyleHook;
 	  }
 	});
 	Object.defineProperty(exports, "genPresetColor", {
@@ -9542,13 +9779,13 @@ function genPresetColor(token, genCss) {
 	Object.defineProperty(exports, "genStyleHooks", {
 	  enumerable: true,
 	  get: function () {
-	    return _genComponentStyleHook.genStyleHooks;
+	    return _genStyleUtils.genStyleHooks;
 	  }
 	});
 	Object.defineProperty(exports, "genSubStyleComponent", {
 	  enumerable: true,
 	  get: function () {
-	    return _genComponentStyleHook.genSubStyleComponent;
+	    return _genStyleUtils.genSubStyleComponent;
 	  }
 	});
 	Object.defineProperty(exports, "getLineHeight", {
@@ -9560,13 +9797,19 @@ function genPresetColor(token, genCss) {
 	Object.defineProperty(exports, "mergeToken", {
 	  enumerable: true,
 	  get: function () {
-	    return _statistic.merge;
+	    return _cssinjsUtils.mergeToken;
+	  }
+	});
+	Object.defineProperty(exports, "statistic", {
+	  enumerable: true,
+	  get: function () {
+	    return _cssinjsUtils.statistic;
 	  }
 	});
 	Object.defineProperty(exports, "statisticToken", {
 	  enumerable: true,
 	  get: function () {
-	    return _statistic.default;
+	    return _cssinjsUtils.statisticToken;
 	  }
 	});
 	Object.defineProperty(exports, "useResetIconStyle", {
@@ -9588,12 +9831,12 @@ function genPresetColor(token, genCss) {
 	  }
 	});
 	var _cssinjs = require$$0;
+	var _cssinjsUtils = require$$2$1;
 	var _interface = _interface$4;
 	var _genFontSizes = genFontSizes;
 	var _useToken = _interopRequireDefault(useToken$1);
-	var _genComponentStyleHook = _interopRequireWildcard(genComponentStyleHook$1);
+	var _genStyleUtils = genStyleUtils;
 	var _genPresetColor = _interopRequireDefault(genPresetColor$1);
-	var _statistic = _interopRequireWildcard(statistic$1);
 	var _useResetIconStyle = _interopRequireDefault(useResetIconStyle$1);
 	var _context = context$3; 
 } (internal));
@@ -10470,7 +10713,7 @@ variants.genFilledGroupStyle = genFilledGroupStyle;
 	        borderRadius: 0
 	      },
 	      // fix slight height diff in Firefox:
-	      // https://ant.design/components/auto-complete-cn/#components-auto-complete-demo-certain-category
+	      // https://ant.design/components/auto-complete-cn/#auto-complete-demo-certain-category
 	      [`${componentCls}-lg`]: {
 	        lineHeight: token.calc(token.lineHeightLG).sub(0.0002).equal()
 	      },
@@ -10736,21 +10979,21 @@ var classnames = {exports: {}};
 var classnamesExports = classnames.exports;
 var clsx = /*@__PURE__*/getDefaultExportFromCjs(classnamesExports);
 
+var warning$5 = {};
+
 var warning$4 = {};
 
-var warning$3 = {};
-
-Object.defineProperty(warning$3, "__esModule", {
+Object.defineProperty(warning$4, "__esModule", {
   value: true
 });
-warning$3.call = call;
-warning$3.default = void 0;
-warning$3.note = note;
-warning$3.noteOnce = noteOnce;
-warning$3.preMessage = void 0;
-warning$3.resetWarned = resetWarned$1;
-warning$3.warning = warning$2;
-warning$3.warningOnce = warningOnce;
+warning$4.call = call;
+warning$4.default = void 0;
+warning$4.note = note;
+warning$4.noteOnce = noteOnce;
+warning$4.preMessage = void 0;
+warning$4.resetWarned = resetWarned$1;
+warning$4.warning = warning$3;
+warning$4.warningOnce = warningOnce;
 /* eslint-disable no-console */
 var warned = {};
 var preWarningFns = [];
@@ -10759,7 +11002,7 @@ var preWarningFns = [];
  * Pre warning enable you to parse content before console.error.
  * Modify to null will prevent warning.
  */
-var preMessage = warning$3.preMessage = function preMessage(fn) {
+var preMessage = warning$4.preMessage = function preMessage(fn) {
   preWarningFns.push(fn);
 };
 
@@ -10774,7 +11017,7 @@ var preMessage = warning$3.preMessage = function preMessage(fn) {
  * warning(1 === 2, 'some error'); // print some error
  * ```
  */
-function warning$2(valid, message) {
+function warning$3(valid, message) {
   if (process.env.NODE_ENV !== 'production' && !valid && console !== undefined) {
     var finalMessage = preWarningFns.reduce(function (msg, preMessageFn) {
       return preMessageFn(msg !== null && msg !== void 0 ? msg : '', 'warning');
@@ -10808,7 +11051,7 @@ function call(method, valid, message) {
 
 /** @see Same as {@link warning}, but only warn once for the same message */
 function warningOnce(valid, message) {
-  call(warning$2, valid, message);
+  call(warning$3, valid, message);
 }
 
 /** @see Same as {@link warning}, but only warn once for the same message */
@@ -10818,44 +11061,44 @@ function noteOnce(valid, message) {
 warningOnce.preMessage = preMessage;
 warningOnce.resetWarned = resetWarned$1;
 warningOnce.noteOnce = noteOnce;
-warning$3.default = warningOnce;
+warning$4.default = warningOnce;
 
-var _interopRequireWildcard$o = interopRequireWildcardExports.default;
-Object.defineProperty(warning$4, "__esModule", {
+var _interopRequireWildcard$w = interopRequireWildcardExports.default;
+Object.defineProperty(warning$5, "__esModule", {
   value: true
 });
-warning$4.devUseWarning = warning$4.default = warning$4.WarningContext = void 0;
-warning$4.noop = noop;
-warning$4.resetWarned = resetWarned;
-var React$i = _interopRequireWildcard$o(React__default);
-var _warning$a = _interopRequireWildcard$o(warning$3);
+warning$5.devUseWarning = warning$5.default = warning$5.WarningContext = void 0;
+warning$5.noop = noop;
+warning$5.resetWarned = resetWarned;
+var React$p = _interopRequireWildcard$w(React__default);
+var _warning$b = _interopRequireWildcard$w(warning$4);
 function noop() {}
 let deprecatedWarnList = null;
 function resetWarned() {
   deprecatedWarnList = null;
-  (0, _warning$a.resetWarned)();
+  (0, _warning$b.resetWarned)();
 }
 // eslint-disable-next-line import/no-mutable-exports
-let warning$1 = noop;
+let warning$2 = noop;
 if (process.env.NODE_ENV !== 'production') {
-  warning$1 = (valid, component, message) => {
-    (0, _warning$a.default)(valid, `[antd: ${component}] ${message}`);
+  warning$2 = (valid, component, message) => {
+    (0, _warning$b.default)(valid, `[antd: ${component}] ${message}`);
     // StrictMode will inject console which will not throw warning in React 17.
     if (process.env.NODE_ENV === 'test') {
       resetWarned();
     }
   };
 }
-const WarningContext = warning$4.WarningContext = /*#__PURE__*/React$i.createContext({});
+const WarningContext = warning$5.WarningContext = /*#__PURE__*/React$p.createContext({});
 /**
  * This is a hook but we not named as `useWarning`
  * since this is only used in development.
  * We should always wrap this in `if (process.env.NODE_ENV !== 'production')` condition
  */
-warning$4.devUseWarning = process.env.NODE_ENV !== 'production' ? component => {
+warning$5.devUseWarning = process.env.NODE_ENV !== 'production' ? component => {
   const {
     strict
-  } = React$i.useContext(WarningContext);
+  } = React$p.useContext(WarningContext);
   const typeWarning = (valid, type, message) => {
     if (!valid) {
       if (strict === false && type === 'deprecated') {
@@ -10873,7 +11116,7 @@ warning$4.devUseWarning = process.env.NODE_ENV !== 'production' ? component => {
           console.warn('[antd] There exists deprecated usage in your code:', deprecatedWarnList);
         }
       } else {
-        process.env.NODE_ENV !== "production" ? warning$1(valid, component, message) : void 0;
+        process.env.NODE_ENV !== "production" ? warning$2(valid, component, message) : void 0;
       }
     }
   };
@@ -10886,37 +11129,30 @@ warning$4.devUseWarning = process.env.NODE_ENV !== 'production' ? component => {
   noopWarning.deprecated = noop;
   return noopWarning;
 };
-warning$4.default = warning$1;
+warning$5.default = warning$2;
 
 var configProvider = {};
 
 var Context$2 = {};
 
-(function (exports) {
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	Object.defineProperty(exports, "default", {
-	    enumerable: true,
-	    get: function() {
-	        return _default;
-	    }
-	});
-	var _react = React__default;
-	var IconContext = /*#__PURE__*/ (0, _react.createContext)({});
-	var _default = IconContext; 
-} (Context$2));
+Object.defineProperty(Context$2, "__esModule", {
+  value: true
+});
+Context$2.default = void 0;
+var _react$m = React__default;
+var IconContext = /*#__PURE__*/(0, _react$m.createContext)({});
+Context$2.default = IconContext;
 
 var useMemo$1 = {};
 
-var _interopRequireWildcard$n = interopRequireWildcardExports.default;
+var _interopRequireWildcard$v = interopRequireWildcardExports.default;
 Object.defineProperty(useMemo$1, "__esModule", {
   value: true
 });
 useMemo$1.default = useMemo;
-var React$h = _interopRequireWildcard$n(React__default);
+var React$o = _interopRequireWildcard$v(React__default);
 function useMemo(getValue, condition, shouldUpdate) {
-  var cacheRef = React$h.useRef({});
+  var cacheRef = React$o.useRef({});
   if (!('value' in cacheRef.current) || shouldUpdate(cacheRef.current.condition, condition)) {
     cacheRef.current.value = getValue();
     cacheRef.current.condition = condition;
@@ -10929,6 +11165,39 @@ var set$1 = {};
 var objectSpread2 = {exports: {}};
 
 var defineProperty = {exports: {}};
+
+var toPropertyKey = {exports: {}};
+
+var toPrimitive = {exports: {}};
+
+(function (module) {
+	var _typeof = _typeofExports["default"];
+	function toPrimitive(t, r) {
+	  if ("object" != _typeof(t) || !t) return t;
+	  var e = t[Symbol.toPrimitive];
+	  if (void 0 !== e) {
+	    var i = e.call(t, r || "default");
+	    if ("object" != _typeof(i)) return i;
+	    throw new TypeError("@@toPrimitive must return a primitive value.");
+	  }
+	  return ("string" === r ? String : Number)(t);
+	}
+	module.exports = toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports; 
+} (toPrimitive));
+
+var toPrimitiveExports = toPrimitive.exports;
+
+(function (module) {
+	var _typeof = _typeofExports["default"];
+	var toPrimitive = toPrimitiveExports;
+	function toPropertyKey(t) {
+	  var i = toPrimitive(t, "string");
+	  return "symbol" == _typeof(i) ? i : i + "";
+	}
+	module.exports = toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports; 
+} (toPropertyKey));
+
+var toPropertyKeyExports = toPropertyKey.exports;
 
 (function (module) {
 	var toPropertyKey = toPropertyKeyExports;
@@ -11105,17 +11374,17 @@ function get(entity, path) {
   return current;
 }
 
-var _interopRequireDefault$E = interopRequireDefaultExports.default;
+var _interopRequireDefault$N = interopRequireDefaultExports.default;
 Object.defineProperty(set$1, "__esModule", {
   value: true
 });
 set$1.default = set;
 set$1.merge = merge;
-var _typeof2$3 = _interopRequireDefault$E(_typeofExports);
-var _objectSpread2$4 = _interopRequireDefault$E(objectSpread2Exports);
-var _toConsumableArray2$1 = _interopRequireDefault$E(toConsumableArrayExports);
-var _toArray2 = _interopRequireDefault$E(toArrayExports);
-var _get = _interopRequireDefault$E(get$1);
+var _typeof2$4 = _interopRequireDefault$N(_typeofExports);
+var _objectSpread2$6 = _interopRequireDefault$N(objectSpread2Exports);
+var _toConsumableArray2$1 = _interopRequireDefault$N(toConsumableArrayExports);
+var _toArray2 = _interopRequireDefault$N(toArrayExports);
+var _get = _interopRequireDefault$N(get$1);
 function internalSet(entity, paths, value, removeIfUndefined) {
   if (!paths.length) {
     return value;
@@ -11129,7 +11398,7 @@ function internalSet(entity, paths, value, removeIfUndefined) {
   } else if (Array.isArray(entity)) {
     clone = (0, _toConsumableArray2$1.default)(entity);
   } else {
-    clone = (0, _objectSpread2$4.default)({}, entity);
+    clone = (0, _objectSpread2$6.default)({}, entity);
   }
 
   // Delete prop if `removeIfUndefined` and value is undefined
@@ -11149,7 +11418,7 @@ function set(entity, paths, value) {
   return internalSet(entity, paths, value, removeIfUndefined);
 }
 function isObject(obj) {
-  return (0, _typeof2$3.default)(obj) === 'object' && obj !== null && Object.getPrototypeOf(obj) === Object.prototype;
+  return (0, _typeof2$4.default)(obj) === 'object' && obj !== null && Object.getPrototypeOf(obj) === Object.prototype;
 }
 function createEmpty(source) {
   return Array.isArray(source) ? [] : {};
@@ -11177,7 +11446,7 @@ function merge() {
           if (isArr) {
             // Array will always be override
             clone = set(clone, path, []);
-          } else if (!originValue || (0, _typeof2$3.default)(originValue) !== 'object') {
+          } else if (!originValue || (0, _typeof2$4.default)(originValue) !== 'object') {
             // Init container if not exist
             clone = set(clone, path, createEmpty(value));
           }
@@ -11200,11 +11469,11 @@ Object.defineProperty(validateMessagesContext, "__esModule", {
   value: true
 });
 validateMessagesContext.default = void 0;
-var _react$k = React__default;
+var _react$l = React__default;
 // ZombieJ: We export single file here since
 // ConfigProvider use this which will make loop deps
 // to import whole `rc-field-form`
-validateMessagesContext.default = /*#__PURE__*/(0, _react$k.createContext)(undefined);
+validateMessagesContext.default = /*#__PURE__*/(0, _react$l.createContext)(undefined);
 
 var locale$5 = {};
 
@@ -11254,14 +11523,14 @@ common.commonLocale = {
   monthBeforeYear: true
 };
 
-var _interopRequireDefault$D = interopRequireDefaultExports.default;
+var _interopRequireDefault$M = interopRequireDefaultExports.default;
 Object.defineProperty(en_US$1, "__esModule", {
   value: true
 });
 en_US$1.default = void 0;
-var _objectSpread2$3 = _interopRequireDefault$D(objectSpread2Exports);
+var _objectSpread2$5 = _interopRequireDefault$M(objectSpread2Exports);
 var _common = common;
-var locale$2 = (0, _objectSpread2$3.default)((0, _objectSpread2$3.default)({}, _common.commonLocale), {}, {
+var locale$2 = (0, _objectSpread2$5.default)((0, _objectSpread2$5.default)({}, _common.commonLocale), {}, {
   locale: 'en_US',
   today: 'Today',
   now: 'Now',
@@ -11301,13 +11570,13 @@ const locale$1 = {
 };
 en_US.default = locale$1;
 
-var _interopRequireDefault$C = interopRequireDefaultExports.default;
+var _interopRequireDefault$L = interopRequireDefaultExports.default;
 Object.defineProperty(en_US$2, "__esModule", {
   value: true
 });
 en_US$2.default = void 0;
-var _en_US$4 = _interopRequireDefault$C(en_US$1);
-var _en_US2$1 = _interopRequireDefault$C(en_US);
+var _en_US$4 = _interopRequireDefault$L(en_US$1);
+var _en_US2$1 = _interopRequireDefault$L(en_US);
 // Merge into a locale object
 const locale = {
   lang: Object.assign({
@@ -11328,23 +11597,23 @@ const locale = {
 // https://github.com/ant-design/ant-design/blob/master/components/date-picker/locale/example.json
 en_US$2.default = locale;
 
-var _interopRequireDefault$B = interopRequireDefaultExports.default;
+var _interopRequireDefault$K = interopRequireDefaultExports.default;
 Object.defineProperty(en_US$3, "__esModule", {
   value: true
 });
 en_US$3.default = void 0;
-var _en_US$3 = _interopRequireDefault$B(en_US$2);
+var _en_US$3 = _interopRequireDefault$K(en_US$2);
 en_US$3.default = _en_US$3.default;
 
-var _interopRequireDefault$A = interopRequireDefaultExports.default;
+var _interopRequireDefault$J = interopRequireDefaultExports.default;
 Object.defineProperty(en_US$5, "__esModule", {
   value: true
 });
 en_US$5.default = void 0;
-var _en_US$2 = _interopRequireDefault$A(en_US$4);
-var _en_US2 = _interopRequireDefault$A(en_US$3);
-var _en_US3 = _interopRequireDefault$A(en_US$2);
-var _en_US4 = _interopRequireDefault$A(en_US);
+var _en_US$2 = _interopRequireDefault$J(en_US$4);
+var _en_US2 = _interopRequireDefault$J(en_US$3);
+var _en_US3 = _interopRequireDefault$J(en_US$2);
+var _en_US4 = _interopRequireDefault$J(en_US);
 /* eslint-disable no-template-curly-in-string */
 
 const typeTemplate$1 = '${label} is not a valid ${type}';
@@ -11482,18 +11751,21 @@ const localeValues = {
     scanned: 'Scanned'
   },
   ColorPicker: {
-    presetEmpty: 'Empty'
+    presetEmpty: 'Empty',
+    transparent: 'Transparent',
+    singleColor: 'Single',
+    gradientColor: 'Gradient'
   }
 };
 en_US$5.default = localeValues;
 
-var _interopRequireDefault$z = interopRequireDefaultExports.default;
+var _interopRequireDefault$I = interopRequireDefaultExports.default;
 Object.defineProperty(locale$4, "__esModule", {
   value: true
 });
 locale$4.changeConfirmLocale = changeConfirmLocale;
 locale$4.getConfirmLocale = getConfirmLocale;
-var _en_US$1 = _interopRequireDefault$z(en_US$5);
+var _en_US$1 = _interopRequireDefault$I(en_US$5);
 let runtimeLocale = Object.assign({}, _en_US$1.default.Modal);
 let localeList = [];
 const generateLocale = () => localeList.reduce((merged, locale) => Object.assign(Object.assign({}, merged), locale), _en_US$1.default.Modal);
@@ -11519,30 +11791,30 @@ Object.defineProperty(context$1, "__esModule", {
   value: true
 });
 context$1.default = void 0;
-var _react$j = React__default;
-const LocaleContext = /*#__PURE__*/(0, _react$j.createContext)(undefined);
+var _react$k = React__default;
+const LocaleContext = /*#__PURE__*/(0, _react$k.createContext)(undefined);
 context$1.default = LocaleContext;
 
 var useLocale$1 = {};
 
-var _interopRequireDefault$y = interopRequireDefaultExports.default;
-var _interopRequireWildcard$m = interopRequireWildcardExports.default;
+var _interopRequireDefault$H = interopRequireDefaultExports.default;
+var _interopRequireWildcard$u = interopRequireWildcardExports.default;
 Object.defineProperty(useLocale$1, "__esModule", {
   value: true
 });
 useLocale$1.default = void 0;
-var React$g = _interopRequireWildcard$m(React__default);
-var _context$6 = _interopRequireDefault$y(context$1);
-var _en_US = _interopRequireDefault$y(en_US$5);
+var React$n = _interopRequireWildcard$u(React__default);
+var _context$6 = _interopRequireDefault$H(context$1);
+var _en_US = _interopRequireDefault$H(en_US$5);
 const useLocale = (componentName, defaultLocale) => {
-  const fullLocale = React$g.useContext(_context$6.default);
-  const getLocale = React$g.useMemo(() => {
+  const fullLocale = React$n.useContext(_context$6.default);
+  const getLocale = React$n.useMemo(() => {
     var _a;
     const locale = defaultLocale || _en_US.default[componentName];
     const localeFromContext = (_a = fullLocale === null || fullLocale === void 0 ? void 0 : fullLocale[componentName]) !== null && _a !== void 0 ? _a : {};
     return Object.assign(Object.assign({}, typeof locale === 'function' ? locale() : locale), localeFromContext || {});
   }, [componentName, defaultLocale, fullLocale]);
-  const getLocaleCode = React$g.useMemo(() => {
+  const getLocaleCode = React$n.useMemo(() => {
     const localeCode = fullLocale === null || fullLocale === void 0 ? void 0 : fullLocale.locale;
     // Had use LocaleProvide but didn't set locale
     if ((fullLocale === null || fullLocale === void 0 ? void 0 : fullLocale.exist) && !localeCode) {
@@ -11570,7 +11842,7 @@ useLocale$1.default = useLocale;
 	  }
 	});
 	var React = _interopRequireWildcard(React__default);
-	var _warning = warning$4;
+	var _warning = warning$5;
 	var _locale = locale$4;
 	var _context = _interopRequireDefault(context$1);
 	var _useLocale = _interopRequireDefault(useLocale$1);
@@ -11643,7 +11915,7 @@ function contains(root, n) {
   return false;
 }
 
-var _interopRequireDefault$x = interopRequireDefaultExports.default;
+var _interopRequireDefault$G = interopRequireDefaultExports.default;
 Object.defineProperty(dynamicCSS, "__esModule", {
   value: true
 });
@@ -11651,9 +11923,9 @@ dynamicCSS.clearContainerCache = clearContainerCache;
 dynamicCSS.injectCSS = injectCSS;
 dynamicCSS.removeCSS = removeCSS;
 dynamicCSS.updateCSS = updateCSS;
-var _objectSpread2$2 = _interopRequireDefault$x(objectSpread2Exports);
-var _canUseDom$1 = _interopRequireDefault$x(canUseDom$1);
-var _contains = _interopRequireDefault$x(contains$1);
+var _objectSpread2$4 = _interopRequireDefault$G(objectSpread2Exports);
+var _canUseDom$1 = _interopRequireDefault$G(canUseDom$1);
+var _contains = _interopRequireDefault$G(contains$1);
 var APPEND_ORDER = 'data-rc-order';
 var APPEND_PRIORITY = 'data-rc-priority';
 var MARK_KEY = "rc-util-key";
@@ -11777,7 +12049,7 @@ function updateCSS(css, key) {
   var originOption = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
   var container = getContainer(originOption);
   var styles = findStyles(container);
-  var option = (0, _objectSpread2$2.default)((0, _objectSpread2$2.default)({}, originOption), {}, {
+  var option = (0, _objectSpread2$4.default)((0, _objectSpread2$4.default)({}, originOption), {}, {
     styles: styles
   });
 
@@ -11800,17 +12072,17 @@ function updateCSS(css, key) {
   return newNode;
 }
 
-var _interopRequireDefault$w = interopRequireDefaultExports.default;
+var _interopRequireDefault$F = interopRequireDefaultExports.default;
 Object.defineProperty(cssVariables, "__esModule", {
   value: true
 });
 cssVariables.getStyle = getStyle;
 cssVariables.registerTheme = registerTheme;
-var _colors = require$$2$1;
+var _colors$2 = require$$8;
 var _tinycolor = require$$2;
-var _canUseDom = _interopRequireDefault$w(canUseDom$1);
-var _dynamicCSS = dynamicCSS;
-var _warning$9 = _interopRequireDefault$w(warning$4);
+var _canUseDom = _interopRequireDefault$F(canUseDom$1);
+var _dynamicCSS$1 = dynamicCSS;
+var _warning$a = _interopRequireDefault$F(warning$5);
 /* eslint-disable import/prefer-default-export, prefer-destructuring */
 
 const dynamicStyleMark = `-ant-${Date.now()}-${Math.random()}`;
@@ -11823,7 +12095,7 @@ function getStyle(globalPrefixCls, theme) {
   };
   const fillColor = (colorVal, type) => {
     const baseColor = new _tinycolor.TinyColor(colorVal);
-    const colorPalettes = (0, _colors.generate)(baseColor.toRgbString());
+    const colorPalettes = (0, _colors$2.generate)(baseColor.toRgbString());
     variables[`${type}-color`] = formatColor(baseColor);
     variables[`${type}-color-disabled`] = colorPalettes[1];
     variables[`${type}-color-hover`] = colorPalettes[4];
@@ -11836,7 +12108,7 @@ function getStyle(globalPrefixCls, theme) {
   if (theme.primaryColor) {
     fillColor(theme.primaryColor, 'primary');
     const primaryColor = new _tinycolor.TinyColor(theme.primaryColor);
-    const primaryColors = (0, _colors.generate)(primaryColor.toRgbString());
+    const primaryColors = (0, _colors$2.generate)(primaryColor.toRgbString());
     // Legacy - We should use semantic naming standard
     primaryColors.forEach((color, index) => {
       variables[`primary-${index + 1}`] = color;
@@ -11878,28 +12150,28 @@ function getStyle(globalPrefixCls, theme) {
 function registerTheme(globalPrefixCls, theme) {
   const style = getStyle(globalPrefixCls, theme);
   if ((0, _canUseDom.default)()) {
-    (0, _dynamicCSS.updateCSS)(style, `${dynamicStyleMark}-dynamic-theme`);
+    (0, _dynamicCSS$1.updateCSS)(style, `${dynamicStyleMark}-dynamic-theme`);
   } else {
-    process.env.NODE_ENV !== "production" ? (0, _warning$9.default)(false, 'ConfigProvider', 'SSR do not support dynamic theme with css variables.') : void 0;
+    process.env.NODE_ENV !== "production" ? (0, _warning$a.default)(false, 'ConfigProvider', 'SSR do not support dynamic theme with css variables.') : void 0;
   }
 }
 
 var DisabledContext$1 = {};
 
-var _interopRequireWildcard$l = interopRequireWildcardExports.default;
+var _interopRequireWildcard$t = interopRequireWildcardExports.default;
 Object.defineProperty(DisabledContext$1, "__esModule", {
   value: true
 });
 DisabledContext$1.default = DisabledContext$1.DisabledContextProvider = void 0;
-var React$f = _interopRequireWildcard$l(React__default);
-const DisabledContext = /*#__PURE__*/React$f.createContext(false);
+var React$m = _interopRequireWildcard$t(React__default);
+const DisabledContext = /*#__PURE__*/React$m.createContext(false);
 const DisabledContextProvider = _ref => {
   let {
     children,
     disabled
   } = _ref;
-  const originDisabled = React$f.useContext(DisabledContext);
-  return /*#__PURE__*/React$f.createElement(DisabledContext.Provider, {
+  const originDisabled = React$m.useContext(DisabledContext);
+  return /*#__PURE__*/React$m.createElement(DisabledContext.Provider, {
     value: disabled !== null && disabled !== void 0 ? disabled : originDisabled
   }, children);
 };
@@ -11910,37 +12182,37 @@ var useConfig$1 = {};
 
 var SizeContext$1 = {};
 
-var _interopRequireWildcard$k = interopRequireWildcardExports.default;
+var _interopRequireWildcard$s = interopRequireWildcardExports.default;
 Object.defineProperty(SizeContext$1, "__esModule", {
   value: true
 });
 SizeContext$1.default = SizeContext$1.SizeContextProvider = void 0;
-var React$e = _interopRequireWildcard$k(React__default);
-const SizeContext = /*#__PURE__*/React$e.createContext(undefined);
+var React$l = _interopRequireWildcard$s(React__default);
+const SizeContext = /*#__PURE__*/React$l.createContext(undefined);
 const SizeContextProvider = _ref => {
   let {
     children,
     size
   } = _ref;
-  const originSize = React$e.useContext(SizeContext);
-  return /*#__PURE__*/React$e.createElement(SizeContext.Provider, {
+  const originSize = React$l.useContext(SizeContext);
+  return /*#__PURE__*/React$l.createElement(SizeContext.Provider, {
     value: size || originSize
   }, children);
 };
 SizeContext$1.SizeContextProvider = SizeContextProvider;
 SizeContext$1.default = SizeContext;
 
-var _interopRequireDefault$v = interopRequireDefaultExports.default;
+var _interopRequireDefault$E = interopRequireDefaultExports.default;
 Object.defineProperty(useConfig$1, "__esModule", {
   value: true
 });
 useConfig$1.default = void 0;
-var _react$i = React__default;
-var _DisabledContext$3 = _interopRequireDefault$v(DisabledContext$1);
-var _SizeContext$1 = _interopRequireDefault$v(SizeContext$1);
+var _react$j = React__default;
+var _DisabledContext$3 = _interopRequireDefault$E(DisabledContext$1);
+var _SizeContext$1 = _interopRequireDefault$E(SizeContext$1);
 function useConfig() {
-  const componentDisabled = (0, _react$i.useContext)(_DisabledContext$3.default);
-  const componentSize = (0, _react$i.useContext)(_SizeContext$1.default);
+  const componentDisabled = (0, _react$j.useContext)(_DisabledContext$3.default);
+  const componentSize = (0, _react$j.useContext)(_SizeContext$1.default);
   return {
     componentDisabled,
     componentSize
@@ -11952,13 +12224,13 @@ var useTheme$1 = {};
 
 var isEqual$1 = {};
 
-var _interopRequireDefault$u = interopRequireDefaultExports.default;
+var _interopRequireDefault$D = interopRequireDefaultExports.default;
 Object.defineProperty(isEqual$1, "__esModule", {
   value: true
 });
 isEqual$1.default = void 0;
-var _typeof2$2 = _interopRequireDefault$u(_typeofExports);
-var _warning$8 = _interopRequireDefault$u(warning$3);
+var _typeof2$3 = _interopRequireDefault$D(_typeofExports);
+var _warning$9 = _interopRequireDefault$D(warning$4);
 /**
  * Deeply compares two object literals.
  * @param obj1 object 1
@@ -11973,7 +12245,7 @@ function isEqual(obj1, obj2) {
   function deepEqual(a, b) {
     var level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
     var circular = refSet.has(a);
-    (0, _warning$8.default)(!circular, 'Warning: There may be circular references');
+    (0, _warning$9.default)(!circular, 'Warning: There may be circular references');
     if (circular) {
       return false;
     }
@@ -11996,7 +12268,7 @@ function isEqual(obj1, obj2) {
       }
       return true;
     }
-    if (a && b && (0, _typeof2$2.default)(a) === 'object' && (0, _typeof2$2.default)(b) === 'object') {
+    if (a && b && (0, _typeof2$3.default)(a) === 'object' && (0, _typeof2$3.default)(b) === 'object') {
       var keys = Object.keys(a);
       if (keys.length !== Object.keys(b).length) {
         return false;
@@ -12014,13 +12286,13 @@ isEqual$1.default = isEqual;
 
 var useThemeKey$1 = {};
 
-var _interopRequireWildcard$j = interopRequireWildcardExports.default;
+var _interopRequireWildcard$r = interopRequireWildcardExports.default;
 Object.defineProperty(useThemeKey$1, "__esModule", {
   value: true
 });
 useThemeKey$1.default = void 0;
-var React$d = _interopRequireWildcard$j(React__default);
-const fullClone$1 = Object.assign({}, React$d);
+var React$k = _interopRequireWildcard$r(React__default);
+const fullClone$1 = Object.assign({}, React$k);
 const {
   useId
 } = fullClone$1;
@@ -12028,19 +12300,19 @@ const useEmptyId = () => '';
 const useThemeKey = typeof useId === 'undefined' ? useEmptyId : useId;
 useThemeKey$1.default = useThemeKey;
 
-var _interopRequireDefault$t = interopRequireDefaultExports.default;
+var _interopRequireDefault$C = interopRequireDefaultExports.default;
 Object.defineProperty(useTheme$1, "__esModule", {
   value: true
 });
 useTheme$1.default = useTheme;
-var _useMemo$1 = _interopRequireDefault$t(useMemo$1);
-var _isEqual = _interopRequireDefault$t(isEqual$1);
-var _warning$7 = warning$4;
+var _useMemo$1 = _interopRequireDefault$C(useMemo$1);
+var _isEqual = _interopRequireDefault$C(isEqual$1);
+var _warning$8 = warning$5;
 var _internal$9 = internal;
-var _useThemeKey = _interopRequireDefault$t(useThemeKey$1);
+var _useThemeKey = _interopRequireDefault$C(useThemeKey$1);
 function useTheme(theme, parentTheme, config) {
   var _a, _b;
-  const warning = (0, _warning$7.devUseWarning)('ConfigProvider');
+  const warning = (0, _warning$8.devUseWarning)('ConfigProvider');
   const themeConfig = theme || {};
   const parentThemeConfig = themeConfig.inherit === false || !parentTheme ? Object.assign(Object.assign({}, _internal$9.defaultConfig), {
     hashed: (_a = parentTheme === null || parentTheme === void 0 ? void 0 : parentTheme.hashed) !== null && _a !== void 0 ? _a : _internal$9.defaultConfig.hashed,
@@ -12116,12 +12388,12 @@ function findDOMNode(node) {
   return null;
 }
 
-var _excluded$8 = ["children"];
-var Context$1 = /*#__PURE__*/React$k.createContext({});
+var _excluded$a = ["children"];
+var Context$1 = /*#__PURE__*/React$r.createContext({});
 function MotionProvider(_ref) {
   var children = _ref.children,
-    props = _objectWithoutProperties(_ref, _excluded$8);
-  return /*#__PURE__*/React$k.createElement(Context$1.Provider, {
+    props = _objectWithoutProperties(_ref, _excluded$a);
+  return /*#__PURE__*/React$r.createElement(Context$1.Provider, {
     value: props
   }, children);
 }
@@ -12140,7 +12412,7 @@ var DomWrapper$1 = /*#__PURE__*/function (_React$Component) {
     }
   }]);
   return DomWrapper;
-}(React$k.Component);
+}(React$r.Component);
 
 /**
  * Same as React.useState but will always get latest state.
@@ -12148,12 +12420,12 @@ var DomWrapper$1 = /*#__PURE__*/function (_React$Component) {
  * e.g. onTransitionEnd trigger multiple event at once will be merged state update in React.
  */
 function useSyncState(defaultValue) {
-  var _React$useReducer = React$k.useReducer(function (x) {
+  var _React$useReducer = React$r.useReducer(function (x) {
       return x + 1;
     }, 0),
     _React$useReducer2 = _slicedToArray(_React$useReducer, 2),
     forceUpdate = _React$useReducer2[1];
-  var currentValueRef = React$k.useRef(defaultValue);
+  var currentValueRef = React$r.useRef(defaultValue);
   var getValue = useEvent(function () {
     return currentValueRef.current;
   });
@@ -12272,7 +12544,7 @@ var useDomMotionEvents = (function (onInternalMotionEnd) {
   }
 
   // Clean up when removed
-  React$k.useEffect(function () {
+  React$r.useEffect(function () {
     return function () {
       removeMotionEvents(cacheElementRef.current);
     };
@@ -12338,7 +12610,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 var useNextFrame = (function () {
-  var nextFrameRef = React$k.useRef(null);
+  var nextFrameRef = React$r.useRef(null);
   function cancelNextFrame() {
     wrapperRaf$1.cancel(nextFrameRef.current);
   }
@@ -12358,7 +12630,7 @@ var useNextFrame = (function () {
     });
     nextFrameRef.current = nextFrameId;
   }
-  React$k.useEffect(function () {
+  React$r.useEffect(function () {
     return function () {
       cancelNextFrame();
     };
@@ -12415,7 +12687,7 @@ var useStepQueue = (function (status, prepareOnly, callback) {
       }
     }
   }, [status, step]);
-  React$k.useEffect(function () {
+  React$r.useEffect(function () {
     return function () {
       cancelNextFrame();
     };
@@ -12523,7 +12795,7 @@ function useStatus(supportMotion, visible, getElement, _ref) {
         return {};
     }
   };
-  var eventHandlers = React$k.useMemo(function () {
+  var eventHandlers = React$r.useMemo(function () {
     return getEventHandlers(currentStatus);
   }, [currentStatus]);
   var _useStepQueue = useStepQueue(currentStatus, !supportMotion, function (newStep) {
@@ -12624,7 +12896,7 @@ function useStatus(supportMotion, visible, getElement, _ref) {
   }, []);
 
   // Trigger `onVisibleChanged`
-  var firstMountChangeRef = React$k.useRef(false);
+  var firstMountChangeRef = React$r.useRef(false);
   useEffect(function () {
     // [visible & motion not end] => [!visible & motion end] still need trigger onVisibleChanged
     if (asyncVisible) {
@@ -12642,7 +12914,7 @@ function useStatus(supportMotion, visible, getElement, _ref) {
   // ============================ Styles ============================
   var mergedStyle = style;
   if (eventHandlers[STEP_PREPARE] && step === STEP_START) {
-    mergedStyle = _objectSpread2$5({
+    mergedStyle = _objectSpread2$7({
       transition: 'none'
     }, mergedStyle);
   }
@@ -12661,7 +12933,7 @@ function genCSSMotion(config) {
   function isSupportTransition(props, contextMotion) {
     return !!(props.motionName && transitionSupport && contextMotion !== false);
   }
-  var CSSMotion = /*#__PURE__*/React$k.forwardRef(function (props, ref) {
+  var CSSMotion = /*#__PURE__*/React$r.forwardRef(function (props, ref) {
     var _props$visible = props.visible,
       visible = _props$visible === void 0 ? true : _props$visible,
       _props$removeOnLeave = props.removeOnLeave,
@@ -12671,7 +12943,7 @@ function genCSSMotion(config) {
       motionName = props.motionName,
       leavedClassName = props.leavedClassName,
       eventProps = props.eventProps;
-    var _React$useContext = React$k.useContext(Context$1),
+    var _React$useContext = React$r.useContext(Context$1),
       contextMotion = _React$useContext.motion;
     var supportMotion = isSupportTransition(props, contextMotion);
 
@@ -12700,20 +12972,20 @@ function genCSSMotion(config) {
 
     // Record whether content has rendered
     // Will return null for un-rendered even when `removeOnLeave={false}`
-    var renderedRef = React$k.useRef(mergedVisible);
+    var renderedRef = React$r.useRef(mergedVisible);
     if (mergedVisible) {
       renderedRef.current = true;
     }
 
     // ====================== Refs ======================
-    var setNodeRef = React$k.useCallback(function (node) {
+    var setNodeRef = React$r.useCallback(function (node) {
       nodeRef.current = node;
       fillRef$1(ref, node);
     }, [ref]);
 
     // ===================== Render =====================
     var motionChildren;
-    var mergedProps = _objectSpread2$5(_objectSpread2$5({}, eventProps), {}, {
+    var mergedProps = _objectSpread2$7(_objectSpread2$7({}, eventProps), {}, {
       visible: visible
     });
     if (!children) {
@@ -12722,13 +12994,13 @@ function genCSSMotion(config) {
     } else if (status === STATUS_NONE) {
       // Stable children
       if (mergedVisible) {
-        motionChildren = children(_objectSpread2$5({}, mergedProps), setNodeRef);
+        motionChildren = children(_objectSpread2$7({}, mergedProps), setNodeRef);
       } else if (!removeOnLeave && renderedRef.current && leavedClassName) {
-        motionChildren = children(_objectSpread2$5(_objectSpread2$5({}, mergedProps), {}, {
+        motionChildren = children(_objectSpread2$7(_objectSpread2$7({}, mergedProps), {}, {
           className: leavedClassName
         }), setNodeRef);
       } else if (forceRender || !removeOnLeave && !leavedClassName) {
-        motionChildren = children(_objectSpread2$5(_objectSpread2$5({}, mergedProps), {}, {
+        motionChildren = children(_objectSpread2$7(_objectSpread2$7({}, mergedProps), {}, {
           style: {
             display: 'none'
           }
@@ -12747,23 +13019,23 @@ function genCSSMotion(config) {
         statusSuffix = 'start';
       }
       var motionCls = getTransitionName(motionName, "".concat(status, "-").concat(statusSuffix));
-      motionChildren = children(_objectSpread2$5(_objectSpread2$5({}, mergedProps), {}, {
+      motionChildren = children(_objectSpread2$7(_objectSpread2$7({}, mergedProps), {}, {
         className: clsx(getTransitionName(motionName, status), _defineProperty(_defineProperty({}, motionCls, motionCls && statusSuffix), motionName, typeof motionName === 'string')),
         style: statusStyle
       }), setNodeRef);
     }
 
     // Auto inject ref if child node not have `ref` props
-    if ( /*#__PURE__*/React$k.isValidElement(motionChildren) && supportRef$1(motionChildren)) {
+    if ( /*#__PURE__*/React$r.isValidElement(motionChildren) && supportRef$1(motionChildren)) {
       var _ref = motionChildren,
         originNodeRef = _ref.ref;
       if (!originNodeRef) {
-        motionChildren = /*#__PURE__*/React$k.cloneElement(motionChildren, {
+        motionChildren = /*#__PURE__*/React$r.cloneElement(motionChildren, {
           ref: setNodeRef
         });
       }
     }
-    return /*#__PURE__*/React$k.createElement(DomWrapper$1, {
+    return /*#__PURE__*/React$r.createElement(DomWrapper$1, {
       ref: wrapperNodeRef
     }, motionChildren);
   });
@@ -12785,7 +13057,7 @@ function wrapKeyToObject(key) {
       key: key
     };
   }
-  return _objectSpread2$5(_objectSpread2$5({}, keyObj), {}, {
+  return _objectSpread2$7(_objectSpread2$7({}, keyObj), {}, {
     key: String(keyObj.key)
   });
 }
@@ -12811,13 +13083,13 @@ function diffKeys() {
         // New added keys should add before current key
         if (currentIndex < i) {
           list = list.concat(currentKeyObjects.slice(currentIndex, i).map(function (obj) {
-            return _objectSpread2$5(_objectSpread2$5({}, obj), {}, {
+            return _objectSpread2$7(_objectSpread2$7({}, obj), {}, {
               status: STATUS_ADD
             });
           }));
           currentIndex = i;
         }
-        list.push(_objectSpread2$5(_objectSpread2$5({}, currentKeyObj), {}, {
+        list.push(_objectSpread2$7(_objectSpread2$7({}, currentKeyObj), {}, {
           status: STATUS_KEEP
         }));
         currentIndex += 1;
@@ -12828,7 +13100,7 @@ function diffKeys() {
 
     // If not hit, it means key is removed
     if (!hit) {
-      list.push(_objectSpread2$5(_objectSpread2$5({}, keyObj), {}, {
+      list.push(_objectSpread2$7(_objectSpread2$7({}, keyObj), {}, {
         status: STATUS_REMOVE
       }));
     }
@@ -12837,7 +13109,7 @@ function diffKeys() {
   // Add rest to the list
   if (currentIndex < currentLen) {
     list = list.concat(currentKeyObjects.slice(currentIndex).map(function (obj) {
-      return _objectSpread2$5(_objectSpread2$5({}, obj), {}, {
+      return _objectSpread2$7(_objectSpread2$7({}, obj), {}, {
         status: STATUS_ADD
       });
     }));
@@ -12874,7 +13146,7 @@ function diffKeys() {
   return list;
 }
 
-var _excluded$7 = ["component", "children", "onVisibleChanged", "onAllRemoved"],
+var _excluded$9 = ["component", "children", "onVisibleChanged", "onAllRemoved"],
   _excluded2 = ["status"];
 var MOTION_PROP_NAMES = ['eventProps', 'visible', 'children', 'motionName', 'motionAppear', 'motionEnter', 'motionLeave', 'motionLeaveImmediately', 'motionDeadline', 'removeOnLeave', 'leavedClassName', 'onAppearPrepare', 'onAppearStart', 'onAppearActive', 'onAppearEnd', 'onEnterStart', 'onEnterActive', 'onEnterEnd', 'onLeaveStart', 'onLeaveActive', 'onLeaveEnd'];
 /**
@@ -12902,7 +13174,7 @@ function genCSSMotionList(transitionSupport) {
         var keyEntities = _this.state.keyEntities;
         var nextKeyEntities = keyEntities.map(function (entity) {
           if (entity.key !== removeKey) return entity;
-          return _objectSpread2$5(_objectSpread2$5({}, entity), {}, {
+          return _objectSpread2$7(_objectSpread2$7({}, entity), {}, {
             status: STATUS_REMOVED
           });
         });
@@ -12926,19 +13198,19 @@ function genCSSMotionList(transitionSupport) {
           children = _this$props.children,
           _onVisibleChanged = _this$props.onVisibleChanged,
           onAllRemoved = _this$props.onAllRemoved,
-          restProps = _objectWithoutProperties(_this$props, _excluded$7);
-        var Component = component || React$k.Fragment;
+          restProps = _objectWithoutProperties(_this$props, _excluded$9);
+        var Component = component || React$r.Fragment;
         var motionProps = {};
         MOTION_PROP_NAMES.forEach(function (prop) {
           motionProps[prop] = restProps[prop];
           delete restProps[prop];
         });
         delete restProps.keys;
-        return /*#__PURE__*/React$k.createElement(Component, restProps, keyEntities.map(function (_ref2, index) {
+        return /*#__PURE__*/React$r.createElement(Component, restProps, keyEntities.map(function (_ref2, index) {
           var status = _ref2.status,
             eventProps = _objectWithoutProperties(_ref2, _excluded2);
           var visible = status === STATUS_ADD || status === STATUS_KEEP;
-          return /*#__PURE__*/React$k.createElement(CSSMotion$1, _extends({}, motionProps, {
+          return /*#__PURE__*/React$r.createElement(CSSMotion$1, _extends$1({}, motionProps, {
             key: eventProps.key,
             visible: visible,
             eventProps: eventProps,
@@ -12954,7 +13226,7 @@ function genCSSMotionList(transitionSupport) {
               }
             }
           }), function (props, ref) {
-            return children(_objectSpread2$5(_objectSpread2$5({}, props), {}, {
+            return children(_objectSpread2$7(_objectSpread2$7({}, props), {}, {
               index: index
             }), ref);
           });
@@ -12984,7 +13256,7 @@ function genCSSMotionList(transitionSupport) {
       }
     }]);
     return CSSMotionList;
-  }(React$k.Component);
+  }(React$r.Component);
   _defineProperty(CSSMotionList, "defaultProps", {
     component: 'div'
   });
@@ -13001,12 +13273,12 @@ var es$3 = /*#__PURE__*/Object.freeze({
 
 var require$$5 = /*@__PURE__*/getAugmentedNamespace(es$3);
 
-var _interopRequireWildcard$i = interopRequireWildcardExports.default;
+var _interopRequireWildcard$q = interopRequireWildcardExports.default;
 Object.defineProperty(MotionWrapper$1, "__esModule", {
   value: true
 });
 MotionWrapper$1.default = MotionWrapper;
-var React$c = _interopRequireWildcard$i(React__default);
+var React$j = _interopRequireWildcard$q(React__default);
 var _rcMotion$2 = require$$5;
 var _internal$8 = internal;
 function MotionWrapper(props) {
@@ -13017,10 +13289,10 @@ function MotionWrapper(props) {
   const {
     motion
   } = token;
-  const needWrapMotionProviderRef = React$c.useRef(false);
+  const needWrapMotionProviderRef = React$j.useRef(false);
   needWrapMotionProviderRef.current = needWrapMotionProviderRef.current || motion === false;
   if (needWrapMotionProviderRef.current) {
-    return /*#__PURE__*/React$c.createElement(_rcMotion$2.Provider, {
+    return /*#__PURE__*/React$j.createElement(_rcMotion$2.Provider, {
       motion: motion
     }, children);
   }
@@ -13029,22 +13301,22 @@ function MotionWrapper(props) {
 
 var PropWarning$1 = {};
 
-var _interopRequireWildcard$h = interopRequireWildcardExports.default;
+var _interopRequireWildcard$p = interopRequireWildcardExports.default;
 Object.defineProperty(PropWarning$1, "__esModule", {
   value: true
 });
 PropWarning$1.default = void 0;
-var React$b = _interopRequireWildcard$h(React__default);
-var _warning$6 = warning$4;
+var React$i = _interopRequireWildcard$p(React__default);
+var _warning$7 = warning$5;
 /**
  * Warning for ConfigProviderProps.
  * This will be empty function in production.
  */
-const PropWarning = /*#__PURE__*/React$b.memo(_ref => {
+const PropWarning = /*#__PURE__*/React$i.memo(_ref => {
   let {
     dropdownMatchSelectWidth
   } = _ref;
-  const warning = (0, _warning$6.devUseWarning)('ConfigProvider');
+  const warning = (0, _warning$7.devUseWarning)('ConfigProvider');
   warning.deprecated(dropdownMatchSelectWidth === undefined, 'dropdownMatchSelectWidth', 'popupMatchSelectWidth');
   return null;
 });
@@ -13114,7 +13386,7 @@ var style$3 = {};
 	var _Context = _interopRequireDefault(Context$2);
 	var _useMemo = _interopRequireDefault(useMemo$1);
 	var _set = set$1;
-	var _warning = _interopRequireWildcard(warning$4);
+	var _warning = _interopRequireWildcard(warning$5);
 	var _validateMessagesContext = _interopRequireDefault(validateMessagesContext);
 	var _locale = _interopRequireWildcard(locale$5);
 	var _context = _interopRequireDefault(context$1);
@@ -13876,7 +14148,7 @@ var HOOK_MARK = 'RC_FORM_INTERNAL_HOOKS';
 var warningFunc = function warningFunc() {
   warningOnce$1(false, 'Can not find FormContext. Please make sure you wrap Field under Form.');
 };
-var Context = /*#__PURE__*/React$k.createContext({
+var Context = /*#__PURE__*/React$r.createContext({
   getFieldValue: warningFunc,
   getFieldsValue: warningFunc,
   getFieldError: warningFunc,
@@ -13911,7 +14183,7 @@ var Context = /*#__PURE__*/React$k.createContext({
   }
 });
 
-var ListContext = /*#__PURE__*/React$k.createContext(null);
+var ListContext = /*#__PURE__*/React$r.createContext(null);
 
 function toArray$2(value) {
   if (value === undefined || value === null) {
@@ -14021,11 +14293,11 @@ function _wrapNativeSuper(t) {
 /* eslint no-console:0 */
 
 var formatRegExp = /%[sdj%]/g;
-var warning = function warning() {};
+var warning$1 = function warning() {};
 
 // don't print warning message when in production env or node runtime
 if (typeof process !== 'undefined' && process.env && process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && typeof document !== 'undefined') {
-  warning = function warning(type, errors) {
+  warning$1 = function warning(type, errors) {
     if (typeof console !== 'undefined' && console.warn && typeof ASYNC_VALIDATOR_NO_WARNING === 'undefined') {
       if (errors.every(function (e) {
         return typeof e === 'string';
@@ -14240,7 +14512,7 @@ function deepMerge(target, source) {
       if (source.hasOwnProperty(s)) {
         var value = source[s];
         if (_typeof$1(value) === 'object' && _typeof$1(target[s]) === 'object') {
-          target[s] = _objectSpread2$5(_objectSpread2$5({}, target[s]), value);
+          target[s] = _objectSpread2$7(_objectSpread2$7({}, target[s]), value);
         } else {
           target[s] = value;
         }
@@ -14835,7 +15107,7 @@ var Schema = /*#__PURE__*/function () {
           var rule = r;
           if (typeof rule.transform === 'function') {
             if (source === source_) {
-              source = _objectSpread2$5({}, source);
+              source = _objectSpread2$7({}, source);
             }
             value = source[z] = rule.transform(value);
             if (value !== undefined && value !== null) {
@@ -14847,7 +15119,7 @@ var Schema = /*#__PURE__*/function () {
               validator: rule
             };
           } else {
-            rule = _objectSpread2$5({}, rule);
+            rule = _objectSpread2$7({}, rule);
           }
 
           // Fill validator. Skip if nothing need to validate
@@ -14874,7 +15146,7 @@ var Schema = /*#__PURE__*/function () {
         deep = deep && (rule.required || !rule.required && data.value);
         rule.field = data.field;
         function addFullField(key, schema) {
-          return _objectSpread2$5(_objectSpread2$5({}, schema), {}, {
+          return _objectSpread2$7(_objectSpread2$7({}, schema), {}, {
             fullField: "".concat(rule.fullField, ".").concat(key),
             fullFields: rule.fullFields ? [].concat(_toConsumableArray(rule.fullFields), [key]) : [key]
           });
@@ -14915,7 +15187,7 @@ var Schema = /*#__PURE__*/function () {
                 fieldsSchema[key] = rule.defaultField;
               });
             }
-            fieldsSchema = _objectSpread2$5(_objectSpread2$5({}, fieldsSchema), data.rule.fields);
+            fieldsSchema = _objectSpread2$7(_objectSpread2$7({}, fieldsSchema), data.rule.fields);
             var paredFieldsSchema = {};
             Object.keys(fieldsSchema).forEach(function (field) {
               var fieldSchema = fieldsSchema[field];
@@ -15015,7 +15287,7 @@ _defineProperty(Schema, "register", function register(type, validator) {
   }
   validators[type] = validator;
 });
-_defineProperty(Schema, "warning", warning);
+_defineProperty(Schema, "warning", warning$1);
 _defineProperty(Schema, "messages", messages);
 _defineProperty(Schema, "validators", validators);
 
@@ -15095,7 +15367,7 @@ function _validateRule() {
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          cloneRule = _objectSpread2$5({}, rule); // Bug of `async-validator`
+          cloneRule = _objectSpread2$7({}, rule); // Bug of `async-validator`
           // https://github.com/react-component/field-form/issues/316
           // https://github.com/react-component/field-form/issues/313
           delete cloneRule.ruleIndex;
@@ -15128,7 +15400,7 @@ function _validateRule() {
           result = [];
           _context2.prev = 10;
           _context2.next = 13;
-          return Promise.resolve(validator.validate(_defineProperty({}, name, value), _objectSpread2$5({}, options)));
+          return Promise.resolve(validator.validate(_defineProperty({}, name, value), _objectSpread2$7({}, options)));
         case 13:
           _context2.next = 18;
           break;
@@ -15139,10 +15411,10 @@ function _validateRule() {
             result = _context2.t0.errors.map(function (_ref4, index) {
               var message = _ref4.message;
               var mergedMessage = message === CODE_LOGIC_ERROR ? messages.default : message;
-              return /*#__PURE__*/React$k.isValidElement(mergedMessage) ?
+              return /*#__PURE__*/React$r.isValidElement(mergedMessage) ?
               /*#__PURE__*/
               // Wrap ReactNode with `key`
-              React$k.cloneElement(mergedMessage, {
+              React$r.cloneElement(mergedMessage, {
                 key: "error_".concat(index)
               }) : mergedMessage;
             });
@@ -15163,7 +15435,7 @@ function _validateRule() {
           }, []));
         case 23:
           // Replace message with variables
-          kv = _objectSpread2$5(_objectSpread2$5({}, rule), {}, {
+          kv = _objectSpread2$7(_objectSpread2$7({}, rule), {}, {
             name: name,
             enum: (rule.enum || []).join(', ')
           }, messageVariables);
@@ -15188,7 +15460,7 @@ function validateRules(namePath, value, rules, options, validateFirst, messageVa
   // Fill rule with context
   var filledRules = rules.map(function (currentRule, ruleIndex) {
     var originValidatorFunc = currentRule.validator;
-    var cloneRule = _objectSpread2$5(_objectSpread2$5({}, currentRule), {}, {
+    var cloneRule = _objectSpread2$7(_objectSpread2$7({}, currentRule), {}, {
       ruleIndex: ruleIndex
     });
 
@@ -15479,7 +15751,7 @@ function move(array, moveIndex, toIndex) {
   return array;
 }
 
-var _excluded$6 = ["name"];
+var _excluded$8 = ["name"];
 var EMPTY_ERRORS = [];
 function requireUpdate(shouldUpdate, prev, next, prevValue, nextValue, info) {
   if (typeof shouldUpdate === 'function') {
@@ -15571,7 +15843,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "triggerMetaEvent", function (destroy) {
       var onMetaChange = _this.props.onMetaChange;
       if (onMetaChange) {
-        var _meta = _objectSpread2$5(_objectSpread2$5({}, _this.getMeta()), {}, {
+        var _meta = _objectSpread2$7(_objectSpread2$7({}, _this.getMeta()), {}, {
           destroy: destroy
         });
         if (!isEqual$2(_this.metaCache, _meta)) {
@@ -15861,14 +16133,14 @@ var Field = /*#__PURE__*/function (_React$Component) {
       // Support render props
       if (typeof children === 'function') {
         var _meta2 = _this.getMeta();
-        return _objectSpread2$5(_objectSpread2$5({}, _this.getOnlyChild(children(_this.getControlled(), _meta2, _this.props.fieldContext))), {}, {
+        return _objectSpread2$7(_objectSpread2$7({}, _this.getOnlyChild(children(_this.getControlled(), _meta2, _this.props.fieldContext))), {}, {
           isFunction: true
         });
       }
 
       // Filed element only
       var childList = toArray$3(children);
-      if (childList.length !== 1 || ! /*#__PURE__*/React$k.isValidElement(childList[0])) {
+      if (childList.length !== 1 || ! /*#__PURE__*/React$r.isValidElement(childList[0])) {
         return {
           child: childList,
           isFunction: false
@@ -15915,7 +16187,7 @@ var Field = /*#__PURE__*/function (_React$Component) {
           warningOnce$1(typeof valueProps[key] !== 'function', "It's not recommended to generate dynamic function prop by `getValueProps`. Please pass it to child component directly (prop: ".concat(key, ")"));
         });
       }
-      var control = _objectSpread2$5(_objectSpread2$5({}, childProps), valueProps);
+      var control = _objectSpread2$7(_objectSpread2$7({}, childProps), valueProps);
 
       // Add trigger
       control[trigger] = function () {
@@ -16025,19 +16297,19 @@ var Field = /*#__PURE__*/function (_React$Component) {
       var returnChildNode;
       if (isFunction) {
         returnChildNode = child;
-      } else if ( /*#__PURE__*/React$k.isValidElement(child)) {
-        returnChildNode = /*#__PURE__*/React$k.cloneElement(child, this.getControlled(child.props));
+      } else if ( /*#__PURE__*/React$r.isValidElement(child)) {
+        returnChildNode = /*#__PURE__*/React$r.cloneElement(child, this.getControlled(child.props));
       } else {
         warningOnce$1(!child, '`children` of Field is not validate ReactElement.');
         returnChildNode = child;
       }
-      return /*#__PURE__*/React$k.createElement(React$k.Fragment, {
+      return /*#__PURE__*/React$r.createElement(React$r.Fragment, {
         key: resetCount
       }, returnChildNode);
     }
   }]);
   return Field;
-}(React$k.Component);
+}(React$r.Component);
 _defineProperty(Field, "contextType", Context);
 _defineProperty(Field, "defaultProps", {
   trigger: 'onChange',
@@ -16045,9 +16317,9 @@ _defineProperty(Field, "defaultProps", {
 });
 function WrapperField(_ref6) {
   var name = _ref6.name,
-    restProps = _objectWithoutProperties(_ref6, _excluded$6);
-  var fieldContext = React$k.useContext(Context);
-  var listContext = React$k.useContext(ListContext);
+    restProps = _objectWithoutProperties(_ref6, _excluded$8);
+  var fieldContext = React$r.useContext(Context);
+  var listContext = React$r.useContext(ListContext);
   var namePath = name !== undefined ? getNamePath(name) : undefined;
   var key = 'keep';
   if (!restProps.isListField) {
@@ -16059,7 +16331,7 @@ function WrapperField(_ref6) {
   if (process.env.NODE_ENV !== 'production' && restProps.preserve === false && restProps.isListField && namePath.length <= 1) {
     warningOnce$1(false, '`preserve` should not apply on Form.List fields.');
   }
-  return /*#__PURE__*/React$k.createElement(Field, _extends({
+  return /*#__PURE__*/React$r.createElement(Field, _extends$1({
     key: key,
     name: namePath,
     isListField: !!listContext
@@ -16075,25 +16347,25 @@ function List(_ref) {
     rules = _ref.rules,
     validateTrigger = _ref.validateTrigger,
     isListField = _ref.isListField;
-  var context = React$k.useContext(Context);
-  var wrapperListContext = React$k.useContext(ListContext);
-  var keyRef = React$k.useRef({
+  var context = React$r.useContext(Context);
+  var wrapperListContext = React$r.useContext(ListContext);
+  var keyRef = React$r.useRef({
     keys: [],
     id: 0
   });
   var keyManager = keyRef.current;
-  var prefixName = React$k.useMemo(function () {
+  var prefixName = React$r.useMemo(function () {
     var parentPrefixName = getNamePath(context.prefixName) || [];
     return [].concat(_toConsumableArray(parentPrefixName), _toConsumableArray(getNamePath(name)));
   }, [context.prefixName, name]);
-  var fieldContext = React$k.useMemo(function () {
-    return _objectSpread2$5(_objectSpread2$5({}, context), {}, {
+  var fieldContext = React$r.useMemo(function () {
+    return _objectSpread2$7(_objectSpread2$7({}, context), {}, {
       prefixName: prefixName
     });
   }, [context, prefixName]);
 
   // List context
-  var listContext = React$k.useMemo(function () {
+  var listContext = React$r.useMemo(function () {
     return {
       getKey: function getKey(namePath) {
         var len = prefixName.length;
@@ -16115,11 +16387,11 @@ function List(_ref) {
     }
     return prevValue !== nextValue;
   };
-  return /*#__PURE__*/React$k.createElement(ListContext.Provider, {
+  return /*#__PURE__*/React$r.createElement(ListContext.Provider, {
     value: listContext
-  }, /*#__PURE__*/React$k.createElement(Context.Provider, {
+  }, /*#__PURE__*/React$r.createElement(Context.Provider, {
     value: fieldContext
-  }, /*#__PURE__*/React$k.createElement(WrapperField, {
+  }, /*#__PURE__*/React$r.createElement(WrapperField, {
     name: [],
     shouldUpdate: shouldUpdate,
     rules: rules,
@@ -16321,7 +16593,7 @@ var NameMap = /*#__PURE__*/function () {
   return NameMap;
 }();
 
-var _excluded$5 = ["name"];
+var _excluded$7 = ["name"];
 var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
   var _this = this;
   _classCallCheck(this, FormStore);
@@ -16778,7 +17050,7 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     var namePathList = [];
     fields.forEach(function (fieldData) {
       var name = fieldData.name,
-        data = _objectWithoutProperties(fieldData, _excluded$5);
+        data = _objectWithoutProperties(fieldData, _excluded$7);
       var namePath = getNamePath(name);
       namePathList.push(namePath);
 
@@ -16798,7 +17070,7 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
     var fields = entities.map(function (field) {
       var namePath = field.getNamePath();
       var meta = field.getMeta();
-      var fieldData = _objectSpread2$5(_objectSpread2$5({}, meta), {}, {
+      var fieldData = _objectSpread2$7(_objectSpread2$7({}, meta), {}, {
         name: namePath,
         value: _this.getFieldValue(namePath)
       });
@@ -16899,7 +17171,7 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
   });
   _defineProperty(this, "notifyObservers", function (prevStore, namePathList, info) {
     if (_this.subscribable) {
-      var mergedInfo = _objectSpread2$5(_objectSpread2$5({}, info), {}, {
+      var mergedInfo = _objectSpread2$7(_objectSpread2$7({}, info), {}, {
         store: _this.getFieldsValue(true)
       });
       _this.getFieldEntities().forEach(function (_ref5) {
@@ -17074,8 +17346,8 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
 
       // Add field validate rule in to promise list
       if (!provideNameList || containsNamePath(namePathList, fieldNamePath, recursive)) {
-        var promise = field.validateRules(_objectSpread2$5({
-          validateMessages: _objectSpread2$5(_objectSpread2$5({}, defaultValidateMessages), _this.validateMessages)
+        var promise = field.validateRules(_objectSpread2$7({
+          validateMessages: _objectSpread2$7(_objectSpread2$7({}, defaultValidateMessages), _this.validateMessages)
         }, options));
 
         // Wrap promise with field
@@ -17180,8 +17452,8 @@ var FormStore = /*#__PURE__*/_createClass(function FormStore(forceRootUpdate) {
   this.forceRootUpdate = forceRootUpdate;
 });
 function useForm(form) {
-  var formRef = React$k.useRef();
-  var _React$useState = React$k.useState({}),
+  var formRef = React$r.useRef();
+  var _React$useState = React$r.useState({}),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     forceUpdate = _React$useState2[1];
   if (!formRef.current) {
@@ -17199,7 +17471,7 @@ function useForm(form) {
   return [formRef.current];
 }
 
-var FormContext = /*#__PURE__*/React$k.createContext({
+var FormContext = /*#__PURE__*/React$r.createContext({
   triggerFormChange: function triggerFormChange() {},
   triggerFormFinish: function triggerFormFinish() {},
   registerForm: function registerForm() {},
@@ -17210,11 +17482,11 @@ var FormProvider$1 = function FormProvider(_ref) {
     onFormChange = _ref.onFormChange,
     onFormFinish = _ref.onFormFinish,
     children = _ref.children;
-  var formContext = React$k.useContext(FormContext);
-  var formsRef = React$k.useRef({});
-  return /*#__PURE__*/React$k.createElement(FormContext.Provider, {
-    value: _objectSpread2$5(_objectSpread2$5({}, formContext), {}, {
-      validateMessages: _objectSpread2$5(_objectSpread2$5({}, formContext.validateMessages), validateMessages),
+  var formContext = React$r.useContext(FormContext);
+  var formsRef = React$r.useRef({});
+  return /*#__PURE__*/React$r.createElement(FormContext.Provider, {
+    value: _objectSpread2$7(_objectSpread2$7({}, formContext), {}, {
+      validateMessages: _objectSpread2$7(_objectSpread2$7({}, formContext.validateMessages), validateMessages),
       // =========================================================
       // =                  Global Form Control                  =
       // =========================================================
@@ -17238,12 +17510,12 @@ var FormProvider$1 = function FormProvider(_ref) {
       },
       registerForm: function registerForm(name, form) {
         if (name) {
-          formsRef.current = _objectSpread2$5(_objectSpread2$5({}, formsRef.current), {}, _defineProperty({}, name, form));
+          formsRef.current = _objectSpread2$7(_objectSpread2$7({}, formsRef.current), {}, _defineProperty({}, name, form));
         }
         formContext.registerForm(name, form);
       },
       unregisterForm: function unregisterForm(name) {
-        var newForms = _objectSpread2$5({}, formsRef.current);
+        var newForms = _objectSpread2$7({}, formsRef.current);
         delete newForms[name];
         formsRef.current = newForms;
         formContext.unregisterForm(name);
@@ -17252,7 +17524,7 @@ var FormProvider$1 = function FormProvider(_ref) {
   }, children);
 };
 
-var _excluded$4 = ["name", "initialValues", "fields", "form", "preserve", "children", "component", "validateMessages", "validateTrigger", "onValuesChange", "onFieldsChange", "onFinish", "onFinishFailed", "clearOnDestroy"];
+var _excluded$6 = ["name", "initialValues", "fields", "form", "preserve", "children", "component", "validateMessages", "validateTrigger", "onValuesChange", "onFieldsChange", "onFinish", "onFinishFailed", "clearOnDestroy"];
 var Form = function Form(_ref, ref) {
   var name = _ref.name,
     initialValues = _ref.initialValues,
@@ -17270,9 +17542,9 @@ var Form = function Form(_ref, ref) {
     _onFinish = _ref.onFinish,
     onFinishFailed = _ref.onFinishFailed,
     clearOnDestroy = _ref.clearOnDestroy,
-    restProps = _objectWithoutProperties(_ref, _excluded$4);
-  var nativeElementRef = React$k.useRef(null);
-  var formContext = React$k.useContext(FormContext);
+    restProps = _objectWithoutProperties(_ref, _excluded$6);
+  var nativeElementRef = React$r.useRef(null);
+  var formContext = React$r.useContext(FormContext);
 
   // We customize handle event since Context will makes all the consumer re-render:
   // https://reactjs.org/docs/context.html#contextprovider
@@ -17288,14 +17560,14 @@ var Form = function Form(_ref, ref) {
     destroyForm = _getInternalHooks.destroyForm;
 
   // Pass ref with form instance
-  React$k.useImperativeHandle(ref, function () {
-    return _objectSpread2$5(_objectSpread2$5({}, formInstance), {}, {
+  React$r.useImperativeHandle(ref, function () {
+    return _objectSpread2$7(_objectSpread2$7({}, formInstance), {}, {
       nativeElement: nativeElementRef.current
     });
   });
 
   // Register form into Context
-  React$k.useEffect(function () {
+  React$r.useEffect(function () {
     formContext.registerForm(name, formInstance);
     return function () {
       formContext.unregisterForm(name);
@@ -17303,7 +17575,7 @@ var Form = function Form(_ref, ref) {
   }, [formContext, formInstance, name]);
 
   // Pass props to store
-  setValidateMessages(_objectSpread2$5(_objectSpread2$5({}, formContext.validateMessages), validateMessages));
+  setValidateMessages(_objectSpread2$7(_objectSpread2$7({}, formContext.validateMessages), validateMessages));
   setCallbacks({
     onValuesChange: onValuesChange,
     onFieldsChange: function onFieldsChange(changedFields) {
@@ -17326,12 +17598,12 @@ var Form = function Form(_ref, ref) {
   setPreserve(preserve);
 
   // Set initial value, init store value when first mount
-  var mountRef = React$k.useRef(null);
+  var mountRef = React$r.useRef(null);
   setInitialValues(initialValues, !mountRef.current);
   if (!mountRef.current) {
     mountRef.current = true;
   }
-  React$k.useEffect(function () {
+  React$r.useEffect(function () {
     return function () {
       return destroyForm(clearOnDestroy);
     };
@@ -17353,27 +17625,27 @@ var Form = function Form(_ref, ref) {
   useSubscribe(!childrenRenderProps);
 
   // Listen if fields provided. We use ref to save prev data here to avoid additional render
-  var prevFieldsRef = React$k.useRef();
-  React$k.useEffect(function () {
+  var prevFieldsRef = React$r.useRef();
+  React$r.useEffect(function () {
     if (!isSimilar(prevFieldsRef.current || [], fields || [])) {
       formInstance.setFields(fields || []);
     }
     prevFieldsRef.current = fields;
   }, [fields, formInstance]);
-  var formContextValue = React$k.useMemo(function () {
-    return _objectSpread2$5(_objectSpread2$5({}, formInstance), {}, {
+  var formContextValue = React$r.useMemo(function () {
+    return _objectSpread2$7(_objectSpread2$7({}, formInstance), {}, {
       validateTrigger: validateTrigger
     });
   }, [formInstance, validateTrigger]);
-  var wrapperNode = /*#__PURE__*/React$k.createElement(ListContext.Provider, {
+  var wrapperNode = /*#__PURE__*/React$r.createElement(ListContext.Provider, {
     value: null
-  }, /*#__PURE__*/React$k.createElement(Context.Provider, {
+  }, /*#__PURE__*/React$r.createElement(Context.Provider, {
     value: formContextValue
   }, childrenNode));
   if (Component === false) {
     return wrapperNode;
   }
-  return /*#__PURE__*/React$k.createElement(Component, _extends({}, restProps, {
+  return /*#__PURE__*/React$r.createElement(Component, _extends$1({}, restProps, {
     ref: nativeElementRef,
     onSubmit: function onSubmit(event) {
       event.preventDefault();
@@ -17478,7 +17750,7 @@ function useWatch() {
   return value;
 }
 
-var InternalForm = /*#__PURE__*/React$k.forwardRef(Form);
+var InternalForm = /*#__PURE__*/React$r.forwardRef(Form);
 var RefForm = InternalForm;
 RefForm.FormProvider = FormProvider$1;
 RefForm.Field = WrapperField;
@@ -17498,7 +17770,7 @@ var es$2 = /*#__PURE__*/Object.freeze({
   useWatch: useWatch
 });
 
-var require$$3 = /*@__PURE__*/getAugmentedNamespace(es$2);
+var require$$3$1 = /*@__PURE__*/getAugmentedNamespace(es$2);
 
 var omit$2 = {};
 
@@ -17516,31 +17788,31 @@ function omit$1(obj, fields) {
   return clone;
 }
 
-var _interopRequireDefault$s = interopRequireDefaultExports.default;
-var _interopRequireWildcard$g = interopRequireWildcardExports.default;
+var _interopRequireDefault$B = interopRequireDefaultExports.default;
+var _interopRequireWildcard$o = interopRequireWildcardExports.default;
 Object.defineProperty(context, "__esModule", {
   value: true
 });
 context.VariantContext = context.NoStyleItemContext = context.NoFormStyle = context.FormProvider = context.FormItemPrefixContext = context.FormItemInputContext = context.FormContext = void 0;
-var _react$h = _interopRequireWildcard$g(React__default);
-var React$a = _react$h;
-var _rcFieldForm = require$$3;
-var _omit$2 = _interopRequireDefault$s(omit$2);
-context.FormContext = /*#__PURE__*/React$a.createContext({
+var _react$i = _interopRequireWildcard$o(React__default);
+var React$h = _react$i;
+var _rcFieldForm = require$$3$1;
+var _omit$2 = _interopRequireDefault$B(omit$2);
+context.FormContext = /*#__PURE__*/React$h.createContext({
   labelAlign: 'right',
   vertical: false,
   itemRef: () => {}
 });
-context.NoStyleItemContext = /*#__PURE__*/React$a.createContext(null);
+context.NoStyleItemContext = /*#__PURE__*/React$h.createContext(null);
 const FormProvider = props => {
   const providerProps = (0, _omit$2.default)(props, ['prefixCls']);
-  return /*#__PURE__*/React$a.createElement(_rcFieldForm.FormProvider, Object.assign({}, providerProps));
+  return /*#__PURE__*/React$h.createElement(_rcFieldForm.FormProvider, Object.assign({}, providerProps));
 };
 context.FormProvider = FormProvider;
-context.FormItemPrefixContext = /*#__PURE__*/React$a.createContext({
+context.FormItemPrefixContext = /*#__PURE__*/React$h.createContext({
   prefixCls: ''
 });
-const FormItemInputContext = context.FormItemInputContext = /*#__PURE__*/React$a.createContext({});
+const FormItemInputContext = context.FormItemInputContext = /*#__PURE__*/React$h.createContext({});
 if (process.env.NODE_ENV !== 'production') {
   FormItemInputContext.displayName = 'FormItemInputContext';
 }
@@ -17550,8 +17822,8 @@ const NoFormStyle = _ref => {
     status,
     override
   } = _ref;
-  const formItemInputContext = (0, _react$h.useContext)(FormItemInputContext);
-  const newFormItemInputContext = (0, _react$h.useMemo)(() => {
+  const formItemInputContext = (0, _react$i.useContext)(FormItemInputContext);
+  const newFormItemInputContext = (0, _react$i.useMemo)(() => {
     const newContext = Object.assign({}, formItemInputContext);
     if (override) {
       delete newContext.isFormItemInput;
@@ -17563,31 +17835,31 @@ const NoFormStyle = _ref => {
     }
     return newContext;
   }, [status, override, formItemInputContext]);
-  return /*#__PURE__*/React$a.createElement(FormItemInputContext.Provider, {
+  return /*#__PURE__*/React$h.createElement(FormItemInputContext.Provider, {
     value: newFormItemInputContext
   }, children);
 };
 context.NoFormStyle = NoFormStyle;
-context.VariantContext = /*#__PURE__*/(0, _react$h.createContext)(undefined);
+context.VariantContext = /*#__PURE__*/(0, _react$i.createContext)(undefined);
 
-var _interopRequireDefault$r = interopRequireDefaultExports.default;
-var _interopRequireWildcard$f = interopRequireWildcardExports.default;
+var _interopRequireDefault$A = interopRequireDefaultExports.default;
+var _interopRequireWildcard$n = interopRequireWildcardExports.default;
 Object.defineProperty(Group$1, "__esModule", {
   value: true
 });
 Group$1.default = void 0;
-var _react$g = _interopRequireWildcard$f(React__default);
-var React$9 = _react$g;
-var _classnames$d = _interopRequireDefault$r(classnamesExports);
-var _warning$5 = warning$4;
+var _react$h = _interopRequireWildcard$n(React__default);
+var React$g = _react$h;
+var _classnames$e = _interopRequireDefault$A(classnamesExports);
+var _warning$6 = warning$5;
 var _configProvider$c = configProvider;
 var _context$5 = context;
-var _style$6 = _interopRequireDefault$r(style$6);
+var _style$6 = _interopRequireDefault$A(style$6);
 const Group = props => {
   const {
     getPrefixCls,
     direction
-  } = (0, _react$g.useContext)(_configProvider$c.ConfigContext);
+  } = (0, _react$h.useContext)(_configProvider$c.ConfigContext);
   const {
     prefixCls: customizePrefixCls,
     className
@@ -17595,28 +17867,28 @@ const Group = props => {
   const prefixCls = getPrefixCls('input-group', customizePrefixCls);
   const inputPrefixCls = getPrefixCls('input');
   const [wrapCSSVar, hashId] = (0, _style$6.default)(inputPrefixCls);
-  const cls = (0, _classnames$d.default)(prefixCls, {
+  const cls = (0, _classnames$e.default)(prefixCls, {
     [`${prefixCls}-lg`]: props.size === 'large',
     [`${prefixCls}-sm`]: props.size === 'small',
     [`${prefixCls}-compact`]: props.compact,
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, hashId, className);
-  const formItemContext = (0, _react$g.useContext)(_context$5.FormItemInputContext);
-  const groupFormItemContext = (0, _react$g.useMemo)(() => Object.assign(Object.assign({}, formItemContext), {
+  const formItemContext = (0, _react$h.useContext)(_context$5.FormItemInputContext);
+  const groupFormItemContext = (0, _react$h.useMemo)(() => Object.assign(Object.assign({}, formItemContext), {
     isFormItemInput: false
   }), [formItemContext]);
   if (process.env.NODE_ENV !== 'production') {
-    const warning = (0, _warning$5.devUseWarning)('Input.Group');
+    const warning = (0, _warning$6.devUseWarning)('Input.Group');
     warning.deprecated(false, 'Input.Group', 'Space.Compact');
   }
-  return wrapCSSVar( /*#__PURE__*/React$9.createElement("span", {
+  return wrapCSSVar( /*#__PURE__*/React$g.createElement("span", {
     className: cls,
     style: props.style,
     onMouseEnter: props.onMouseEnter,
     onMouseLeave: props.onMouseLeave,
     onFocus: props.onFocus,
     onBlur: props.onBlur
-  }, /*#__PURE__*/React$9.createElement(_context$5.FormItemInputContext.Provider, {
+  }, /*#__PURE__*/React$g.createElement(_context$5.FormItemInputContext.Provider, {
     value: groupFormItemContext
   }, props.children)));
 };
@@ -17740,7 +18012,8 @@ var BaseInput = /*#__PURE__*/React__default.forwardRef(function (props, ref) {
     classNames = props.classNames,
     dataAttrs = props.dataAttrs,
     styles = props.styles,
-    components = props.components;
+    components = props.components,
+    onClear = props.onClear;
   var inputElement = children !== null && children !== void 0 ? children : inputEl;
   var AffixWrapperComponent = (components === null || components === void 0 ? void 0 : components.affixWrapper) || 'span';
   var GroupWrapperComponent = (components === null || components === void 0 ? void 0 : components.groupWrapper) || 'span';
@@ -17769,34 +18042,35 @@ var BaseInput = /*#__PURE__*/React__default.forwardRef(function (props, ref) {
 
   // ================== Prefix & Suffix ================== //
   if (hasAffix) {
-    var _clsx2;
     // ================== Clear Icon ================== //
     var clearIcon = null;
     if (allowClear) {
-      var _clsx;
       var needClear = !disabled && !readOnly && value;
       var clearIconCls = "".concat(prefixCls, "-clear-icon");
       var iconNode = _typeof$1(allowClear) === 'object' && allowClear !== null && allowClear !== void 0 && allowClear.clearIcon ? allowClear.clearIcon : '✖';
       clearIcon = /*#__PURE__*/React__default.createElement("span", {
-        onClick: handleReset
+        onClick: function onClick(event) {
+          handleReset === null || handleReset === void 0 || handleReset(event);
+          onClear === null || onClear === void 0 || onClear();
+        }
         // Do not trigger onBlur when clear input
         // https://github.com/ant-design/ant-design/issues/31200
         ,
         onMouseDown: function onMouseDown(e) {
           return e.preventDefault();
         },
-        className: clsx(clearIconCls, (_clsx = {}, _defineProperty(_clsx, "".concat(clearIconCls, "-hidden"), !needClear), _defineProperty(_clsx, "".concat(clearIconCls, "-has-suffix"), !!suffix), _clsx)),
+        className: clsx(clearIconCls, _defineProperty(_defineProperty({}, "".concat(clearIconCls, "-hidden"), !needClear), "".concat(clearIconCls, "-has-suffix"), !!suffix)),
         role: "button",
         tabIndex: -1
       }, iconNode);
     }
     var affixWrapperPrefixCls = "".concat(prefixCls, "-affix-wrapper");
-    var affixWrapperCls = clsx(affixWrapperPrefixCls, (_clsx2 = {}, _defineProperty(_clsx2, "".concat(prefixCls, "-disabled"), disabled), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-disabled"), disabled), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-focused"), focused), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-readonly"), readOnly), _defineProperty(_clsx2, "".concat(affixWrapperPrefixCls, "-input-with-clear-btn"), suffix && allowClear && value), _clsx2), classes === null || classes === void 0 ? void 0 : classes.affixWrapper, classNames === null || classNames === void 0 ? void 0 : classNames.affixWrapper, classNames === null || classNames === void 0 ? void 0 : classNames.variant);
+    var affixWrapperCls = clsx(affixWrapperPrefixCls, _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty({}, "".concat(prefixCls, "-disabled"), disabled), "".concat(affixWrapperPrefixCls, "-disabled"), disabled), "".concat(affixWrapperPrefixCls, "-focused"), focused), "".concat(affixWrapperPrefixCls, "-readonly"), readOnly), "".concat(affixWrapperPrefixCls, "-input-with-clear-btn"), suffix && allowClear && value), classes === null || classes === void 0 ? void 0 : classes.affixWrapper, classNames === null || classNames === void 0 ? void 0 : classNames.affixWrapper, classNames === null || classNames === void 0 ? void 0 : classNames.variant);
     var suffixNode = (suffix || allowClear) && /*#__PURE__*/React__default.createElement("span", {
       className: clsx("".concat(prefixCls, "-suffix"), classNames === null || classNames === void 0 ? void 0 : classNames.suffix),
       style: styles === null || styles === void 0 ? void 0 : styles.suffix
     }, clearIcon, suffix);
-    element = /*#__PURE__*/React__default.createElement(AffixWrapperComponent, _extends({
+    element = /*#__PURE__*/React__default.createElement(AffixWrapperComponent, _extends$1({
       className: affixWrapperCls,
       style: styles === null || styles === void 0 ? void 0 : styles.affixWrapper,
       onClick: onInputClick
@@ -17833,7 +18107,7 @@ var BaseInput = /*#__PURE__*/React__default.forwardRef(function (props, ref) {
   // `className` and `style` are always on the root element
   return /*#__PURE__*/React__default.cloneElement(element, {
     className: clsx((_element$props = element.props) === null || _element$props === void 0 ? void 0 : _element$props.className, className) || null,
-    style: _objectSpread2$5(_objectSpread2$5({}, (_element$props2 = element.props) === null || _element$props2 === void 0 ? void 0 : _element$props2.style), style),
+    style: _objectSpread2$7(_objectSpread2$7({}, (_element$props2 = element.props) === null || _element$props2 === void 0 ? void 0 : _element$props2.style), style),
     hidden: hidden
   });
 });
@@ -17848,18 +18122,18 @@ function omit(obj, fields) {
   return clone;
 }
 
-var _excluded$3 = ["show"];
+var _excluded$5 = ["show"];
 function useCount(count, showCount) {
-  return React$k.useMemo(function () {
+  return React$r.useMemo(function () {
     var mergedConfig = {};
     if (showCount) {
       mergedConfig.show = _typeof$1(showCount) === 'object' && showCount.formatter ? showCount.formatter : !!showCount;
     }
-    mergedConfig = _objectSpread2$5(_objectSpread2$5({}, mergedConfig), count);
+    mergedConfig = _objectSpread2$7(_objectSpread2$7({}, mergedConfig), count);
     var _ref = mergedConfig,
       show = _ref.show,
-      rest = _objectWithoutProperties(_ref, _excluded$3);
-    return _objectSpread2$5(_objectSpread2$5({}, rest), {}, {
+      rest = _objectWithoutProperties(_ref, _excluded$5);
+    return _objectSpread2$7(_objectSpread2$7({}, rest), {}, {
       show: !!show,
       showFormatter: typeof show === 'function' ? show : undefined,
       strategy: rest.strategy || function (value) {
@@ -17869,7 +18143,7 @@ function useCount(count, showCount) {
   }, [count, showCount]);
 }
 
-var _excluded$2 = ["autoComplete", "onChange", "onFocus", "onBlur", "onPressEnter", "onKeyDown", "prefixCls", "disabled", "htmlSize", "className", "maxLength", "suffix", "showCount", "count", "type", "classes", "classNames", "styles", "onCompositionStart", "onCompositionEnd"];
+var _excluded$4 = ["autoComplete", "onChange", "onFocus", "onBlur", "onPressEnter", "onKeyDown", "onKeyUp", "prefixCls", "disabled", "htmlSize", "className", "maxLength", "suffix", "showCount", "count", "type", "classes", "classNames", "styles", "onCompositionStart", "onCompositionEnd"];
 var Input$2 = /*#__PURE__*/forwardRef(function (props, ref) {
   var autoComplete = props.autoComplete,
     onChange = props.onChange,
@@ -17877,6 +18151,7 @@ var Input$2 = /*#__PURE__*/forwardRef(function (props, ref) {
     onBlur = props.onBlur,
     onPressEnter = props.onPressEnter,
     onKeyDown = props.onKeyDown,
+    onKeyUp = props.onKeyUp,
     _props$prefixCls = props.prefixCls,
     prefixCls = _props$prefixCls === void 0 ? 'rc-input' : _props$prefixCls,
     disabled = props.disabled,
@@ -17893,12 +18168,13 @@ var Input$2 = /*#__PURE__*/forwardRef(function (props, ref) {
     styles = props.styles,
     _onCompositionStart = props.onCompositionStart,
     onCompositionEnd = props.onCompositionEnd,
-    rest = _objectWithoutProperties(props, _excluded$2);
+    rest = _objectWithoutProperties(props, _excluded$4);
   var _useState = useState(false),
     _useState2 = _slicedToArray(_useState, 2),
     focused = _useState2[0],
     setFocused = _useState2[1];
   var compositionRef = useRef(false);
+  var keyLockRef = useRef(false);
   var inputRef = useRef(null);
   var holderRef = useRef(null);
   var focus = function focus(option) {
@@ -17993,10 +18269,17 @@ var Input$2 = /*#__PURE__*/forwardRef(function (props, ref) {
     onCompositionEnd === null || onCompositionEnd === void 0 || onCompositionEnd(e);
   };
   var handleKeyDown = function handleKeyDown(e) {
-    if (onPressEnter && e.key === 'Enter') {
+    if (onPressEnter && e.key === 'Enter' && !keyLockRef.current) {
+      keyLockRef.current = true;
       onPressEnter(e);
     }
     onKeyDown === null || onKeyDown === void 0 || onKeyDown(e);
+  };
+  var handleKeyUp = function handleKeyUp(e) {
+    if (e.key === 'Enter') {
+      keyLockRef.current = false;
+    }
+    onKeyUp === null || onKeyUp === void 0 || onKeyUp(e);
   };
   var handleFocus = function handleFocus(e) {
     setFocused(true);
@@ -18021,14 +18304,15 @@ var Input$2 = /*#__PURE__*/forwardRef(function (props, ref) {
     var otherProps = omit(props, ['prefixCls', 'onPressEnter', 'addonBefore', 'addonAfter', 'prefix', 'suffix', 'allowClear',
     // Input elements must be either controlled or uncontrolled,
     // specify either the value prop, or the defaultValue prop, but not both.
-    'defaultValue', 'showCount', 'count', 'classes', 'htmlSize', 'styles', 'classNames']);
-    return /*#__PURE__*/React__default.createElement("input", _extends({
+    'defaultValue', 'showCount', 'count', 'classes', 'htmlSize', 'styles', 'classNames', 'onClear']);
+    return /*#__PURE__*/React__default.createElement("input", _extends$1({
       autoComplete: autoComplete
     }, otherProps, {
       onChange: onInternalChange,
       onFocus: handleFocus,
       onBlur: handleBlur,
       onKeyDown: handleKeyDown,
+      onKeyUp: handleKeyUp,
       className: clsx(prefixCls, _defineProperty({}, "".concat(prefixCls, "-disabled"), disabled), classNames === null || classNames === void 0 ? void 0 : classNames.input),
       style: styles === null || styles === void 0 ? void 0 : styles.input,
       ref: inputRef,
@@ -18052,14 +18336,14 @@ var Input$2 = /*#__PURE__*/forwardRef(function (props, ref) {
       }) : "".concat(valueLength).concat(hasMaxLength ? " / ".concat(mergedMax) : '');
       return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, countConfig.show && /*#__PURE__*/React__default.createElement("span", {
         className: clsx("".concat(prefixCls, "-show-count-suffix"), _defineProperty({}, "".concat(prefixCls, "-show-count-has-suffix"), !!suffix), classNames === null || classNames === void 0 ? void 0 : classNames.count),
-        style: _objectSpread2$5({}, styles === null || styles === void 0 ? void 0 : styles.count)
+        style: _objectSpread2$7({}, styles === null || styles === void 0 ? void 0 : styles.count)
       }, dataCount), suffix);
     }
     return null;
   };
 
   // ====================== Render ======================
-  return /*#__PURE__*/React__default.createElement(BaseInput, _extends({}, rest, {
+  return /*#__PURE__*/React__default.createElement(BaseInput, _extends$1({}, rest, {
     prefixCls: prefixCls,
     className: clsx(className, outOfRangeCls),
     handleReset: handleReset,
@@ -18084,19 +18368,19 @@ var require$$4$1 = /*@__PURE__*/getAugmentedNamespace(es$1);
 
 var ref = {};
 
-var _interopRequireDefault$q = interopRequireDefaultExports.default;
+var _interopRequireDefault$z = interopRequireDefaultExports.default;
 Object.defineProperty(ref, "__esModule", {
   value: true
 });
 ref.useComposeRef = ref.supportRef = ref.supportNodeRef = ref.getNodeRef = ref.fillRef = ref.composeRef = void 0;
-var _typeof2$1 = _interopRequireDefault$q(_typeofExports);
-var _react$f = React__default;
+var _typeof2$2 = _interopRequireDefault$z(_typeofExports);
+var _react$g = React__default;
 var _reactIs$1 = reactIsExports;
-var _useMemo = _interopRequireDefault$q(useMemo$1);
+var _useMemo = _interopRequireDefault$z(useMemo$1);
 var fillRef = ref.fillRef = function fillRef(ref, node) {
   if (typeof ref === 'function') {
     ref(node);
-  } else if ((0, _typeof2$1.default)(ref) === 'object' && ref && 'current' in ref) {
+  } else if ((0, _typeof2$2.default)(ref) === 'object' && ref && 'current' in ref) {
     ref.current = node;
   }
 };
@@ -18146,7 +18430,7 @@ var supportRef = ref.supportRef = function supportRef(nodeOrComponent) {
   return true;
 };
 function isReactElement(node) {
-  return /*#__PURE__*/(0, _react$f.isValidElement)(node) && !(0, _reactIs$1.isFragment)(node);
+  return /*#__PURE__*/(0, _react$g.isValidElement)(node) && !(0, _reactIs$1.isFragment)(node);
 }
 ref.supportNodeRef = function supportNodeRef(node) {
   return isReactElement(node) && supportRef(node);
@@ -18157,7 +18441,7 @@ ref.supportNodeRef = function supportNodeRef(node) {
  * But a property from `props.ref`.
  * To check if `props.ref` exist or fallback to `ref`.
  */
-ref.getNodeRef = Number(_react$f.version.split('.')[0]) >= 19 ?
+ref.getNodeRef = Number(_react$g.version.split('.')[0]) >= 19 ?
 // >= React 19
 function (node) {
   if (isReactElement(node)) {
@@ -18179,17 +18463,17 @@ var Compact$1 = {};
 
 var toArray$1 = {};
 
-var _interopRequireDefault$p = interopRequireDefaultExports.default;
+var _interopRequireDefault$y = interopRequireDefaultExports.default;
 Object.defineProperty(toArray$1, "__esModule", {
   value: true
 });
 toArray$1.default = toArray;
-var _react$e = _interopRequireDefault$p(React__default);
+var _react$f = _interopRequireDefault$y(React__default);
 var _reactIs = reactIsExports;
 function toArray(children) {
   var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var ret = [];
-  _react$e.default.Children.forEach(children, function (child) {
+  _react$f.default.Children.forEach(children, function (child) {
     if ((child === undefined || child === null) && !option.keepEmpty) {
       return;
     }
@@ -18206,16 +18490,16 @@ function toArray(children) {
 
 var useSize$1 = {};
 
-var _interopRequireDefault$o = interopRequireDefaultExports.default;
+var _interopRequireDefault$x = interopRequireDefaultExports.default;
 Object.defineProperty(useSize$1, "__esModule", {
   value: true
 });
 useSize$1.default = void 0;
-var _react$d = _interopRequireDefault$o(React__default);
-var _SizeContext = _interopRequireDefault$o(SizeContext$1);
+var _react$e = _interopRequireDefault$x(React__default);
+var _SizeContext = _interopRequireDefault$x(SizeContext$1);
 const useSize = customSize => {
-  const size = _react$d.default.useContext(_SizeContext.default);
-  const mergedSize = _react$d.default.useMemo(() => {
+  const size = _react$e.default.useContext(_SizeContext.default);
+  const mergedSize = _react$e.default.useMemo(() => {
     if (!customSize) {
       return size;
     }
@@ -18258,13 +18542,13 @@ const genSpaceCompactStyle = token => {
 // ============================== Export ==============================
 compact.default = genSpaceCompactStyle;
 
-var _interopRequireDefault$n = interopRequireDefaultExports.default;
+var _interopRequireDefault$w = interopRequireDefaultExports.default;
 Object.defineProperty(style$2, "__esModule", {
   value: true
 });
 style$2.prepareComponentToken = style$2.default = void 0;
 var _internal$7 = internal;
-var _compact = _interopRequireDefault$n(compact);
+var _compact = _interopRequireDefault$w(compact);
 const genSpaceStyle = token => {
   const {
     componentCls,
@@ -18347,18 +18631,18 @@ style$2.default = (0, _internal$7.genStyleHooks)('Space', token => {
   resetStyle: false
 });
 
-var _interopRequireDefault$m = interopRequireDefaultExports.default;
-var _interopRequireWildcard$e = interopRequireWildcardExports.default;
+var _interopRequireDefault$v = interopRequireDefaultExports.default;
+var _interopRequireWildcard$m = interopRequireWildcardExports.default;
 Object.defineProperty(Compact$1, "__esModule", {
   value: true
 });
 Compact$1.useCompactItemContext = Compact$1.default = Compact$1.SpaceCompactItemContext = Compact$1.NoCompactStyle = void 0;
-var React$8 = _interopRequireWildcard$e(React__default);
-var _classnames$c = _interopRequireDefault$m(classnamesExports);
-var _toArray = _interopRequireDefault$m(toArray$1);
+var React$f = _interopRequireWildcard$m(React__default);
+var _classnames$d = _interopRequireDefault$v(classnamesExports);
+var _toArray = _interopRequireDefault$v(toArray$1);
 var _configProvider$b = configProvider;
-var _useSize$5 = _interopRequireDefault$m(useSize$1);
-var _style$5 = _interopRequireDefault$m(style$2);
+var _useSize$5 = _interopRequireDefault$v(useSize$1);
+var _style$5 = _interopRequireDefault$v(style$2);
 var __rest$8 = function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
@@ -18367,10 +18651,10 @@ var __rest$8 = function (s, e) {
   }
   return t;
 };
-const SpaceCompactItemContext = Compact$1.SpaceCompactItemContext = /*#__PURE__*/React$8.createContext(null);
+const SpaceCompactItemContext = Compact$1.SpaceCompactItemContext = /*#__PURE__*/React$f.createContext(null);
 const useCompactItemContext = (prefixCls, direction) => {
-  const compactItemContext = React$8.useContext(SpaceCompactItemContext);
-  const compactItemClassnames = React$8.useMemo(() => {
+  const compactItemContext = React$f.useContext(SpaceCompactItemContext);
+  const compactItemClassnames = React$f.useMemo(() => {
     if (!compactItemContext) {
       return '';
     }
@@ -18380,7 +18664,7 @@ const useCompactItemContext = (prefixCls, direction) => {
       isLastItem
     } = compactItemContext;
     const separator = compactDirection === 'vertical' ? '-vertical-' : '-';
-    return (0, _classnames$c.default)(`${prefixCls}-compact${separator}item`, {
+    return (0, _classnames$d.default)(`${prefixCls}-compact${separator}item`, {
       [`${prefixCls}-compact${separator}first-item`]: isFirstItem,
       [`${prefixCls}-compact${separator}last-item`]: isLastItem,
       [`${prefixCls}-compact${separator}item-rtl`]: direction === 'rtl'
@@ -18397,7 +18681,7 @@ const NoCompactStyle = _ref => {
   let {
     children
   } = _ref;
-  return /*#__PURE__*/React$8.createElement(SpaceCompactItemContext.Provider, {
+  return /*#__PURE__*/React$f.createElement(SpaceCompactItemContext.Provider, {
     value: null
   }, children);
 };
@@ -18407,7 +18691,7 @@ const CompactItem = _a => {
       children
     } = _a,
     otherProps = __rest$8(_a, ["children"]);
-  return /*#__PURE__*/React$8.createElement(SpaceCompactItemContext.Provider, {
+  return /*#__PURE__*/React$f.createElement(SpaceCompactItemContext.Provider, {
     value: otherProps
   }, children);
 };
@@ -18415,7 +18699,7 @@ const Compact = props => {
   const {
     getPrefixCls,
     direction: directionConfig
-  } = React$8.useContext(_configProvider$b.ConfigContext);
+  } = React$f.useContext(_configProvider$b.ConfigContext);
   const {
       size,
       direction,
@@ -18429,16 +18713,16 @@ const Compact = props => {
   const mergedSize = (0, _useSize$5.default)(ctx => size !== null && size !== void 0 ? size : ctx);
   const prefixCls = getPrefixCls('space-compact', customizePrefixCls);
   const [wrapCSSVar, hashId] = (0, _style$5.default)(prefixCls);
-  const clx = (0, _classnames$c.default)(prefixCls, hashId, {
+  const clx = (0, _classnames$d.default)(prefixCls, hashId, {
     [`${prefixCls}-rtl`]: directionConfig === 'rtl',
     [`${prefixCls}-block`]: block,
     [`${prefixCls}-vertical`]: direction === 'vertical'
   }, className, rootClassName);
-  const compactItemContext = React$8.useContext(SpaceCompactItemContext);
+  const compactItemContext = React$f.useContext(SpaceCompactItemContext);
   const childNodes = (0, _toArray.default)(children);
-  const nodes = React$8.useMemo(() => childNodes.map((child, i) => {
+  const nodes = React$f.useMemo(() => childNodes.map((child, i) => {
     const key = (child === null || child === void 0 ? void 0 : child.key) || `${prefixCls}-item-${i}`;
-    return /*#__PURE__*/React$8.createElement(CompactItem, {
+    return /*#__PURE__*/React$f.createElement(CompactItem, {
       key: key,
       compactSize: mergedSize,
       compactDirection: direction,
@@ -18450,18 +18734,18 @@ const Compact = props => {
   if (childNodes.length === 0) {
     return null;
   }
-  return wrapCSSVar( /*#__PURE__*/React$8.createElement("div", Object.assign({
+  return wrapCSSVar( /*#__PURE__*/React$f.createElement("div", Object.assign({
     className: clx
   }, restProps), nodes));
 };
 Compact$1.default = Compact;
 
-var _interopRequireDefault$l = interopRequireDefaultExports.default;
+var _interopRequireDefault$u = interopRequireDefaultExports.default;
 Object.defineProperty(ContextIsolator$1, "__esModule", {
   value: true
 });
 ContextIsolator$1.default = void 0;
-var _react$c = _interopRequireDefault$l(React__default);
+var _react$d = _interopRequireDefault$u(React__default);
 var _context$4 = context;
 var _Compact$3 = Compact$1;
 const ContextIsolator = props => {
@@ -18475,13 +18759,13 @@ const ContextIsolator = props => {
   }
   let result = children;
   if (form) {
-    result = /*#__PURE__*/_react$c.default.createElement(_context$4.NoFormStyle, {
+    result = /*#__PURE__*/_react$d.default.createElement(_context$4.NoFormStyle, {
       override: true,
       status: true
     }, result);
   }
   if (space) {
-    result = /*#__PURE__*/_react$c.default.createElement(_Compact$3.NoCompactStyle, null, result);
+    result = /*#__PURE__*/_react$d.default.createElement(_Compact$3.NoCompactStyle, null, result);
   }
   return result;
 };
@@ -18489,20 +18773,124 @@ ContextIsolator$1.default = ContextIsolator;
 
 var getAllowClear$1 = {};
 
-var CloseCircleFilled$3 = {exports: {}};
+var CloseCircleFilled$4 = {exports: {}};
+
+var CloseCircleFilled$3 = {};
+
+var _extends = {exports: {}};
+
+(function (module) {
+	function _extends() {
+	  return (module.exports = _extends = Object.assign ? Object.assign.bind() : function (n) {
+	    for (var e = 1; e < arguments.length; e++) {
+	      var t = arguments[e];
+	      for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
+	    }
+	    return n;
+	  }, module.exports.__esModule = true, module.exports["default"] = module.exports), _extends.apply(null, arguments);
+	}
+	module.exports = _extends, module.exports.__esModule = true, module.exports["default"] = module.exports; 
+} (_extends));
+
+var _extendsExports = _extends.exports;
 
 var CloseCircleFilled$2 = {};
 
-var CloseCircleFilled$1 = {};
-
 // This icon file is generated automatically.
-Object.defineProperty(CloseCircleFilled$1, "__esModule", { value: true });
-var CloseCircleFilled = { "icon": { "tag": "svg", "attrs": { "fill-rule": "evenodd", "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z" } }] }, "name": "close-circle", "theme": "filled" };
-CloseCircleFilled$1.default = CloseCircleFilled;
+Object.defineProperty(CloseCircleFilled$2, "__esModule", { value: true });
+var CloseCircleFilled$1 = { "icon": { "tag": "svg", "attrs": { "fill-rule": "evenodd", "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z" } }] }, "name": "close-circle", "theme": "filled" };
+CloseCircleFilled$2.default = CloseCircleFilled$1;
 
 var AntdIcon = {};
 
-var IconBase = {};
+var slicedToArray = {exports: {}};
+
+var iterableToArrayLimit = {exports: {}};
+
+(function (module) {
+	function _iterableToArrayLimit(r, l) {
+	  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+	  if (null != t) {
+	    var e,
+	      n,
+	      i,
+	      u,
+	      a = [],
+	      f = !0,
+	      o = !1;
+	    try {
+	      if (i = (t = t.call(r)).next, 0 === l) {
+	        if (Object(t) !== t) return;
+	        f = !1;
+	      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+	    } catch (r) {
+	      o = !0, n = r;
+	    } finally {
+	      try {
+	        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
+	      } finally {
+	        if (o) throw n;
+	      }
+	    }
+	    return a;
+	  }
+	}
+	module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports; 
+} (iterableToArrayLimit));
+
+var iterableToArrayLimitExports = iterableToArrayLimit.exports;
+
+(function (module) {
+	var arrayWithHoles = arrayWithHolesExports;
+	var iterableToArrayLimit = iterableToArrayLimitExports;
+	var unsupportedIterableToArray = unsupportedIterableToArrayExports;
+	var nonIterableRest = nonIterableRestExports;
+	function _slicedToArray(r, e) {
+	  return arrayWithHoles(r) || iterableToArrayLimit(r, e) || unsupportedIterableToArray(r, e) || nonIterableRest();
+	}
+	module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports; 
+} (slicedToArray));
+
+var slicedToArrayExports = slicedToArray.exports;
+
+var objectWithoutProperties = {exports: {}};
+
+var objectWithoutPropertiesLoose = {exports: {}};
+
+(function (module) {
+	function _objectWithoutPropertiesLoose(r, e) {
+	  if (null == r) return {};
+	  var t = {};
+	  for (var n in r) if ({}.hasOwnProperty.call(r, n)) {
+	    if (e.includes(n)) continue;
+	    t[n] = r[n];
+	  }
+	  return t;
+	}
+	module.exports = _objectWithoutPropertiesLoose, module.exports.__esModule = true, module.exports["default"] = module.exports; 
+} (objectWithoutPropertiesLoose));
+
+var objectWithoutPropertiesLooseExports = objectWithoutPropertiesLoose.exports;
+
+(function (module) {
+	var objectWithoutPropertiesLoose = objectWithoutPropertiesLooseExports;
+	function _objectWithoutProperties(e, t) {
+	  if (null == e) return {};
+	  var o,
+	    r,
+	    i = objectWithoutPropertiesLoose(e, t);
+	  if (Object.getOwnPropertySymbols) {
+	    var s = Object.getOwnPropertySymbols(e);
+	    for (r = 0; r < s.length; r++) o = s[r], t.includes(o) || {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]);
+	  }
+	  return i;
+	}
+	module.exports = _objectWithoutProperties, module.exports.__esModule = true, module.exports["default"] = module.exports; 
+} (objectWithoutProperties));
+
+var objectWithoutPropertiesExports = objectWithoutProperties.exports;
+
+var IconBase$1 = {};
 
 var utils$1 = {};
 
@@ -18532,835 +18920,304 @@ function getShadowRoot(ele) {
   return inShadow(ele) ? getRoot(ele) : null;
 }
 
-(function (exports) {
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	function _export(target, all) {
-	    for(var name in all)Object.defineProperty(target, name, {
-	        enumerable: true,
-	        get: all[name]
-	    });
-	}
-	_export(exports, {
-	    generate: function() {
-	        return generate;
-	    },
-	    getSecondaryColor: function() {
-	        return getSecondaryColor;
-	    },
-	    iconStyles: function() {
-	        return iconStyles;
-	    },
-	    isIconDefinition: function() {
-	        return isIconDefinition;
-	    },
-	    normalizeAttrs: function() {
-	        return normalizeAttrs;
-	    },
-	    normalizeTwoToneColors: function() {
-	        return normalizeTwoToneColors;
-	    },
-	    svgBaseProps: function() {
-	        return svgBaseProps;
-	    },
-	    useInsertStyles: function() {
-	        return useInsertStyles;
-	    },
-	    warning: function() {
-	        return warning;
-	    }
-	});
-	var _colors = require$$2$1;
-	var _dynamicCSS = dynamicCSS;
-	var _shadow = shadow;
-	var _warning = /*#__PURE__*/ _interop_require_default(warning$3);
-	var _react = /*#__PURE__*/ _interop_require_wildcard(React__default);
-	var _Context = /*#__PURE__*/ _interop_require_default(Context$2);
-	function _define_property(obj, key, value) {
-	    if (key in obj) {
-	        Object.defineProperty(obj, key, {
-	            value: value,
-	            enumerable: true,
-	            configurable: true,
-	            writable: true
-	        });
-	    } else {
-	        obj[key] = value;
-	    }
-	    return obj;
-	}
-	function _interop_require_default(obj) {
-	    return obj && obj.__esModule ? obj : {
-	        default: obj
-	    };
-	}
-	function _getRequireWildcardCache(nodeInterop) {
-	    if (typeof WeakMap !== "function") return null;
-	    var cacheBabelInterop = new WeakMap();
-	    var cacheNodeInterop = new WeakMap();
-	    return (_getRequireWildcardCache = function(nodeInterop) {
-	        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-	    })(nodeInterop);
-	}
-	function _interop_require_wildcard(obj, nodeInterop) {
-	    if (obj && obj.__esModule) {
-	        return obj;
-	    }
-	    if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
-	        return {
-	            default: obj
-	        };
-	    }
-	    var cache = _getRequireWildcardCache(nodeInterop);
-	    if (cache && cache.has(obj)) {
-	        return cache.get(obj);
-	    }
-	    var newObj = {
-	        __proto__: null
-	    };
-	    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-	    for(var key in obj){
-	        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-	            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-	            if (desc && (desc.get || desc.set)) {
-	                Object.defineProperty(newObj, key, desc);
-	            } else {
-	                newObj[key] = obj[key];
-	            }
-	        }
-	    }
-	    newObj.default = obj;
-	    if (cache) {
-	        cache.set(obj, newObj);
-	    }
-	    return newObj;
-	}
-	function _object_spread(target) {
-	    for(var i = 1; i < arguments.length; i++){
-	        var source = arguments[i] != null ? arguments[i] : {};
-	        var ownKeys = Object.keys(source);
-	        if (typeof Object.getOwnPropertySymbols === "function") {
-	            ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
-	                return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-	            }));
-	        }
-	        ownKeys.forEach(function(key) {
-	            _define_property(target, key, source[key]);
-	        });
-	    }
-	    return target;
-	}
-	function camelCase(input) {
-	    return input.replace(/-(.)/g, function(match, g) {
-	        return g.toUpperCase();
-	    });
-	}
-	function warning(valid, message) {
-	    (0, _warning.default)(valid, "[@ant-design/icons] ".concat(message));
-	}
-	function isIconDefinition(target) {
-	    return typeof target === 'object' && typeof target.name === 'string' && typeof target.theme === 'string' && (typeof target.icon === 'object' || typeof target.icon === 'function');
-	}
-	function normalizeAttrs() {
-	    var attrs = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-	    return Object.keys(attrs).reduce(function(acc, key) {
-	        var val = attrs[key];
-	        switch(key){
-	            case 'class':
-	                acc.className = val;
-	                delete acc.class;
-	                break;
-	            default:
-	                delete acc[key];
-	                acc[camelCase(key)] = val;
-	        }
-	        return acc;
-	    }, {});
-	}
-	function generate(node, key, rootProps) {
-	    if (!rootProps) {
-	        return _react.default.createElement(node.tag, _object_spread({
-	            key: key
-	        }, normalizeAttrs(node.attrs)), (node.children || []).map(function(child, index) {
-	            return generate(child, "".concat(key, "-").concat(node.tag, "-").concat(index));
-	        }));
-	    }
-	    return _react.default.createElement(node.tag, _object_spread({
-	        key: key
-	    }, normalizeAttrs(node.attrs), rootProps), (node.children || []).map(function(child, index) {
-	        return generate(child, "".concat(key, "-").concat(node.tag, "-").concat(index));
-	    }));
-	}
-	function getSecondaryColor(primaryColor) {
-	    // choose the second color
-	    return (0, _colors.generate)(primaryColor)[0];
-	}
-	function normalizeTwoToneColors(twoToneColor) {
-	    if (!twoToneColor) {
-	        return [];
-	    }
-	    return Array.isArray(twoToneColor) ? twoToneColor : [
-	        twoToneColor
-	    ];
-	}
-	var svgBaseProps = {
-	    width: '1em',
-	    height: '1em',
-	    fill: 'currentColor',
-	    'aria-hidden': 'true',
-	    focusable: 'false'
-	};
-	var iconStyles = "\n.anticon {\n  display: inline-flex;\n  align-items: center;\n  color: inherit;\n  font-style: normal;\n  line-height: 0;\n  text-align: center;\n  text-transform: none;\n  vertical-align: -0.125em;\n  text-rendering: optimizeLegibility;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.anticon > * {\n  line-height: 1;\n}\n\n.anticon svg {\n  display: inline-block;\n}\n\n.anticon::before {\n  display: none;\n}\n\n.anticon .anticon-icon {\n  display: block;\n}\n\n.anticon[tabindex] {\n  cursor: pointer;\n}\n\n.anticon-spin::before,\n.anticon-spin {\n  display: inline-block;\n  -webkit-animation: loadingCircle 1s infinite linear;\n  animation: loadingCircle 1s infinite linear;\n}\n\n@-webkit-keyframes loadingCircle {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes loadingCircle {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n";
-	var useInsertStyles = function(eleRef) {
-	    var _useContext = (0, _react.useContext)(_Context.default), csp = _useContext.csp, prefixCls = _useContext.prefixCls;
-	    var mergedStyleStr = iconStyles;
-	    if (prefixCls) {
-	        mergedStyleStr = mergedStyleStr.replace(/anticon/g, prefixCls);
-	    }
-	    (0, _react.useEffect)(function() {
-	        var ele = eleRef.current;
-	        var shadowRoot = (0, _shadow.getShadowRoot)(ele);
-	        (0, _dynamicCSS.updateCSS)(mergedStyleStr, '@ant-design-icons', {
-	            prepend: true,
-	            csp: csp,
-	            attachTo: shadowRoot
-	        });
-	    }, []);
-	}; 
-} (utils$1));
+var _interopRequireWildcard$l = interopRequireWildcardExports.default;
+var _interopRequireDefault$t = interopRequireDefaultExports.default;
+Object.defineProperty(utils$1, "__esModule", {
+  value: true
+});
+utils$1.generate = generate;
+utils$1.getSecondaryColor = getSecondaryColor;
+utils$1.iconStyles = void 0;
+utils$1.isIconDefinition = isIconDefinition;
+utils$1.normalizeAttrs = normalizeAttrs;
+utils$1.normalizeTwoToneColors = normalizeTwoToneColors;
+utils$1.useInsertStyles = utils$1.svgBaseProps = void 0;
+utils$1.warning = warning;
+var _objectSpread2$3 = _interopRequireDefault$t(objectSpread2Exports);
+var _typeof2$1 = _interopRequireDefault$t(_typeofExports);
+var _colors$1 = require$$8;
+var _dynamicCSS = dynamicCSS;
+var _shadow = shadow;
+var _warning$5 = _interopRequireDefault$t(warning$4);
+var _react$c = _interopRequireWildcard$l(React__default);
+var _Context$1 = _interopRequireDefault$t(Context$2);
+function camelCase(input) {
+  return input.replace(/-(.)/g, function (match, g) {
+    return g.toUpperCase();
+  });
+}
+function warning(valid, message) {
+  (0, _warning$5.default)(valid, "[@ant-design/icons] ".concat(message));
+}
+function isIconDefinition(target) {
+  return (0, _typeof2$1.default)(target) === 'object' && typeof target.name === 'string' && typeof target.theme === 'string' && ((0, _typeof2$1.default)(target.icon) === 'object' || typeof target.icon === 'function');
+}
+function normalizeAttrs() {
+  var attrs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  return Object.keys(attrs).reduce(function (acc, key) {
+    var val = attrs[key];
+    switch (key) {
+      case 'class':
+        acc.className = val;
+        delete acc.class;
+        break;
+      default:
+        delete acc[key];
+        acc[camelCase(key)] = val;
+    }
+    return acc;
+  }, {});
+}
+function generate(node, key, rootProps) {
+  if (!rootProps) {
+    return /*#__PURE__*/_react$c.default.createElement(node.tag, (0, _objectSpread2$3.default)({
+      key: key
+    }, normalizeAttrs(node.attrs)), (node.children || []).map(function (child, index) {
+      return generate(child, "".concat(key, "-").concat(node.tag, "-").concat(index));
+    }));
+  }
+  return /*#__PURE__*/_react$c.default.createElement(node.tag, (0, _objectSpread2$3.default)((0, _objectSpread2$3.default)({
+    key: key
+  }, normalizeAttrs(node.attrs)), rootProps), (node.children || []).map(function (child, index) {
+    return generate(child, "".concat(key, "-").concat(node.tag, "-").concat(index));
+  }));
+}
+function getSecondaryColor(primaryColor) {
+  // choose the second color
+  return (0, _colors$1.generate)(primaryColor)[0];
+}
+function normalizeTwoToneColors(twoToneColor) {
+  if (!twoToneColor) {
+    return [];
+  }
+  return Array.isArray(twoToneColor) ? twoToneColor : [twoToneColor];
+}
 
-(function (exports) {
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	Object.defineProperty(exports, "default", {
-	    enumerable: true,
-	    get: function() {
-	        return _default;
-	    }
-	});
-	var _react = /*#__PURE__*/ _interop_require_wildcard(React__default);
-	var _utils = utils$1;
-	function _define_property(obj, key, value) {
-	    if (key in obj) {
-	        Object.defineProperty(obj, key, {
-	            value: value,
-	            enumerable: true,
-	            configurable: true,
-	            writable: true
-	        });
-	    } else {
-	        obj[key] = value;
-	    }
-	    return obj;
-	}
-	function _getRequireWildcardCache(nodeInterop) {
-	    if (typeof WeakMap !== "function") return null;
-	    var cacheBabelInterop = new WeakMap();
-	    var cacheNodeInterop = new WeakMap();
-	    return (_getRequireWildcardCache = function(nodeInterop) {
-	        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-	    })(nodeInterop);
-	}
-	function _interop_require_wildcard(obj, nodeInterop) {
-	    if (obj && obj.__esModule) {
-	        return obj;
-	    }
-	    if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
-	        return {
-	            default: obj
-	        };
-	    }
-	    var cache = _getRequireWildcardCache(nodeInterop);
-	    if (cache && cache.has(obj)) {
-	        return cache.get(obj);
-	    }
-	    var newObj = {
-	        __proto__: null
-	    };
-	    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-	    for(var key in obj){
-	        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-	            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-	            if (desc && (desc.get || desc.set)) {
-	                Object.defineProperty(newObj, key, desc);
-	            } else {
-	                newObj[key] = obj[key];
-	            }
-	        }
-	    }
-	    newObj.default = obj;
-	    if (cache) {
-	        cache.set(obj, newObj);
-	    }
-	    return newObj;
-	}
-	function _object_spread(target) {
-	    for(var i = 1; i < arguments.length; i++){
-	        var source = arguments[i] != null ? arguments[i] : {};
-	        var ownKeys = Object.keys(source);
-	        if (typeof Object.getOwnPropertySymbols === "function") {
-	            ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
-	                return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-	            }));
-	        }
-	        ownKeys.forEach(function(key) {
-	            _define_property(target, key, source[key]);
-	        });
-	    }
-	    return target;
-	}
-	function ownKeys(object, enumerableOnly) {
-	    var keys = Object.keys(object);
-	    if (Object.getOwnPropertySymbols) {
-	        var symbols = Object.getOwnPropertySymbols(object);
-	        keys.push.apply(keys, symbols);
-	    }
-	    return keys;
-	}
-	function _object_spread_props(target, source) {
-	    source = source != null ? source : {};
-	    if (Object.getOwnPropertyDescriptors) {
-	        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-	    } else {
-	        ownKeys(Object(source)).forEach(function(key) {
-	            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-	        });
-	    }
-	    return target;
-	}
-	function _object_without_properties(source, excluded) {
-	    if (source == null) return {};
-	    var target = _object_without_properties_loose(source, excluded);
-	    var key, i;
-	    if (Object.getOwnPropertySymbols) {
-	        var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-	        for(i = 0; i < sourceSymbolKeys.length; i++){
-	            key = sourceSymbolKeys[i];
-	            if (excluded.indexOf(key) >= 0) continue;
-	            if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-	            target[key] = source[key];
-	        }
-	    }
-	    return target;
-	}
-	function _object_without_properties_loose(source, excluded) {
-	    if (source == null) return {};
-	    var target = {};
-	    var sourceKeys = Object.keys(source);
-	    var key, i;
-	    for(i = 0; i < sourceKeys.length; i++){
-	        key = sourceKeys[i];
-	        if (excluded.indexOf(key) >= 0) continue;
-	        target[key] = source[key];
-	    }
-	    return target;
-	}
-	var twoToneColorPalette = {
-	    primaryColor: '#333',
-	    secondaryColor: '#E6E6E6',
-	    calculated: false
-	};
-	function setTwoToneColors(param) {
-	    var primaryColor = param.primaryColor, secondaryColor = param.secondaryColor;
-	    twoToneColorPalette.primaryColor = primaryColor;
-	    twoToneColorPalette.secondaryColor = secondaryColor || (0, _utils.getSecondaryColor)(primaryColor);
-	    twoToneColorPalette.calculated = !!secondaryColor;
-	}
-	function getTwoToneColors() {
-	    return _object_spread({}, twoToneColorPalette);
-	}
-	var IconBase = function(props) {
-	    var icon = props.icon, className = props.className, onClick = props.onClick, style = props.style, primaryColor = props.primaryColor, secondaryColor = props.secondaryColor, restProps = _object_without_properties(props, [
-	        "icon",
-	        "className",
-	        "onClick",
-	        "style",
-	        "primaryColor",
-	        "secondaryColor"
-	    ]);
-	    var svgRef = _react.useRef();
-	    var colors = twoToneColorPalette;
-	    if (primaryColor) {
-	        colors = {
-	            primaryColor: primaryColor,
-	            secondaryColor: secondaryColor || (0, _utils.getSecondaryColor)(primaryColor)
-	        };
-	    }
-	    (0, _utils.useInsertStyles)(svgRef);
-	    (0, _utils.warning)((0, _utils.isIconDefinition)(icon), "icon should be icon definiton, but got ".concat(icon));
-	    if (!(0, _utils.isIconDefinition)(icon)) {
-	        return null;
-	    }
-	    var target = icon;
-	    if (target && typeof target.icon === 'function') {
-	        target = _object_spread_props(_object_spread({}, target), {
-	            icon: target.icon(colors.primaryColor, colors.secondaryColor)
-	        });
-	    }
-	    return (0, _utils.generate)(target.icon, "svg-".concat(target.name), _object_spread_props(_object_spread({
-	        className: className,
-	        onClick: onClick,
-	        style: style,
-	        'data-icon': target.name,
-	        width: '1em',
-	        height: '1em',
-	        fill: 'currentColor',
-	        'aria-hidden': 'true'
-	    }, restProps), {
-	        ref: svgRef
-	    }));
-	};
-	IconBase.displayName = 'IconReact';
-	IconBase.getTwoToneColors = getTwoToneColors;
-	IconBase.setTwoToneColors = setTwoToneColors;
-	var _default = IconBase; 
-} (IconBase));
+// These props make sure that the SVG behaviours like general text.
+// Reference: https://blog.prototypr.io/align-svg-icons-to-text-and-say-goodbye-to-font-icons-d44b3d7b26b4
+utils$1.svgBaseProps = {
+  width: '1em',
+  height: '1em',
+  fill: 'currentColor',
+  'aria-hidden': 'true',
+  focusable: 'false'
+};
+var iconStyles = utils$1.iconStyles = "\n.anticon {\n  display: inline-flex;\n  align-items: center;\n  color: inherit;\n  font-style: normal;\n  line-height: 0;\n  text-align: center;\n  text-transform: none;\n  vertical-align: -0.125em;\n  text-rendering: optimizeLegibility;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.anticon > * {\n  line-height: 1;\n}\n\n.anticon svg {\n  display: inline-block;\n}\n\n.anticon::before {\n  display: none;\n}\n\n.anticon .anticon-icon {\n  display: block;\n}\n\n.anticon[tabindex] {\n  cursor: pointer;\n}\n\n.anticon-spin::before,\n.anticon-spin {\n  display: inline-block;\n  -webkit-animation: loadingCircle 1s infinite linear;\n  animation: loadingCircle 1s infinite linear;\n}\n\n@-webkit-keyframes loadingCircle {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes loadingCircle {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg);\n  }\n}\n";
+utils$1.useInsertStyles = function useInsertStyles(eleRef) {
+  var _useContext = (0, _react$c.useContext)(_Context$1.default),
+    csp = _useContext.csp,
+    prefixCls = _useContext.prefixCls;
+  var mergedStyleStr = iconStyles;
+  if (prefixCls) {
+    mergedStyleStr = mergedStyleStr.replace(/anticon/g, prefixCls);
+  }
+  (0, _react$c.useEffect)(function () {
+    var ele = eleRef.current;
+    var shadowRoot = (0, _shadow.getShadowRoot)(ele);
+    (0, _dynamicCSS.updateCSS)(mergedStyleStr, '@ant-design-icons', {
+      prepend: true,
+      csp: csp,
+      attachTo: shadowRoot
+    });
+  }, []);
+};
+
+var _interopRequireDefault$s = interopRequireDefaultExports.default;
+var _interopRequireWildcard$k = interopRequireWildcardExports.default;
+Object.defineProperty(IconBase$1, "__esModule", {
+  value: true
+});
+IconBase$1.default = void 0;
+var _objectWithoutProperties2$1 = _interopRequireDefault$s(objectWithoutPropertiesExports);
+var _objectSpread2$2 = _interopRequireDefault$s(objectSpread2Exports);
+var React$e = _interopRequireWildcard$k(React__default);
+var _utils$3 = utils$1;
+var _excluded$3 = ["icon", "className", "onClick", "style", "primaryColor", "secondaryColor"];
+var twoToneColorPalette = {
+  primaryColor: '#333',
+  secondaryColor: '#E6E6E6',
+  calculated: false
+};
+function setTwoToneColors(_ref) {
+  var primaryColor = _ref.primaryColor,
+    secondaryColor = _ref.secondaryColor;
+  twoToneColorPalette.primaryColor = primaryColor;
+  twoToneColorPalette.secondaryColor = secondaryColor || (0, _utils$3.getSecondaryColor)(primaryColor);
+  twoToneColorPalette.calculated = !!secondaryColor;
+}
+function getTwoToneColors() {
+  return (0, _objectSpread2$2.default)({}, twoToneColorPalette);
+}
+var IconBase = function IconBase(props) {
+  var icon = props.icon,
+    className = props.className,
+    onClick = props.onClick,
+    style = props.style,
+    primaryColor = props.primaryColor,
+    secondaryColor = props.secondaryColor,
+    restProps = (0, _objectWithoutProperties2$1.default)(props, _excluded$3);
+  var svgRef = React$e.useRef();
+  var colors = twoToneColorPalette;
+  if (primaryColor) {
+    colors = {
+      primaryColor: primaryColor,
+      secondaryColor: secondaryColor || (0, _utils$3.getSecondaryColor)(primaryColor)
+    };
+  }
+  (0, _utils$3.useInsertStyles)(svgRef);
+  (0, _utils$3.warning)((0, _utils$3.isIconDefinition)(icon), "icon should be icon definiton, but got ".concat(icon));
+  if (!(0, _utils$3.isIconDefinition)(icon)) {
+    return null;
+  }
+  var target = icon;
+  if (target && typeof target.icon === 'function') {
+    target = (0, _objectSpread2$2.default)((0, _objectSpread2$2.default)({}, target), {}, {
+      icon: target.icon(colors.primaryColor, colors.secondaryColor)
+    });
+  }
+  return (0, _utils$3.generate)(target.icon, "svg-".concat(target.name), (0, _objectSpread2$2.default)((0, _objectSpread2$2.default)({
+    className: className,
+    onClick: onClick,
+    style: style,
+    'data-icon': target.name,
+    width: '1em',
+    height: '1em',
+    fill: 'currentColor',
+    'aria-hidden': 'true'
+  }, restProps), {}, {
+    ref: svgRef
+  }));
+};
+IconBase.displayName = 'IconReact';
+IconBase.getTwoToneColors = getTwoToneColors;
+IconBase.setTwoToneColors = setTwoToneColors;
+IconBase$1.default = IconBase;
 
 var twoTonePrimaryColor = {};
 
-(function (exports) {
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	function _export(target, all) {
-	    for(var name in all)Object.defineProperty(target, name, {
-	        enumerable: true,
-	        get: all[name]
-	    });
-	}
-	_export(exports, {
-	    getTwoToneColor: function() {
-	        return getTwoToneColor;
-	    },
-	    setTwoToneColor: function() {
-	        return setTwoToneColor;
-	    }
-	});
-	var _IconBase = /*#__PURE__*/ _interop_require_default(IconBase);
-	var _utils = utils$1;
-	function _array_like_to_array(arr, len) {
-	    if (len == null || len > arr.length) len = arr.length;
-	    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
-	    return arr2;
-	}
-	function _array_with_holes(arr) {
-	    if (Array.isArray(arr)) return arr;
-	}
-	function _interop_require_default(obj) {
-	    return obj && obj.__esModule ? obj : {
-	        default: obj
-	    };
-	}
-	function _iterable_to_array_limit(arr, i) {
-	    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-	    if (_i == null) return;
-	    var _arr = [];
-	    var _n = true;
-	    var _d = false;
-	    var _s, _e;
-	    try {
-	        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
-	            _arr.push(_s.value);
-	            if (i && _arr.length === i) break;
-	        }
-	    } catch (err) {
-	        _d = true;
-	        _e = err;
-	    } finally{
-	        try {
-	            if (!_n && _i["return"] != null) _i["return"]();
-	        } finally{
-	            if (_d) throw _e;
-	        }
-	    }
-	    return _arr;
-	}
-	function _non_iterable_rest() {
-	    throw new TypeError("Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-	}
-	function _sliced_to_array(arr, i) {
-	    return _array_with_holes(arr) || _iterable_to_array_limit(arr, i) || _unsupported_iterable_to_array(arr, i) || _non_iterable_rest();
-	}
-	function _unsupported_iterable_to_array(o, minLen) {
-	    if (!o) return;
-	    if (typeof o === "string") return _array_like_to_array(o, minLen);
-	    var n = Object.prototype.toString.call(o).slice(8, -1);
-	    if (n === "Object" && o.constructor) n = o.constructor.name;
-	    if (n === "Map" || n === "Set") return Array.from(n);
-	    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _array_like_to_array(o, minLen);
-	}
-	function setTwoToneColor(twoToneColor) {
-	    var _normalizeTwoToneColors = _sliced_to_array((0, _utils.normalizeTwoToneColors)(twoToneColor), 2), primaryColor = _normalizeTwoToneColors[0], secondaryColor = _normalizeTwoToneColors[1];
-	    return _IconBase.default.setTwoToneColors({
-	        primaryColor: primaryColor,
-	        secondaryColor: secondaryColor
-	    });
-	}
-	function getTwoToneColor() {
-	    var colors = _IconBase.default.getTwoToneColors();
-	    if (!colors.calculated) {
-	        return colors.primaryColor;
-	    }
-	    return [
-	        colors.primaryColor,
-	        colors.secondaryColor
-	    ];
-	} 
-} (twoTonePrimaryColor));
+var _interopRequireDefault$r = interopRequireDefaultExports.default;
+Object.defineProperty(twoTonePrimaryColor, "__esModule", {
+  value: true
+});
+twoTonePrimaryColor.getTwoToneColor = getTwoToneColor;
+twoTonePrimaryColor.setTwoToneColor = setTwoToneColor;
+var _slicedToArray2$1 = _interopRequireDefault$r(slicedToArrayExports);
+var _IconBase$1 = _interopRequireDefault$r(IconBase$1);
+var _utils$2 = utils$1;
+function setTwoToneColor(twoToneColor) {
+  var _normalizeTwoToneColo = (0, _utils$2.normalizeTwoToneColors)(twoToneColor),
+    _normalizeTwoToneColo2 = (0, _slicedToArray2$1.default)(_normalizeTwoToneColo, 2),
+    primaryColor = _normalizeTwoToneColo2[0],
+    secondaryColor = _normalizeTwoToneColo2[1];
+  return _IconBase$1.default.setTwoToneColors({
+    primaryColor: primaryColor,
+    secondaryColor: secondaryColor
+  });
+}
+function getTwoToneColor() {
+  var colors = _IconBase$1.default.getTwoToneColors();
+  if (!colors.calculated) {
+    return colors.primaryColor;
+  }
+  return [colors.primaryColor, colors.secondaryColor];
+}
 
-(function (exports) {
-	'use client';
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	Object.defineProperty(exports, "default", {
-	    enumerable: true,
-	    get: function() {
-	        return _default;
-	    }
-	});
-	var _react = /*#__PURE__*/ _interop_require_wildcard(React__default);
-	var _classnames = /*#__PURE__*/ _interop_require_default(classnamesExports);
-	var _colors = require$$2$1;
-	var _Context = /*#__PURE__*/ _interop_require_default(Context$2);
-	var _IconBase = /*#__PURE__*/ _interop_require_default(IconBase);
-	var _twoTonePrimaryColor = twoTonePrimaryColor;
-	var _utils = utils$1;
-	function _array_like_to_array(arr, len) {
-	    if (len == null || len > arr.length) len = arr.length;
-	    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
-	    return arr2;
-	}
-	function _array_with_holes(arr) {
-	    if (Array.isArray(arr)) return arr;
-	}
-	function _define_property(obj, key, value) {
-	    if (key in obj) {
-	        Object.defineProperty(obj, key, {
-	            value: value,
-	            enumerable: true,
-	            configurable: true,
-	            writable: true
-	        });
-	    } else {
-	        obj[key] = value;
-	    }
-	    return obj;
-	}
-	function _interop_require_default(obj) {
-	    return obj && obj.__esModule ? obj : {
-	        default: obj
-	    };
-	}
-	function _getRequireWildcardCache(nodeInterop) {
-	    if (typeof WeakMap !== "function") return null;
-	    var cacheBabelInterop = new WeakMap();
-	    var cacheNodeInterop = new WeakMap();
-	    return (_getRequireWildcardCache = function(nodeInterop) {
-	        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-	    })(nodeInterop);
-	}
-	function _interop_require_wildcard(obj, nodeInterop) {
-	    if (obj && obj.__esModule) {
-	        return obj;
-	    }
-	    if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
-	        return {
-	            default: obj
-	        };
-	    }
-	    var cache = _getRequireWildcardCache(nodeInterop);
-	    if (cache && cache.has(obj)) {
-	        return cache.get(obj);
-	    }
-	    var newObj = {
-	        __proto__: null
-	    };
-	    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-	    for(var key in obj){
-	        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-	            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-	            if (desc && (desc.get || desc.set)) {
-	                Object.defineProperty(newObj, key, desc);
-	            } else {
-	                newObj[key] = obj[key];
-	            }
-	        }
-	    }
-	    newObj.default = obj;
-	    if (cache) {
-	        cache.set(obj, newObj);
-	    }
-	    return newObj;
-	}
-	function _iterable_to_array_limit(arr, i) {
-	    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-	    if (_i == null) return;
-	    var _arr = [];
-	    var _n = true;
-	    var _d = false;
-	    var _s, _e;
-	    try {
-	        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
-	            _arr.push(_s.value);
-	            if (i && _arr.length === i) break;
-	        }
-	    } catch (err) {
-	        _d = true;
-	        _e = err;
-	    } finally{
-	        try {
-	            if (!_n && _i["return"] != null) _i["return"]();
-	        } finally{
-	            if (_d) throw _e;
-	        }
-	    }
-	    return _arr;
-	}
-	function _non_iterable_rest() {
-	    throw new TypeError("Invalid attempt to destructure non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-	}
-	function _object_spread(target) {
-	    for(var i = 1; i < arguments.length; i++){
-	        var source = arguments[i] != null ? arguments[i] : {};
-	        var ownKeys = Object.keys(source);
-	        if (typeof Object.getOwnPropertySymbols === "function") {
-	            ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
-	                return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-	            }));
-	        }
-	        ownKeys.forEach(function(key) {
-	            _define_property(target, key, source[key]);
-	        });
-	    }
-	    return target;
-	}
-	function ownKeys(object, enumerableOnly) {
-	    var keys = Object.keys(object);
-	    if (Object.getOwnPropertySymbols) {
-	        var symbols = Object.getOwnPropertySymbols(object);
-	        keys.push.apply(keys, symbols);
-	    }
-	    return keys;
-	}
-	function _object_spread_props(target, source) {
-	    source = source != null ? source : {};
-	    if (Object.getOwnPropertyDescriptors) {
-	        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-	    } else {
-	        ownKeys(Object(source)).forEach(function(key) {
-	            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-	        });
-	    }
-	    return target;
-	}
-	function _object_without_properties(source, excluded) {
-	    if (source == null) return {};
-	    var target = _object_without_properties_loose(source, excluded);
-	    var key, i;
-	    if (Object.getOwnPropertySymbols) {
-	        var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-	        for(i = 0; i < sourceSymbolKeys.length; i++){
-	            key = sourceSymbolKeys[i];
-	            if (excluded.indexOf(key) >= 0) continue;
-	            if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-	            target[key] = source[key];
-	        }
-	    }
-	    return target;
-	}
-	function _object_without_properties_loose(source, excluded) {
-	    if (source == null) return {};
-	    var target = {};
-	    var sourceKeys = Object.keys(source);
-	    var key, i;
-	    for(i = 0; i < sourceKeys.length; i++){
-	        key = sourceKeys[i];
-	        if (excluded.indexOf(key) >= 0) continue;
-	        target[key] = source[key];
-	    }
-	    return target;
-	}
-	function _sliced_to_array(arr, i) {
-	    return _array_with_holes(arr) || _iterable_to_array_limit(arr, i) || _unsupported_iterable_to_array(arr, i) || _non_iterable_rest();
-	}
-	function _unsupported_iterable_to_array(o, minLen) {
-	    if (!o) return;
-	    if (typeof o === "string") return _array_like_to_array(o, minLen);
-	    var n = Object.prototype.toString.call(o).slice(8, -1);
-	    if (n === "Object" && o.constructor) n = o.constructor.name;
-	    if (n === "Map" || n === "Set") return Array.from(n);
-	    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _array_like_to_array(o, minLen);
-	}
-	// Initial setting
-	// should move it to antd main repo?
-	(0, _twoTonePrimaryColor.setTwoToneColor)(_colors.blue.primary);
-	var Icon = /*#__PURE__*/ _react.forwardRef(function(props, ref) {
-	    var // affect outter <i>...</i>
-	    className = props.className, // affect inner <svg>...</svg>
-	    icon = props.icon, spin = props.spin, rotate = props.rotate, tabIndex = props.tabIndex, onClick = props.onClick, // other
-	    twoToneColor = props.twoToneColor, restProps = _object_without_properties(props, [
-	        "className",
-	        "icon",
-	        "spin",
-	        "rotate",
-	        "tabIndex",
-	        "onClick",
-	        "twoToneColor"
-	    ]);
-	    var _React_useContext = _react.useContext(_Context.default), _React_useContext_prefixCls = _React_useContext.prefixCls, prefixCls = _React_useContext_prefixCls === void 0 ? 'anticon' : _React_useContext_prefixCls, rootClassName = _React_useContext.rootClassName;
-	    var _obj;
-	    var classString = (0, _classnames.default)(rootClassName, prefixCls, (_obj = {}, _define_property(_obj, "".concat(prefixCls, "-").concat(icon.name), !!icon.name), _define_property(_obj, "".concat(prefixCls, "-spin"), !!spin || icon.name === 'loading'), _obj), className);
-	    var iconTabIndex = tabIndex;
-	    if (iconTabIndex === undefined && onClick) {
-	        iconTabIndex = -1;
-	    }
-	    var svgStyle = rotate ? {
-	        msTransform: "rotate(".concat(rotate, "deg)"),
-	        transform: "rotate(".concat(rotate, "deg)")
-	    } : undefined;
-	    var _normalizeTwoToneColors = _sliced_to_array((0, _utils.normalizeTwoToneColors)(twoToneColor), 2), primaryColor = _normalizeTwoToneColors[0], secondaryColor = _normalizeTwoToneColors[1];
-	    return /*#__PURE__*/ _react.createElement("span", _object_spread_props(_object_spread({
-	        role: "img",
-	        "aria-label": icon.name
-	    }, restProps), {
-	        ref: ref,
-	        tabIndex: iconTabIndex,
-	        onClick: onClick,
-	        className: classString
-	    }), /*#__PURE__*/ _react.createElement(_IconBase.default, {
-	        icon: icon,
-	        primaryColor: primaryColor,
-	        secondaryColor: secondaryColor,
-	        style: svgStyle
-	    }));
-	});
-	Icon.displayName = 'AntdIcon';
-	Icon.getTwoToneColor = _twoTonePrimaryColor.getTwoToneColor;
-	Icon.setTwoToneColor = _twoTonePrimaryColor.setTwoToneColor;
-	var _default = Icon; 
-} (AntdIcon));
+var _interopRequireDefault$q = interopRequireDefaultExports.default;
+var _interopRequireWildcard$j = interopRequireWildcardExports.default;
+Object.defineProperty(AntdIcon, "__esModule", {
+  value: true
+});
+AntdIcon.default = void 0;
+var _extends2$5 = _interopRequireDefault$q(_extendsExports);
+var _slicedToArray2 = _interopRequireDefault$q(slicedToArrayExports);
+var _defineProperty2 = _interopRequireDefault$q(definePropertyExports);
+var _objectWithoutProperties2 = _interopRequireDefault$q(objectWithoutPropertiesExports);
+var React$d = _interopRequireWildcard$j(React__default);
+var _classnames$c = _interopRequireDefault$q(classnamesExports);
+var _colors = require$$8;
+var _Context = _interopRequireDefault$q(Context$2);
+var _IconBase = _interopRequireDefault$q(IconBase$1);
+var _twoTonePrimaryColor = twoTonePrimaryColor;
+var _utils$1 = utils$1;
+var _excluded$2 = ["className", "icon", "spin", "rotate", "tabIndex", "onClick", "twoToneColor"];
+// Initial setting
+// should move it to antd main repo?
+(0, _twoTonePrimaryColor.setTwoToneColor)(_colors.blue.primary);
 
-(function (exports) {
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	Object.defineProperty(exports, "default", {
-	    enumerable: true,
-	    get: function() {
-	        return _default;
-	    }
-	});
-	var _react = /*#__PURE__*/ _interop_require_wildcard(React__default);
-	var _CloseCircleFilled = /*#__PURE__*/ _interop_require_default(CloseCircleFilled$1);
-	var _AntdIcon = /*#__PURE__*/ _interop_require_default(AntdIcon);
-	function _define_property(obj, key, value) {
-	    if (key in obj) {
-	        Object.defineProperty(obj, key, {
-	            value: value,
-	            enumerable: true,
-	            configurable: true,
-	            writable: true
-	        });
-	    } else {
-	        obj[key] = value;
-	    }
-	    return obj;
-	}
-	function _interop_require_default(obj) {
-	    return obj && obj.__esModule ? obj : {
-	        default: obj
-	    };
-	}
-	function _getRequireWildcardCache(nodeInterop) {
-	    if (typeof WeakMap !== "function") return null;
-	    var cacheBabelInterop = new WeakMap();
-	    var cacheNodeInterop = new WeakMap();
-	    return (_getRequireWildcardCache = function(nodeInterop) {
-	        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-	    })(nodeInterop);
-	}
-	function _interop_require_wildcard(obj, nodeInterop) {
-	    if (obj && obj.__esModule) {
-	        return obj;
-	    }
-	    if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
-	        return {
-	            default: obj
-	        };
-	    }
-	    var cache = _getRequireWildcardCache(nodeInterop);
-	    if (cache && cache.has(obj)) {
-	        return cache.get(obj);
-	    }
-	    var newObj = {
-	        __proto__: null
-	    };
-	    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-	    for(var key in obj){
-	        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-	            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-	            if (desc && (desc.get || desc.set)) {
-	                Object.defineProperty(newObj, key, desc);
-	            } else {
-	                newObj[key] = obj[key];
-	            }
-	        }
-	    }
-	    newObj.default = obj;
-	    if (cache) {
-	        cache.set(obj, newObj);
-	    }
-	    return newObj;
-	}
-	function _object_spread(target) {
-	    for(var i = 1; i < arguments.length; i++){
-	        var source = arguments[i] != null ? arguments[i] : {};
-	        var ownKeys = Object.keys(source);
-	        if (typeof Object.getOwnPropertySymbols === "function") {
-	            ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
-	                return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-	            }));
-	        }
-	        ownKeys.forEach(function(key) {
-	            _define_property(target, key, source[key]);
-	        });
-	    }
-	    return target;
-	}
-	function ownKeys(object, enumerableOnly) {
-	    var keys = Object.keys(object);
-	    if (Object.getOwnPropertySymbols) {
-	        var symbols = Object.getOwnPropertySymbols(object);
-	        keys.push.apply(keys, symbols);
-	    }
-	    return keys;
-	}
-	function _object_spread_props(target, source) {
-	    source = source != null ? source : {};
-	    if (Object.getOwnPropertyDescriptors) {
-	        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-	    } else {
-	        ownKeys(Object(source)).forEach(function(key) {
-	            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-	        });
-	    }
-	    return target;
-	}
-	var CloseCircleFilled = function(props, ref) {
-	    return /*#__PURE__*/ _react.createElement(_AntdIcon.default, _object_spread_props(_object_spread({}, props), {
-	        ref: ref,
-	        icon: _CloseCircleFilled.default
-	    }));
-	};
-	/**![close-circle](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIGZpbGwtcnVsZT0iZXZlbm9kZCIgdmlld0JveD0iNjQgNjQgODk2IDg5NiIgZm9jdXNhYmxlPSJmYWxzZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNTEyIDY0YzI0Ny40IDAgNDQ4IDIwMC42IDQ0OCA0NDhTNzU5LjQgOTYwIDUxMiA5NjAgNjQgNzU5LjQgNjQgNTEyIDI2NC42IDY0IDUxMiA2NHptMTI3Ljk4IDI3NC44MmgtLjA0bC0uMDguMDZMNTEyIDQ2Ni43NSAzODQuMTQgMzM4Ljg4Yy0uMDQtLjA1LS4wNi0uMDYtLjA4LS4wNmEuMTIuMTIgMCAwMC0uMDcgMGMtLjAzIDAtLjA1LjAxLS4wOS4wNWwtNDUuMDIgNDUuMDJhLjIuMiAwIDAwLS4wNS4wOS4xMi4xMiAwIDAwMCAuMDd2LjAyYS4yNy4yNyAwIDAwLjA2LjA2TDQ2Ni43NSA1MTIgMzM4Ljg4IDYzOS44NmMtLjA1LjA0LS4wNi4wNi0uMDYuMDhhLjEyLjEyIDAgMDAwIC4wN2MwIC4wMy4wMS4wNS4wNS4wOWw0NS4wMiA0NS4wMmEuMi4yIDAgMDAuMDkuMDUuMTIuMTIgMCAwMC4wNyAwYy4wMiAwIC4wNC0uMDEuMDgtLjA1TDUxMiA1NTcuMjVsMTI3Ljg2IDEyNy44N2MuMDQuMDQuMDYuMDUuMDguMDVhLjEyLjEyIDAgMDAuMDcgMGMuMDMgMCAuMDUtLjAxLjA5LS4wNWw0NS4wMi00NS4wMmEuMi4yIDAgMDAuMDUtLjA5LjEyLjEyIDAgMDAwLS4wN3YtLjAyYS4yNy4yNyAwIDAwLS4wNS0uMDZMNTU3LjI1IDUxMmwxMjcuODctMTI3Ljg2Yy4wNC0uMDQuMDUtLjA2LjA1LS4wOGEuMTIuMTIgMCAwMDAtLjA3YzAtLjAzLS4wMS0uMDUtLjA1LS4wOWwtNDUuMDItNDUuMDJhLjIuMiAwIDAwLS4wOS0uMDUuMTIuMTIgMCAwMC0uMDcgMHoiIC8+PC9zdmc+) */ var RefIcon = /*#__PURE__*/ _react.forwardRef(CloseCircleFilled);
-	if (process.env.NODE_ENV !== 'production') {
-	    RefIcon.displayName = 'CloseCircleFilled';
-	}
-	var _default = RefIcon; 
-} (CloseCircleFilled$2));
+// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/34757#issuecomment-488848720
+
+var Icon = /*#__PURE__*/React$d.forwardRef(function (props, ref) {
+  var className = props.className,
+    icon = props.icon,
+    spin = props.spin,
+    rotate = props.rotate,
+    tabIndex = props.tabIndex,
+    onClick = props.onClick,
+    twoToneColor = props.twoToneColor,
+    restProps = (0, _objectWithoutProperties2.default)(props, _excluded$2);
+  var _React$useContext = React$d.useContext(_Context.default),
+    _React$useContext$pre = _React$useContext.prefixCls,
+    prefixCls = _React$useContext$pre === void 0 ? 'anticon' : _React$useContext$pre,
+    rootClassName = _React$useContext.rootClassName;
+  var classString = (0, _classnames$c.default)(rootClassName, prefixCls, (0, _defineProperty2.default)((0, _defineProperty2.default)({}, "".concat(prefixCls, "-").concat(icon.name), !!icon.name), "".concat(prefixCls, "-spin"), !!spin || icon.name === 'loading'), className);
+  var iconTabIndex = tabIndex;
+  if (iconTabIndex === undefined && onClick) {
+    iconTabIndex = -1;
+  }
+  var svgStyle = rotate ? {
+    msTransform: "rotate(".concat(rotate, "deg)"),
+    transform: "rotate(".concat(rotate, "deg)")
+  } : undefined;
+  var _normalizeTwoToneColo = (0, _utils$1.normalizeTwoToneColors)(twoToneColor),
+    _normalizeTwoToneColo2 = (0, _slicedToArray2.default)(_normalizeTwoToneColo, 2),
+    primaryColor = _normalizeTwoToneColo2[0],
+    secondaryColor = _normalizeTwoToneColo2[1];
+  return /*#__PURE__*/React$d.createElement("span", (0, _extends2$5.default)({
+    role: "img",
+    "aria-label": icon.name
+  }, restProps, {
+    ref: ref,
+    tabIndex: iconTabIndex,
+    onClick: onClick,
+    className: classString
+  }), /*#__PURE__*/React$d.createElement(_IconBase.default, {
+    icon: icon,
+    primaryColor: primaryColor,
+    secondaryColor: secondaryColor,
+    style: svgStyle
+  }));
+});
+Icon.displayName = 'AntdIcon';
+Icon.getTwoToneColor = _twoTonePrimaryColor.getTwoToneColor;
+Icon.setTwoToneColor = _twoTonePrimaryColor.setTwoToneColor;
+AntdIcon.default = Icon;
+
+var _interopRequireWildcard$i = interopRequireWildcardExports.default;
+var _interopRequireDefault$p = interopRequireDefaultExports.default;
+Object.defineProperty(CloseCircleFilled$3, "__esModule", {
+  value: true
+});
+CloseCircleFilled$3.default = void 0;
+var _extends2$4 = _interopRequireDefault$p(_extendsExports);
+var React$c = _interopRequireWildcard$i(React__default);
+var _CloseCircleFilled$1 = _interopRequireDefault$p(CloseCircleFilled$2);
+var _AntdIcon$4 = _interopRequireDefault$p(AntdIcon);
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+var CloseCircleFilled = function CloseCircleFilled(props, ref) {
+  return /*#__PURE__*/React$c.createElement(_AntdIcon$4.default, (0, _extends2$4.default)({}, props, {
+    ref: ref,
+    icon: _CloseCircleFilled$1.default
+  }));
+};
+
+/**![close-circle](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIGZpbGwtcnVsZT0iZXZlbm9kZCIgdmlld0JveD0iNjQgNjQgODk2IDg5NiIgZm9jdXNhYmxlPSJmYWxzZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNTEyIDY0YzI0Ny40IDAgNDQ4IDIwMC42IDQ0OCA0NDhTNzU5LjQgOTYwIDUxMiA5NjAgNjQgNzU5LjQgNjQgNTEyIDI2NC42IDY0IDUxMiA2NHptMTI3Ljk4IDI3NC44MmgtLjA0bC0uMDguMDZMNTEyIDQ2Ni43NSAzODQuMTQgMzM4Ljg4Yy0uMDQtLjA1LS4wNi0uMDYtLjA4LS4wNmEuMTIuMTIgMCAwMC0uMDcgMGMtLjAzIDAtLjA1LjAxLS4wOS4wNWwtNDUuMDIgNDUuMDJhLjIuMiAwIDAwLS4wNS4wOS4xMi4xMiAwIDAwMCAuMDd2LjAyYS4yNy4yNyAwIDAwLjA2LjA2TDQ2Ni43NSA1MTIgMzM4Ljg4IDYzOS44NmMtLjA1LjA0LS4wNi4wNi0uMDYuMDhhLjEyLjEyIDAgMDAwIC4wN2MwIC4wMy4wMS4wNS4wNS4wOWw0NS4wMiA0NS4wMmEuMi4yIDAgMDAuMDkuMDUuMTIuMTIgMCAwMC4wNyAwYy4wMiAwIC4wNC0uMDEuMDgtLjA1TDUxMiA1NTcuMjVsMTI3Ljg2IDEyNy44N2MuMDQuMDQuMDYuMDUuMDguMDVhLjEyLjEyIDAgMDAuMDcgMGMuMDMgMCAuMDUtLjAxLjA5LS4wNWw0NS4wMi00NS4wMmEuMi4yIDAgMDAuMDUtLjA5LjEyLjEyIDAgMDAwLS4wN3YtLjAyYS4yNy4yNyAwIDAwLS4wNS0uMDZMNTU3LjI1IDUxMmwxMjcuODctMTI3Ljg2Yy4wNC0uMDQuMDUtLjA2LjA1LS4wOGEuMTIuMTIgMCAwMDAtLjA3YzAtLjAzLS4wMS0uMDUtLjA1LS4wOWwtNDUuMDItNDUuMDJhLjIuMiAwIDAwLS4wOS0uMDUuMTIuMTIgMCAwMC0uMDcgMHoiIC8+PC9zdmc+) */
+var RefIcon$4 = /*#__PURE__*/React$c.forwardRef(CloseCircleFilled);
+if (process.env.NODE_ENV !== 'production') {
+  RefIcon$4.displayName = 'CloseCircleFilled';
+}
+CloseCircleFilled$3.default = RefIcon$4;
 
 (function (module, exports) {
 	Object.defineProperty(exports, "__esModule", {
@@ -19368,24 +19225,24 @@ var twoTonePrimaryColor = {};
 	});
 	exports.default = void 0;
 
-	const _CloseCircleFilled = _interopRequireDefault(CloseCircleFilled$2);
+	const _CloseCircleFilled = _interopRequireDefault(CloseCircleFilled$3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	const _default = _CloseCircleFilled;
 	exports.default = _default;
 	module.exports = _default; 
-} (CloseCircleFilled$3, CloseCircleFilled$3.exports));
+} (CloseCircleFilled$4, CloseCircleFilled$4.exports));
 
-var CloseCircleFilledExports = CloseCircleFilled$3.exports;
+var CloseCircleFilledExports = CloseCircleFilled$4.exports;
 
-var _interopRequireDefault$k = interopRequireDefaultExports.default;
+var _interopRequireDefault$o = interopRequireDefaultExports.default;
 Object.defineProperty(getAllowClear$1, "__esModule", {
   value: true
 });
 getAllowClear$1.default = void 0;
-var _react$b = _interopRequireDefault$k(React__default);
-var _CloseCircleFilled = _interopRequireDefault$k(CloseCircleFilledExports);
+var _react$b = _interopRequireDefault$o(React__default);
+var _CloseCircleFilled = _interopRequireDefault$o(CloseCircleFilledExports);
 const getAllowClear = allowClear => {
   let mergedAllowClear;
   if (typeof allowClear === 'object' && (allowClear === null || allowClear === void 0 ? void 0 : allowClear.clearIcon)) {
@@ -19401,13 +19258,13 @@ getAllowClear$1.default = getAllowClear;
 
 var statusUtils = {};
 
-var _interopRequireDefault$j = interopRequireDefaultExports.default;
+var _interopRequireDefault$n = interopRequireDefaultExports.default;
 Object.defineProperty(statusUtils, "__esModule", {
   value: true
 });
 statusUtils.getMergedStatus = void 0;
 statusUtils.getStatusClassNames = getStatusClassNames;
-var _classnames$b = _interopRequireDefault$j(classnamesExports);
+var _classnames$b = _interopRequireDefault$n(classnamesExports);
 function getStatusClassNames(prefixCls, status, hasFeedback) {
   return (0, _classnames$b.default)({
     [`${prefixCls}-status-success`]: status === 'success',
@@ -19514,30 +19371,30 @@ function hasPrefixSuffix(props) {
   return !!(props.prefix || props.suffix || props.allowClear || props.showCount);
 }
 
-var _interopRequireDefault$i = interopRequireDefaultExports.default;
-var _interopRequireWildcard$d = interopRequireWildcardExports.default;
+var _interopRequireDefault$m = interopRequireDefaultExports.default;
+var _interopRequireWildcard$h = interopRequireWildcardExports.default;
 Object.defineProperty(Input$3, "__esModule", {
   value: true
 });
 Input$3.default = void 0;
 Input$3.triggerFocus = triggerFocus;
-var _react$8 = _interopRequireWildcard$d(React__default);
-var _classnames$a = _interopRequireDefault$i(classnamesExports);
-var _rcInput = _interopRequireDefault$i(require$$4$1);
+var _react$8 = _interopRequireWildcard$h(React__default);
+var _classnames$a = _interopRequireDefault$m(classnamesExports);
+var _rcInput = _interopRequireDefault$m(require$$4$1);
 var _ref$4 = ref;
-var _ContextIsolator = _interopRequireDefault$i(ContextIsolator$1);
-var _getAllowClear$1 = _interopRequireDefault$i(getAllowClear$1);
+var _ContextIsolator = _interopRequireDefault$m(ContextIsolator$1);
+var _getAllowClear$1 = _interopRequireDefault$m(getAllowClear$1);
 var _statusUtils$2 = statusUtils;
-var _warning$4 = warning$4;
+var _warning$4 = warning$5;
 var _configProvider$9 = configProvider;
-var _DisabledContext$2 = _interopRequireDefault$i(DisabledContext$1);
-var _useCSSVarCls$2 = _interopRequireDefault$i(useCSSVarCls$1);
-var _useSize$4 = _interopRequireDefault$i(useSize$1);
+var _DisabledContext$2 = _interopRequireDefault$m(DisabledContext$1);
+var _useCSSVarCls$2 = _interopRequireDefault$m(useCSSVarCls$1);
+var _useSize$4 = _interopRequireDefault$m(useSize$1);
 var _context$2 = context;
-var _useVariants$1 = _interopRequireDefault$i(useVariants);
+var _useVariants$1 = _interopRequireDefault$m(useVariants);
 var _Compact$2 = Compact$1;
-var _useRemovePasswordTimeout$1 = _interopRequireDefault$i(useRemovePasswordTimeout$1);
-var _style$4 = _interopRequireDefault$i(style$6);
+var _useRemovePasswordTimeout$1 = _interopRequireDefault$m(useRemovePasswordTimeout$1);
+var _style$4 = _interopRequireDefault$m(style$6);
 var _utils = utils;
 var __rest$7 = function (s, e) {
   var t = {};
@@ -19716,14 +19573,16 @@ Input$3.default = Input$1;
 
 var OTP$1 = {};
 
+var require$$3 = /*@__PURE__*/getAugmentedNamespace(es$6);
+
 var pickAttrs$1 = {};
 
-var _interopRequireDefault$h = interopRequireDefaultExports.default;
+var _interopRequireDefault$l = interopRequireDefaultExports.default;
 Object.defineProperty(pickAttrs$1, "__esModule", {
   value: true
 });
 pickAttrs$1.default = pickAttrs;
-var _objectSpread2$1 = _interopRequireDefault$h(objectSpread2Exports);
+var _objectSpread2$1 = _interopRequireDefault$l(objectSpread2Exports);
 var attributes = "accept acceptCharset accessKey action allowFullScreen allowTransparency\n    alt async autoComplete autoFocus autoPlay capture cellPadding cellSpacing challenge\n    charSet checked classID className colSpan cols content contentEditable contextMenu\n    controls coords crossOrigin data dateTime default defer dir disabled download draggable\n    encType form formAction formEncType formMethod formNoValidate formTarget frameBorder\n    headers height hidden high href hrefLang htmlFor httpEquiv icon id inputMode integrity\n    is keyParams keyType kind label lang list loop low manifest marginHeight marginWidth max maxLength media\n    mediaGroup method min minLength multiple muted name noValidate nonce open\n    optimum pattern placeholder poster preload radioGroup readOnly rel required\n    reversed role rowSpan rows sandbox scope scoped scrolling seamless selected\n    shape size sizes span spellCheck src srcDoc srcLang srcSet start step style\n    summary tabIndex target title type useMap value width wmode wrap";
 var eventsName = "onCopy onCut onPaste onCompositionEnd onCompositionStart onCompositionUpdate onKeyDown\n    onKeyPress onKeyUp onFocus onBlur onChange onInput onSubmit onClick onContextMenu onDoubleClick\n    onDrag onDragEnd onDragEnter onDragExit onDragLeave onDragOver onDragStart onDrop onMouseDown\n    onMouseEnter onMouseLeave onMouseMove onMouseOut onMouseOver onMouseUp onSelect onTouchCancel\n    onTouchEnd onTouchMove onTouchStart onScroll onWheel onAbort onCanPlay onCanPlayThrough\n    onDurationChange onEmptied onEncrypted onEnded onError onLoadedData onLoadedMetadata\n    onLoadStart onPause onPlay onPlaying onProgress onRateChange onSeeked onSeeking onStalled onSuspend onTimeUpdate onVolumeChange onWaiting onLoad onError";
 var propList = "".concat(attributes, " ").concat(eventsName).split(/[\s\n]+/);
@@ -19876,15 +19735,15 @@ if (process.env.NODE_ENV !== 'production') {
 }
 raf$1.default = wrapperRaf;
 
-var _interopRequireDefault$g = interopRequireDefaultExports.default;
-var _interopRequireWildcard$c = interopRequireWildcardExports.default;
+var _interopRequireDefault$k = interopRequireDefaultExports.default;
+var _interopRequireWildcard$g = interopRequireWildcardExports.default;
 Object.defineProperty(OTPInput$1, "__esModule", {
   value: true
 });
 OTPInput$1.default = void 0;
-var React$7 = _interopRequireWildcard$c(React__default);
-var _raf$2 = _interopRequireDefault$g(raf$1);
-var _Input$4 = _interopRequireDefault$g(Input$3);
+var React$b = _interopRequireWildcard$g(React__default);
+var _raf$2 = _interopRequireDefault$k(raf$1);
+var _Input$4 = _interopRequireDefault$k(Input$3);
 var __rest$6 = function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
@@ -19893,7 +19752,7 @@ var __rest$6 = function (s, e) {
   }
   return t;
 };
-const OTPInput = /*#__PURE__*/React$7.forwardRef((props, ref) => {
+const OTPInput = /*#__PURE__*/React$b.forwardRef((props, ref) => {
   const {
       value,
       onChange,
@@ -19907,8 +19766,8 @@ const OTPInput = /*#__PURE__*/React$7.forwardRef((props, ref) => {
     onChange(index, e.target.value);
   };
   // ========================== Ref ===========================
-  const inputRef = React$7.useRef(null);
-  React$7.useImperativeHandle(ref, () => inputRef.current);
+  const inputRef = React$b.useRef(null);
+  React$b.useImperativeHandle(ref, () => inputRef.current);
   // ========================= Focus ==========================
   const syncSelection = () => {
     (0, _raf$2.default)(() => {
@@ -19938,7 +19797,7 @@ const OTPInput = /*#__PURE__*/React$7.forwardRef((props, ref) => {
     syncSelection();
   };
   // ========================= Render =========================
-  return /*#__PURE__*/React$7.createElement(_Input$4.default, Object.assign({}, restProps, {
+  return /*#__PURE__*/React$b.createElement(_Input$4.default, Object.assign({}, restProps, {
     ref: inputRef,
     value: internalValue,
     onInput: onInternalChange,
@@ -19952,25 +19811,25 @@ const OTPInput = /*#__PURE__*/React$7.forwardRef((props, ref) => {
 });
 OTPInput$1.default = OTPInput;
 
-var _interopRequireWildcard$b = interopRequireWildcardExports.default;
-var _interopRequireDefault$f = interopRequireDefaultExports.default;
+var _interopRequireWildcard$f = interopRequireWildcardExports.default;
+var _interopRequireDefault$j = interopRequireDefaultExports.default;
 Object.defineProperty(OTP$1, "__esModule", {
   value: true
 });
 OTP$1.default = void 0;
-var _toConsumableArray2 = _interopRequireDefault$f(toConsumableArrayExports);
-var React$6 = _interopRequireWildcard$b(React__default);
-var _classnames$9 = _interopRequireDefault$f(classnamesExports);
-var _rcUtil$1 = require$$3$1;
-var _pickAttrs = _interopRequireDefault$f(pickAttrs$1);
+var _toConsumableArray2 = _interopRequireDefault$j(toConsumableArrayExports);
+var React$a = _interopRequireWildcard$f(React__default);
+var _classnames$9 = _interopRequireDefault$j(classnamesExports);
+var _rcUtil$1 = require$$3;
+var _pickAttrs = _interopRequireDefault$j(pickAttrs$1);
 var _statusUtils$1 = statusUtils;
-var _warning$3 = warning$4;
+var _warning$3 = warning$5;
 var _configProvider$8 = configProvider;
-var _useCSSVarCls$1 = _interopRequireDefault$f(useCSSVarCls$1);
-var _useSize$3 = _interopRequireDefault$f(useSize$1);
+var _useCSSVarCls$1 = _interopRequireDefault$j(useCSSVarCls$1);
+var _useSize$3 = _interopRequireDefault$j(useSize$1);
 var _context$1 = context;
-var _otp = _interopRequireDefault$f(otp);
-var _OTPInput = _interopRequireDefault$f(OTPInput$1);
+var _otp = _interopRequireDefault$j(otp);
+var _OTPInput = _interopRequireDefault$j(OTPInput$1);
 var __rest$5 = function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
@@ -19982,7 +19841,7 @@ var __rest$5 = function (s, e) {
 function strToArr(str) {
   return (str || '').split('');
 }
-const OTP = /*#__PURE__*/React$6.forwardRef((props, ref) => {
+const OTP = /*#__PURE__*/React$a.forwardRef((props, ref) => {
   const {
       prefixCls: customizePrefixCls,
       length = 6,
@@ -20005,7 +19864,7 @@ const OTP = /*#__PURE__*/React$6.forwardRef((props, ref) => {
   const {
     getPrefixCls,
     direction
-  } = React$6.useContext(_configProvider$8.ConfigContext);
+  } = React$a.useContext(_configProvider$8.ConfigContext);
   const prefixCls = getPrefixCls('otp', customizePrefixCls);
   const domAttrs = (0, _pickAttrs.default)(restProps, {
     aria: true,
@@ -20019,17 +19878,17 @@ const OTP = /*#__PURE__*/React$6.forwardRef((props, ref) => {
   // ========================= Size =========================
   const mergedSize = (0, _useSize$3.default)(ctx => customSize !== null && customSize !== void 0 ? customSize : ctx);
   // ======================== Status ========================
-  const formContext = React$6.useContext(_context$1.FormItemInputContext);
+  const formContext = React$a.useContext(_context$1.FormItemInputContext);
   const mergedStatus = (0, _statusUtils$1.getMergedStatus)(formContext.status, customStatus);
-  const proxyFormContext = React$6.useMemo(() => Object.assign(Object.assign({}, formContext), {
+  const proxyFormContext = React$a.useMemo(() => Object.assign(Object.assign({}, formContext), {
     status: mergedStatus,
     hasFeedback: false,
     feedbackIcon: null
   }), [formContext, mergedStatus]);
   // ========================= Refs =========================
-  const containerRef = React$6.useRef(null);
-  const refs = React$6.useRef({});
-  React$6.useImperativeHandle(ref, () => ({
+  const containerRef = React$a.useRef(null);
+  const refs = React$a.useRef({});
+  React$a.useImperativeHandle(ref, () => ({
     focus: () => {
       var _a;
       (_a = refs.current[0]) === null || _a === void 0 ? void 0 : _a.focus();
@@ -20045,8 +19904,8 @@ const OTP = /*#__PURE__*/React$6.forwardRef((props, ref) => {
   // ======================= Formatter ======================
   const internalFormatter = txt => formatter ? formatter(txt) : txt;
   // ======================== Values ========================
-  const [valueCells, setValueCells] = React$6.useState(strToArr(internalFormatter(defaultValue || '')));
-  React$6.useEffect(() => {
+  const [valueCells, setValueCells] = React$a.useState(strToArr(internalFormatter(defaultValue || '')));
+  React$a.useEffect(() => {
     if (value !== undefined) {
       setValueCells(strToArr(value));
     }
@@ -20110,21 +19969,21 @@ const OTP = /*#__PURE__*/React$6.forwardRef((props, ref) => {
     status: mergedStatus,
     mask
   };
-  return wrapCSSVar( /*#__PURE__*/React$6.createElement("div", Object.assign({}, domAttrs, {
+  return wrapCSSVar( /*#__PURE__*/React$a.createElement("div", Object.assign({}, domAttrs, {
     ref: containerRef,
     className: (0, _classnames$9.default)(prefixCls, {
       [`${prefixCls}-sm`]: mergedSize === 'small',
       [`${prefixCls}-lg`]: mergedSize === 'large',
       [`${prefixCls}-rtl`]: direction === 'rtl'
     }, cssVarCls, hashId)
-  }), /*#__PURE__*/React$6.createElement(_context$1.FormItemInputContext.Provider, {
+  }), /*#__PURE__*/React$a.createElement(_context$1.FormItemInputContext.Provider, {
     value: proxyFormContext
   }, Array.from({
     length
   }).map((_, index) => {
     const key = `otp-${index}`;
     const singleValue = valueCells[index] || '';
-    return /*#__PURE__*/React$6.createElement(_OTPInput.default, Object.assign({
+    return /*#__PURE__*/React$a.createElement(_OTPInput.default, Object.assign({
       ref: inputEle => {
         refs.current[index] = inputEle;
       },
@@ -20144,135 +20003,43 @@ OTP$1.default = OTP;
 
 var Password$1 = {};
 
-var EyeInvisibleOutlined$3 = {exports: {}};
+var EyeInvisibleOutlined$4 = {exports: {}};
+
+var EyeInvisibleOutlined$3 = {};
 
 var EyeInvisibleOutlined$2 = {};
 
-var EyeInvisibleOutlined$1 = {};
-
 // This icon file is generated automatically.
-Object.defineProperty(EyeInvisibleOutlined$1, "__esModule", { value: true });
-var EyeInvisibleOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z" } }, { "tag": "path", "attrs": { "d": "M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z" } }] }, "name": "eye-invisible", "theme": "outlined" };
-EyeInvisibleOutlined$1.default = EyeInvisibleOutlined;
+Object.defineProperty(EyeInvisibleOutlined$2, "__esModule", { value: true });
+var EyeInvisibleOutlined$1 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z" } }, { "tag": "path", "attrs": { "d": "M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z" } }] }, "name": "eye-invisible", "theme": "outlined" };
+EyeInvisibleOutlined$2.default = EyeInvisibleOutlined$1;
 
-(function (exports) {
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	Object.defineProperty(exports, "default", {
-	    enumerable: true,
-	    get: function() {
-	        return _default;
-	    }
-	});
-	var _react = /*#__PURE__*/ _interop_require_wildcard(React__default);
-	var _EyeInvisibleOutlined = /*#__PURE__*/ _interop_require_default(EyeInvisibleOutlined$1);
-	var _AntdIcon = /*#__PURE__*/ _interop_require_default(AntdIcon);
-	function _define_property(obj, key, value) {
-	    if (key in obj) {
-	        Object.defineProperty(obj, key, {
-	            value: value,
-	            enumerable: true,
-	            configurable: true,
-	            writable: true
-	        });
-	    } else {
-	        obj[key] = value;
-	    }
-	    return obj;
-	}
-	function _interop_require_default(obj) {
-	    return obj && obj.__esModule ? obj : {
-	        default: obj
-	    };
-	}
-	function _getRequireWildcardCache(nodeInterop) {
-	    if (typeof WeakMap !== "function") return null;
-	    var cacheBabelInterop = new WeakMap();
-	    var cacheNodeInterop = new WeakMap();
-	    return (_getRequireWildcardCache = function(nodeInterop) {
-	        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-	    })(nodeInterop);
-	}
-	function _interop_require_wildcard(obj, nodeInterop) {
-	    if (obj && obj.__esModule) {
-	        return obj;
-	    }
-	    if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
-	        return {
-	            default: obj
-	        };
-	    }
-	    var cache = _getRequireWildcardCache(nodeInterop);
-	    if (cache && cache.has(obj)) {
-	        return cache.get(obj);
-	    }
-	    var newObj = {
-	        __proto__: null
-	    };
-	    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-	    for(var key in obj){
-	        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-	            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-	            if (desc && (desc.get || desc.set)) {
-	                Object.defineProperty(newObj, key, desc);
-	            } else {
-	                newObj[key] = obj[key];
-	            }
-	        }
-	    }
-	    newObj.default = obj;
-	    if (cache) {
-	        cache.set(obj, newObj);
-	    }
-	    return newObj;
-	}
-	function _object_spread(target) {
-	    for(var i = 1; i < arguments.length; i++){
-	        var source = arguments[i] != null ? arguments[i] : {};
-	        var ownKeys = Object.keys(source);
-	        if (typeof Object.getOwnPropertySymbols === "function") {
-	            ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
-	                return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-	            }));
-	        }
-	        ownKeys.forEach(function(key) {
-	            _define_property(target, key, source[key]);
-	        });
-	    }
-	    return target;
-	}
-	function ownKeys(object, enumerableOnly) {
-	    var keys = Object.keys(object);
-	    if (Object.getOwnPropertySymbols) {
-	        var symbols = Object.getOwnPropertySymbols(object);
-	        keys.push.apply(keys, symbols);
-	    }
-	    return keys;
-	}
-	function _object_spread_props(target, source) {
-	    source = source != null ? source : {};
-	    if (Object.getOwnPropertyDescriptors) {
-	        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-	    } else {
-	        ownKeys(Object(source)).forEach(function(key) {
-	            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-	        });
-	    }
-	    return target;
-	}
-	var EyeInvisibleOutlined = function(props, ref) {
-	    return /*#__PURE__*/ _react.createElement(_AntdIcon.default, _object_spread_props(_object_spread({}, props), {
-	        ref: ref,
-	        icon: _EyeInvisibleOutlined.default
-	    }));
-	};
-	/**![eye-invisible](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTk0Mi4yIDQ4Ni4yUTg4OS40NyAzNzUuMTEgODE2LjcgMzA1bC01MC44OCA1MC44OEM4MDcuMzEgMzk1LjUzIDg0My40NSA0NDcuNCA4NzQuNyA1MTIgNzkxLjUgNjg0LjIgNjczLjQgNzY2IDUxMiA3NjZxLTcyLjY3IDAtMTMzLjg3LTIyLjM4TDMyMyA3OTguNzVRNDA4IDgzOCA1MTIgODM4cTI4OC4zIDAgNDMwLjItMzAwLjNhNjAuMjkgNjAuMjkgMCAwMDAtNTEuNXptLTYzLjU3LTMyMC42NEw4MzYgMTIyLjg4YTggOCAwIDAwLTExLjMyIDBMNzE1LjMxIDIzMi4yUTYyNC44NiAxODYgNTEyIDE4NnEtMjg4LjMgMC00MzAuMiAzMDAuM2E2MC4zIDYwLjMgMCAwMDAgNTEuNXE1Ni42OSAxMTkuNCAxMzYuNSAxOTEuNDFMMTEyLjQ4IDgzNWE4IDggMCAwMDAgMTEuMzFMMTU1LjE3IDg4OWE4IDggMCAwMDExLjMxIDBsNzEyLjE1LTcxMi4xMmE4IDggMCAwMDAtMTEuMzJ6TTE0OS4zIDUxMkMyMzIuNiAzMzkuOCAzNTAuNyAyNTggNTEyIDI1OGM1NC41NCAwIDEwNC4xMyA5LjM2IDE0OS4xMiAyOC4zOWwtNzAuMyA3MC4zYTE3NiAxNzYgMCAwMC0yMzguMTMgMjM4LjEzbC04My40MiA4My40MkMyMjMuMSA2MzcuNDkgMTgzLjMgNTgyLjI4IDE0OS4zIDUxMnptMjQ2LjcgMGExMTIuMTEgMTEyLjExIDAgMDExNDYuMi0xMDYuNjlMNDAxLjMxIDU0Ni4yQTExMiAxMTIgMCAwMTM5NiA1MTJ6IiAvPjxwYXRoIGQ9Ik01MDggNjI0Yy0zLjQ2IDAtNi44Ny0uMTYtMTAuMjUtLjQ3bC01Mi44MiA1Mi44MmExNzYuMDkgMTc2LjA5IDAgMDAyMjcuNDItMjI3LjQybC01Mi44MiA1Mi44MmMuMzEgMy4zOC40NyA2Ljc5LjQ3IDEwLjI1YTExMS45NCAxMTEuOTQgMCAwMS0xMTIgMTEyeiIgLz48L3N2Zz4=) */ var RefIcon = /*#__PURE__*/ _react.forwardRef(EyeInvisibleOutlined);
-	if (process.env.NODE_ENV !== 'production') {
-	    RefIcon.displayName = 'EyeInvisibleOutlined';
-	}
-	var _default = RefIcon; 
-} (EyeInvisibleOutlined$2));
+var _interopRequireWildcard$e = interopRequireWildcardExports.default;
+var _interopRequireDefault$i = interopRequireDefaultExports.default;
+Object.defineProperty(EyeInvisibleOutlined$3, "__esModule", {
+  value: true
+});
+EyeInvisibleOutlined$3.default = void 0;
+var _extends2$3 = _interopRequireDefault$i(_extendsExports);
+var React$9 = _interopRequireWildcard$e(React__default);
+var _EyeInvisibleOutlined$1 = _interopRequireDefault$i(EyeInvisibleOutlined$2);
+var _AntdIcon$3 = _interopRequireDefault$i(AntdIcon);
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+var EyeInvisibleOutlined = function EyeInvisibleOutlined(props, ref) {
+  return /*#__PURE__*/React$9.createElement(_AntdIcon$3.default, (0, _extends2$3.default)({}, props, {
+    ref: ref,
+    icon: _EyeInvisibleOutlined$1.default
+  }));
+};
+
+/**![eye-invisible](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTk0Mi4yIDQ4Ni4yUTg4OS40NyAzNzUuMTEgODE2LjcgMzA1bC01MC44OCA1MC44OEM4MDcuMzEgMzk1LjUzIDg0My40NSA0NDcuNCA4NzQuNyA1MTIgNzkxLjUgNjg0LjIgNjczLjQgNzY2IDUxMiA3NjZxLTcyLjY3IDAtMTMzLjg3LTIyLjM4TDMyMyA3OTguNzVRNDA4IDgzOCA1MTIgODM4cTI4OC4zIDAgNDMwLjItMzAwLjNhNjAuMjkgNjAuMjkgMCAwMDAtNTEuNXptLTYzLjU3LTMyMC42NEw4MzYgMTIyLjg4YTggOCAwIDAwLTExLjMyIDBMNzE1LjMxIDIzMi4yUTYyNC44NiAxODYgNTEyIDE4NnEtMjg4LjMgMC00MzAuMiAzMDAuM2E2MC4zIDYwLjMgMCAwMDAgNTEuNXE1Ni42OSAxMTkuNCAxMzYuNSAxOTEuNDFMMTEyLjQ4IDgzNWE4IDggMCAwMDAgMTEuMzFMMTU1LjE3IDg4OWE4IDggMCAwMDExLjMxIDBsNzEyLjE1LTcxMi4xMmE4IDggMCAwMDAtMTEuMzJ6TTE0OS4zIDUxMkMyMzIuNiAzMzkuOCAzNTAuNyAyNTggNTEyIDI1OGM1NC41NCAwIDEwNC4xMyA5LjM2IDE0OS4xMiAyOC4zOWwtNzAuMyA3MC4zYTE3NiAxNzYgMCAwMC0yMzguMTMgMjM4LjEzbC04My40MiA4My40MkMyMjMuMSA2MzcuNDkgMTgzLjMgNTgyLjI4IDE0OS4zIDUxMnptMjQ2LjcgMGExMTIuMTEgMTEyLjExIDAgMDExNDYuMi0xMDYuNjlMNDAxLjMxIDU0Ni4yQTExMiAxMTIgMCAwMTM5NiA1MTJ6IiAvPjxwYXRoIGQ9Ik01MDggNjI0Yy0zLjQ2IDAtNi44Ny0uMTYtMTAuMjUtLjQ3bC01Mi44MiA1Mi44MmExNzYuMDkgMTc2LjA5IDAgMDAyMjcuNDItMjI3LjQybC01Mi44MiA1Mi44MmMuMzEgMy4zOC40NyA2Ljc5LjQ3IDEwLjI1YTExMS45NCAxMTEuOTQgMCAwMS0xMTIgMTEyeiIgLz48L3N2Zz4=) */
+var RefIcon$3 = /*#__PURE__*/React$9.forwardRef(EyeInvisibleOutlined);
+if (process.env.NODE_ENV !== 'production') {
+  RefIcon$3.displayName = 'EyeInvisibleOutlined';
+}
+EyeInvisibleOutlined$3.default = RefIcon$3;
 
 (function (module, exports) {
 	Object.defineProperty(exports, "__esModule", {
@@ -20280,146 +20047,54 @@ EyeInvisibleOutlined$1.default = EyeInvisibleOutlined;
 	});
 	exports.default = void 0;
 
-	const _EyeInvisibleOutlined = _interopRequireDefault(EyeInvisibleOutlined$2);
+	const _EyeInvisibleOutlined = _interopRequireDefault(EyeInvisibleOutlined$3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	const _default = _EyeInvisibleOutlined;
 	exports.default = _default;
 	module.exports = _default; 
-} (EyeInvisibleOutlined$3, EyeInvisibleOutlined$3.exports));
+} (EyeInvisibleOutlined$4, EyeInvisibleOutlined$4.exports));
 
-var EyeInvisibleOutlinedExports = EyeInvisibleOutlined$3.exports;
+var EyeInvisibleOutlinedExports = EyeInvisibleOutlined$4.exports;
 
-var EyeOutlined$3 = {exports: {}};
+var EyeOutlined$4 = {exports: {}};
+
+var EyeOutlined$3 = {};
 
 var EyeOutlined$2 = {};
 
-var EyeOutlined$1 = {};
-
 // This icon file is generated automatically.
-Object.defineProperty(EyeOutlined$1, "__esModule", { value: true });
-var EyeOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z" } }] }, "name": "eye", "theme": "outlined" };
-EyeOutlined$1.default = EyeOutlined;
+Object.defineProperty(EyeOutlined$2, "__esModule", { value: true });
+var EyeOutlined$1 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z" } }] }, "name": "eye", "theme": "outlined" };
+EyeOutlined$2.default = EyeOutlined$1;
 
-(function (exports) {
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	Object.defineProperty(exports, "default", {
-	    enumerable: true,
-	    get: function() {
-	        return _default;
-	    }
-	});
-	var _react = /*#__PURE__*/ _interop_require_wildcard(React__default);
-	var _EyeOutlined = /*#__PURE__*/ _interop_require_default(EyeOutlined$1);
-	var _AntdIcon = /*#__PURE__*/ _interop_require_default(AntdIcon);
-	function _define_property(obj, key, value) {
-	    if (key in obj) {
-	        Object.defineProperty(obj, key, {
-	            value: value,
-	            enumerable: true,
-	            configurable: true,
-	            writable: true
-	        });
-	    } else {
-	        obj[key] = value;
-	    }
-	    return obj;
-	}
-	function _interop_require_default(obj) {
-	    return obj && obj.__esModule ? obj : {
-	        default: obj
-	    };
-	}
-	function _getRequireWildcardCache(nodeInterop) {
-	    if (typeof WeakMap !== "function") return null;
-	    var cacheBabelInterop = new WeakMap();
-	    var cacheNodeInterop = new WeakMap();
-	    return (_getRequireWildcardCache = function(nodeInterop) {
-	        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-	    })(nodeInterop);
-	}
-	function _interop_require_wildcard(obj, nodeInterop) {
-	    if (obj && obj.__esModule) {
-	        return obj;
-	    }
-	    if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
-	        return {
-	            default: obj
-	        };
-	    }
-	    var cache = _getRequireWildcardCache(nodeInterop);
-	    if (cache && cache.has(obj)) {
-	        return cache.get(obj);
-	    }
-	    var newObj = {
-	        __proto__: null
-	    };
-	    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-	    for(var key in obj){
-	        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-	            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-	            if (desc && (desc.get || desc.set)) {
-	                Object.defineProperty(newObj, key, desc);
-	            } else {
-	                newObj[key] = obj[key];
-	            }
-	        }
-	    }
-	    newObj.default = obj;
-	    if (cache) {
-	        cache.set(obj, newObj);
-	    }
-	    return newObj;
-	}
-	function _object_spread(target) {
-	    for(var i = 1; i < arguments.length; i++){
-	        var source = arguments[i] != null ? arguments[i] : {};
-	        var ownKeys = Object.keys(source);
-	        if (typeof Object.getOwnPropertySymbols === "function") {
-	            ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
-	                return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-	            }));
-	        }
-	        ownKeys.forEach(function(key) {
-	            _define_property(target, key, source[key]);
-	        });
-	    }
-	    return target;
-	}
-	function ownKeys(object, enumerableOnly) {
-	    var keys = Object.keys(object);
-	    if (Object.getOwnPropertySymbols) {
-	        var symbols = Object.getOwnPropertySymbols(object);
-	        keys.push.apply(keys, symbols);
-	    }
-	    return keys;
-	}
-	function _object_spread_props(target, source) {
-	    source = source != null ? source : {};
-	    if (Object.getOwnPropertyDescriptors) {
-	        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-	    } else {
-	        ownKeys(Object(source)).forEach(function(key) {
-	            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-	        });
-	    }
-	    return target;
-	}
-	var EyeOutlined = function(props, ref) {
-	    return /*#__PURE__*/ _react.createElement(_AntdIcon.default, _object_spread_props(_object_spread({}, props), {
-	        ref: ref,
-	        icon: _EyeOutlined.default
-	    }));
-	};
-	/**![eye](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTk0Mi4yIDQ4Ni4yQzg0Ny40IDI4Ni41IDcwNC4xIDE4NiA1MTIgMTg2Yy0xOTIuMiAwLTMzNS40IDEwMC41LTQzMC4yIDMwMC4zYTYwLjMgNjAuMyAwIDAwMCA1MS41QzE3Ni42IDczNy41IDMxOS45IDgzOCA1MTIgODM4YzE5Mi4yIDAgMzM1LjQtMTAwLjUgNDMwLjItMzAwLjMgNy43LTE2LjIgNy43LTM1IDAtNTEuNXpNNTEyIDc2NmMtMTYxLjMgMC0yNzkuNC04MS44LTM2Mi43LTI1NEMyMzIuNiAzMzkuOCAzNTAuNyAyNTggNTEyIDI1OGMxNjEuMyAwIDI3OS40IDgxLjggMzYyLjcgMjU0Qzc5MS41IDY4NC4yIDY3My40IDc2NiA1MTIgNzY2em0tNC00MzBjLTk3LjIgMC0xNzYgNzguOC0xNzYgMTc2czc4LjggMTc2IDE3NiAxNzYgMTc2LTc4LjggMTc2LTE3Ni03OC44LTE3Ni0xNzYtMTc2em0wIDI4OGMtNjEuOSAwLTExMi01MC4xLTExMi0xMTJzNTAuMS0xMTIgMTEyLTExMiAxMTIgNTAuMSAxMTIgMTEyLTUwLjEgMTEyLTExMiAxMTJ6IiAvPjwvc3ZnPg==) */ var RefIcon = /*#__PURE__*/ _react.forwardRef(EyeOutlined);
-	if (process.env.NODE_ENV !== 'production') {
-	    RefIcon.displayName = 'EyeOutlined';
-	}
-	var _default = RefIcon; 
-} (EyeOutlined$2));
+var _interopRequireWildcard$d = interopRequireWildcardExports.default;
+var _interopRequireDefault$h = interopRequireDefaultExports.default;
+Object.defineProperty(EyeOutlined$3, "__esModule", {
+  value: true
+});
+EyeOutlined$3.default = void 0;
+var _extends2$2 = _interopRequireDefault$h(_extendsExports);
+var React$8 = _interopRequireWildcard$d(React__default);
+var _EyeOutlined$1 = _interopRequireDefault$h(EyeOutlined$2);
+var _AntdIcon$2 = _interopRequireDefault$h(AntdIcon);
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+var EyeOutlined = function EyeOutlined(props, ref) {
+  return /*#__PURE__*/React$8.createElement(_AntdIcon$2.default, (0, _extends2$2.default)({}, props, {
+    ref: ref,
+    icon: _EyeOutlined$1.default
+  }));
+};
+
+/**![eye](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTk0Mi4yIDQ4Ni4yQzg0Ny40IDI4Ni41IDcwNC4xIDE4NiA1MTIgMTg2Yy0xOTIuMiAwLTMzNS40IDEwMC41LTQzMC4yIDMwMC4zYTYwLjMgNjAuMyAwIDAwMCA1MS41QzE3Ni42IDczNy41IDMxOS45IDgzOCA1MTIgODM4YzE5Mi4yIDAgMzM1LjQtMTAwLjUgNDMwLjItMzAwLjMgNy43LTE2LjIgNy43LTM1IDAtNTEuNXpNNTEyIDc2NmMtMTYxLjMgMC0yNzkuNC04MS44LTM2Mi43LTI1NEMyMzIuNiAzMzkuOCAzNTAuNyAyNTggNTEyIDI1OGMxNjEuMyAwIDI3OS40IDgxLjggMzYyLjcgMjU0Qzc5MS41IDY4NC4yIDY3My40IDc2NiA1MTIgNzY2em0tNC00MzBjLTk3LjIgMC0xNzYgNzguOC0xNzYgMTc2czc4LjggMTc2IDE3NiAxNzYgMTc2LTc4LjggMTc2LTE3Ni03OC44LTE3Ni0xNzYtMTc2em0wIDI4OGMtNjEuOSAwLTExMi01MC4xLTExMi0xMTJzNTAuMS0xMTIgMTEyLTExMiAxMTIgNTAuMSAxMTIgMTEyLTUwLjEgMTEyLTExMiAxMTJ6IiAvPjwvc3ZnPg==) */
+var RefIcon$2 = /*#__PURE__*/React$8.forwardRef(EyeOutlined);
+if (process.env.NODE_ENV !== 'production') {
+  RefIcon$2.displayName = 'EyeOutlined';
+}
+EyeOutlined$3.default = RefIcon$2;
 
 (function (module, exports) {
 	Object.defineProperty(exports, "__esModule", {
@@ -20427,33 +20102,33 @@ EyeOutlined$1.default = EyeOutlined;
 	});
 	exports.default = void 0;
 
-	const _EyeOutlined = _interopRequireDefault(EyeOutlined$2);
+	const _EyeOutlined = _interopRequireDefault(EyeOutlined$3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	const _default = _EyeOutlined;
 	exports.default = _default;
 	module.exports = _default; 
-} (EyeOutlined$3, EyeOutlined$3.exports));
+} (EyeOutlined$4, EyeOutlined$4.exports));
 
-var EyeOutlinedExports = EyeOutlined$3.exports;
+var EyeOutlinedExports = EyeOutlined$4.exports;
 
-var _interopRequireDefault$e = interopRequireDefaultExports.default;
-var _interopRequireWildcard$a = interopRequireWildcardExports.default;
+var _interopRequireDefault$g = interopRequireDefaultExports.default;
+var _interopRequireWildcard$c = interopRequireWildcardExports.default;
 Object.defineProperty(Password$1, "__esModule", {
   value: true
 });
 Password$1.default = void 0;
-var _react$7 = _interopRequireWildcard$a(React__default);
-var React$5 = _react$7;
-var _EyeInvisibleOutlined = _interopRequireDefault$e(EyeInvisibleOutlinedExports);
-var _EyeOutlined = _interopRequireDefault$e(EyeOutlinedExports);
-var _classnames$8 = _interopRequireDefault$e(classnamesExports);
-var _omit$1 = _interopRequireDefault$e(omit$2);
+var _react$7 = _interopRequireWildcard$c(React__default);
+var React$7 = _react$7;
+var _EyeInvisibleOutlined = _interopRequireDefault$g(EyeInvisibleOutlinedExports);
+var _EyeOutlined = _interopRequireDefault$g(EyeOutlinedExports);
+var _classnames$8 = _interopRequireDefault$g(classnamesExports);
+var _omit$1 = _interopRequireDefault$g(omit$2);
 var _ref$3 = ref;
 var _configProvider$7 = configProvider;
-var _useRemovePasswordTimeout = _interopRequireDefault$e(useRemovePasswordTimeout$1);
-var _Input$3 = _interopRequireDefault$e(Input$3);
+var _useRemovePasswordTimeout = _interopRequireDefault$g(useRemovePasswordTimeout$1);
+var _Input$3 = _interopRequireDefault$g(Input$3);
 var __rest$4 = function (s, e) {
   var t = {};
   for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
@@ -20462,12 +20137,12 @@ var __rest$4 = function (s, e) {
   }
   return t;
 };
-const defaultIconRender = visible => visible ? /*#__PURE__*/React$5.createElement(_EyeOutlined.default, null) : /*#__PURE__*/React$5.createElement(_EyeInvisibleOutlined.default, null);
+const defaultIconRender = visible => visible ? /*#__PURE__*/React$7.createElement(_EyeOutlined.default, null) : /*#__PURE__*/React$7.createElement(_EyeInvisibleOutlined.default, null);
 const actionMap = {
   click: 'onClick',
   hover: 'onMouseOver'
 };
-const Password = /*#__PURE__*/React$5.forwardRef((props, ref) => {
+const Password = /*#__PURE__*/React$7.forwardRef((props, ref) => {
   const {
     disabled,
     action = 'click',
@@ -20477,7 +20152,7 @@ const Password = /*#__PURE__*/React$5.forwardRef((props, ref) => {
   const visibilityControlled = typeof visibilityToggle === 'object' && visibilityToggle.visible !== undefined;
   const [visible, setVisible] = (0, _react$7.useState)(() => visibilityControlled ? visibilityToggle.visible : false);
   const inputRef = (0, _react$7.useRef)(null);
-  React$5.useEffect(() => {
+  React$7.useEffect(() => {
     if (visibilityControlled) {
       setVisible(visibilityToggle.visible);
     }
@@ -20518,7 +20193,7 @@ const Password = /*#__PURE__*/React$5.forwardRef((props, ref) => {
         e.preventDefault();
       }
     };
-    return /*#__PURE__*/React$5.cloneElement( /*#__PURE__*/React$5.isValidElement(icon) ? icon : /*#__PURE__*/React$5.createElement("span", null, icon), iconProps);
+    return /*#__PURE__*/React$7.cloneElement( /*#__PURE__*/React$7.isValidElement(icon) ? icon : /*#__PURE__*/React$7.createElement("span", null, icon), iconProps);
   };
   const {
       className,
@@ -20529,7 +20204,7 @@ const Password = /*#__PURE__*/React$5.forwardRef((props, ref) => {
     restProps = __rest$4(props, ["className", "prefixCls", "inputPrefixCls", "size"]);
   const {
     getPrefixCls
-  } = React$5.useContext(_configProvider$7.ConfigContext);
+  } = React$7.useContext(_configProvider$7.ConfigContext);
   const inputPrefixCls = getPrefixCls('input', customizeInputPrefixCls);
   const prefixCls = getPrefixCls('input-password', customizePrefixCls);
   const suffixIcon = visibilityToggle && getIcon(prefixCls);
@@ -20545,7 +20220,7 @@ const Password = /*#__PURE__*/React$5.forwardRef((props, ref) => {
   if (size) {
     omittedProps.size = size;
   }
-  return /*#__PURE__*/React$5.createElement(_Input$3.default, Object.assign({
+  return /*#__PURE__*/React$7.createElement(_Input$3.default, Object.assign({
     ref: (0, _ref$3.composeRef)(ref, inputRef)
   }, omittedProps));
 });
@@ -20556,135 +20231,43 @@ Password$1.default = Password;
 
 var Search$1 = {};
 
-var SearchOutlined$3 = {exports: {}};
+var SearchOutlined$4 = {exports: {}};
+
+var SearchOutlined$3 = {};
 
 var SearchOutlined$2 = {};
 
-var SearchOutlined$1 = {};
-
 // This icon file is generated automatically.
-Object.defineProperty(SearchOutlined$1, "__esModule", { value: true });
-var SearchOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z" } }] }, "name": "search", "theme": "outlined" };
-SearchOutlined$1.default = SearchOutlined;
+Object.defineProperty(SearchOutlined$2, "__esModule", { value: true });
+var SearchOutlined$1 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z" } }] }, "name": "search", "theme": "outlined" };
+SearchOutlined$2.default = SearchOutlined$1;
 
-(function (exports) {
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	Object.defineProperty(exports, "default", {
-	    enumerable: true,
-	    get: function() {
-	        return _default;
-	    }
-	});
-	var _react = /*#__PURE__*/ _interop_require_wildcard(React__default);
-	var _SearchOutlined = /*#__PURE__*/ _interop_require_default(SearchOutlined$1);
-	var _AntdIcon = /*#__PURE__*/ _interop_require_default(AntdIcon);
-	function _define_property(obj, key, value) {
-	    if (key in obj) {
-	        Object.defineProperty(obj, key, {
-	            value: value,
-	            enumerable: true,
-	            configurable: true,
-	            writable: true
-	        });
-	    } else {
-	        obj[key] = value;
-	    }
-	    return obj;
-	}
-	function _interop_require_default(obj) {
-	    return obj && obj.__esModule ? obj : {
-	        default: obj
-	    };
-	}
-	function _getRequireWildcardCache(nodeInterop) {
-	    if (typeof WeakMap !== "function") return null;
-	    var cacheBabelInterop = new WeakMap();
-	    var cacheNodeInterop = new WeakMap();
-	    return (_getRequireWildcardCache = function(nodeInterop) {
-	        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-	    })(nodeInterop);
-	}
-	function _interop_require_wildcard(obj, nodeInterop) {
-	    if (obj && obj.__esModule) {
-	        return obj;
-	    }
-	    if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
-	        return {
-	            default: obj
-	        };
-	    }
-	    var cache = _getRequireWildcardCache(nodeInterop);
-	    if (cache && cache.has(obj)) {
-	        return cache.get(obj);
-	    }
-	    var newObj = {
-	        __proto__: null
-	    };
-	    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-	    for(var key in obj){
-	        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-	            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-	            if (desc && (desc.get || desc.set)) {
-	                Object.defineProperty(newObj, key, desc);
-	            } else {
-	                newObj[key] = obj[key];
-	            }
-	        }
-	    }
-	    newObj.default = obj;
-	    if (cache) {
-	        cache.set(obj, newObj);
-	    }
-	    return newObj;
-	}
-	function _object_spread(target) {
-	    for(var i = 1; i < arguments.length; i++){
-	        var source = arguments[i] != null ? arguments[i] : {};
-	        var ownKeys = Object.keys(source);
-	        if (typeof Object.getOwnPropertySymbols === "function") {
-	            ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
-	                return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-	            }));
-	        }
-	        ownKeys.forEach(function(key) {
-	            _define_property(target, key, source[key]);
-	        });
-	    }
-	    return target;
-	}
-	function ownKeys(object, enumerableOnly) {
-	    var keys = Object.keys(object);
-	    if (Object.getOwnPropertySymbols) {
-	        var symbols = Object.getOwnPropertySymbols(object);
-	        keys.push.apply(keys, symbols);
-	    }
-	    return keys;
-	}
-	function _object_spread_props(target, source) {
-	    source = source != null ? source : {};
-	    if (Object.getOwnPropertyDescriptors) {
-	        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-	    } else {
-	        ownKeys(Object(source)).forEach(function(key) {
-	            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-	        });
-	    }
-	    return target;
-	}
-	var SearchOutlined = function(props, ref) {
-	    return /*#__PURE__*/ _react.createElement(_AntdIcon.default, _object_spread_props(_object_spread({}, props), {
-	        ref: ref,
-	        icon: _SearchOutlined.default
-	    }));
-	};
-	/**![search](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTkwOS42IDg1NC41TDY0OS45IDU5NC44QzY5MC4yIDU0Mi43IDcxMiA0NzkgNzEyIDQxMmMwLTgwLjItMzEuMy0xNTUuNC04Ny45LTIxMi4xLTU2LjYtNTYuNy0xMzItODcuOS0yMTIuMS04Ny45cy0xNTUuNSAzMS4zLTIxMi4xIDg3LjlDMTQzLjIgMjU2LjUgMTEyIDMzMS44IDExMiA0MTJjMCA4MC4xIDMxLjMgMTU1LjUgODcuOSAyMTIuMUMyNTYuNSA2ODAuOCAzMzEuOCA3MTIgNDEyIDcxMmM2NyAwIDEzMC42LTIxLjggMTgyLjctNjJsMjU5LjcgMjU5LjZhOC4yIDguMiAwIDAwMTEuNiAwbDQzLjYtNDMuNWE4LjIgOC4yIDAgMDAwLTExLjZ6TTU3MC40IDU3MC40QzUyOCA2MTIuNyA0NzEuOCA2MzYgNDEyIDYzNnMtMTE2LTIzLjMtMTU4LjQtNjUuNkMyMTEuMyA1MjggMTg4IDQ3MS44IDE4OCA0MTJzMjMuMy0xMTYuMSA2NS42LTE1OC40QzI5NiAyMTEuMyAzNTIuMiAxODggNDEyIDE4OHMxMTYuMSAyMy4yIDE1OC40IDY1LjZTNjM2IDM1Mi4yIDYzNiA0MTJzLTIzLjMgMTE2LjEtNjUuNiAxNTguNHoiIC8+PC9zdmc+) */ var RefIcon = /*#__PURE__*/ _react.forwardRef(SearchOutlined);
-	if (process.env.NODE_ENV !== 'production') {
-	    RefIcon.displayName = 'SearchOutlined';
-	}
-	var _default = RefIcon; 
-} (SearchOutlined$2));
+var _interopRequireWildcard$b = interopRequireWildcardExports.default;
+var _interopRequireDefault$f = interopRequireDefaultExports.default;
+Object.defineProperty(SearchOutlined$3, "__esModule", {
+  value: true
+});
+SearchOutlined$3.default = void 0;
+var _extends2$1 = _interopRequireDefault$f(_extendsExports);
+var React$6 = _interopRequireWildcard$b(React__default);
+var _SearchOutlined$1 = _interopRequireDefault$f(SearchOutlined$2);
+var _AntdIcon$1 = _interopRequireDefault$f(AntdIcon);
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+var SearchOutlined = function SearchOutlined(props, ref) {
+  return /*#__PURE__*/React$6.createElement(_AntdIcon$1.default, (0, _extends2$1.default)({}, props, {
+    ref: ref,
+    icon: _SearchOutlined$1.default
+  }));
+};
+
+/**![search](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTkwOS42IDg1NC41TDY0OS45IDU5NC44QzY5MC4yIDU0Mi43IDcxMiA0NzkgNzEyIDQxMmMwLTgwLjItMzEuMy0xNTUuNC04Ny45LTIxMi4xLTU2LjYtNTYuNy0xMzItODcuOS0yMTIuMS04Ny45cy0xNTUuNSAzMS4zLTIxMi4xIDg3LjlDMTQzLjIgMjU2LjUgMTEyIDMzMS44IDExMiA0MTJjMCA4MC4xIDMxLjMgMTU1LjUgODcuOSAyMTIuMUMyNTYuNSA2ODAuOCAzMzEuOCA3MTIgNDEyIDcxMmM2NyAwIDEzMC42LTIxLjggMTgyLjctNjJsMjU5LjcgMjU5LjZhOC4yIDguMiAwIDAwMTEuNiAwbDQzLjYtNDMuNWE4LjIgOC4yIDAgMDAwLTExLjZ6TTU3MC40IDU3MC40QzUyOCA2MTIuNyA0NzEuOCA2MzYgNDEyIDYzNnMtMTE2LTIzLjMtMTU4LjQtNjUuNkMyMTEuMyA1MjggMTg4IDQ3MS44IDE4OCA0MTJzMjMuMy0xMTYuMSA2NS42LTE1OC40QzI5NiAyMTEuMyAzNTIuMiAxODggNDEyIDE4OHMxMTYuMSAyMy4yIDE1OC40IDY1LjZTNjM2IDM1Mi4yIDYzNiA0MTJzLTIzLjMgMTE2LjEtNjUuNiAxNTguNHoiIC8+PC9zdmc+) */
+var RefIcon$1 = /*#__PURE__*/React$6.forwardRef(SearchOutlined);
+if (process.env.NODE_ENV !== 'production') {
+  RefIcon$1.displayName = 'SearchOutlined';
+}
+SearchOutlined$3.default = RefIcon$1;
 
 (function (module, exports) {
 	Object.defineProperty(exports, "__esModule", {
@@ -20692,27 +20275,27 @@ SearchOutlined$1.default = SearchOutlined;
 	});
 	exports.default = void 0;
 
-	const _SearchOutlined = _interopRequireDefault(SearchOutlined$2);
+	const _SearchOutlined = _interopRequireDefault(SearchOutlined$3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	const _default = _SearchOutlined;
 	exports.default = _default;
 	module.exports = _default; 
-} (SearchOutlined$3, SearchOutlined$3.exports));
+} (SearchOutlined$4, SearchOutlined$4.exports));
 
-var SearchOutlinedExports = SearchOutlined$3.exports;
+var SearchOutlinedExports = SearchOutlined$4.exports;
 
 var reactNode = {};
 
-var _interopRequireDefault$d = interopRequireDefaultExports.default;
+var _interopRequireDefault$e = interopRequireDefaultExports.default;
 Object.defineProperty(reactNode, "__esModule", {
   value: true
 });
 reactNode.cloneElement = cloneElement;
 reactNode.isFragment = isFragment;
 reactNode.replaceElement = void 0;
-var _react$6 = _interopRequireDefault$d(React__default);
+var _react$6 = _interopRequireDefault$e(React__default);
 function isFragment(child) {
   return child && /*#__PURE__*/_react$6.default.isValidElement(child) && child.type === _react$6.default.Fragment;
 }
@@ -21162,8 +20745,8 @@ var asyncToGenerator = {exports: {}};
 
 var asyncToGeneratorExports = asyncToGenerator.exports;
 
-var _interopRequireWildcard$9 = interopRequireWildcardExports.default;
-var _interopRequireDefault$c = interopRequireDefaultExports.default;
+var _interopRequireWildcard$a = interopRequireWildcardExports.default;
+var _interopRequireDefault$d = interopRequireDefaultExports.default;
 Object.defineProperty(render$1, "__esModule", {
   value: true
 });
@@ -21171,11 +20754,11 @@ render$1._r = _r;
 render$1._u = _u;
 render$1.render = render;
 render$1.unmount = unmount;
-var _regeneratorRuntime2 = _interopRequireDefault$c(regeneratorRuntimeExports);
-var _asyncToGenerator2 = _interopRequireDefault$c(asyncToGeneratorExports);
-var _typeof2 = _interopRequireDefault$c(_typeofExports);
-var _objectSpread2 = _interopRequireDefault$c(objectSpread2Exports);
-var ReactDOM = _interopRequireWildcard$9(ReactDOM$1);
+var _regeneratorRuntime2 = _interopRequireDefault$d(regeneratorRuntimeExports);
+var _asyncToGenerator2 = _interopRequireDefault$d(asyncToGeneratorExports);
+var _typeof2 = _interopRequireDefault$d(_typeofExports);
+var _objectSpread2 = _interopRequireDefault$d(objectSpread2Exports);
+var ReactDOM = _interopRequireWildcard$a(ReactDOM$1);
 // Let compiler not to search module usage
 var fullClone = (0, _objectSpread2.default)({}, ReactDOM);
 var version = fullClone.version,
@@ -21321,16 +20904,16 @@ function getTargetWaveColor(node) {
   return null;
 }
 
-var _interopRequireDefault$b = interopRequireDefaultExports.default;
-var _interopRequireWildcard$8 = interopRequireWildcardExports.default;
+var _interopRequireDefault$c = interopRequireDefaultExports.default;
+var _interopRequireWildcard$9 = interopRequireWildcardExports.default;
 Object.defineProperty(WaveEffect$1, "__esModule", {
   value: true
 });
 WaveEffect$1.default = void 0;
-var React$4 = _interopRequireWildcard$8(React__default);
-var _classnames$7 = _interopRequireDefault$b(classnamesExports);
-var _rcMotion$1 = _interopRequireDefault$b(require$$5);
-var _raf$1 = _interopRequireDefault$b(raf$1);
+var React$5 = _interopRequireWildcard$9(React__default);
+var _classnames$7 = _interopRequireDefault$c(classnamesExports);
+var _rcMotion$1 = _interopRequireDefault$c(require$$5);
+var _raf$1 = _interopRequireDefault$c(raf$1);
 var _render = render$1;
 var _ref2 = ref;
 var _interface$1 = _interface$2;
@@ -21344,14 +20927,14 @@ const WaveEffect = props => {
     target,
     component
   } = props;
-  const divRef = React$4.useRef(null);
-  const [color, setWaveColor] = React$4.useState(null);
-  const [borderRadius, setBorderRadius] = React$4.useState([]);
-  const [left, setLeft] = React$4.useState(0);
-  const [top, setTop] = React$4.useState(0);
-  const [width, setWidth] = React$4.useState(0);
-  const [height, setHeight] = React$4.useState(0);
-  const [enabled, setEnabled] = React$4.useState(false);
+  const divRef = React$5.useRef(null);
+  const [color, setWaveColor] = React$5.useState(null);
+  const [borderRadius, setBorderRadius] = React$5.useState([]);
+  const [left, setLeft] = React$5.useState(0);
+  const [top, setTop] = React$5.useState(0);
+  const [width, setWidth] = React$5.useState(0);
+  const [height, setHeight] = React$5.useState(0);
+  const [enabled, setEnabled] = React$5.useState(false);
   const waveStyle = {
     left,
     top,
@@ -21385,7 +20968,7 @@ const WaveEffect = props => {
     } = nodeStyle;
     setBorderRadius([borderTopLeftRadius, borderTopRightRadius, borderBottomRightRadius, borderBottomLeftRadius].map(radius => validateNum(parseFloat(radius))));
   }
-  React$4.useEffect(() => {
+  React$5.useEffect(() => {
     if (target) {
       // We need delay to check position here
       // since UI may change after click
@@ -21409,7 +20992,7 @@ const WaveEffect = props => {
     return null;
   }
   const isSmallComponent = (component === 'Checkbox' || component === 'Radio') && (target === null || target === void 0 ? void 0 : target.classList.contains(_interface$1.TARGET_CLS));
-  return /*#__PURE__*/React$4.createElement(_rcMotion$1.default, {
+  return /*#__PURE__*/React$5.createElement(_rcMotion$1.default, {
     visible: true,
     motionAppear: true,
     motionName: "wave-motion",
@@ -21428,7 +21011,7 @@ const WaveEffect = props => {
     let {
       className: motionClassName
     } = _ref;
-    return /*#__PURE__*/React$4.createElement("div", {
+    return /*#__PURE__*/React$5.createElement("div", {
       ref: (0, _ref2.composeRef)(divRef, ref),
       className: (0, _classnames$7.default)(className, motionClassName, {
         'wave-quick': isSmallComponent
@@ -21452,29 +21035,29 @@ const showWaveEffect = (target, info) => {
   holder.style.left = '0px';
   holder.style.top = '0px';
   target === null || target === void 0 ? void 0 : target.insertBefore(holder, target === null || target === void 0 ? void 0 : target.firstChild);
-  (0, _render.render)( /*#__PURE__*/React$4.createElement(WaveEffect, Object.assign({}, info, {
+  (0, _render.render)( /*#__PURE__*/React$5.createElement(WaveEffect, Object.assign({}, info, {
     target: target
   })), holder);
 };
 WaveEffect$1.default = showWaveEffect;
 
-var _interopRequireDefault$a = interopRequireDefaultExports.default;
-var _interopRequireWildcard$7 = interopRequireWildcardExports.default;
+var _interopRequireDefault$b = interopRequireDefaultExports.default;
+var _interopRequireWildcard$8 = interopRequireWildcardExports.default;
 Object.defineProperty(useWave$1, "__esModule", {
   value: true
 });
 useWave$1.default = void 0;
-var React$3 = _interopRequireWildcard$7(React__default);
-var _rcUtil = require$$3$1;
-var _raf = _interopRequireDefault$a(raf$1);
+var React$4 = _interopRequireWildcard$8(React__default);
+var _rcUtil = require$$3;
+var _raf = _interopRequireDefault$b(raf$1);
 var _configProvider$5 = configProvider;
-var _useToken = _interopRequireDefault$a(useToken$1);
+var _useToken = _interopRequireDefault$b(useToken$1);
 var _interface = _interface$2;
-var _WaveEffect = _interopRequireDefault$a(WaveEffect$1);
+var _WaveEffect = _interopRequireDefault$b(WaveEffect$1);
 const useWave = (nodeRef, className, component) => {
   const {
     wave
-  } = React$3.useContext(_configProvider$5.ConfigContext);
+  } = React$4.useContext(_configProvider$5.ConfigContext);
   const [, token, hashId] = (0, _useToken.default)();
   const showWave = (0, _rcUtil.useEvent)(event => {
     const node = nodeRef.current;
@@ -21494,7 +21077,7 @@ const useWave = (nodeRef, className, component) => {
       hashId
     });
   });
-  const rafId = React$3.useRef();
+  const rafId = React$4.useRef();
   // Merge trigger event into one for each frame
   const showDebounceWave = event => {
     _raf.default.cancel(rafId.current);
@@ -21506,20 +21089,20 @@ const useWave = (nodeRef, className, component) => {
 };
 useWave$1.default = useWave;
 
-var _interopRequireDefault$9 = interopRequireDefaultExports.default;
-var _interopRequireWildcard$6 = interopRequireWildcardExports.default;
+var _interopRequireDefault$a = interopRequireDefaultExports.default;
+var _interopRequireWildcard$7 = interopRequireWildcardExports.default;
 Object.defineProperty(wave, "__esModule", {
   value: true
 });
 wave.default = void 0;
-var _react$5 = _interopRequireWildcard$6(React__default);
-var _classnames$6 = _interopRequireDefault$9(classnamesExports);
-var _isVisible = _interopRequireDefault$9(isVisible);
+var _react$5 = _interopRequireWildcard$7(React__default);
+var _classnames$6 = _interopRequireDefault$a(classnamesExports);
+var _isVisible = _interopRequireDefault$a(isVisible);
 var _ref$2 = ref;
 var _configProvider$4 = configProvider;
 var _reactNode$2 = reactNode;
-var _style$3 = _interopRequireDefault$9(style$1);
-var _useWave = _interopRequireDefault$9(useWave$1);
+var _style$3 = _interopRequireDefault$a(style$1);
+var _useWave = _interopRequireDefault$a(useWave$1);
 const Wave = props => {
   const {
     children,
@@ -21573,15 +21156,15 @@ wave.default = Wave;
 
 var buttonGroup = {};
 
-var _interopRequireDefault$8 = interopRequireDefaultExports.default;
-var _interopRequireWildcard$5 = interopRequireWildcardExports.default;
+var _interopRequireDefault$9 = interopRequireDefaultExports.default;
+var _interopRequireWildcard$6 = interopRequireWildcardExports.default;
 Object.defineProperty(buttonGroup, "__esModule", {
   value: true
 });
 buttonGroup.default = buttonGroup.GroupSizeContext = void 0;
-var React$2 = _interopRequireWildcard$5(React__default);
-var _classnames$5 = _interopRequireDefault$8(classnamesExports);
-var _warning$2 = warning$4;
+var React$3 = _interopRequireWildcard$6(React__default);
+var _classnames$5 = _interopRequireDefault$9(classnamesExports);
+var _warning$2 = warning$5;
 var _configProvider$3 = configProvider;
 var _internal$3 = internal;
 var __rest$3 = function (s, e) {
@@ -21592,12 +21175,12 @@ var __rest$3 = function (s, e) {
   }
   return t;
 };
-const GroupSizeContext = buttonGroup.GroupSizeContext = /*#__PURE__*/React$2.createContext(undefined);
+const GroupSizeContext = buttonGroup.GroupSizeContext = /*#__PURE__*/React$3.createContext(undefined);
 const ButtonGroup = props => {
   const {
     getPrefixCls,
     direction
-  } = React$2.useContext(_configProvider$3.ConfigContext);
+  } = React$3.useContext(_configProvider$3.ConfigContext);
   const {
       prefixCls: customizePrefixCls,
       size,
@@ -21624,9 +21207,9 @@ const ButtonGroup = props => {
     [`${prefixCls}-${sizeCls}`]: sizeCls,
     [`${prefixCls}-rtl`]: direction === 'rtl'
   }, className, hashId);
-  return /*#__PURE__*/React$2.createElement(GroupSizeContext.Provider, {
+  return /*#__PURE__*/React$3.createElement(GroupSizeContext.Provider, {
     value: size
-  }, /*#__PURE__*/React$2.createElement("div", Object.assign({}, others, {
+  }, /*#__PURE__*/React$3.createElement("div", Object.assign({}, others, {
     className: classes
   })));
 };
@@ -21634,7 +21217,7 @@ buttonGroup.default = ButtonGroup;
 
 var buttonHelpers = {};
 
-var _interopRequireDefault$7 = interopRequireDefaultExports.default;
+var _interopRequireDefault$8 = interopRequireDefaultExports.default;
 Object.defineProperty(buttonHelpers, "__esModule", {
   value: true
 });
@@ -21643,7 +21226,7 @@ buttonHelpers.isString = isString;
 buttonHelpers.isTwoCNChar = void 0;
 buttonHelpers.isUnBorderedButtonType = isUnBorderedButtonType;
 buttonHelpers.spaceChildren = spaceChildren;
-var _react$4 = _interopRequireDefault$7(React__default);
+var _react$4 = _interopRequireDefault$8(React__default);
 var _reactNode$1 = reactNode;
 const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
 const isTwoCNChar = buttonHelpers.isTwoCNChar = rxTwoCNChar.test.bind(rxTwoCNChar);
@@ -21701,14 +21284,14 @@ function spaceChildren(children, needInserted) {
 
 var IconWrapper$1 = {};
 
-var _interopRequireDefault$6 = interopRequireDefaultExports.default;
-var _interopRequireWildcard$4 = interopRequireWildcardExports.default;
+var _interopRequireDefault$7 = interopRequireDefaultExports.default;
+var _interopRequireWildcard$5 = interopRequireWildcardExports.default;
 Object.defineProperty(IconWrapper$1, "__esModule", {
   value: true
 });
 IconWrapper$1.default = void 0;
-var _react$3 = _interopRequireWildcard$4(React__default);
-var _classnames$4 = _interopRequireDefault$6(classnamesExports);
+var _react$3 = _interopRequireWildcard$5(React__default);
+var _classnames$4 = _interopRequireDefault$7(classnamesExports);
 const IconWrapper = /*#__PURE__*/(0, _react$3.forwardRef)((props, ref) => {
   const {
     className,
@@ -21727,135 +21310,43 @@ IconWrapper$1.default = IconWrapper;
 
 var LoadingIcon$1 = {};
 
-var LoadingOutlined$3 = {exports: {}};
+var LoadingOutlined$4 = {exports: {}};
+
+var LoadingOutlined$3 = {};
 
 var LoadingOutlined$2 = {};
 
-var LoadingOutlined$1 = {};
-
 // This icon file is generated automatically.
-Object.defineProperty(LoadingOutlined$1, "__esModule", { value: true });
-var LoadingOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z" } }] }, "name": "loading", "theme": "outlined" };
-LoadingOutlined$1.default = LoadingOutlined;
+Object.defineProperty(LoadingOutlined$2, "__esModule", { value: true });
+var LoadingOutlined$1 = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z" } }] }, "name": "loading", "theme": "outlined" };
+LoadingOutlined$2.default = LoadingOutlined$1;
 
-(function (exports) {
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	Object.defineProperty(exports, "default", {
-	    enumerable: true,
-	    get: function() {
-	        return _default;
-	    }
-	});
-	var _react = /*#__PURE__*/ _interop_require_wildcard(React__default);
-	var _LoadingOutlined = /*#__PURE__*/ _interop_require_default(LoadingOutlined$1);
-	var _AntdIcon = /*#__PURE__*/ _interop_require_default(AntdIcon);
-	function _define_property(obj, key, value) {
-	    if (key in obj) {
-	        Object.defineProperty(obj, key, {
-	            value: value,
-	            enumerable: true,
-	            configurable: true,
-	            writable: true
-	        });
-	    } else {
-	        obj[key] = value;
-	    }
-	    return obj;
-	}
-	function _interop_require_default(obj) {
-	    return obj && obj.__esModule ? obj : {
-	        default: obj
-	    };
-	}
-	function _getRequireWildcardCache(nodeInterop) {
-	    if (typeof WeakMap !== "function") return null;
-	    var cacheBabelInterop = new WeakMap();
-	    var cacheNodeInterop = new WeakMap();
-	    return (_getRequireWildcardCache = function(nodeInterop) {
-	        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-	    })(nodeInterop);
-	}
-	function _interop_require_wildcard(obj, nodeInterop) {
-	    if (obj && obj.__esModule) {
-	        return obj;
-	    }
-	    if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
-	        return {
-	            default: obj
-	        };
-	    }
-	    var cache = _getRequireWildcardCache(nodeInterop);
-	    if (cache && cache.has(obj)) {
-	        return cache.get(obj);
-	    }
-	    var newObj = {
-	        __proto__: null
-	    };
-	    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-	    for(var key in obj){
-	        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-	            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-	            if (desc && (desc.get || desc.set)) {
-	                Object.defineProperty(newObj, key, desc);
-	            } else {
-	                newObj[key] = obj[key];
-	            }
-	        }
-	    }
-	    newObj.default = obj;
-	    if (cache) {
-	        cache.set(obj, newObj);
-	    }
-	    return newObj;
-	}
-	function _object_spread(target) {
-	    for(var i = 1; i < arguments.length; i++){
-	        var source = arguments[i] != null ? arguments[i] : {};
-	        var ownKeys = Object.keys(source);
-	        if (typeof Object.getOwnPropertySymbols === "function") {
-	            ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
-	                return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-	            }));
-	        }
-	        ownKeys.forEach(function(key) {
-	            _define_property(target, key, source[key]);
-	        });
-	    }
-	    return target;
-	}
-	function ownKeys(object, enumerableOnly) {
-	    var keys = Object.keys(object);
-	    if (Object.getOwnPropertySymbols) {
-	        var symbols = Object.getOwnPropertySymbols(object);
-	        keys.push.apply(keys, symbols);
-	    }
-	    return keys;
-	}
-	function _object_spread_props(target, source) {
-	    source = source != null ? source : {};
-	    if (Object.getOwnPropertyDescriptors) {
-	        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-	    } else {
-	        ownKeys(Object(source)).forEach(function(key) {
-	            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-	        });
-	    }
-	    return target;
-	}
-	var LoadingOutlined = function(props, ref) {
-	    return /*#__PURE__*/ _react.createElement(_AntdIcon.default, _object_spread_props(_object_spread({}, props), {
-	        ref: ref,
-	        icon: _LoadingOutlined.default
-	    }));
-	};
-	/**![loading](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTk4OCA1NDhjLTE5LjkgMC0zNi0xNi4xLTM2LTM2IDAtNTkuNC0xMS42LTExNy0zNC42LTE3MS4zYTQ0MC40NSA0NDAuNDUgMCAwMC05NC4zLTEzOS45IDQzNy43MSA0MzcuNzEgMCAwMC0xMzkuOS05NC4zQzYyOSA4My42IDU3MS40IDcyIDUxMiA3MmMtMTkuOSAwLTM2LTE2LjEtMzYtMzZzMTYuMS0zNiAzNi0zNmM2OS4xIDAgMTM2LjIgMTMuNSAxOTkuMyA0MC4zQzc3Mi4zIDY2IDgyNyAxMDMgODc0IDE1MGM0NyA0NyA4My45IDEwMS44IDEwOS43IDE2Mi43IDI2LjcgNjMuMSA0MC4yIDEzMC4yIDQwLjIgMTk5LjMuMSAxOS45LTE2IDM2LTM1LjkgMzZ6IiAvPjwvc3ZnPg==) */ var RefIcon = /*#__PURE__*/ _react.forwardRef(LoadingOutlined);
-	if (process.env.NODE_ENV !== 'production') {
-	    RefIcon.displayName = 'LoadingOutlined';
-	}
-	var _default = RefIcon; 
-} (LoadingOutlined$2));
+var _interopRequireWildcard$4 = interopRequireWildcardExports.default;
+var _interopRequireDefault$6 = interopRequireDefaultExports.default;
+Object.defineProperty(LoadingOutlined$3, "__esModule", {
+  value: true
+});
+LoadingOutlined$3.default = void 0;
+var _extends2 = _interopRequireDefault$6(_extendsExports);
+var React$2 = _interopRequireWildcard$4(React__default);
+var _LoadingOutlined$1 = _interopRequireDefault$6(LoadingOutlined$2);
+var _AntdIcon = _interopRequireDefault$6(AntdIcon);
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+var LoadingOutlined = function LoadingOutlined(props, ref) {
+  return /*#__PURE__*/React$2.createElement(_AntdIcon.default, (0, _extends2.default)({}, props, {
+    ref: ref,
+    icon: _LoadingOutlined$1.default
+  }));
+};
+
+/**![loading](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTk4OCA1NDhjLTE5LjkgMC0zNi0xNi4xLTM2LTM2IDAtNTkuNC0xMS42LTExNy0zNC42LTE3MS4zYTQ0MC40NSA0NDAuNDUgMCAwMC05NC4zLTEzOS45IDQzNy43MSA0MzcuNzEgMCAwMC0xMzkuOS05NC4zQzYyOSA4My42IDU3MS40IDcyIDUxMiA3MmMtMTkuOSAwLTM2LTE2LjEtMzYtMzZzMTYuMS0zNiAzNi0zNmM2OS4xIDAgMTM2LjIgMTMuNSAxOTkuMyA0MC4zQzc3Mi4zIDY2IDgyNyAxMDMgODc0IDE1MGM0NyA0NyA4My45IDEwMS44IDEwOS43IDE2Mi43IDI2LjcgNjMuMSA0MC4yIDEzMC4yIDQwLjIgMTk5LjMuMSAxOS45LTE2IDM2LTM1LjkgMzZ6IiAvPjwvc3ZnPg==) */
+var RefIcon = /*#__PURE__*/React$2.forwardRef(LoadingOutlined);
+if (process.env.NODE_ENV !== 'production') {
+  RefIcon.displayName = 'LoadingOutlined';
+}
+LoadingOutlined$3.default = RefIcon;
 
 (function (module, exports) {
 	Object.defineProperty(exports, "__esModule", {
@@ -21863,16 +21354,16 @@ LoadingOutlined$1.default = LoadingOutlined;
 	});
 	exports.default = void 0;
 
-	const _LoadingOutlined = _interopRequireDefault(LoadingOutlined$2);
+	const _LoadingOutlined = _interopRequireDefault(LoadingOutlined$3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	const _default = _LoadingOutlined;
 	exports.default = _default;
 	module.exports = _default; 
-} (LoadingOutlined$3, LoadingOutlined$3.exports));
+} (LoadingOutlined$4, LoadingOutlined$4.exports));
 
-var LoadingOutlinedExports = LoadingOutlined$3.exports;
+var LoadingOutlinedExports = LoadingOutlined$4.exports;
 
 var _interopRequireDefault$5 = interopRequireDefaultExports.default;
 var _interopRequireWildcard$3 = interopRequireWildcardExports.default;
@@ -22574,7 +22065,7 @@ var _react$1 = _interopRequireWildcard$2(React__default);
 var _classnames$2 = _interopRequireDefault$3(classnamesExports);
 var _omit = _interopRequireDefault$3(omit$2);
 var _ref$1 = ref;
-var _warning$1 = warning$4;
+var _warning$1 = warning$5;
 var _wave = _interopRequireDefault$3(wave);
 var _configProvider$2 = configProvider;
 var _DisabledContext$1 = _interopRequireDefault$3(DisabledContext$1);
@@ -22964,17 +22455,17 @@ Search$1.default = Search;
 
 var TextArea$2 = {};
 
-var CollectionContext = /*#__PURE__*/React$k.createContext(null);
+var CollectionContext = /*#__PURE__*/React$r.createContext(null);
 /**
  * Collect all the resize event from children ResizeObserver
  */
 function Collection(_ref) {
   var children = _ref.children,
     onBatchResize = _ref.onBatchResize;
-  var resizeIdRef = React$k.useRef(0);
-  var resizeInfosRef = React$k.useRef([]);
-  var onCollectionResize = React$k.useContext(CollectionContext);
-  var onResize = React$k.useCallback(function (size, element, data) {
+  var resizeIdRef = React$r.useRef(0);
+  var resizeInfosRef = React$r.useRef([]);
+  var onCollectionResize = React$r.useContext(CollectionContext);
+  var onResize = React$r.useCallback(function (size, element, data) {
     resizeIdRef.current += 1;
     var currentId = resizeIdRef.current;
     resizeInfosRef.current.push({
@@ -22992,7 +22483,7 @@ function Collection(_ref) {
     // Continue bubbling if parent exist
     onCollectionResize === null || onCollectionResize === void 0 || onCollectionResize(size, element, data);
   }, [onBatchResize, onCollectionResize]);
-  return /*#__PURE__*/React$k.createElement(CollectionContext.Provider, {
+  return /*#__PURE__*/React$r.createElement(CollectionContext.Provider, {
     value: onResize
   }, children);
 }
@@ -23978,21 +23469,21 @@ var DomWrapper = /*#__PURE__*/function (_React$Component) {
     }
   }]);
   return DomWrapper;
-}(React$k.Component);
+}(React$r.Component);
 
 function SingleObserver(props, ref) {
   var children = props.children,
     disabled = props.disabled;
-  var elementRef = React$k.useRef(null);
-  var wrapperRef = React$k.useRef(null);
-  var onCollectionResize = React$k.useContext(CollectionContext);
+  var elementRef = React$r.useRef(null);
+  var wrapperRef = React$r.useRef(null);
+  var onCollectionResize = React$r.useContext(CollectionContext);
 
   // =========================== Children ===========================
   var isRenderProps = typeof children === 'function';
   var mergedChildren = isRenderProps ? children(elementRef) : children;
 
   // ============================= Size =============================
-  var sizeRef = React$k.useRef({
+  var sizeRef = React$r.useRef({
     width: -1,
     height: -1,
     offsetWidth: -1,
@@ -24000,7 +23491,7 @@ function SingleObserver(props, ref) {
   });
 
   // ============================= Ref ==============================
-  var canRef = !isRenderProps && /*#__PURE__*/React$k.isValidElement(mergedChildren) && supportRef$1(mergedChildren);
+  var canRef = !isRenderProps && /*#__PURE__*/React$r.isValidElement(mergedChildren) && supportRef$1(mergedChildren);
   var originRef = canRef ? mergedChildren.ref : null;
   var mergedRef = useComposeRef(originRef, elementRef);
   var getDom = function getDom() {
@@ -24009,16 +23500,16 @@ function SingleObserver(props, ref) {
     // Support `nativeElement` format
     elementRef.current && _typeof$1(elementRef.current) === 'object' ? findDOMNode((_elementRef$current = elementRef.current) === null || _elementRef$current === void 0 ? void 0 : _elementRef$current.nativeElement) : null) || findDOMNode(wrapperRef.current);
   };
-  React$k.useImperativeHandle(ref, function () {
+  React$r.useImperativeHandle(ref, function () {
     return getDom();
   });
 
   // =========================== Observe ============================
-  var propsRef = React$k.useRef(props);
+  var propsRef = React$r.useRef(props);
   propsRef.current = props;
 
   // Handler
-  var onInternalResize = React$k.useCallback(function (target) {
+  var onInternalResize = React$r.useCallback(function (target) {
     var _propsRef$current = propsRef.current,
       onResize = _propsRef$current.onResize,
       data = _propsRef$current.data;
@@ -24047,7 +23538,7 @@ function SingleObserver(props, ref) {
       // IE is strange, right?
       var mergedOffsetWidth = offsetWidth === Math.round(width) ? width : offsetWidth;
       var mergedOffsetHeight = offsetHeight === Math.round(height) ? height : offsetHeight;
-      var sizeInfo = _objectSpread2$5(_objectSpread2$5({}, size), {}, {
+      var sizeInfo = _objectSpread2$7(_objectSpread2$7({}, size), {}, {
         offsetWidth: mergedOffsetWidth,
         offsetHeight: mergedOffsetHeight
       });
@@ -24064,7 +23555,7 @@ function SingleObserver(props, ref) {
   }, []);
 
   // Dynamic observe
-  React$k.useEffect(function () {
+  React$r.useEffect(function () {
     var currentElement = getDom();
     if (currentElement && !disabled) {
       observe(currentElement, onInternalResize);
@@ -24075,13 +23566,13 @@ function SingleObserver(props, ref) {
   }, [elementRef.current, disabled]);
 
   // ============================ Render ============================
-  return /*#__PURE__*/React$k.createElement(DomWrapper, {
+  return /*#__PURE__*/React$r.createElement(DomWrapper, {
     ref: wrapperRef
-  }, canRef ? /*#__PURE__*/React$k.cloneElement(mergedChildren, {
+  }, canRef ? /*#__PURE__*/React$r.cloneElement(mergedChildren, {
     ref: mergedRef
   }) : mergedChildren);
 }
-var RefSingleObserver = /*#__PURE__*/React$k.forwardRef(SingleObserver);
+var RefSingleObserver = /*#__PURE__*/React$r.forwardRef(SingleObserver);
 if (process.env.NODE_ENV !== 'production') {
   RefSingleObserver.displayName = 'SingleObserver';
 }
@@ -24092,20 +23583,20 @@ function ResizeObserver$1(props, ref) {
   var childNodes = typeof children === 'function' ? [children] : toArray$3(children);
   if (process.env.NODE_ENV !== 'production') {
     if (childNodes.length > 1) {
-      warning$5(false, 'Find more than one child node with `children` in ResizeObserver. Please use ResizeObserver.Collection instead.');
+      warning$6(false, 'Find more than one child node with `children` in ResizeObserver. Please use ResizeObserver.Collection instead.');
     } else if (childNodes.length === 0) {
-      warning$5(false, '`children` of ResizeObserver is empty. Nothing is in observe.');
+      warning$6(false, '`children` of ResizeObserver is empty. Nothing is in observe.');
     }
   }
   return childNodes.map(function (child, index) {
     var key = (child === null || child === void 0 ? void 0 : child.key) || "".concat(INTERNAL_PREFIX_KEY, "-").concat(index);
-    return /*#__PURE__*/React$k.createElement(RefSingleObserver, _extends({}, props, {
+    return /*#__PURE__*/React$r.createElement(RefSingleObserver, _extends$1({}, props, {
       key: key,
       ref: index === 0 ? ref : undefined
     }), child);
   });
 }
-var RefResizeObserver = /*#__PURE__*/React$k.forwardRef(ResizeObserver$1);
+var RefResizeObserver = /*#__PURE__*/React$r.forwardRef(ResizeObserver$1);
 if (process.env.NODE_ENV !== 'production') {
   RefResizeObserver.displayName = 'ResizeObserver';
 }
@@ -24222,15 +23713,14 @@ function calculateAutoSizeStyle(uiTextNode) {
   return style;
 }
 
-var _excluded$1 = ["prefixCls", "onPressEnter", "defaultValue", "value", "autoSize", "onResize", "className", "style", "disabled", "onChange", "onInternalAutoSize"];
+var _excluded$1 = ["prefixCls", "defaultValue", "value", "autoSize", "onResize", "className", "style", "disabled", "onChange", "onInternalAutoSize"];
 var RESIZE_START = 0;
 var RESIZE_MEASURING = 1;
 var RESIZE_STABLE = 2;
-var ResizableTextArea = /*#__PURE__*/React$k.forwardRef(function (props, ref) {
+var ResizableTextArea = /*#__PURE__*/React$r.forwardRef(function (props, ref) {
   var _ref = props,
-    prefixCls = _ref.prefixCls;
-    _ref.onPressEnter;
-    var defaultValue = _ref.defaultValue,
+    prefixCls = _ref.prefixCls,
+    defaultValue = _ref.defaultValue,
     value = _ref.value,
     autoSize = _ref.autoSize,
     onResize = _ref.onResize,
@@ -24257,15 +23747,15 @@ var ResizableTextArea = /*#__PURE__*/React$k.forwardRef(function (props, ref) {
   };
 
   // ================================ Ref =================================
-  var textareaRef = React$k.useRef();
-  React$k.useImperativeHandle(ref, function () {
+  var textareaRef = React$r.useRef();
+  React$r.useImperativeHandle(ref, function () {
     return {
       textArea: textareaRef.current
     };
   });
 
   // ============================== AutoSize ==============================
-  var _React$useMemo = React$k.useMemo(function () {
+  var _React$useMemo = React$r.useMemo(function () {
       if (autoSize && _typeof$1(autoSize) === 'object') {
         return [autoSize.minRows, autoSize.maxRows];
       }
@@ -24304,11 +23794,11 @@ var ResizableTextArea = /*#__PURE__*/React$k.forwardRef(function (props, ref) {
   };
 
   // =============================== Resize ===============================
-  var _React$useState = React$k.useState(RESIZE_STABLE),
+  var _React$useState = React$r.useState(RESIZE_STABLE),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     resizeState = _React$useState2[0],
     setResizeState = _React$useState2[1];
-  var _React$useState3 = React$k.useState(),
+  var _React$useState3 = React$r.useState(),
     _React$useState4 = _slicedToArray(_React$useState3, 2),
     autoSizeStyle = _React$useState4[0],
     setAutoSizeStyle = _React$useState4[1];
@@ -24351,7 +23841,7 @@ var ResizableTextArea = /*#__PURE__*/React$k.forwardRef(function (props, ref) {
   }, [resizeState]);
 
   // We lock resize trigger by raf to avoid Safari warning
-  var resizeRafRef = React$k.useRef();
+  var resizeRafRef = React$r.useRef();
   var cleanRaf = function cleanRaf() {
     wrapperRaf$1.cancel(resizeRafRef.current);
   };
@@ -24366,21 +23856,21 @@ var ResizableTextArea = /*#__PURE__*/React$k.forwardRef(function (props, ref) {
       }
     }
   };
-  React$k.useEffect(function () {
+  React$r.useEffect(function () {
     return cleanRaf;
   }, []);
 
   // =============================== Render ===============================
   var mergedAutoSizeStyle = needAutoSize ? autoSizeStyle : null;
-  var mergedStyle = _objectSpread2$5(_objectSpread2$5({}, style), mergedAutoSizeStyle);
+  var mergedStyle = _objectSpread2$7(_objectSpread2$7({}, style), mergedAutoSizeStyle);
   if (resizeState === RESIZE_START || resizeState === RESIZE_MEASURING) {
     mergedStyle.overflowY = 'hidden';
     mergedStyle.overflowX = 'hidden';
   }
-  return /*#__PURE__*/React$k.createElement(RefResizeObserver, {
+  return /*#__PURE__*/React$r.createElement(RefResizeObserver, {
     onResize: onInternalResize,
     disabled: !(autoSize || onResize)
-  }, /*#__PURE__*/React$k.createElement("textarea", _extends({}, restProps, {
+  }, /*#__PURE__*/React$r.createElement("textarea", _extends$1({}, restProps, {
     ref: textareaRef,
     style: mergedStyle,
     className: clsx(prefixCls, className, _defineProperty({}, "".concat(prefixCls, "-disabled"), disabled)),
@@ -24390,7 +23880,7 @@ var ResizableTextArea = /*#__PURE__*/React$k.forwardRef(function (props, ref) {
   })));
 });
 
-var _excluded = ["defaultValue", "value", "onFocus", "onBlur", "onChange", "allowClear", "maxLength", "onCompositionStart", "onCompositionEnd", "suffix", "prefixCls", "showCount", "count", "className", "style", "disabled", "hidden", "classNames", "styles", "onResize", "readOnly"];
+var _excluded = ["defaultValue", "value", "onFocus", "onBlur", "onChange", "allowClear", "maxLength", "onCompositionStart", "onCompositionEnd", "suffix", "prefixCls", "showCount", "count", "className", "style", "disabled", "hidden", "classNames", "styles", "onResize", "onClear", "onPressEnter", "readOnly", "autoSize", "onKeyDown"];
 var TextArea$1 = /*#__PURE__*/React__default.forwardRef(function (_ref, ref) {
   var _countConfig$max;
   var defaultValue = _ref.defaultValue,
@@ -24414,7 +23904,11 @@ var TextArea$1 = /*#__PURE__*/React__default.forwardRef(function (_ref, ref) {
     classNames = _ref.classNames,
     styles = _ref.styles,
     onResize = _ref.onResize,
+    onClear = _ref.onClear,
+    onPressEnter = _ref.onPressEnter,
     readOnly = _ref.readOnly,
+    autoSize = _ref.autoSize,
+    onKeyDown = _ref.onKeyDown,
     rest = _objectWithoutProperties(_ref, _excluded);
   var _useMergedState = useMergedState(defaultValue, {
       value: customValue,
@@ -24511,8 +24005,6 @@ var TextArea$1 = /*#__PURE__*/React__default.forwardRef(function (_ref, ref) {
     triggerChange(e, e.target.value);
   };
   var handleKeyDown = function handleKeyDown(e) {
-    var onPressEnter = rest.onPressEnter,
-      onKeyDown = rest.onKeyDown;
     if (e.key === 'Enter' && onPressEnter) {
       onPressEnter(e);
     }
@@ -24557,7 +24049,7 @@ var TextArea$1 = /*#__PURE__*/React__default.forwardRef(function (_ref, ref) {
       setTextareaResized(true);
     }
   };
-  var isPureTextArea = !rest.autoSize && !showCount && !allowClear;
+  var isPureTextArea = !autoSize && !showCount && !allowClear;
   return /*#__PURE__*/React__default.createElement(BaseInput, {
     ref: holderRef,
     value: formatValue,
@@ -24565,13 +24057,13 @@ var TextArea$1 = /*#__PURE__*/React__default.forwardRef(function (_ref, ref) {
     handleReset: handleReset,
     suffix: suffixNode,
     prefixCls: prefixCls,
-    classNames: _objectSpread2$5(_objectSpread2$5({}, classNames), {}, {
+    classNames: _objectSpread2$7(_objectSpread2$7({}, classNames), {}, {
       affixWrapper: clsx(classNames === null || classNames === void 0 ? void 0 : classNames.affixWrapper, _defineProperty(_defineProperty({}, "".concat(prefixCls, "-show-count"), showCount), "".concat(prefixCls, "-textarea-allow-clear"), allowClear))
     }),
     disabled: disabled,
     focused: focused,
     className: clsx(className, isOutOfRange && "".concat(prefixCls, "-out-of-range")),
-    style: _objectSpread2$5(_objectSpread2$5({}, style), textareaResized && !isPureTextArea ? {
+    style: _objectSpread2$7(_objectSpread2$7({}, style), textareaResized && !isPureTextArea ? {
       height: 'auto'
     } : {}),
     dataAttrs: {
@@ -24580,8 +24072,10 @@ var TextArea$1 = /*#__PURE__*/React__default.forwardRef(function (_ref, ref) {
       }
     },
     hidden: hidden,
-    readOnly: readOnly
-  }, /*#__PURE__*/React__default.createElement(ResizableTextArea, _extends({}, rest, {
+    readOnly: readOnly,
+    onClear: onClear
+  }, /*#__PURE__*/React__default.createElement(ResizableTextArea, _extends$1({}, rest, {
+    autoSize: autoSize,
     maxLength: maxLength,
     onKeyDown: handleKeyDown,
     onChange: onInternalChange,
@@ -24590,7 +24084,7 @@ var TextArea$1 = /*#__PURE__*/React__default.forwardRef(function (_ref, ref) {
     onCompositionStart: onInternalCompositionStart,
     onCompositionEnd: onInternalCompositionEnd,
     className: clsx(classNames === null || classNames === void 0 ? void 0 : classNames.textarea),
-    style: _objectSpread2$5(_objectSpread2$5({}, styles === null || styles === void 0 ? void 0 : styles.textarea), {}, {
+    style: _objectSpread2$7(_objectSpread2$7({}, styles === null || styles === void 0 ? void 0 : styles.textarea), {}, {
       resize: style === null || style === void 0 ? void 0 : style.resize
     }),
     disabled: disabled,
@@ -24621,7 +24115,7 @@ var _classnames = _interopRequireDefault$1(classnamesExports);
 var _rcTextarea = _interopRequireDefault$1(require$$4);
 var _getAllowClear = _interopRequireDefault$1(getAllowClear$1);
 var _statusUtils = statusUtils;
-var _warning = warning$4;
+var _warning = warning$5;
 var _configProvider = configProvider;
 var _DisabledContext = _interopRequireDefault$1(DisabledContext$1);
 var _useCSSVarCls = _interopRequireDefault$1(useCSSVarCls$1);

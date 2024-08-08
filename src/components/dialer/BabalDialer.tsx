@@ -172,12 +172,15 @@ import BabalFooter from "../footer/BabalFooter";
 import { useNumberContext } from "../context/CreateContext";
 import {
   CalledUi,
+  DialerMainWrapper,
   DialerWrapper,
   Display,
   InputStyledDiv,
   StyledNumber,
+  TextSpan,
 } from "../styled/StyledComponents";
 import { IoIosCall } from "react-icons/io";
+import SideMenu from "../sidemenu/SideMenu";
 // import { TwilioProvider, useTwilio } from "../../context/TwilioContext";
 
 interface DialerProps {
@@ -223,47 +226,47 @@ const BabalDialer: React.FC<DialerProps> = ({
   };
 
   return (
-    <DialerWrapper width={width}>
-      <BabalHeader height="60px" width="inherit" logo={logo} type={false} />
-      {showUi ? (
-        <CalledUi>
-          <StyledNumber onClick={handleHangUp}>
-            <IoIosCall size={40} color="red" />
-          </StyledNumber>
-        </CalledUi>
-      ) : (
-        <>
-          <InputStyledDiv>
-            {/* <BabalSearch handleChange={inputOnChange} /> */}
-          </InputStyledDiv>
-          <Display>{state.number}</Display>
-          <NumberGrid>
-            {["123", "456", "789", "*0#"].map((row, rowIndex) => (
-              <BabalContainer key={rowIndex}>
-                {row.split("").map((digit) => (
-                  <StyledNumber
-                    digitColor={digitColor}
-                    key={digit}
-                    onClick={() => handleClick(digit)}
-                  >
-                    {digit}
-                    {digit !== "*" && digit !== "0" && digit !== "#" && (
-                      <span style={{ color: "#c0b9b9", fontSize: "12px" }}>
-                        {String.fromCharCode(65 + (parseInt(digit) - 1) * 3) +
-                          String.fromCharCode(
-                            65 + (parseInt(digit) - 1) * 3 + 2
-                          )}
-                      </span>
-                    )}
-                  </StyledNumber>
-                ))}
-              </BabalContainer>
-            ))}
-          </NumberGrid>
-          <BabalFooter handleCall={handleCall} />
-        </>
-      )}
-    </DialerWrapper>
+    <DialerMainWrapper width={width}>
+      <SideMenu />
+      <DialerWrapper>
+        <BabalHeader height="60px" width="inherit" logo={logo} type={false} />
+        {showUi ? (
+          <CalledUi>
+            <StyledNumber onClick={handleHangUp}>
+              <IoIosCall size={40} color="red" />
+            </StyledNumber>
+          </CalledUi>
+        ) : (
+          <>
+            <Display>{state.number}</Display>
+            <NumberGrid>
+              {["123", "456", "789", "*0#"].map((row, rowIndex) => (
+                <BabalContainer key={rowIndex}>
+                  {row.split("").map((digit) => (
+                    <StyledNumber
+                      digitColor={digitColor}
+                      key={digit}
+                      onClick={() => handleClick(digit)}
+                    >
+                      {digit}
+                      {digit !== "*" && digit !== "0" && digit !== "#" && (
+                        <TextSpan>
+                          {String.fromCharCode(65 + (parseInt(digit) - 1) * 3) +
+                            String.fromCharCode(
+                              65 + (parseInt(digit) - 1) * 3 + 2
+                            )}
+                        </TextSpan>
+                      )}
+                    </StyledNumber>
+                  ))}
+                </BabalContainer>
+              ))}
+            </NumberGrid>
+            <BabalFooter handleCall={handleCall} />
+          </>
+        )}
+      </DialerWrapper>
+    </DialerMainWrapper>
   );
 };
 

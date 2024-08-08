@@ -1,5 +1,5 @@
 {
-  "name": "babal-ui-npm",
+  "name": "babal-sdk",
   "version": "1.0.32",
   "description": "this ui provides the awesome elements and hooks",
   "scripts": {
@@ -23,7 +23,6 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/react": "^18.3.3",
-    "postcss": "^8.4.39",
     "postcss-less": "^6.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -56,7 +55,7 @@
     "axios": "^1.7.2",
     "babel-plugin-import": "^1.13.8",
     "react-hook-form": "^7.52.1",
-    "react-router-dom": "^6.25.1",
+    "react-router-dom": "^6.26.0",
     "rollup-plugin-postcss": "^4.0.2",
     "yup": "^1.4.0"
   }

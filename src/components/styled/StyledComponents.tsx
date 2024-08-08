@@ -13,7 +13,7 @@ export const HeaderWrapper = styled.header<styleHeaderProps>`
   padding: 1rem;
   height: ${(props) => props.height};
   border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+  /* border-top-left-radius: 8px; */
   background: red;
 `;
 export const BabalMenu = styled.ul`
@@ -79,13 +79,17 @@ export const InputStyledDiv = styled.div`
 interface dialerProps {
   width: string | number;
 }
-
-export const DialerWrapper = styled.section<dialerProps>`
-  position: relative;
+export const DialerMainWrapper = styled.section<dialerProps>`
+  display: flex;
   width: ${(props) => props.width};
-  height: fit-content;
   border-radius: 8px;
   border: 1px solid #a6a4a4;
+`;
+
+export const DialerWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: fit-content;
   overflow-x: hidden;
   padding-bottom: 20px;
   background-color: ${({ theme }) => theme.background};
@@ -109,6 +113,11 @@ export const CalledUi = styled.div`
   align-items: center;
   height: 20vh;
   width: 350px;
+`;
+
+export const TextSpan = styled.span`
+  font-size: 15px;
+  color: ${({ theme }) => theme.color};
 `;
 
 export const StyledSpinner = styled.div`

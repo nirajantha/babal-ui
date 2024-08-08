@@ -52,6 +52,7 @@ declare class BabalUi {
     static Dialer(width: string | number, logo: string, theme: {
         background: string;
         color: string;
+        textColor: string;
     }, key: string, digitColor?: string, inputOnChange?: void): React.JSX.Element;
     static Button(title: string, onClick: () => void, key: string): React.JSX.Element;
     static Header(menus: menuItems[], logo: string, type: boolean, key: string, width: string | number, height: string | number): React.JSX.Element;

@@ -1784,8 +1784,8 @@ A.forEach(function (e) {
 var gt = "__sc-".concat(f, "__");
 "production" !== process.env.NODE_ENV && "test" !== process.env.NODE_ENV && "undefined" != typeof window && (window[gt] || (window[gt] = 0), 1 === window[gt] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window[gt] += 1);
 
-var _templateObject$3, _templateObject2$1, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14;
-var HeaderWrapper = pt.header(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  box-sizing: border-box;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem;\n  height: ", ";\n  border-top-right-radius: 8px;\n  /* border-top-left-radius: 8px; */\n  background: red;\n"])), function (props) {
+var _templateObject$2, _templateObject2$1, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18;
+var HeaderWrapper = pt.header(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  box-sizing: border-box;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem;\n  height: ", ";\n  border-top-right-radius: 8px;\n  /* border-top-left-radius: 8px; */\n  background: red;\n"])), function (props) {
   return props.width;
 }, function (props) {
   return props.height;
@@ -1802,26 +1802,47 @@ pt.div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  widt
   var theme = _ref.theme;
   return theme.background;
 });
-var DialerMainWrapper = pt.section(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  display: flex;\n  width: ", ";\n  border-radius: 8px;\n  border: 1px solid #a6a4a4;\n"])), function (props) {
+var DialerMainWrapper = pt.section(_templateObject9 || (_templateObject9 = _taggedTemplateLiteral(["\n  display: flex;\n  width: ", ";\n  border-radius: 8px;\n  border: 1px solid #a6a4a4;\n  position: relative;\n  overflow: hidden;\n  height: 68vh;\n"])), function (props) {
   return props.width;
 });
-var DialerWrapper = pt.div(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100%;\n  height: fit-content;\n  overflow-x: hidden;\n  padding-bottom: 20px;\n  background-color: ", ";\n  color: ", ";\n"])), function (_ref2) {
+var DialerWrapper = pt.div(_templateObject10 || (_templateObject10 = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100%;\n  height: 100%;\n  padding-bottom: 20px;\n  background-color: ", ";\n  color: ", ";\n"])), function (_ref2) {
   var theme = _ref2.theme;
   return theme.background;
 }, function (_ref3) {
   var theme = _ref3.theme;
   return theme.color;
 });
-var Display = pt.div(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n  width: inherit;\n  height: 10vh;\n  background-color: white;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 600;\n  font-size: medium;\n"])), function (_ref4) {
+var NumberGrid = pt.div(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n  display: flex;\n  gap: 10px;\n  flex-direction: column;\n  margin-top: 10px;\n"])));
+var Display = pt.div(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n  width: inherit;\n  height: 10vh;\n  background-color: white;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 600;\n  font-size: medium;\n"])), function (_ref4) {
   var theme = _ref4.theme;
   return theme.textColor;
 });
-var CalledUi = pt.div(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 20vh;\n  width: 350px;\n"])));
-var TextSpan = pt.span(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["\n  font-size: 15px;\n  color: ", ";\n"])), function (_ref5) {
+var CalledUi = pt.div(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 20vh;\n  width: 350px;\n"])));
+var TextSpan = pt.span(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["\n  font-size: 15px;\n  color: ", ";\n"])), function (_ref5) {
   var theme = _ref5.theme;
   return theme.color;
 });
-var StyledSpinner = pt.div(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["\n  height: 10px;\n  width: 10px;\n  border-radius: 50%;\n  border: 4px solid;\n  border-color: white white white black;\n  animation: spin 1.5s linear infinite;\n\n  @keyframes spin {\n    from {\n      transform: rotate(0deg);\n    }\n    to {\n      transform: rotate(360deg);\n    }\n  }\n"])));
+var StyledSpinner = pt.div(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral(["\n  height: 10px;\n  width: 10px;\n  border-radius: 50%;\n  border: 4px solid;\n  border-color: white white white black;\n  animation: spin 1.5s linear infinite;\n\n  @keyframes spin {\n    from {\n      transform: rotate(0deg);\n    }\n    to {\n      transform: rotate(360deg);\n    }\n  }\n"])));
+var SideMenuWrapper = pt.section(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral(["\n  box-sizing: border-box;\n  width: 80px;\n  background-color: white;\n  border-bottom-left-radius: 8px;\n  border-top-left-radius: 8px;\n  display: flex;\n  justify-content: center;\n  padding: 4px;\n"])));
+// export const SlideDiv = styled.div<sideMenuProps>`
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   width: 80px; /* Set the width of the sliding div */
+//   background-color: white;
+//   box-sizing: border-box;
+//   border-bottom-left-radius: 8px;
+//   border-top-left-radius: 8px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border: 1px solid red;
+//   transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(100%)")};
+//   transition: transform 0.5s ease-in-out;
+//   padding: 4px;
+// `;
+var MenuDiv = pt.div(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 5px;\n"])));
+var MenuIcon = pt.div(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 8px;\n  border-radius: 8px;\n  background: #ffffff;\n  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #6d6666;\n"])));
 
 var BabalButton = function BabalButton(_ref) {
   var title = _ref.title;
@@ -1885,10 +1906,10 @@ var DefaultContext = {
 };
 var IconContext$1 = React__default.createContext && /*#__PURE__*/React__default.createContext(DefaultContext);
 
-var _excluded$c = ["attr", "size", "title"];
-function _objectWithoutProperties$1(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$1(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-function _objectWithoutPropertiesLoose$1(source, excluded) { if (source == null) return {}; var target = {}; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } } return target; }
-function _extends$2() { _extends$2 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$2.apply(this, arguments); }
+var _excluded$d = ["attr", "size", "title"];
+function _objectWithoutProperties$1(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose$2(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _objectWithoutPropertiesLoose$2(source, excluded) { if (source == null) return {}; var target = {}; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } } return target; }
+function _extends$5() { _extends$5 = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends$5.apply(this, arguments); }
 function ownKeys$1(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys$1(Object(t), !0).forEach(function (r) { _defineProperty$1(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$1(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty$1(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1900,7 +1921,7 @@ function Tree2Element(tree) {
   }, node.attr), Tree2Element(node.child)));
 }
 function GenIcon(data) {
-  return props => /*#__PURE__*/React__default.createElement(IconBase$2, _extends$2({
+  return props => /*#__PURE__*/React__default.createElement(IconBase$2, _extends$5({
     attr: _objectSpread({}, data.attr)
   }, props), Tree2Element(data.child));
 }
@@ -1911,12 +1932,12 @@ function IconBase$2(props) {
         size,
         title
       } = props,
-      svgProps = _objectWithoutProperties$1(props, _excluded$c);
+      svgProps = _objectWithoutProperties$1(props, _excluded$d);
     var computedSize = size || conf.size || "1em";
     var className;
     if (conf.className) className = conf.className;
     if (props.className) className = (className ? className + " " : "") + props.className;
-    return /*#__PURE__*/React__default.createElement("svg", _extends$2({
+    return /*#__PURE__*/React__default.createElement("svg", _extends$5({
       stroke: "currentColor",
       fill: "currentColor",
       strokeWidth: "0"
@@ -1972,8 +1993,8 @@ var BabalHeader = function BabalHeader(_ref) {
   }, toggle ? /*#__PURE__*/React__default.createElement(FaMoon, null) : /*#__PURE__*/React__default.createElement(FaSun, null))));
 };
 
-var _templateObject$2, _templateObject2;
-var BodyWrapper = pt.div(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 25px;\n  flex-wrap: wrap;\n"])));
+var _templateObject$1, _templateObject2;
+var BodyWrapper = pt.div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 25px;\n  flex-wrap: wrap;\n"])));
 var VerticalWrapper = pt.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n"])));
 var BabalContainer = function BabalContainer(_ref) {
   var children = _ref.children,
@@ -1982,6 +2003,2344 @@ var BabalContainer = function BabalContainer(_ref) {
     style: Object.assign({}, style)
   }, children));
 };
+
+var initialValue = {
+  number: ""
+};
+var NumberContext = /*#__PURE__*/createContext({
+  state: initialValue,
+  dispatch: function dispatch() {
+    return null;
+  }
+});
+var useNumberContext = function useNumberContext() {
+  return useContext(NumberContext);
+};
+
+/**
+ * @remix-run/router v1.19.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+function _extends$4() {
+  _extends$4 = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends$4.apply(this, arguments);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//#region Types and Constants
+////////////////////////////////////////////////////////////////////////////////
+/**
+ * Actions represent the type of change to a location value.
+ */
+var Action;
+(function (Action) {
+  /**
+   * A POP indicates a change to an arbitrary index in the history stack, such
+   * as a back or forward navigation. It does not describe the direction of the
+   * navigation, only that the current index changed.
+   *
+   * Note: This is the default action for newly created history objects.
+   */
+  Action["Pop"] = "POP";
+  /**
+   * A PUSH indicates a new entry being added to the history stack, such as when
+   * a link is clicked and a new page loads. When this happens, all subsequent
+   * entries in the stack are lost.
+   */
+  Action["Push"] = "PUSH";
+  /**
+   * A REPLACE indicates the entry at the current index in the history stack
+   * being replaced by a new one.
+   */
+  Action["Replace"] = "REPLACE";
+})(Action || (Action = {}));
+const PopStateEventType = "popstate";
+/**
+ * Browser history stores the location in regular URLs. This is the standard for
+ * most web apps, but it requires some configuration on the server to ensure you
+ * serve the same app at multiple URLs.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createbrowserhistory
+ */
+function createBrowserHistory(options) {
+  if (options === void 0) {
+    options = {};
+  }
+  function createBrowserLocation(window, globalHistory) {
+    let {
+      pathname,
+      search,
+      hash
+    } = window.location;
+    return createLocation("", {
+      pathname,
+      search,
+      hash
+    },
+    // state defaults to `null` because `window.history.state` does
+    globalHistory.state && globalHistory.state.usr || null, globalHistory.state && globalHistory.state.key || "default");
+  }
+  function createBrowserHref(window, to) {
+    return typeof to === "string" ? to : createPath(to);
+  }
+  return getUrlBasedHistory(createBrowserLocation, createBrowserHref, null, options);
+}
+function invariant(value, message) {
+  if (value === false || value === null || typeof value === "undefined") {
+    throw new Error(message);
+  }
+}
+function warning$7(cond, message) {
+  if (!cond) {
+    // eslint-disable-next-line no-console
+    if (typeof console !== "undefined") console.warn(message);
+    try {
+      // Welcome to debugging history!
+      //
+      // This error is thrown as a convenience, so you can more easily
+      // find the source for a warning that appears in the console by
+      // enabling "pause on exceptions" in your JavaScript debugger.
+      throw new Error(message);
+      // eslint-disable-next-line no-empty
+    } catch (e) {}
+  }
+}
+function createKey() {
+  return Math.random().toString(36).substr(2, 8);
+}
+/**
+ * For browser-based histories, we combine the state and key into an object
+ */
+function getHistoryState(location, index) {
+  return {
+    usr: location.state,
+    key: location.key,
+    idx: index
+  };
+}
+/**
+ * Creates a Location object with a unique key from the given Path
+ */
+function createLocation(current, to, state, key) {
+  if (state === void 0) {
+    state = null;
+  }
+  let location = _extends$4({
+    pathname: typeof current === "string" ? current : current.pathname,
+    search: "",
+    hash: ""
+  }, typeof to === "string" ? parsePath$1(to) : to, {
+    state,
+    // TODO: This could be cleaned up.  push/replace should probably just take
+    // full Locations now and avoid the need to run through this flow at all
+    // But that's a pretty big refactor to the current test suite so going to
+    // keep as is for the time being and just let any incoming keys take precedence
+    key: to && to.key || key || createKey()
+  });
+  return location;
+}
+/**
+ * Creates a string URL path from the given pathname, search, and hash components.
+ */
+function createPath(_ref) {
+  let {
+    pathname = "/",
+    search = "",
+    hash = ""
+  } = _ref;
+  if (search && search !== "?") pathname += search.charAt(0) === "?" ? search : "?" + search;
+  if (hash && hash !== "#") pathname += hash.charAt(0) === "#" ? hash : "#" + hash;
+  return pathname;
+}
+/**
+ * Parses a string URL path into its separate pathname, search, and hash components.
+ */
+function parsePath$1(path) {
+  let parsedPath = {};
+  if (path) {
+    let hashIndex = path.indexOf("#");
+    if (hashIndex >= 0) {
+      parsedPath.hash = path.substr(hashIndex);
+      path = path.substr(0, hashIndex);
+    }
+    let searchIndex = path.indexOf("?");
+    if (searchIndex >= 0) {
+      parsedPath.search = path.substr(searchIndex);
+      path = path.substr(0, searchIndex);
+    }
+    if (path) {
+      parsedPath.pathname = path;
+    }
+  }
+  return parsedPath;
+}
+function getUrlBasedHistory(getLocation, createHref, validateLocation, options) {
+  if (options === void 0) {
+    options = {};
+  }
+  let {
+    window = document.defaultView,
+    v5Compat = false
+  } = options;
+  let globalHistory = window.history;
+  let action = Action.Pop;
+  let listener = null;
+  let index = getIndex();
+  // Index should only be null when we initialize. If not, it's because the
+  // user called history.pushState or history.replaceState directly, in which
+  // case we should log a warning as it will result in bugs.
+  if (index == null) {
+    index = 0;
+    globalHistory.replaceState(_extends$4({}, globalHistory.state, {
+      idx: index
+    }), "");
+  }
+  function getIndex() {
+    let state = globalHistory.state || {
+      idx: null
+    };
+    return state.idx;
+  }
+  function handlePop() {
+    action = Action.Pop;
+    let nextIndex = getIndex();
+    let delta = nextIndex == null ? null : nextIndex - index;
+    index = nextIndex;
+    if (listener) {
+      listener({
+        action,
+        location: history.location,
+        delta
+      });
+    }
+  }
+  function push(to, state) {
+    action = Action.Push;
+    let location = createLocation(history.location, to, state);
+    index = getIndex() + 1;
+    let historyState = getHistoryState(location, index);
+    let url = history.createHref(location);
+    // try...catch because iOS limits us to 100 pushState calls :/
+    try {
+      globalHistory.pushState(historyState, "", url);
+    } catch (error) {
+      // If the exception is because `state` can't be serialized, let that throw
+      // outwards just like a replace call would so the dev knows the cause
+      // https://html.spec.whatwg.org/multipage/nav-history-apis.html#shared-history-push/replace-state-steps
+      // https://html.spec.whatwg.org/multipage/structured-data.html#structuredserializeinternal
+      if (error instanceof DOMException && error.name === "DataCloneError") {
+        throw error;
+      }
+      // They are going to lose state here, but there is no real
+      // way to warn them about it since the page will refresh...
+      window.location.assign(url);
+    }
+    if (v5Compat && listener) {
+      listener({
+        action,
+        location: history.location,
+        delta: 1
+      });
+    }
+  }
+  function replace(to, state) {
+    action = Action.Replace;
+    let location = createLocation(history.location, to, state);
+    index = getIndex();
+    let historyState = getHistoryState(location, index);
+    let url = history.createHref(location);
+    globalHistory.replaceState(historyState, "", url);
+    if (v5Compat && listener) {
+      listener({
+        action,
+        location: history.location,
+        delta: 0
+      });
+    }
+  }
+  function createURL(to) {
+    // window.location.origin is "null" (the literal string value) in Firefox
+    // under certain conditions, notably when serving from a local HTML file
+    // See https://bugzilla.mozilla.org/show_bug.cgi?id=878297
+    let base = window.location.origin !== "null" ? window.location.origin : window.location.href;
+    let href = typeof to === "string" ? to : createPath(to);
+    // Treating this as a full URL will strip any trailing spaces so we need to
+    // pre-encode them since they might be part of a matching splat param from
+    // an ancestor route
+    href = href.replace(/ $/, "%20");
+    invariant(base, "No window.location.(origin|href) available to create URL for href: " + href);
+    return new URL(href, base);
+  }
+  let history = {
+    get action() {
+      return action;
+    },
+    get location() {
+      return getLocation(window, globalHistory);
+    },
+    listen(fn) {
+      if (listener) {
+        throw new Error("A history only accepts one active listener");
+      }
+      window.addEventListener(PopStateEventType, handlePop);
+      listener = fn;
+      return () => {
+        window.removeEventListener(PopStateEventType, handlePop);
+        listener = null;
+      };
+    },
+    createHref(to) {
+      return createHref(window, to);
+    },
+    createURL,
+    encodeLocation(to) {
+      // Encode a Location the same way window.location would
+      let url = createURL(to);
+      return {
+        pathname: url.pathname,
+        search: url.search,
+        hash: url.hash
+      };
+    },
+    push,
+    replace,
+    go(n) {
+      return globalHistory.go(n);
+    }
+  };
+  return history;
+}
+//#endregion
+
+var ResultType;
+(function (ResultType) {
+  ResultType["data"] = "data";
+  ResultType["deferred"] = "deferred";
+  ResultType["redirect"] = "redirect";
+  ResultType["error"] = "error";
+})(ResultType || (ResultType = {}));
+/**
+ * Matches the given routes to a location and returns the match data.
+ *
+ * @see https://reactrouter.com/utils/match-routes
+ */
+function matchRoutes(routes, locationArg, basename) {
+  if (basename === void 0) {
+    basename = "/";
+  }
+  return matchRoutesImpl(routes, locationArg, basename, false);
+}
+function matchRoutesImpl(routes, locationArg, basename, allowPartial) {
+  let location = typeof locationArg === "string" ? parsePath$1(locationArg) : locationArg;
+  let pathname = stripBasename(location.pathname || "/", basename);
+  if (pathname == null) {
+    return null;
+  }
+  let branches = flattenRoutes(routes);
+  rankRouteBranches(branches);
+  let matches = null;
+  for (let i = 0; matches == null && i < branches.length; ++i) {
+    // Incoming pathnames are generally encoded from either window.location
+    // or from router.navigate, but we want to match against the unencoded
+    // paths in the route definitions.  Memory router locations won't be
+    // encoded here but there also shouldn't be anything to decode so this
+    // should be a safe operation.  This avoids needing matchRoutes to be
+    // history-aware.
+    let decoded = decodePath(pathname);
+    matches = matchRouteBranch(branches[i], decoded, allowPartial);
+  }
+  return matches;
+}
+function flattenRoutes(routes, branches, parentsMeta, parentPath) {
+  if (branches === void 0) {
+    branches = [];
+  }
+  if (parentsMeta === void 0) {
+    parentsMeta = [];
+  }
+  if (parentPath === void 0) {
+    parentPath = "";
+  }
+  let flattenRoute = (route, index, relativePath) => {
+    let meta = {
+      relativePath: relativePath === undefined ? route.path || "" : relativePath,
+      caseSensitive: route.caseSensitive === true,
+      childrenIndex: index,
+      route
+    };
+    if (meta.relativePath.startsWith("/")) {
+      invariant(meta.relativePath.startsWith(parentPath), "Absolute route path \"" + meta.relativePath + "\" nested under path " + ("\"" + parentPath + "\" is not valid. An absolute child route path ") + "must start with the combined path of all its parent routes.");
+      meta.relativePath = meta.relativePath.slice(parentPath.length);
+    }
+    let path = joinPaths([parentPath, meta.relativePath]);
+    let routesMeta = parentsMeta.concat(meta);
+    // Add the children before adding this route to the array, so we traverse the
+    // route tree depth-first and child routes appear before their parents in
+    // the "flattened" version.
+    if (route.children && route.children.length > 0) {
+      invariant(
+      // Our types know better, but runtime JS may not!
+      // @ts-expect-error
+      route.index !== true, "Index routes must not have child routes. Please remove " + ("all child routes from route path \"" + path + "\"."));
+      flattenRoutes(route.children, branches, routesMeta, path);
+    }
+    // Routes without a path shouldn't ever match by themselves unless they are
+    // index routes, so don't add them to the list of possible branches.
+    if (route.path == null && !route.index) {
+      return;
+    }
+    branches.push({
+      path,
+      score: computeScore(path, route.index),
+      routesMeta
+    });
+  };
+  routes.forEach((route, index) => {
+    var _route$path;
+    // coarse-grain check for optional params
+    if (route.path === "" || !((_route$path = route.path) != null && _route$path.includes("?"))) {
+      flattenRoute(route, index);
+    } else {
+      for (let exploded of explodeOptionalSegments(route.path)) {
+        flattenRoute(route, index, exploded);
+      }
+    }
+  });
+  return branches;
+}
+/**
+ * Computes all combinations of optional path segments for a given path,
+ * excluding combinations that are ambiguous and of lower priority.
+ *
+ * For example, `/one/:two?/three/:four?/:five?` explodes to:
+ * - `/one/three`
+ * - `/one/:two/three`
+ * - `/one/three/:four`
+ * - `/one/three/:five`
+ * - `/one/:two/three/:four`
+ * - `/one/:two/three/:five`
+ * - `/one/three/:four/:five`
+ * - `/one/:two/three/:four/:five`
+ */
+function explodeOptionalSegments(path) {
+  let segments = path.split("/");
+  if (segments.length === 0) return [];
+  let [first, ...rest] = segments;
+  // Optional path segments are denoted by a trailing `?`
+  let isOptional = first.endsWith("?");
+  // Compute the corresponding required segment: `foo?` -> `foo`
+  let required = first.replace(/\?$/, "");
+  if (rest.length === 0) {
+    // Intepret empty string as omitting an optional segment
+    // `["one", "", "three"]` corresponds to omitting `:two` from `/one/:two?/three` -> `/one/three`
+    return isOptional ? [required, ""] : [required];
+  }
+  let restExploded = explodeOptionalSegments(rest.join("/"));
+  let result = [];
+  // All child paths with the prefix.  Do this for all children before the
+  // optional version for all children, so we get consistent ordering where the
+  // parent optional aspect is preferred as required.  Otherwise, we can get
+  // child sections interspersed where deeper optional segments are higher than
+  // parent optional segments, where for example, /:two would explode _earlier_
+  // then /:one.  By always including the parent as required _for all children_
+  // first, we avoid this issue
+  result.push(...restExploded.map(subpath => subpath === "" ? required : [required, subpath].join("/")));
+  // Then, if this is an optional value, add all child versions without
+  if (isOptional) {
+    result.push(...restExploded);
+  }
+  // for absolute paths, ensure `/` instead of empty segment
+  return result.map(exploded => path.startsWith("/") && exploded === "" ? "/" : exploded);
+}
+function rankRouteBranches(branches) {
+  branches.sort((a, b) => a.score !== b.score ? b.score - a.score // Higher score first
+  : compareIndexes(a.routesMeta.map(meta => meta.childrenIndex), b.routesMeta.map(meta => meta.childrenIndex)));
+}
+const paramRe = /^:[\w-]+$/;
+const dynamicSegmentValue = 3;
+const indexRouteValue = 2;
+const emptySegmentValue = 1;
+const staticSegmentValue = 10;
+const splatPenalty = -2;
+const isSplat = s => s === "*";
+function computeScore(path, index) {
+  let segments = path.split("/");
+  let initialScore = segments.length;
+  if (segments.some(isSplat)) {
+    initialScore += splatPenalty;
+  }
+  if (index) {
+    initialScore += indexRouteValue;
+  }
+  return segments.filter(s => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
+}
+function compareIndexes(a, b) {
+  let siblings = a.length === b.length && a.slice(0, -1).every((n, i) => n === b[i]);
+  return siblings ?
+  // If two routes are siblings, we should try to match the earlier sibling
+  // first. This allows people to have fine-grained control over the matching
+  // behavior by simply putting routes with identical paths in the order they
+  // want them tried.
+  a[a.length - 1] - b[b.length - 1] :
+  // Otherwise, it doesn't really make sense to rank non-siblings by index,
+  // so they sort equally.
+  0;
+}
+function matchRouteBranch(branch, pathname, allowPartial) {
+  let {
+    routesMeta
+  } = branch;
+  let matchedParams = {};
+  let matchedPathname = "/";
+  let matches = [];
+  for (let i = 0; i < routesMeta.length; ++i) {
+    let meta = routesMeta[i];
+    let end = i === routesMeta.length - 1;
+    let remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/";
+    let match = matchPath({
+      path: meta.relativePath,
+      caseSensitive: meta.caseSensitive,
+      end
+    }, remainingPathname);
+    let route = meta.route;
+    if (!match && end && allowPartial && !routesMeta[routesMeta.length - 1].route.index) {
+      match = matchPath({
+        path: meta.relativePath,
+        caseSensitive: meta.caseSensitive,
+        end: false
+      }, remainingPathname);
+    }
+    if (!match) {
+      return null;
+    }
+    Object.assign(matchedParams, match.params);
+    matches.push({
+      // TODO: Can this as be avoided?
+      params: matchedParams,
+      pathname: joinPaths([matchedPathname, match.pathname]),
+      pathnameBase: normalizePathname(joinPaths([matchedPathname, match.pathnameBase])),
+      route
+    });
+    if (match.pathnameBase !== "/") {
+      matchedPathname = joinPaths([matchedPathname, match.pathnameBase]);
+    }
+  }
+  return matches;
+}
+/**
+ * Performs pattern matching on a URL pathname and returns information about
+ * the match.
+ *
+ * @see https://reactrouter.com/utils/match-path
+ */
+function matchPath(pattern, pathname) {
+  if (typeof pattern === "string") {
+    pattern = {
+      path: pattern,
+      caseSensitive: false,
+      end: true
+    };
+  }
+  let [matcher, compiledParams] = compilePath(pattern.path, pattern.caseSensitive, pattern.end);
+  let match = pathname.match(matcher);
+  if (!match) return null;
+  let matchedPathname = match[0];
+  let pathnameBase = matchedPathname.replace(/(.)\/+$/, "$1");
+  let captureGroups = match.slice(1);
+  let params = compiledParams.reduce((memo, _ref, index) => {
+    let {
+      paramName,
+      isOptional
+    } = _ref;
+    // We need to compute the pathnameBase here using the raw splat value
+    // instead of using params["*"] later because it will be decoded then
+    if (paramName === "*") {
+      let splatValue = captureGroups[index] || "";
+      pathnameBase = matchedPathname.slice(0, matchedPathname.length - splatValue.length).replace(/(.)\/+$/, "$1");
+    }
+    const value = captureGroups[index];
+    if (isOptional && !value) {
+      memo[paramName] = undefined;
+    } else {
+      memo[paramName] = (value || "").replace(/%2F/g, "/");
+    }
+    return memo;
+  }, {});
+  return {
+    params,
+    pathname: matchedPathname,
+    pathnameBase,
+    pattern
+  };
+}
+function compilePath(path, caseSensitive, end) {
+  if (caseSensitive === void 0) {
+    caseSensitive = false;
+  }
+  if (end === void 0) {
+    end = true;
+  }
+  warning$7(path === "*" || !path.endsWith("*") || path.endsWith("/*"), "Route path \"" + path + "\" will be treated as if it were " + ("\"" + path.replace(/\*$/, "/*") + "\" because the `*` character must ") + "always follow a `/` in the pattern. To get rid of this warning, " + ("please change the route path to \"" + path.replace(/\*$/, "/*") + "\"."));
+  let params = [];
+  let regexpSource = "^" + path.replace(/\/*\*?$/, "") // Ignore trailing / and /*, we'll handle it below
+  .replace(/^\/*/, "/") // Make sure it has a leading /
+  .replace(/[\\.*+^${}|()[\]]/g, "\\$&") // Escape special regex chars
+  .replace(/\/:([\w-]+)(\?)?/g, (_, paramName, isOptional) => {
+    params.push({
+      paramName,
+      isOptional: isOptional != null
+    });
+    return isOptional ? "/?([^\\/]+)?" : "/([^\\/]+)";
+  });
+  if (path.endsWith("*")) {
+    params.push({
+      paramName: "*"
+    });
+    regexpSource += path === "*" || path === "/*" ? "(.*)$" // Already matched the initial /, just match the rest
+    : "(?:\\/(.+)|\\/*)$"; // Don't include the / in params["*"]
+  } else if (end) {
+    // When matching to the end, ignore trailing slashes
+    regexpSource += "\\/*$";
+  } else if (path !== "" && path !== "/") {
+    // If our path is non-empty and contains anything beyond an initial slash,
+    // then we have _some_ form of path in our regex, so we should expect to
+    // match only if we find the end of this path segment.  Look for an optional
+    // non-captured trailing slash (to match a portion of the URL) or the end
+    // of the path (if we've matched to the end).  We used to do this with a
+    // word boundary but that gives false positives on routes like
+    // /user-preferences since `-` counts as a word boundary.
+    regexpSource += "(?:(?=\\/|$))";
+  } else ;
+  let matcher = new RegExp(regexpSource, caseSensitive ? undefined : "i");
+  return [matcher, params];
+}
+function decodePath(value) {
+  try {
+    return value.split("/").map(v => decodeURIComponent(v).replace(/\//g, "%2F")).join("/");
+  } catch (error) {
+    warning$7(false, "The URL path \"" + value + "\" could not be decoded because it is is a " + "malformed URL segment. This is probably due to a bad percent " + ("encoding (" + error + ")."));
+    return value;
+  }
+}
+/**
+ * @private
+ */
+function stripBasename(pathname, basename) {
+  if (basename === "/") return pathname;
+  if (!pathname.toLowerCase().startsWith(basename.toLowerCase())) {
+    return null;
+  }
+  // We want to leave trailing slash behavior in the user's control, so if they
+  // specify a basename with a trailing slash, we should support it
+  let startIndex = basename.endsWith("/") ? basename.length - 1 : basename.length;
+  let nextChar = pathname.charAt(startIndex);
+  if (nextChar && nextChar !== "/") {
+    // pathname does not start with basename/
+    return null;
+  }
+  return pathname.slice(startIndex) || "/";
+}
+/**
+ * Returns a resolved path object relative to the given pathname.
+ *
+ * @see https://reactrouter.com/utils/resolve-path
+ */
+function resolvePath(to, fromPathname) {
+  if (fromPathname === void 0) {
+    fromPathname = "/";
+  }
+  let {
+    pathname: toPathname,
+    search = "",
+    hash = ""
+  } = typeof to === "string" ? parsePath$1(to) : to;
+  let pathname = toPathname ? toPathname.startsWith("/") ? toPathname : resolvePathname(toPathname, fromPathname) : fromPathname;
+  return {
+    pathname,
+    search: normalizeSearch(search),
+    hash: normalizeHash(hash)
+  };
+}
+function resolvePathname(relativePath, fromPathname) {
+  let segments = fromPathname.replace(/\/+$/, "").split("/");
+  let relativeSegments = relativePath.split("/");
+  relativeSegments.forEach(segment => {
+    if (segment === "..") {
+      // Keep the root "" segment so the pathname starts at /
+      if (segments.length > 1) segments.pop();
+    } else if (segment !== ".") {
+      segments.push(segment);
+    }
+  });
+  return segments.length > 1 ? segments.join("/") : "/";
+}
+function getInvalidPathError(char, field, dest, path) {
+  return "Cannot include a '" + char + "' character in a manually specified " + ("`to." + field + "` field [" + JSON.stringify(path) + "].  Please separate it out to the ") + ("`to." + dest + "` field. Alternatively you may provide the full path as ") + "a string in <Link to=\"...\"> and the router will parse it for you.";
+}
+/**
+ * @private
+ *
+ * When processing relative navigation we want to ignore ancestor routes that
+ * do not contribute to the path, such that index/pathless layout routes don't
+ * interfere.
+ *
+ * For example, when moving a route element into an index route and/or a
+ * pathless layout route, relative link behavior contained within should stay
+ * the same.  Both of the following examples should link back to the root:
+ *
+ *   <Route path="/">
+ *     <Route path="accounts" element={<Link to=".."}>
+ *   </Route>
+ *
+ *   <Route path="/">
+ *     <Route path="accounts">
+ *       <Route element={<AccountsLayout />}>       // <-- Does not contribute
+ *         <Route index element={<Link to=".."} />  // <-- Does not contribute
+ *       </Route
+ *     </Route>
+ *   </Route>
+ */
+function getPathContributingMatches(matches) {
+  return matches.filter((match, index) => index === 0 || match.route.path && match.route.path.length > 0);
+}
+// Return the array of pathnames for the current route matches - used to
+// generate the routePathnames input for resolveTo()
+function getResolveToMatches(matches, v7_relativeSplatPath) {
+  let pathMatches = getPathContributingMatches(matches);
+  // When v7_relativeSplatPath is enabled, use the full pathname for the leaf
+  // match so we include splat values for "." links.  See:
+  // https://github.com/remix-run/react-router/issues/11052#issuecomment-1836589329
+  if (v7_relativeSplatPath) {
+    return pathMatches.map((match, idx) => idx === pathMatches.length - 1 ? match.pathname : match.pathnameBase);
+  }
+  return pathMatches.map(match => match.pathnameBase);
+}
+/**
+ * @private
+ */
+function resolveTo(toArg, routePathnames, locationPathname, isPathRelative) {
+  if (isPathRelative === void 0) {
+    isPathRelative = false;
+  }
+  let to;
+  if (typeof toArg === "string") {
+    to = parsePath$1(toArg);
+  } else {
+    to = _extends$4({}, toArg);
+    invariant(!to.pathname || !to.pathname.includes("?"), getInvalidPathError("?", "pathname", "search", to));
+    invariant(!to.pathname || !to.pathname.includes("#"), getInvalidPathError("#", "pathname", "hash", to));
+    invariant(!to.search || !to.search.includes("#"), getInvalidPathError("#", "search", "hash", to));
+  }
+  let isEmptyPath = toArg === "" || to.pathname === "";
+  let toPathname = isEmptyPath ? "/" : to.pathname;
+  let from;
+  // Routing is relative to the current pathname if explicitly requested.
+  //
+  // If a pathname is explicitly provided in `to`, it should be relative to the
+  // route context. This is explained in `Note on `<Link to>` values` in our
+  // migration guide from v5 as a means of disambiguation between `to` values
+  // that begin with `/` and those that do not. However, this is problematic for
+  // `to` values that do not provide a pathname. `to` can simply be a search or
+  // hash string, in which case we should assume that the navigation is relative
+  // to the current location's pathname and *not* the route pathname.
+  if (toPathname == null) {
+    from = locationPathname;
+  } else {
+    let routePathnameIndex = routePathnames.length - 1;
+    // With relative="route" (the default), each leading .. segment means
+    // "go up one route" instead of "go up one URL segment".  This is a key
+    // difference from how <a href> works and a major reason we call this a
+    // "to" value instead of a "href".
+    if (!isPathRelative && toPathname.startsWith("..")) {
+      let toSegments = toPathname.split("/");
+      while (toSegments[0] === "..") {
+        toSegments.shift();
+        routePathnameIndex -= 1;
+      }
+      to.pathname = toSegments.join("/");
+    }
+    from = routePathnameIndex >= 0 ? routePathnames[routePathnameIndex] : "/";
+  }
+  let path = resolvePath(to, from);
+  // Ensure the pathname has a trailing slash if the original "to" had one
+  let hasExplicitTrailingSlash = toPathname && toPathname !== "/" && toPathname.endsWith("/");
+  // Or if this was a link to the current path which has a trailing slash
+  let hasCurrentTrailingSlash = (isEmptyPath || toPathname === ".") && locationPathname.endsWith("/");
+  if (!path.pathname.endsWith("/") && (hasExplicitTrailingSlash || hasCurrentTrailingSlash)) {
+    path.pathname += "/";
+  }
+  return path;
+}
+/**
+ * @private
+ */
+const joinPaths = paths => paths.join("/").replace(/\/\/+/g, "/");
+/**
+ * @private
+ */
+const normalizePathname = pathname => pathname.replace(/\/+$/, "").replace(/^\/*/, "/");
+/**
+ * @private
+ */
+const normalizeSearch = search => !search || search === "?" ? "" : search.startsWith("?") ? search : "?" + search;
+/**
+ * @private
+ */
+const normalizeHash = hash => !hash || hash === "#" ? "" : hash.startsWith("#") ? hash : "#" + hash;
+/**
+ * Check if the given error is an ErrorResponse generated from a 4xx/5xx
+ * Response thrown from an action/loader
+ */
+function isRouteErrorResponse(error) {
+  return error != null && typeof error.status === "number" && typeof error.statusText === "string" && typeof error.internal === "boolean" && "data" in error;
+}
+
+const validMutationMethodsArr = ["post", "put", "patch", "delete"];
+new Set(validMutationMethodsArr);
+const validRequestMethodsArr = ["get", ...validMutationMethodsArr];
+new Set(validRequestMethodsArr);
+
+/**
+ * React Router v6.26.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+function _extends$3() {
+  _extends$3 = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends$3.apply(this, arguments);
+}
+
+// Create react-specific types from the agnostic types in @remix-run/router to
+// export from react-router
+const DataRouterContext = /*#__PURE__*/React$r.createContext(null);
+if (process.env.NODE_ENV !== "production") {
+  DataRouterContext.displayName = "DataRouter";
+}
+const DataRouterStateContext = /*#__PURE__*/React$r.createContext(null);
+if (process.env.NODE_ENV !== "production") {
+  DataRouterStateContext.displayName = "DataRouterState";
+}
+const AwaitContext = /*#__PURE__*/React$r.createContext(null);
+if (process.env.NODE_ENV !== "production") {
+  AwaitContext.displayName = "Await";
+}
+
+/**
+ * A Navigator is a "location changer"; it's how you get to different locations.
+ *
+ * Every history instance conforms to the Navigator interface, but the
+ * distinction is useful primarily when it comes to the low-level `<Router>` API
+ * where both the location and a navigator must be provided separately in order
+ * to avoid "tearing" that may occur in a suspense-enabled app if the action
+ * and/or location were to be read directly from the history instance.
+ */
+
+const NavigationContext = /*#__PURE__*/React$r.createContext(null);
+if (process.env.NODE_ENV !== "production") {
+  NavigationContext.displayName = "Navigation";
+}
+const LocationContext = /*#__PURE__*/React$r.createContext(null);
+if (process.env.NODE_ENV !== "production") {
+  LocationContext.displayName = "Location";
+}
+const RouteContext = /*#__PURE__*/React$r.createContext({
+  outlet: null,
+  matches: [],
+  isDataRoute: false
+});
+if (process.env.NODE_ENV !== "production") {
+  RouteContext.displayName = "Route";
+}
+const RouteErrorContext = /*#__PURE__*/React$r.createContext(null);
+if (process.env.NODE_ENV !== "production") {
+  RouteErrorContext.displayName = "RouteError";
+}
+
+/**
+ * Returns the full href for the given "to" value. This is useful for building
+ * custom links that are also accessible and preserve right-click behavior.
+ *
+ * @see https://reactrouter.com/hooks/use-href
+ */
+function useHref(to, _temp) {
+  let {
+    relative
+  } = _temp === void 0 ? {} : _temp;
+  !useInRouterContext() ? process.env.NODE_ENV !== "production" ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useHref() may be used only in the context of a <Router> component.") : invariant(false) : void 0;
+  let {
+    basename,
+    navigator
+  } = React$r.useContext(NavigationContext);
+  let {
+    hash,
+    pathname,
+    search
+  } = useResolvedPath(to, {
+    relative
+  });
+  let joinedPathname = pathname;
+
+  // If we're operating within a basename, prepend it to the pathname prior
+  // to creating the href.  If this is a root navigation, then just use the raw
+  // basename which allows the basename to have full control over the presence
+  // of a trailing slash on root links
+  if (basename !== "/") {
+    joinedPathname = pathname === "/" ? basename : joinPaths([basename, pathname]);
+  }
+  return navigator.createHref({
+    pathname: joinedPathname,
+    search,
+    hash
+  });
+}
+
+/**
+ * Returns true if this component is a descendant of a `<Router>`.
+ *
+ * @see https://reactrouter.com/hooks/use-in-router-context
+ */
+function useInRouterContext() {
+  return React$r.useContext(LocationContext) != null;
+}
+
+/**
+ * Returns the current location object, which represents the current URL in web
+ * browsers.
+ *
+ * Note: If you're using this it may mean you're doing some of your own
+ * "routing" in your app, and we'd like to know what your use case is. We may
+ * be able to provide something higher-level to better suit your needs.
+ *
+ * @see https://reactrouter.com/hooks/use-location
+ */
+function useLocation() {
+  !useInRouterContext() ? process.env.NODE_ENV !== "production" ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useLocation() may be used only in the context of a <Router> component.") : invariant(false) : void 0;
+  return React$r.useContext(LocationContext).location;
+}
+
+/**
+ * The interface for the navigate() function returned from useNavigate().
+ */
+
+const navigateEffectWarning = "You should call navigate() in a React.useEffect(), not when " + "your component is first rendered.";
+
+// Mute warnings for calls to useNavigate in SSR environments
+function useIsomorphicLayoutEffect$1(cb) {
+  let isStatic = React$r.useContext(NavigationContext).static;
+  if (!isStatic) {
+    // We should be able to get rid of this once react 18.3 is released
+    // See: https://github.com/facebook/react/pull/26395
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    React$r.useLayoutEffect(cb);
+  }
+}
+
+/**
+ * Returns an imperative method for changing the location. Used by `<Link>`s, but
+ * may also be used by other elements to change the location.
+ *
+ * @see https://reactrouter.com/hooks/use-navigate
+ */
+function useNavigate() {
+  let {
+    isDataRoute
+  } = React$r.useContext(RouteContext);
+  // Conditional usage is OK here because the usage of a data router is static
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  return isDataRoute ? useNavigateStable() : useNavigateUnstable();
+}
+function useNavigateUnstable() {
+  !useInRouterContext() ? process.env.NODE_ENV !== "production" ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useNavigate() may be used only in the context of a <Router> component.") : invariant(false) : void 0;
+  let dataRouterContext = React$r.useContext(DataRouterContext);
+  let {
+    basename,
+    future,
+    navigator
+  } = React$r.useContext(NavigationContext);
+  let {
+    matches
+  } = React$r.useContext(RouteContext);
+  let {
+    pathname: locationPathname
+  } = useLocation();
+  let routePathnamesJson = JSON.stringify(getResolveToMatches(matches, future.v7_relativeSplatPath));
+  let activeRef = React$r.useRef(false);
+  useIsomorphicLayoutEffect$1(() => {
+    activeRef.current = true;
+  });
+  let navigate = React$r.useCallback(function (to, options) {
+    if (options === void 0) {
+      options = {};
+    }
+    process.env.NODE_ENV !== "production" ? warning$7(activeRef.current, navigateEffectWarning) : void 0;
+
+    // Short circuit here since if this happens on first render the navigate
+    // is useless because we haven't wired up our history listener yet
+    if (!activeRef.current) return;
+    if (typeof to === "number") {
+      navigator.go(to);
+      return;
+    }
+    let path = resolveTo(to, JSON.parse(routePathnamesJson), locationPathname, options.relative === "path");
+
+    // If we're operating within a basename, prepend it to the pathname prior
+    // to handing off to history (but only if we're not in a data router,
+    // otherwise it'll prepend the basename inside of the router).
+    // If this is a root navigation, then we navigate to the raw basename
+    // which allows the basename to have full control over the presence of a
+    // trailing slash on root links
+    if (dataRouterContext == null && basename !== "/") {
+      path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname]);
+    }
+    (!!options.replace ? navigator.replace : navigator.push)(path, options.state, options);
+  }, [basename, navigator, routePathnamesJson, locationPathname, dataRouterContext]);
+  return navigate;
+}
+
+/**
+ * Resolves the pathname of the given `to` value against the current location.
+ *
+ * @see https://reactrouter.com/hooks/use-resolved-path
+ */
+function useResolvedPath(to, _temp2) {
+  let {
+    relative
+  } = _temp2 === void 0 ? {} : _temp2;
+  let {
+    future
+  } = React$r.useContext(NavigationContext);
+  let {
+    matches
+  } = React$r.useContext(RouteContext);
+  let {
+    pathname: locationPathname
+  } = useLocation();
+  let routePathnamesJson = JSON.stringify(getResolveToMatches(matches, future.v7_relativeSplatPath));
+  return React$r.useMemo(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname, relative === "path"), [to, routePathnamesJson, locationPathname, relative]);
+}
+
+/**
+ * Returns the element of the route that matched the current location, prepared
+ * with the correct context to render the remainder of the route tree. Route
+ * elements in the tree must render an `<Outlet>` to render their child route's
+ * element.
+ *
+ * @see https://reactrouter.com/hooks/use-routes
+ */
+function useRoutes(routes, locationArg) {
+  return useRoutesImpl(routes, locationArg);
+}
+
+// Internal implementation with accept optional param for RouterProvider usage
+function useRoutesImpl(routes, locationArg, dataRouterState, future) {
+  !useInRouterContext() ? process.env.NODE_ENV !== "production" ? invariant(false, // TODO: This error is probably because they somehow have 2 versions of the
+  // router loaded. We can help them understand how to avoid that.
+  "useRoutes() may be used only in the context of a <Router> component.") : invariant(false) : void 0;
+  let {
+    navigator
+  } = React$r.useContext(NavigationContext);
+  let {
+    matches: parentMatches
+  } = React$r.useContext(RouteContext);
+  let routeMatch = parentMatches[parentMatches.length - 1];
+  let parentParams = routeMatch ? routeMatch.params : {};
+  let parentPathname = routeMatch ? routeMatch.pathname : "/";
+  let parentPathnameBase = routeMatch ? routeMatch.pathnameBase : "/";
+  let parentRoute = routeMatch && routeMatch.route;
+  if (process.env.NODE_ENV !== "production") {
+    // You won't get a warning about 2 different <Routes> under a <Route>
+    // without a trailing *, but this is a best-effort warning anyway since we
+    // cannot even give the warning unless they land at the parent route.
+    //
+    // Example:
+    //
+    // <Routes>
+    //   {/* This route path MUST end with /* because otherwise
+    //       it will never match /blog/post/123 */}
+    //   <Route path="blog" element={<Blog />} />
+    //   <Route path="blog/feed" element={<BlogFeed />} />
+    // </Routes>
+    //
+    // function Blog() {
+    //   return (
+    //     <Routes>
+    //       <Route path="post/:id" element={<Post />} />
+    //     </Routes>
+    //   );
+    // }
+    let parentPath = parentRoute && parentRoute.path || "";
+    warningOnce$2(parentPathname, !parentRoute || parentPath.endsWith("*"), "You rendered descendant <Routes> (or called `useRoutes()`) at " + ("\"" + parentPathname + "\" (under <Route path=\"" + parentPath + "\">) but the ") + "parent route path has no trailing \"*\". This means if you navigate " + "deeper, the parent won't match anymore and therefore the child " + "routes will never render.\n\n" + ("Please change the parent <Route path=\"" + parentPath + "\"> to <Route ") + ("path=\"" + (parentPath === "/" ? "*" : parentPath + "/*") + "\">."));
+  }
+  let locationFromContext = useLocation();
+  let location;
+  if (locationArg) {
+    var _parsedLocationArg$pa;
+    let parsedLocationArg = typeof locationArg === "string" ? parsePath$1(locationArg) : locationArg;
+    !(parentPathnameBase === "/" || ((_parsedLocationArg$pa = parsedLocationArg.pathname) == null ? void 0 : _parsedLocationArg$pa.startsWith(parentPathnameBase))) ? process.env.NODE_ENV !== "production" ? invariant(false, "When overriding the location using `<Routes location>` or `useRoutes(routes, location)`, " + "the location pathname must begin with the portion of the URL pathname that was " + ("matched by all parent routes. The current pathname base is \"" + parentPathnameBase + "\" ") + ("but pathname \"" + parsedLocationArg.pathname + "\" was given in the `location` prop.")) : invariant(false) : void 0;
+    location = parsedLocationArg;
+  } else {
+    location = locationFromContext;
+  }
+  let pathname = location.pathname || "/";
+  let remainingPathname = pathname;
+  if (parentPathnameBase !== "/") {
+    // Determine the remaining pathname by removing the # of URL segments the
+    // parentPathnameBase has, instead of removing based on character count.
+    // This is because we can't guarantee that incoming/outgoing encodings/
+    // decodings will match exactly.
+    // We decode paths before matching on a per-segment basis with
+    // decodeURIComponent(), but we re-encode pathnames via `new URL()` so they
+    // match what `window.location.pathname` would reflect.  Those don't 100%
+    // align when it comes to encoded URI characters such as % and &.
+    //
+    // So we may end up with:
+    //   pathname:           "/descendant/a%25b/match"
+    //   parentPathnameBase: "/descendant/a%b"
+    //
+    // And the direct substring removal approach won't work :/
+    let parentSegments = parentPathnameBase.replace(/^\//, "").split("/");
+    let segments = pathname.replace(/^\//, "").split("/");
+    remainingPathname = "/" + segments.slice(parentSegments.length).join("/");
+  }
+  let matches = matchRoutes(routes, {
+    pathname: remainingPathname
+  });
+  if (process.env.NODE_ENV !== "production") {
+    process.env.NODE_ENV !== "production" ? warning$7(parentRoute || matches != null, "No routes matched location \"" + location.pathname + location.search + location.hash + "\" ") : void 0;
+    process.env.NODE_ENV !== "production" ? warning$7(matches == null || matches[matches.length - 1].route.element !== undefined || matches[matches.length - 1].route.Component !== undefined || matches[matches.length - 1].route.lazy !== undefined, "Matched leaf route at location \"" + location.pathname + location.search + location.hash + "\" " + "does not have an element or Component. This means it will render an <Outlet /> with a " + "null value by default resulting in an \"empty\" page.") : void 0;
+  }
+  let renderedMatches = _renderMatches(matches && matches.map(match => Object.assign({}, match, {
+    params: Object.assign({}, parentParams, match.params),
+    pathname: joinPaths([parentPathnameBase,
+    // Re-encode pathnames that were decoded inside matchRoutes
+    navigator.encodeLocation ? navigator.encodeLocation(match.pathname).pathname : match.pathname]),
+    pathnameBase: match.pathnameBase === "/" ? parentPathnameBase : joinPaths([parentPathnameBase,
+    // Re-encode pathnames that were decoded inside matchRoutes
+    navigator.encodeLocation ? navigator.encodeLocation(match.pathnameBase).pathname : match.pathnameBase])
+  })), parentMatches, dataRouterState, future);
+
+  // When a user passes in a `locationArg`, the associated routes need to
+  // be wrapped in a new `LocationContext.Provider` in order for `useLocation`
+  // to use the scoped location instead of the global location.
+  if (locationArg && renderedMatches) {
+    return /*#__PURE__*/React$r.createElement(LocationContext.Provider, {
+      value: {
+        location: _extends$3({
+          pathname: "/",
+          search: "",
+          hash: "",
+          state: null,
+          key: "default"
+        }, location),
+        navigationType: Action.Pop
+      }
+    }, renderedMatches);
+  }
+  return renderedMatches;
+}
+function DefaultErrorComponent() {
+  let error = useRouteError();
+  let message = isRouteErrorResponse(error) ? error.status + " " + error.statusText : error instanceof Error ? error.message : JSON.stringify(error);
+  let stack = error instanceof Error ? error.stack : null;
+  let lightgrey = "rgba(200,200,200, 0.5)";
+  let preStyles = {
+    padding: "0.5rem",
+    backgroundColor: lightgrey
+  };
+  let codeStyles = {
+    padding: "2px 4px",
+    backgroundColor: lightgrey
+  };
+  let devInfo = null;
+  if (process.env.NODE_ENV !== "production") {
+    console.error("Error handled by React Router default ErrorBoundary:", error);
+    devInfo = /*#__PURE__*/React$r.createElement(React$r.Fragment, null, /*#__PURE__*/React$r.createElement("p", null, "\uD83D\uDCBF Hey developer \uD83D\uDC4B"), /*#__PURE__*/React$r.createElement("p", null, "You can provide a way better UX than this when your app throws errors by providing your own ", /*#__PURE__*/React$r.createElement("code", {
+      style: codeStyles
+    }, "ErrorBoundary"), " or", " ", /*#__PURE__*/React$r.createElement("code", {
+      style: codeStyles
+    }, "errorElement"), " prop on your route."));
+  }
+  return /*#__PURE__*/React$r.createElement(React$r.Fragment, null, /*#__PURE__*/React$r.createElement("h2", null, "Unexpected Application Error!"), /*#__PURE__*/React$r.createElement("h3", {
+    style: {
+      fontStyle: "italic"
+    }
+  }, message), stack ? /*#__PURE__*/React$r.createElement("pre", {
+    style: preStyles
+  }, stack) : null, devInfo);
+}
+const defaultErrorElement = /*#__PURE__*/React$r.createElement(DefaultErrorComponent, null);
+class RenderErrorBoundary extends React$r.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      location: props.location,
+      revalidation: props.revalidation,
+      error: props.error
+    };
+  }
+  static getDerivedStateFromError(error) {
+    return {
+      error: error
+    };
+  }
+  static getDerivedStateFromProps(props, state) {
+    // When we get into an error state, the user will likely click "back" to the
+    // previous page that didn't have an error. Because this wraps the entire
+    // application, that will have no effect--the error page continues to display.
+    // This gives us a mechanism to recover from the error when the location changes.
+    //
+    // Whether we're in an error state or not, we update the location in state
+    // so that when we are in an error state, it gets reset when a new location
+    // comes in and the user recovers from the error.
+    if (state.location !== props.location || state.revalidation !== "idle" && props.revalidation === "idle") {
+      return {
+        error: props.error,
+        location: props.location,
+        revalidation: props.revalidation
+      };
+    }
+
+    // If we're not changing locations, preserve the location but still surface
+    // any new errors that may come through. We retain the existing error, we do
+    // this because the error provided from the app state may be cleared without
+    // the location changing.
+    return {
+      error: props.error !== undefined ? props.error : state.error,
+      location: state.location,
+      revalidation: props.revalidation || state.revalidation
+    };
+  }
+  componentDidCatch(error, errorInfo) {
+    console.error("React Router caught the following error during render", error, errorInfo);
+  }
+  render() {
+    return this.state.error !== undefined ? /*#__PURE__*/React$r.createElement(RouteContext.Provider, {
+      value: this.props.routeContext
+    }, /*#__PURE__*/React$r.createElement(RouteErrorContext.Provider, {
+      value: this.state.error,
+      children: this.props.component
+    })) : this.props.children;
+  }
+}
+function RenderedRoute(_ref) {
+  let {
+    routeContext,
+    match,
+    children
+  } = _ref;
+  let dataRouterContext = React$r.useContext(DataRouterContext);
+
+  // Track how deep we got in our render pass to emulate SSR componentDidCatch
+  // in a DataStaticRouter
+  if (dataRouterContext && dataRouterContext.static && dataRouterContext.staticContext && (match.route.errorElement || match.route.ErrorBoundary)) {
+    dataRouterContext.staticContext._deepestRenderedBoundaryId = match.route.id;
+  }
+  return /*#__PURE__*/React$r.createElement(RouteContext.Provider, {
+    value: routeContext
+  }, children);
+}
+function _renderMatches(matches, parentMatches, dataRouterState, future) {
+  var _dataRouterState;
+  if (parentMatches === void 0) {
+    parentMatches = [];
+  }
+  if (dataRouterState === void 0) {
+    dataRouterState = null;
+  }
+  if (future === void 0) {
+    future = null;
+  }
+  if (matches == null) {
+    var _future;
+    if (!dataRouterState) {
+      return null;
+    }
+    if (dataRouterState.errors) {
+      // Don't bail if we have data router errors so we can render them in the
+      // boundary.  Use the pre-matched (or shimmed) matches
+      matches = dataRouterState.matches;
+    } else if ((_future = future) != null && _future.v7_partialHydration && parentMatches.length === 0 && !dataRouterState.initialized && dataRouterState.matches.length > 0) {
+      // Don't bail if we're initializing with partial hydration and we have
+      // router matches.  That means we're actively running `patchRoutesOnMiss`
+      // so we should render down the partial matches to the appropriate
+      // `HydrateFallback`.  We only do this if `parentMatches` is empty so it
+      // only impacts the root matches for `RouterProvider` and no descendant
+      // `<Routes>`
+      matches = dataRouterState.matches;
+    } else {
+      return null;
+    }
+  }
+  let renderedMatches = matches;
+
+  // If we have data errors, trim matches to the highest error boundary
+  let errors = (_dataRouterState = dataRouterState) == null ? void 0 : _dataRouterState.errors;
+  if (errors != null) {
+    let errorIndex = renderedMatches.findIndex(m => m.route.id && (errors == null ? void 0 : errors[m.route.id]) !== undefined);
+    !(errorIndex >= 0) ? process.env.NODE_ENV !== "production" ? invariant(false, "Could not find a matching route for errors on route IDs: " + Object.keys(errors).join(",")) : invariant(false) : void 0;
+    renderedMatches = renderedMatches.slice(0, Math.min(renderedMatches.length, errorIndex + 1));
+  }
+
+  // If we're in a partial hydration mode, detect if we need to render down to
+  // a given HydrateFallback while we load the rest of the hydration data
+  let renderFallback = false;
+  let fallbackIndex = -1;
+  if (dataRouterState && future && future.v7_partialHydration) {
+    for (let i = 0; i < renderedMatches.length; i++) {
+      let match = renderedMatches[i];
+      // Track the deepest fallback up until the first route without data
+      if (match.route.HydrateFallback || match.route.hydrateFallbackElement) {
+        fallbackIndex = i;
+      }
+      if (match.route.id) {
+        let {
+          loaderData,
+          errors
+        } = dataRouterState;
+        let needsToRunLoader = match.route.loader && loaderData[match.route.id] === undefined && (!errors || errors[match.route.id] === undefined);
+        if (match.route.lazy || needsToRunLoader) {
+          // We found the first route that's not ready to render (waiting on
+          // lazy, or has a loader that hasn't run yet).  Flag that we need to
+          // render a fallback and render up until the appropriate fallback
+          renderFallback = true;
+          if (fallbackIndex >= 0) {
+            renderedMatches = renderedMatches.slice(0, fallbackIndex + 1);
+          } else {
+            renderedMatches = [renderedMatches[0]];
+          }
+          break;
+        }
+      }
+    }
+  }
+  return renderedMatches.reduceRight((outlet, match, index) => {
+    // Only data routers handle errors/fallbacks
+    let error;
+    let shouldRenderHydrateFallback = false;
+    let errorElement = null;
+    let hydrateFallbackElement = null;
+    if (dataRouterState) {
+      error = errors && match.route.id ? errors[match.route.id] : undefined;
+      errorElement = match.route.errorElement || defaultErrorElement;
+      if (renderFallback) {
+        if (fallbackIndex < 0 && index === 0) {
+          warningOnce$2("route-fallback", false, "No `HydrateFallback` element provided to render during initial hydration");
+          shouldRenderHydrateFallback = true;
+          hydrateFallbackElement = null;
+        } else if (fallbackIndex === index) {
+          shouldRenderHydrateFallback = true;
+          hydrateFallbackElement = match.route.hydrateFallbackElement || null;
+        }
+      }
+    }
+    let matches = parentMatches.concat(renderedMatches.slice(0, index + 1));
+    let getChildren = () => {
+      let children;
+      if (error) {
+        children = errorElement;
+      } else if (shouldRenderHydrateFallback) {
+        children = hydrateFallbackElement;
+      } else if (match.route.Component) {
+        // Note: This is a de-optimized path since React won't re-use the
+        // ReactElement since it's identity changes with each new
+        // React.createElement call.  We keep this so folks can use
+        // `<Route Component={...}>` in `<Routes>` but generally `Component`
+        // usage is only advised in `RouterProvider` when we can convert it to
+        // `element` ahead of time.
+        children = /*#__PURE__*/React$r.createElement(match.route.Component, null);
+      } else if (match.route.element) {
+        children = match.route.element;
+      } else {
+        children = outlet;
+      }
+      return /*#__PURE__*/React$r.createElement(RenderedRoute, {
+        match: match,
+        routeContext: {
+          outlet,
+          matches,
+          isDataRoute: dataRouterState != null
+        },
+        children: children
+      });
+    };
+    // Only wrap in an error boundary within data router usages when we have an
+    // ErrorBoundary/errorElement on this route.  Otherwise let it bubble up to
+    // an ancestor ErrorBoundary/errorElement
+    return dataRouterState && (match.route.ErrorBoundary || match.route.errorElement || index === 0) ? /*#__PURE__*/React$r.createElement(RenderErrorBoundary, {
+      location: dataRouterState.location,
+      revalidation: dataRouterState.revalidation,
+      component: errorElement,
+      error: error,
+      children: getChildren(),
+      routeContext: {
+        outlet: null,
+        matches,
+        isDataRoute: true
+      }
+    }) : getChildren();
+  }, null);
+}
+var DataRouterHook$1 = /*#__PURE__*/function (DataRouterHook) {
+  DataRouterHook["UseBlocker"] = "useBlocker";
+  DataRouterHook["UseRevalidator"] = "useRevalidator";
+  DataRouterHook["UseNavigateStable"] = "useNavigate";
+  return DataRouterHook;
+}(DataRouterHook$1 || {});
+var DataRouterStateHook$1 = /*#__PURE__*/function (DataRouterStateHook) {
+  DataRouterStateHook["UseBlocker"] = "useBlocker";
+  DataRouterStateHook["UseLoaderData"] = "useLoaderData";
+  DataRouterStateHook["UseActionData"] = "useActionData";
+  DataRouterStateHook["UseRouteError"] = "useRouteError";
+  DataRouterStateHook["UseNavigation"] = "useNavigation";
+  DataRouterStateHook["UseRouteLoaderData"] = "useRouteLoaderData";
+  DataRouterStateHook["UseMatches"] = "useMatches";
+  DataRouterStateHook["UseRevalidator"] = "useRevalidator";
+  DataRouterStateHook["UseNavigateStable"] = "useNavigate";
+  DataRouterStateHook["UseRouteId"] = "useRouteId";
+  return DataRouterStateHook;
+}(DataRouterStateHook$1 || {});
+function getDataRouterConsoleError$1(hookName) {
+  return hookName + " must be used within a data router.  See https://reactrouter.com/routers/picking-a-router.";
+}
+function useDataRouterContext$1(hookName) {
+  let ctx = React$r.useContext(DataRouterContext);
+  !ctx ? process.env.NODE_ENV !== "production" ? invariant(false, getDataRouterConsoleError$1(hookName)) : invariant(false) : void 0;
+  return ctx;
+}
+function useDataRouterState(hookName) {
+  let state = React$r.useContext(DataRouterStateContext);
+  !state ? process.env.NODE_ENV !== "production" ? invariant(false, getDataRouterConsoleError$1(hookName)) : invariant(false) : void 0;
+  return state;
+}
+function useRouteContext(hookName) {
+  let route = React$r.useContext(RouteContext);
+  !route ? process.env.NODE_ENV !== "production" ? invariant(false, getDataRouterConsoleError$1(hookName)) : invariant(false) : void 0;
+  return route;
+}
+
+// Internal version with hookName-aware debugging
+function useCurrentRouteId(hookName) {
+  let route = useRouteContext(hookName);
+  let thisRoute = route.matches[route.matches.length - 1];
+  !thisRoute.route.id ? process.env.NODE_ENV !== "production" ? invariant(false, hookName + " can only be used on routes that contain a unique \"id\"") : invariant(false) : void 0;
+  return thisRoute.route.id;
+}
+
+/**
+ * Returns the ID for the nearest contextual route
+ */
+function useRouteId() {
+  return useCurrentRouteId(DataRouterStateHook$1.UseRouteId);
+}
+
+/**
+ * Returns the nearest ancestor Route error, which could be a loader/action
+ * error or a render error.  This is intended to be called from your
+ * ErrorBoundary/errorElement to display a proper error message.
+ */
+function useRouteError() {
+  var _state$errors;
+  let error = React$r.useContext(RouteErrorContext);
+  let state = useDataRouterState(DataRouterStateHook$1.UseRouteError);
+  let routeId = useCurrentRouteId(DataRouterStateHook$1.UseRouteError);
+
+  // If this was a render error, we put it in a RouteError context inside
+  // of RenderErrorBoundary
+  if (error !== undefined) {
+    return error;
+  }
+
+  // Otherwise look for errors from our data router state
+  return (_state$errors = state.errors) == null ? void 0 : _state$errors[routeId];
+}
+
+/**
+ * Stable version of useNavigate that is used when we are in the context of
+ * a RouterProvider.
+ */
+function useNavigateStable() {
+  let {
+    router
+  } = useDataRouterContext$1(DataRouterHook$1.UseNavigateStable);
+  let id = useCurrentRouteId(DataRouterStateHook$1.UseNavigateStable);
+  let activeRef = React$r.useRef(false);
+  useIsomorphicLayoutEffect$1(() => {
+    activeRef.current = true;
+  });
+  let navigate = React$r.useCallback(function (to, options) {
+    if (options === void 0) {
+      options = {};
+    }
+    process.env.NODE_ENV !== "production" ? warning$7(activeRef.current, navigateEffectWarning) : void 0;
+
+    // Short circuit here since if this happens on first render the navigate
+    // is useless because we haven't wired up our router subscriber yet
+    if (!activeRef.current) return;
+    if (typeof to === "number") {
+      router.navigate(to);
+    } else {
+      router.navigate(to, _extends$3({
+        fromRouteId: id
+      }, options));
+    }
+  }, [router, id]);
+  return navigate;
+}
+const alreadyWarned = {};
+function warningOnce$2(key, cond, message) {
+  if (!cond && !alreadyWarned[key]) {
+    alreadyWarned[key] = true;
+    process.env.NODE_ENV !== "production" ? warning$7(false, message) : void 0;
+  }
+}
+/**
+ * Declares an element that should be rendered at a certain URL path.
+ *
+ * @see https://reactrouter.com/components/route
+ */
+function Route(_props) {
+  process.env.NODE_ENV !== "production" ? invariant(false, "A <Route> is only ever to be used as the child of <Routes> element, " + "never rendered directly. Please wrap your <Route> in a <Routes>.") : invariant(false) ;
+}
+/**
+ * Provides location context for the rest of the app.
+ *
+ * Note: You usually won't render a `<Router>` directly. Instead, you'll render a
+ * router that is more specific to your environment such as a `<BrowserRouter>`
+ * in web browsers or a `<StaticRouter>` for server rendering.
+ *
+ * @see https://reactrouter.com/router-components/router
+ */
+function Router(_ref5) {
+  let {
+    basename: basenameProp = "/",
+    children = null,
+    location: locationProp,
+    navigationType = Action.Pop,
+    navigator,
+    static: staticProp = false,
+    future
+  } = _ref5;
+  !!useInRouterContext() ? process.env.NODE_ENV !== "production" ? invariant(false, "You cannot render a <Router> inside another <Router>." + " You should never have more than one in your app.") : invariant(false) : void 0;
+
+  // Preserve trailing slashes on basename, so we can let the user control
+  // the enforcement of trailing slashes throughout the app
+  let basename = basenameProp.replace(/^\/*/, "/");
+  let navigationContext = React$r.useMemo(() => ({
+    basename,
+    navigator,
+    static: staticProp,
+    future: _extends$3({
+      v7_relativeSplatPath: false
+    }, future)
+  }), [basename, future, navigator, staticProp]);
+  if (typeof locationProp === "string") {
+    locationProp = parsePath$1(locationProp);
+  }
+  let {
+    pathname = "/",
+    search = "",
+    hash = "",
+    state = null,
+    key = "default"
+  } = locationProp;
+  let locationContext = React$r.useMemo(() => {
+    let trailingPathname = stripBasename(pathname, basename);
+    if (trailingPathname == null) {
+      return null;
+    }
+    return {
+      location: {
+        pathname: trailingPathname,
+        search,
+        hash,
+        state,
+        key
+      },
+      navigationType
+    };
+  }, [basename, pathname, search, hash, state, key, navigationType]);
+  process.env.NODE_ENV !== "production" ? warning$7(locationContext != null, "<Router basename=\"" + basename + "\"> is not able to match the URL " + ("\"" + pathname + search + hash + "\" because it does not start with the ") + "basename, so the <Router> won't render anything.") : void 0;
+  if (locationContext == null) {
+    return null;
+  }
+  return /*#__PURE__*/React$r.createElement(NavigationContext.Provider, {
+    value: navigationContext
+  }, /*#__PURE__*/React$r.createElement(LocationContext.Provider, {
+    children: children,
+    value: locationContext
+  }));
+}
+/**
+ * A container for a nested tree of `<Route>` elements that renders the branch
+ * that best matches the current location.
+ *
+ * @see https://reactrouter.com/components/routes
+ */
+function Routes(_ref6) {
+  let {
+    children,
+    location
+  } = _ref6;
+  return useRoutes(createRoutesFromChildren(children), location);
+}
+new Promise(() => {});
+
+///////////////////////////////////////////////////////////////////////////////
+// UTILS
+///////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Creates a route config from a React "children" object, which is usually
+ * either a `<Route>` element or an array of them. Used internally by
+ * `<Routes>` to create a route config from its children.
+ *
+ * @see https://reactrouter.com/utils/create-routes-from-children
+ */
+function createRoutesFromChildren(children, parentPath) {
+  if (parentPath === void 0) {
+    parentPath = [];
+  }
+  let routes = [];
+  React$r.Children.forEach(children, (element, index) => {
+    if (! /*#__PURE__*/React$r.isValidElement(element)) {
+      // Ignore non-elements. This allows people to more easily inline
+      // conditionals in their route config.
+      return;
+    }
+    let treePath = [...parentPath, index];
+    if (element.type === React$r.Fragment) {
+      // Transparently support React.Fragment and its children.
+      routes.push.apply(routes, createRoutesFromChildren(element.props.children, treePath));
+      return;
+    }
+    !(element.type === Route) ? process.env.NODE_ENV !== "production" ? invariant(false, "[" + (typeof element.type === "string" ? element.type : element.type.name) + "] is not a <Route> component. All component children of <Routes> must be a <Route> or <React.Fragment>") : invariant(false) : void 0;
+    !(!element.props.index || !element.props.children) ? process.env.NODE_ENV !== "production" ? invariant(false, "An index route cannot have child routes.") : invariant(false) : void 0;
+    let route = {
+      id: element.props.id || treePath.join("-"),
+      caseSensitive: element.props.caseSensitive,
+      element: element.props.element,
+      Component: element.props.Component,
+      index: element.props.index,
+      path: element.props.path,
+      loader: element.props.loader,
+      action: element.props.action,
+      errorElement: element.props.errorElement,
+      ErrorBoundary: element.props.ErrorBoundary,
+      hasErrorBoundary: element.props.ErrorBoundary != null || element.props.errorElement != null,
+      shouldRevalidate: element.props.shouldRevalidate,
+      handle: element.props.handle,
+      lazy: element.props.lazy
+    };
+    if (element.props.children) {
+      route.children = createRoutesFromChildren(element.props.children, treePath);
+    }
+    routes.push(route);
+  });
+  return routes;
+}
+
+/**
+ * React Router DOM v6.26.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+function _extends$2() {
+  _extends$2 = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends$2.apply(this, arguments);
+}
+function _objectWithoutPropertiesLoose$1(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+  return target;
+}
+
+const defaultMethod = "get";
+const defaultEncType = "application/x-www-form-urlencoded";
+function isHtmlElement(object) {
+  return object != null && typeof object.tagName === "string";
+}
+function isButtonElement(object) {
+  return isHtmlElement(object) && object.tagName.toLowerCase() === "button";
+}
+function isFormElement(object) {
+  return isHtmlElement(object) && object.tagName.toLowerCase() === "form";
+}
+function isInputElement(object) {
+  return isHtmlElement(object) && object.tagName.toLowerCase() === "input";
+}
+function isModifiedEvent(event) {
+  return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+}
+function shouldProcessLinkClick(event, target) {
+  return event.button === 0 && (
+  // Ignore everything but left clicks
+  !target || target === "_self") &&
+  // Let browser handle "target=_blank" etc.
+  !isModifiedEvent(event) // Ignore clicks with modifier keys
+  ;
+}
+// One-time check for submitter support
+let _formDataSupportsSubmitter = null;
+function isFormDataSubmitterSupported() {
+  if (_formDataSupportsSubmitter === null) {
+    try {
+      new FormData(document.createElement("form"),
+      // @ts-expect-error if FormData supports the submitter parameter, this will throw
+      0);
+      _formDataSupportsSubmitter = false;
+    } catch (e) {
+      _formDataSupportsSubmitter = true;
+    }
+  }
+  return _formDataSupportsSubmitter;
+}
+const supportedFormEncTypes = new Set(["application/x-www-form-urlencoded", "multipart/form-data", "text/plain"]);
+function getFormEncType(encType) {
+  if (encType != null && !supportedFormEncTypes.has(encType)) {
+    process.env.NODE_ENV !== "production" ? warning$7(false, "\"" + encType + "\" is not a valid `encType` for `<Form>`/`<fetcher.Form>` " + ("and will default to \"" + defaultEncType + "\"")) : void 0;
+    return null;
+  }
+  return encType;
+}
+function getFormSubmissionInfo(target, basename) {
+  let method;
+  let action;
+  let encType;
+  let formData;
+  let body;
+  if (isFormElement(target)) {
+    // When grabbing the action from the element, it will have had the basename
+    // prefixed to ensure non-JS scenarios work, so strip it since we'll
+    // re-prefix in the router
+    let attr = target.getAttribute("action");
+    action = attr ? stripBasename(attr, basename) : null;
+    method = target.getAttribute("method") || defaultMethod;
+    encType = getFormEncType(target.getAttribute("enctype")) || defaultEncType;
+    formData = new FormData(target);
+  } else if (isButtonElement(target) || isInputElement(target) && (target.type === "submit" || target.type === "image")) {
+    let form = target.form;
+    if (form == null) {
+      throw new Error("Cannot submit a <button> or <input type=\"submit\"> without a <form>");
+    }
+    // <button>/<input type="submit"> may override attributes of <form>
+    // When grabbing the action from the element, it will have had the basename
+    // prefixed to ensure non-JS scenarios work, so strip it since we'll
+    // re-prefix in the router
+    let attr = target.getAttribute("formaction") || form.getAttribute("action");
+    action = attr ? stripBasename(attr, basename) : null;
+    method = target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod;
+    encType = getFormEncType(target.getAttribute("formenctype")) || getFormEncType(form.getAttribute("enctype")) || defaultEncType;
+    // Build a FormData object populated from a form and submitter
+    formData = new FormData(form, target);
+    // If this browser doesn't support the `FormData(el, submitter)` format,
+    // then tack on the submitter value at the end.  This is a lightweight
+    // solution that is not 100% spec compliant.  For complete support in older
+    // browsers, consider using the `formdata-submitter-polyfill` package
+    if (!isFormDataSubmitterSupported()) {
+      let {
+        name,
+        type,
+        value
+      } = target;
+      if (type === "image") {
+        let prefix = name ? name + "." : "";
+        formData.append(prefix + "x", "0");
+        formData.append(prefix + "y", "0");
+      } else if (name) {
+        formData.append(name, value);
+      }
+    }
+  } else if (isHtmlElement(target)) {
+    throw new Error("Cannot submit element that is not <form>, <button>, or " + "<input type=\"submit|image\">");
+  } else {
+    method = defaultMethod;
+    action = null;
+    encType = defaultEncType;
+    body = target;
+  }
+  // Send body for <Form encType="text/plain" so we encode it into text
+  if (formData && encType === "text/plain") {
+    body = formData;
+    formData = undefined;
+  }
+  return {
+    action,
+    method: method.toLowerCase(),
+    encType,
+    formData,
+    body
+  };
+}
+
+const _excluded$c = ["onClick", "relative", "reloadDocument", "replace", "state", "target", "to", "preventScrollReset", "unstable_viewTransition"],
+  _excluded2$1 = ["aria-current", "caseSensitive", "className", "end", "style", "to", "unstable_viewTransition", "children"],
+  _excluded3 = ["fetcherKey", "navigate", "reloadDocument", "replace", "state", "method", "action", "onSubmit", "relative", "preventScrollReset", "unstable_viewTransition"];
+// HEY YOU! DON'T TOUCH THIS VARIABLE!
+//
+// It is replaced with the proper version at build time via a babel plugin in
+// the rollup config.
+//
+// Export a global property onto the window for React Router detection by the
+// Core Web Vitals Technology Report.  This way they can configure the `wappalyzer`
+// to detect and properly classify live websites as being built with React Router:
+// https://github.com/HTTPArchive/wappalyzer/blob/main/src/technologies/r.json
+const REACT_ROUTER_VERSION = "6";
+try {
+  window.__reactRouterVersion = REACT_ROUTER_VERSION;
+} catch (e) {
+  // no-op
+}
+const ViewTransitionContext = /*#__PURE__*/React$r.createContext({
+  isTransitioning: false
+});
+if (process.env.NODE_ENV !== "production") {
+  ViewTransitionContext.displayName = "ViewTransition";
+}
+const FetchersContext = /*#__PURE__*/React$r.createContext(new Map());
+if (process.env.NODE_ENV !== "production") {
+  FetchersContext.displayName = "Fetchers";
+}
+//#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region Components
+////////////////////////////////////////////////////////////////////////////////
+/**
+  Webpack + React 17 fails to compile on any of the following because webpack
+  complains that `startTransition` doesn't exist in `React`:
+  * import { startTransition } from "react"
+  * import * as React from from "react";
+    "startTransition" in React ? React.startTransition(() => setState()) : setState()
+  * import * as React from from "react";
+    "startTransition" in React ? React["startTransition"](() => setState()) : setState()
+
+  Moving it to a constant such as the following solves the Webpack/React 17 issue:
+  * import * as React from from "react";
+    const START_TRANSITION = "startTransition";
+    START_TRANSITION in React ? React[START_TRANSITION](() => setState()) : setState()
+
+  However, that introduces webpack/terser minification issues in production builds
+  in React 18 where minification/obfuscation ends up removing the call of
+  React.startTransition entirely from the first half of the ternary.  Grabbing
+  this exported reference once up front resolves that issue.
+
+  See https://github.com/remix-run/react-router/issues/10579
+*/
+const START_TRANSITION = "startTransition";
+const startTransitionImpl = React$r[START_TRANSITION];
+/**
+ * A `<Router>` for use in web browsers. Provides the cleanest URLs.
+ */
+function BrowserRouter(_ref4) {
+  let {
+    basename,
+    children,
+    future,
+    window
+  } = _ref4;
+  let historyRef = React$r.useRef();
+  if (historyRef.current == null) {
+    historyRef.current = createBrowserHistory({
+      window,
+      v5Compat: true
+    });
+  }
+  let history = historyRef.current;
+  let [state, setStateImpl] = React$r.useState({
+    action: history.action,
+    location: history.location
+  });
+  let {
+    v7_startTransition
+  } = future || {};
+  let setState = React$r.useCallback(newState => {
+    v7_startTransition && startTransitionImpl ? startTransitionImpl(() => setStateImpl(newState)) : setStateImpl(newState);
+  }, [setStateImpl, v7_startTransition]);
+  React$r.useLayoutEffect(() => history.listen(setState), [history, setState]);
+  return /*#__PURE__*/React$r.createElement(Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history,
+    future: future
+  });
+}
+if (process.env.NODE_ENV !== "production") ;
+const isBrowser$1 = typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined";
+const ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
+/**
+ * The public API for rendering a history-aware `<a>`.
+ */
+const Link = /*#__PURE__*/React$r.forwardRef(function LinkWithRef(_ref7, ref) {
+  let {
+      onClick,
+      relative,
+      reloadDocument,
+      replace,
+      state,
+      target,
+      to,
+      preventScrollReset,
+      unstable_viewTransition
+    } = _ref7,
+    rest = _objectWithoutPropertiesLoose$1(_ref7, _excluded$c);
+  let {
+    basename
+  } = React$r.useContext(NavigationContext);
+  // Rendered into <a href> for absolute URLs
+  let absoluteHref;
+  let isExternal = false;
+  if (typeof to === "string" && ABSOLUTE_URL_REGEX.test(to)) {
+    // Render the absolute href server- and client-side
+    absoluteHref = to;
+    // Only check for external origins client-side
+    if (isBrowser$1) {
+      try {
+        let currentUrl = new URL(window.location.href);
+        let targetUrl = to.startsWith("//") ? new URL(currentUrl.protocol + to) : new URL(to);
+        let path = stripBasename(targetUrl.pathname, basename);
+        if (targetUrl.origin === currentUrl.origin && path != null) {
+          // Strip the protocol/origin/basename for same-origin absolute URLs
+          to = path + targetUrl.search + targetUrl.hash;
+        } else {
+          isExternal = true;
+        }
+      } catch (e) {
+        // We can't do external URL detection without a valid URL
+        process.env.NODE_ENV !== "production" ? warning$7(false, "<Link to=\"" + to + "\"> contains an invalid URL which will probably break " + "when clicked - please update to a valid URL path.") : void 0;
+      }
+    }
+  }
+  // Rendered into <a href> for relative URLs
+  let href = useHref(to, {
+    relative
+  });
+  let internalOnClick = useLinkClickHandler(to, {
+    replace,
+    state,
+    target,
+    preventScrollReset,
+    relative,
+    unstable_viewTransition
+  });
+  function handleClick(event) {
+    if (onClick) onClick(event);
+    if (!event.defaultPrevented) {
+      internalOnClick(event);
+    }
+  }
+  return (
+    /*#__PURE__*/
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
+    React$r.createElement("a", _extends$2({}, rest, {
+      href: absoluteHref || href,
+      onClick: isExternal || reloadDocument ? onClick : handleClick,
+      ref: ref,
+      target: target
+    }))
+  );
+});
+if (process.env.NODE_ENV !== "production") {
+  Link.displayName = "Link";
+}
+/**
+ * A `<Link>` wrapper that knows if it's "active" or not.
+ */
+const NavLink = /*#__PURE__*/React$r.forwardRef(function NavLinkWithRef(_ref8, ref) {
+  let {
+      "aria-current": ariaCurrentProp = "page",
+      caseSensitive = false,
+      className: classNameProp = "",
+      end = false,
+      style: styleProp,
+      to,
+      unstable_viewTransition,
+      children
+    } = _ref8,
+    rest = _objectWithoutPropertiesLoose$1(_ref8, _excluded2$1);
+  let path = useResolvedPath(to, {
+    relative: rest.relative
+  });
+  let location = useLocation();
+  let routerState = React$r.useContext(DataRouterStateContext);
+  let {
+    navigator,
+    basename
+  } = React$r.useContext(NavigationContext);
+  let isTransitioning = routerState != null &&
+  // Conditional usage is OK here because the usage of a data router is static
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useViewTransitionState(path) && unstable_viewTransition === true;
+  let toPathname = navigator.encodeLocation ? navigator.encodeLocation(path).pathname : path.pathname;
+  let locationPathname = location.pathname;
+  let nextLocationPathname = routerState && routerState.navigation && routerState.navigation.location ? routerState.navigation.location.pathname : null;
+  if (!caseSensitive) {
+    locationPathname = locationPathname.toLowerCase();
+    nextLocationPathname = nextLocationPathname ? nextLocationPathname.toLowerCase() : null;
+    toPathname = toPathname.toLowerCase();
+  }
+  if (nextLocationPathname && basename) {
+    nextLocationPathname = stripBasename(nextLocationPathname, basename) || nextLocationPathname;
+  }
+  // If the `to` has a trailing slash, look at that exact spot.  Otherwise,
+  // we're looking for a slash _after_ what's in `to`.  For example:
+  //
+  // <NavLink to="/users"> and <NavLink to="/users/">
+  // both want to look for a / at index 6 to match URL `/users/matt`
+  const endSlashPosition = toPathname !== "/" && toPathname.endsWith("/") ? toPathname.length - 1 : toPathname.length;
+  let isActive = locationPathname === toPathname || !end && locationPathname.startsWith(toPathname) && locationPathname.charAt(endSlashPosition) === "/";
+  let isPending = nextLocationPathname != null && (nextLocationPathname === toPathname || !end && nextLocationPathname.startsWith(toPathname) && nextLocationPathname.charAt(toPathname.length) === "/");
+  let renderProps = {
+    isActive,
+    isPending,
+    isTransitioning
+  };
+  let ariaCurrent = isActive ? ariaCurrentProp : undefined;
+  let className;
+  if (typeof classNameProp === "function") {
+    className = classNameProp(renderProps);
+  } else {
+    // If the className prop is not a function, we use a default `active`
+    // class for <NavLink />s that are active. In v5 `active` was the default
+    // value for `activeClassName`, but we are removing that API and can still
+    // use the old default behavior for a cleaner upgrade path and keep the
+    // simple styling rules working as they currently do.
+    className = [classNameProp, isActive ? "active" : null, isPending ? "pending" : null, isTransitioning ? "transitioning" : null].filter(Boolean).join(" ");
+  }
+  let style = typeof styleProp === "function" ? styleProp(renderProps) : styleProp;
+  return /*#__PURE__*/React$r.createElement(Link, _extends$2({}, rest, {
+    "aria-current": ariaCurrent,
+    className: className,
+    ref: ref,
+    style: style,
+    to: to,
+    unstable_viewTransition: unstable_viewTransition
+  }), typeof children === "function" ? children(renderProps) : children);
+});
+if (process.env.NODE_ENV !== "production") {
+  NavLink.displayName = "NavLink";
+}
+/**
+ * A `@remix-run/router`-aware `<form>`. It behaves like a normal form except
+ * that the interaction with the server is with `fetch` instead of new document
+ * requests, allowing components to add nicer UX to the page as the form is
+ * submitted and returns with data.
+ */
+const Form$1 = /*#__PURE__*/React$r.forwardRef((_ref9, forwardedRef) => {
+  let {
+      fetcherKey,
+      navigate,
+      reloadDocument,
+      replace,
+      state,
+      method = defaultMethod,
+      action,
+      onSubmit,
+      relative,
+      preventScrollReset,
+      unstable_viewTransition
+    } = _ref9,
+    props = _objectWithoutPropertiesLoose$1(_ref9, _excluded3);
+  let submit = useSubmit();
+  let formAction = useFormAction(action, {
+    relative
+  });
+  let formMethod = method.toLowerCase() === "get" ? "get" : "post";
+  let submitHandler = event => {
+    onSubmit && onSubmit(event);
+    if (event.defaultPrevented) return;
+    event.preventDefault();
+    let submitter = event.nativeEvent.submitter;
+    let submitMethod = (submitter == null ? void 0 : submitter.getAttribute("formmethod")) || method;
+    submit(submitter || event.currentTarget, {
+      fetcherKey,
+      method: submitMethod,
+      navigate,
+      replace,
+      state,
+      relative,
+      preventScrollReset,
+      unstable_viewTransition
+    });
+  };
+  return /*#__PURE__*/React$r.createElement("form", _extends$2({
+    ref: forwardedRef,
+    method: formMethod,
+    action: formAction,
+    onSubmit: reloadDocument ? onSubmit : submitHandler
+  }, props));
+});
+if (process.env.NODE_ENV !== "production") {
+  Form$1.displayName = "Form";
+}
+if (process.env.NODE_ENV !== "production") ;
+//#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region Hooks
+////////////////////////////////////////////////////////////////////////////////
+var DataRouterHook;
+(function (DataRouterHook) {
+  DataRouterHook["UseScrollRestoration"] = "useScrollRestoration";
+  DataRouterHook["UseSubmit"] = "useSubmit";
+  DataRouterHook["UseSubmitFetcher"] = "useSubmitFetcher";
+  DataRouterHook["UseFetcher"] = "useFetcher";
+  DataRouterHook["useViewTransitionState"] = "useViewTransitionState";
+})(DataRouterHook || (DataRouterHook = {}));
+var DataRouterStateHook;
+(function (DataRouterStateHook) {
+  DataRouterStateHook["UseFetcher"] = "useFetcher";
+  DataRouterStateHook["UseFetchers"] = "useFetchers";
+  DataRouterStateHook["UseScrollRestoration"] = "useScrollRestoration";
+})(DataRouterStateHook || (DataRouterStateHook = {}));
+// Internal hooks
+function getDataRouterConsoleError(hookName) {
+  return hookName + " must be used within a data router.  See https://reactrouter.com/routers/picking-a-router.";
+}
+function useDataRouterContext(hookName) {
+  let ctx = React$r.useContext(DataRouterContext);
+  !ctx ? process.env.NODE_ENV !== "production" ? invariant(false, getDataRouterConsoleError(hookName)) : invariant(false) : void 0;
+  return ctx;
+}
+// External hooks
+/**
+ * Handles the click behavior for router `<Link>` components. This is useful if
+ * you need to create custom `<Link>` components with the same click behavior we
+ * use in our exported `<Link>`.
+ */
+function useLinkClickHandler(to, _temp) {
+  let {
+    target,
+    replace: replaceProp,
+    state,
+    preventScrollReset,
+    relative,
+    unstable_viewTransition
+  } = _temp === void 0 ? {} : _temp;
+  let navigate = useNavigate();
+  let location = useLocation();
+  let path = useResolvedPath(to, {
+    relative
+  });
+  return React$r.useCallback(event => {
+    if (shouldProcessLinkClick(event, target)) {
+      event.preventDefault();
+      // If the URL hasn't changed, a regular <a> will do a replace instead of
+      // a push, so do the same here unless the replace prop is explicitly set
+      let replace = replaceProp !== undefined ? replaceProp : createPath(location) === createPath(path);
+      navigate(to, {
+        replace,
+        state,
+        preventScrollReset,
+        relative,
+        unstable_viewTransition
+      });
+    }
+  }, [location, navigate, path, replaceProp, state, target, to, preventScrollReset, relative, unstable_viewTransition]);
+}
+function validateClientSideSubmission() {
+  if (typeof document === "undefined") {
+    throw new Error("You are calling submit during the server render. " + "Try calling submit within a `useEffect` or callback instead.");
+  }
+}
+let fetcherId = 0;
+let getUniqueFetcherId = () => "__" + String(++fetcherId) + "__";
+/**
+ * Returns a function that may be used to programmatically submit a form (or
+ * some arbitrary data) to the server.
+ */
+function useSubmit() {
+  let {
+    router
+  } = useDataRouterContext(DataRouterHook.UseSubmit);
+  let {
+    basename
+  } = React$r.useContext(NavigationContext);
+  let currentRouteId = useRouteId();
+  return React$r.useCallback(function (target, options) {
+    if (options === void 0) {
+      options = {};
+    }
+    validateClientSideSubmission();
+    let {
+      action,
+      method,
+      encType,
+      formData,
+      body
+    } = getFormSubmissionInfo(target, basename);
+    if (options.navigate === false) {
+      let key = options.fetcherKey || getUniqueFetcherId();
+      router.fetch(key, currentRouteId, options.action || action, {
+        preventScrollReset: options.preventScrollReset,
+        formData,
+        body,
+        formMethod: options.method || method,
+        formEncType: options.encType || encType,
+        unstable_flushSync: options.unstable_flushSync
+      });
+    } else {
+      router.navigate(options.action || action, {
+        preventScrollReset: options.preventScrollReset,
+        formData,
+        body,
+        formMethod: options.method || method,
+        formEncType: options.encType || encType,
+        replace: options.replace,
+        state: options.state,
+        fromRouteId: currentRouteId,
+        unstable_flushSync: options.unstable_flushSync,
+        unstable_viewTransition: options.unstable_viewTransition
+      });
+    }
+  }, [router, basename, currentRouteId]);
+}
+// v7: Eventually we should deprecate this entirely in favor of using the
+// router method directly?
+function useFormAction(action, _temp2) {
+  let {
+    relative
+  } = _temp2 === void 0 ? {} : _temp2;
+  let {
+    basename
+  } = React$r.useContext(NavigationContext);
+  let routeContext = React$r.useContext(RouteContext);
+  !routeContext ? process.env.NODE_ENV !== "production" ? invariant(false, "useFormAction must be used inside a RouteContext") : invariant(false) : void 0;
+  let [match] = routeContext.matches.slice(-1);
+  // Shallow clone path so we can modify it below, otherwise we modify the
+  // object referenced by useMemo inside useResolvedPath
+  let path = _extends$2({}, useResolvedPath(action ? action : ".", {
+    relative
+  }));
+  // If no action was specified, browsers will persist current search params
+  // when determining the path, so match that behavior
+  // https://github.com/remix-run/remix/issues/927
+  let location = useLocation();
+  if (action == null) {
+    // Safe to write to this directly here since if action was undefined, we
+    // would have called useResolvedPath(".") which will never include a search
+    path.search = location.search;
+    // When grabbing search params from the URL, remove any included ?index param
+    // since it might not apply to our contextual route.  We add it back based
+    // on match.route.index below
+    let params = new URLSearchParams(path.search);
+    if (params.has("index") && params.get("index") === "") {
+      params.delete("index");
+      path.search = params.toString() ? "?" + params.toString() : "";
+    }
+  }
+  if ((!action || action === ".") && match.route.index) {
+    path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index";
+  }
+  // If we're operating within a basename, prepend it to the pathname prior
+  // to creating the form action.  If this is a root navigation, then just use
+  // the raw basename which allows the basename to have full control over the
+  // presence of a trailing slash on root actions
+  if (basename !== "/") {
+    path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname]);
+  }
+  return createPath(path);
+}
+/**
+ * Return a boolean indicating if there is an active view transition to the
+ * given href.  You can use this value to render CSS classes or viewTransitionName
+ * styles onto your elements
+ *
+ * @param href The destination href
+ * @param [opts.relative] Relative routing type ("route" | "path")
+ */
+function useViewTransitionState(to, opts) {
+  if (opts === void 0) {
+    opts = {};
+  }
+  let vtContext = React$r.useContext(ViewTransitionContext);
+  !(vtContext != null) ? process.env.NODE_ENV !== "production" ? invariant(false, "`unstable_useViewTransitionState` must be used within `react-router-dom`'s `RouterProvider`.  " + "Did you accidentally import `RouterProvider` from `react-router`?") : invariant(false) : void 0;
+  let {
+    basename
+  } = useDataRouterContext(DataRouterHook.useViewTransitionState);
+  let path = useResolvedPath(to, {
+    relative: opts.relative
+  });
+  if (!vtContext.isTransitioning) {
+    return false;
+  }
+  let currentPath = stripBasename(vtContext.currentLocation.pathname, basename) || vtContext.currentLocation.pathname;
+  let nextPath = stripBasename(vtContext.nextLocation.pathname, basename) || vtContext.nextLocation.pathname;
+  // Transition is active if we're going to or coming from the indicated
+  // destination.  This ensures that other PUSH navigations that reverse
+  // an indicated transition apply.  I.e., on the list view you have:
+  //
+  //   <NavLink to="/details/1" unstable_viewTransition>
+  //
+  // If you click the breadcrumb back to the list view:
+  //
+  //   <NavLink to="/list" unstable_viewTransition>
+  //
+  // We should apply the transition because it's indicated as active going
+  // from /list -> /details/1 and therefore should be active on the reverse
+  // (even though this isn't strictly a POP reverse)
+  return matchPath(path.pathname, nextPath) != null || matchPath(path.pathname, currentPath) != null;
+}
 
 // THIS FILE IS AUTO GENERATED
 function IoIosCall (props) {
@@ -1999,21 +4358,8 @@ function MdContactPhone (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"fill":"none","d":"M0 0h24v24H0z"},"child":[]},{"tag":"path","attr":{"d":"M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"},"child":[]}]})(props);
 }
 
-var initialValue = {
-  number: ""
-};
-var NumberContext = /*#__PURE__*/createContext({
-  state: initialValue,
-  dispatch: function dispatch() {
-    return null;
-  }
-});
-var useNumberContext = function useNumberContext() {
-  return useContext(NumberContext);
-};
-
-var _templateObject$1;
-var FooterContainer = pt.section(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 10px;\n"])));
+var _templateObject;
+var FooterContainer = pt.section(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 10px;\n"])));
 var BabalFooter = function BabalFooter(_ref) {
   var handleCall = _ref.handleCall;
   var _useNumberContext = useNumberContext();
@@ -2040,44 +4386,8 @@ var BabalFooter = function BabalFooter(_ref) {
   })));
 };
 
-var SideMenu = function SideMenu() {
-  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement("div", {
-    className: "side",
-    style: {
-      width: "50px",
-      padding: "10px",
-      backgroundColor: "white",
-      display: "flex",
-      borderTopLeftRadius: "8px",
-      borderBottomLeftRadius: "8px"
-    }
-  }, /*#__PURE__*/React__default.createElement("div", {
-    style: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center"
-    }
-  }, /*#__PURE__*/React__default.createElement("span", null, /*#__PURE__*/React__default.createElement(IoIosKeypad, {
-    color: "black",
-    size: 50
-  })), /*#__PURE__*/React__default.createElement("span", null, /*#__PURE__*/React__default.createElement(MdContactPhone, {
-    color: "black",
-    size: 50
-  })), /*#__PURE__*/React__default.createElement("span", null, /*#__PURE__*/React__default.createElement(FaRocketchat, {
-    color: "black",
-    size: 50
-  })))));
-};
-
-var _templateObject;
-var NumberGrid = pt.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  display: flex;\n  gap: 10px;\n  flex-direction: column;\n  margin-top: 10px;\n"])));
-var BabalDialer = function BabalDialer(_ref) {
-  var logo = _ref.logo,
-    digitColor = _ref.digitColor;
-    _ref.inputOnChange;
-    var width = _ref.width;
-  // const { connect, disconnect } = useTwilio();
+var Keypad = function Keypad(_ref) {
+  var digitColor = _ref.digitColor;
   var _useNumberContext = useNumberContext(),
     state = _useNumberContext.state,
     dispatch = _useNumberContext.dispatch;
@@ -2099,14 +4409,7 @@ var BabalDialer = function BabalDialer(_ref) {
       payload: digit
     });
   };
-  return /*#__PURE__*/React__default.createElement(DialerMainWrapper, {
-    width: width
-  }, /*#__PURE__*/React__default.createElement(SideMenu, null), /*#__PURE__*/React__default.createElement(DialerWrapper, null, /*#__PURE__*/React__default.createElement(BabalHeader, {
-    height: "60px",
-    width: "inherit",
-    logo: logo,
-    type: false
-  }), showUi ? ( /*#__PURE__*/React__default.createElement(CalledUi, null, /*#__PURE__*/React__default.createElement(StyledNumber, {
+  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, showUi ? ( /*#__PURE__*/React__default.createElement(CalledUi, null, /*#__PURE__*/React__default.createElement(StyledNumber, {
     onClick: handleHangUp
   }, /*#__PURE__*/React__default.createElement(IoIosCall, {
     size: 40,
@@ -2125,7 +4428,118 @@ var BabalDialer = function BabalDialer(_ref) {
     }));
   })), /*#__PURE__*/React__default.createElement(BabalFooter, {
     handleCall: handleCall
-  })))));
+  }))));
+};
+
+// interface sideMenuProps {
+//   showChat: () => void;
+//   showKeyPad: () => void;
+//   showPhoneBook: () => void;
+// }
+var SideMenu = function SideMenu() {
+  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement(SideMenuWrapper, null, /*#__PURE__*/React__default.createElement(MenuDiv, null, /*#__PURE__*/React__default.createElement(Link, {
+    to: "keypad"
+  }, /*#__PURE__*/React__default.createElement(MenuIcon, null, /*#__PURE__*/React__default.createElement(IoIosKeypad, {
+    color: "purple",
+    size: 30
+  }))), /*#__PURE__*/React__default.createElement(Link, {
+    to: "contact"
+  }, /*#__PURE__*/React__default.createElement(MenuIcon, null, /*#__PURE__*/React__default.createElement(MdContactPhone, {
+    color: "purple",
+    size: 30
+  }))), /*#__PURE__*/React__default.createElement(Link, {
+    to: "chat"
+  }, /*#__PURE__*/React__default.createElement(MenuIcon, null, /*#__PURE__*/React__default.createElement(FaRocketchat, {
+    color: "purple",
+    size: 30
+  }))))));
+};
+
+var ChatUi = function ChatUi() {
+  return /*#__PURE__*/React__default.createElement("div", {
+    style: {
+      height: "100%",
+      backgroundColor: "yellow"
+    }
+  }, /*#__PURE__*/React__default.createElement("h1", {
+    style: {
+      color: "white"
+    }
+  }, "chatting with hero"), /*#__PURE__*/React__default.createElement("h1", {
+    style: {
+      color: "white"
+    }
+  }, "chatting with hero"), /*#__PURE__*/React__default.createElement("h1", {
+    style: {
+      color: "white"
+    }
+  }, "chatting with hero"));
+};
+
+var PhoneBook = function PhoneBook() {
+  return /*#__PURE__*/React__default.createElement("div", {
+    style: {
+      backgroundColor: "red",
+      height: "100%"
+    }
+  }, "PhoneBook");
+};
+
+var BabalDialer = function BabalDialer(_ref) {
+  var logo = _ref.logo;
+    _ref.digitColor;
+    _ref.inputOnChange;
+    var width = _ref.width;
+  // const { connect, disconnect } = useTwilio();
+  var _useNumberContext = useNumberContext();
+    _useNumberContext.state;
+    _useNumberContext.dispatch;
+  var _useState = useState(false),
+    _useState2 = _slicedToArray$1(_useState, 2);
+    _useState2[0];
+    _useState2[1];
+  var _useState3 = useState(false),
+    _useState4 = _slicedToArray$1(_useState3, 2);
+    _useState4[0];
+    _useState4[1];
+  var _useState5 = useState(false),
+    _useState6 = _slicedToArray$1(_useState5, 2);
+    _useState6[0];
+    _useState6[1];
+  var _useState7 = useState(false),
+    _useState8 = _slicedToArray$1(_useState7, 2);
+    _useState8[0];
+    _useState8[1];
+  // const handleCancelCall = () => {
+  //   alert("call cancel");
+  // };
+  // const showChat = () => {
+  //   setIsChatOpen(true);
+  // };
+  // const showKeypad = () => {
+  //   setIsKeypadOpen(true);
+  // };
+  // const showPhoneBook = () => {
+  //   setIsPhoneBookOpen(true);
+  // };
+  // console.log("showChatui", isChatOpen);
+  return /*#__PURE__*/React__default.createElement(DialerMainWrapper, {
+    width: width
+  }, /*#__PURE__*/React__default.createElement(SideMenu, null), /*#__PURE__*/React__default.createElement(DialerWrapper, null, /*#__PURE__*/React__default.createElement(BabalHeader, {
+    height: "60px",
+    width: "inherit",
+    logo: logo,
+    type: false
+  }), /*#__PURE__*/React__default.createElement(Routes, null, /*#__PURE__*/React__default.createElement(Route, {
+    path: "chat",
+    element: /*#__PURE__*/React__default.createElement(ChatUi, null)
+  }), /*#__PURE__*/React__default.createElement(Route, {
+    path: "contact",
+    element: /*#__PURE__*/React__default.createElement(PhoneBook, null)
+  }), /*#__PURE__*/React__default.createElement(Route, {
+    path: "keypad",
+    element: /*#__PURE__*/React__default.createElement(Keypad, null)
+  }))));
 };
 
 var style$6 = {};
@@ -24315,13 +26729,13 @@ var BabalUi = /*#__PURE__*/function () {
       return (
         /*#__PURE__*/
         // <TwilioProvider>
-        React__default.createElement(nt, {
+        React__default.createElement(BrowserRouter, null, /*#__PURE__*/React__default.createElement(nt, {
           theme: theme
         }, /*#__PURE__*/React__default.createElement(NumberProvider, null, /*#__PURE__*/React__default.createElement(BabalDialer, {
           width: width,
           logo: logo,
           digitColor: digitColor
-        })))
+        }))))
         // </TwilioProvider>
       );
     }

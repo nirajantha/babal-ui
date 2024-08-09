@@ -164,23 +164,19 @@
 // export default BabalDialer;
 
 import React, { useState } from "react";
-import BabalContainer from "../container/BabalContainer";
+
 import BabalHeader from "../header/BabalHeader";
-import styled, { ThemeProvider } from "styled-components";
-import BabalFooter from "../footer/BabalFooter";
+
 // import BabalSearch from "../search/BabalSearch";
 import { useNumberContext } from "../context/CreateContext";
-import {
-  CalledUi,
-  DialerMainWrapper,
-  DialerWrapper,
-  Display,
-  InputStyledDiv,
-  StyledNumber,
-  TextSpan,
-} from "../styled/StyledComponents";
-import { IoIosCall } from "react-icons/io";
+
+import { DialerMainWrapper, DialerWrapper } from "../styled/StyledComponents";
+
+import { Outlet, Route, Routes } from "react-router-dom";
+import Keypad from "../keypad/Keypad";
 import SideMenu from "../sidemenu/SideMenu";
+import ChatUi from "../chatUI/ChatUi";
+import PhoneBook from "../phoneBook/PhoneBook";
 // import { TwilioProvider, useTwilio } from "../../context/TwilioContext";
 
 interface DialerProps {
@@ -189,13 +185,6 @@ interface DialerProps {
   digitColor?: string;
   width: string | number;
 }
-
-const NumberGrid = styled.div`
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  margin-top: 10px;
-`;
 
 const BabalDialer: React.FC<DialerProps> = ({
   logo,
@@ -206,6 +195,9 @@ const BabalDialer: React.FC<DialerProps> = ({
   // const { connect, disconnect } = useTwilio();
   const { state, dispatch } = useNumberContext();
   const [showUi, setShowUi] = useState<boolean>(false);
+  const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
+  const [isKeypadOpen, setIsKeypadOpen] = useState<boolean>(false);
+  const [isPhoneBookOpen, setIsPhoneBookOpen] = useState<boolean>(false);
 
   const handleCall = () => {
     setShowUi(!showUi);
@@ -221,50 +213,31 @@ const BabalDialer: React.FC<DialerProps> = ({
     dispatch({ type: "PressNumber", payload: digit });
   };
 
-  const handleCancelCall = () => {
-    alert("call cancel");
-  };
+  // const handleCancelCall = () => {
+  //   alert("call cancel");
+  // };
+  // const showChat = () => {
+  //   setIsChatOpen(true);
+  // };
+  // const showKeypad = () => {
+  //   setIsKeypadOpen(true);
+  // };
+  // const showPhoneBook = () => {
+  //   setIsPhoneBookOpen(true);
+  // };
+
+  // console.log("showChatui", isChatOpen);
 
   return (
     <DialerMainWrapper width={width}>
       <SideMenu />
       <DialerWrapper>
         <BabalHeader height="60px" width="inherit" logo={logo} type={false} />
-        {showUi ? (
-          <CalledUi>
-            <StyledNumber onClick={handleHangUp}>
-              <IoIosCall size={40} color="red" />
-            </StyledNumber>
-          </CalledUi>
-        ) : (
-          <>
-            <Display>{state.number}</Display>
-            <NumberGrid>
-              {["123", "456", "789", "*0#"].map((row, rowIndex) => (
-                <BabalContainer key={rowIndex}>
-                  {row.split("").map((digit) => (
-                    <StyledNumber
-                      digitColor={digitColor}
-                      key={digit}
-                      onClick={() => handleClick(digit)}
-                    >
-                      {digit}
-                      {digit !== "*" && digit !== "0" && digit !== "#" && (
-                        <TextSpan>
-                          {String.fromCharCode(65 + (parseInt(digit) - 1) * 3) +
-                            String.fromCharCode(
-                              65 + (parseInt(digit) - 1) * 3 + 2
-                            )}
-                        </TextSpan>
-                      )}
-                    </StyledNumber>
-                  ))}
-                </BabalContainer>
-              ))}
-            </NumberGrid>
-            <BabalFooter handleCall={handleCall} />
-          </>
-        )}
+        <Routes>
+          <Route path="chat" element={<ChatUi />} />
+          <Route path="contact" element={<PhoneBook />} />
+          <Route path="keypad" element={<Keypad />} />
+        </Routes>
       </DialerWrapper>
     </DialerMainWrapper>
   );

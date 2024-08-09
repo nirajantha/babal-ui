@@ -13,6 +13,7 @@ import { menuItems } from "./components/header/BabalHeader";
 import { MY_KEY } from "./constant/Constant";
 import { TwilioProvider } from "./context/TwilioContext";
 import { ThemeProvider } from "styled-components";
+import { BrowserRouter } from "react-router-dom";
 
 export class BabalUi {
   constructor() {}
@@ -49,11 +50,14 @@ export class BabalUi {
     BabalUi.initialize(key);
     return (
       // <TwilioProvider>
-      <ThemeProvider theme={theme}>
-        <NumberProvider>
-          <BabalDialer width={width} logo={logo} digitColor={digitColor} />
-        </NumberProvider>
-      </ThemeProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <NumberProvider>
+            <BabalDialer width={width} logo={logo} digitColor={digitColor} />
+          </NumberProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+
       // </TwilioProvider>
     );
   }

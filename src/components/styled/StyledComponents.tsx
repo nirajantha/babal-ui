@@ -84,16 +84,24 @@ export const DialerMainWrapper = styled.section<dialerProps>`
   width: ${(props) => props.width};
   border-radius: 8px;
   border: 1px solid #a6a4a4;
+  position: relative;
+  overflow: hidden;
+  height: 68vh;
 `;
 
 export const DialerWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: fit-content;
-  overflow-x: hidden;
+  height: 100%;
   padding-bottom: 20px;
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.color};
+`;
+export const NumberGrid = styled.div`
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 10px;
 `;
 
 export const Display = styled.div`
@@ -136,4 +144,53 @@ export const StyledSpinner = styled.div`
       transform: rotate(360deg);
     }
   }
+`;
+
+//side menu
+interface sideMenuProps {
+  isOpen: boolean;
+}
+export const SideMenuWrapper = styled.section`
+  box-sizing: border-box;
+  width: 80px;
+  background-color: white;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+`;
+
+// export const SlideDiv = styled.div<sideMenuProps>`
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   width: 80px; /* Set the width of the sliding div */
+//   background-color: white;
+//   box-sizing: border-box;
+//   border-bottom-left-radius: 8px;
+//   border-top-left-radius: 8px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border: 1px solid red;
+//   transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(100%)")};
+//   transition: transform 0.5s ease-in-out;
+//   padding: 4px;
+// `;
+
+export const MenuDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+`;
+export const MenuIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #6d6666;
 `;

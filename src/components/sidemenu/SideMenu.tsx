@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaRocketchat } from "react-icons/fa";
 import { MdContactPhone } from "react-icons/md";
 import { IoIosKeypad } from "react-icons/io";
@@ -9,24 +9,47 @@ import { MenuDiv, MenuIcon, SideMenuWrapper } from "../styled/StyledComponents";
 //   showKeyPad: () => void;
 //   showPhoneBook: () => void;
 // }
+
 const SideMenu = () => {
+  const [activeItem, setActiveItem] = useState(null);
+
+  const handleClick = (index: any) => {
+    setActiveItem(index);
+  };
+
   return (
     <>
       <SideMenuWrapper>
         <MenuDiv>
           <Link to="keypad">
-            <MenuIcon>
-              <IoIosKeypad color="purple" size={30} />
+            <MenuIcon active={activeItem === "keypad"}>
+              <IoIosKeypad
+                color="purple"
+                size={30}
+                onClick={() => {
+                  handleClick("keypad");
+                }}
+              />
             </MenuIcon>
           </Link>
           <Link to="contact">
-            <MenuIcon>
+            <MenuIcon
+              active={activeItem === "contact"}
+              onClick={() => {
+                handleClick("contact");
+              }}
+            >
               <MdContactPhone color="purple" size={30} />
             </MenuIcon>
           </Link>
 
           <Link to="chat">
-            <MenuIcon>
+            <MenuIcon
+              active={activeItem === "chat"}
+              onClick={() => {
+                handleClick("chat");
+              }}
+            >
               <FaRocketchat color="purple" size={30} />
             </MenuIcon>
           </Link>

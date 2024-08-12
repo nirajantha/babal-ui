@@ -177,6 +177,7 @@ import Keypad from "../keypad/Keypad";
 import SideMenu from "../sidemenu/SideMenu";
 import ChatUi from "../chatUI/ChatUi";
 import PhoneBook from "../phoneBook/PhoneBook";
+import SinglePhoneDetails from "../singlePhoneDetails/SinglePhoneDetails";
 // import { TwilioProvider, useTwilio } from "../../context/TwilioContext";
 
 interface DialerProps {
@@ -234,9 +235,10 @@ const BabalDialer: React.FC<DialerProps> = ({
       <DialerWrapper>
         <BabalHeader height="60px" width="inherit" logo={logo} type={false} />
         <Routes>
-          <Route path="chat" element={<ChatUi />} />
           <Route path="contact" element={<PhoneBook />} />
+          <Route path="chat" element={<ChatUi />} />
           <Route path="keypad" element={<Keypad />} />
+          <Route path="phoneDetail" element={<SinglePhoneDetails />} />
         </Routes>
       </DialerWrapper>
     </DialerMainWrapper>

@@ -185,12 +185,15 @@ export const MenuDiv = styled.div`
   align-items: center;
   gap: 5px;
 `;
-export const MenuIcon = styled.div`
+interface menuProps {
+  active: boolean;
+}
+export const MenuIcon = styled.div<menuProps>`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px;
   border-radius: 8px;
-  background: #ffffff;
+  background-color: ${(props) => (props.active ? "#79b0f2" : "transparent")};
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #6d6666;
 `;

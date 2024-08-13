@@ -197,3 +197,57 @@ export const MenuIcon = styled.div<menuProps>`
   background-color: ${(props) => (props.active ? "#79b0f2" : "transparent")};
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #6d6666;
 `;
+
+export const ContactWrapper = styled.section`
+  height: 89%;
+  margin: 0;
+`;
+
+export const PhoneInput = styled.input`
+  padding: 8px;
+  border-radius: 8px;
+  background: transparent;
+  width: 100%;
+  border: 2px solid #6620de;
+  color: white;
+  font-weight: 500;
+
+  &::placeholder {
+    color: white; /* Change this to your desired color */
+    font-weight: 500;
+  }
+
+  &:focus {
+    outline: none;
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+`;
+interface chatProps {
+  color: string;
+}
+export const ChatWrapper = styled.section<chatProps>`
+  position: relative;
+  height: 89%;
+  background: ${(props) => props.color};
+`;
+export const ChatText = styled.textarea`
+  padding: 6px;
+  border-radius: 8px;
+  background: transparent;
+  width: 70%;
+  border: 2px solid #6620de;
+  color: black;
+
+  &::placeholder {
+    color: white; /* Change this to your desired color */
+  }
+
+  &:focus {
+    outline: none;
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+`;

@@ -238,7 +238,7 @@ const BabalDialer: React.FC<DialerProps> = ({
           <Route path="contact" element={<PhoneBook />} />
           <Route path="chat" element={<ChatUi />} />
           <Route path="keypad" element={<Keypad />} />
-          <Route path="phoneDetail" element={<SinglePhoneDetails />} />
+          <Route path="phoneDetail/:id" element={<SinglePhoneDetails />} />
         </Routes>
       </DialerWrapper>
     </DialerMainWrapper>

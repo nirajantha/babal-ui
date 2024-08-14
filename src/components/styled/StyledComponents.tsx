@@ -232,13 +232,16 @@ export const ChatWrapper = styled.section<chatProps>`
   height: 89%;
   background: ${(props) => props.color};
 `;
-export const ChatText = styled.textarea`
+interface chatTextProps {
+  width: number | string;
+}
+export const ChatText = styled.textarea<chatTextProps>`
   padding: 6px;
   border-radius: 8px;
   background: transparent;
-  width: 70%;
-  border: 2px solid #6620de;
-  color: black;
+  width: ${(props) => props.width};
+  border: 2px solid #3e1c79da;
+  color: white;
 
   &::placeholder {
     color: white; /* Change this to your desired color */

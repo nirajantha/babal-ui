@@ -1870,7 +1870,9 @@ var PhoneInput = pt.input(_templateObject20 || (_templateObject20 = _taggedTempl
 var ChatWrapper = pt.section(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral(["\n  position: relative;\n  height: 89%;\n  background: ", ";\n"])), function (props) {
   return props.color;
 });
-var ChatText = pt.textarea(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral(["\n  padding: 6px;\n  border-radius: 8px;\n  background: transparent;\n  width: 70%;\n  border: 2px solid #6620de;\n  color: black;\n\n  &::placeholder {\n    color: white; /* Change this to your desired color */\n  }\n\n  &:focus {\n    outline: none;\n    &::placeholder {\n      opacity: 0;\n    }\n  }\n"])));
+var ChatText = pt.textarea(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral(["\n  padding: 6px;\n  border-radius: 8px;\n  background: transparent;\n  width: ", ";\n  border: 2px solid #3e1c79da;\n  color: white;\n\n  &::placeholder {\n    color: white; /* Change this to your desired color */\n  }\n\n  &:focus {\n    outline: none;\n    &::placeholder {\n      opacity: 0;\n    }\n  }\n"])), function (props) {
+  return props.width;
+});
 
 var BabalButton = function BabalButton(_ref) {
   var title = _ref.title;
@@ -4471,6 +4473,10 @@ var SideMenu = function SideMenu() {
     _useState2 = _slicedToArray$1(_useState, 2),
     activeItem = _useState2[0],
     setActiveItem = _useState2[1];
+  var location = useLocation();
+  console.log("location>>", location.pathname);
+  var sideName = location.pathname.split("/")[1];
+  console.log("sideName", sideName);
   var handleClick = function handleClick(index) {
     setActiveItem(index);
   };
@@ -17355,11 +17361,11 @@ var RightOutlined = function RightOutlined(props, ref) {
 };
 
 /**![right](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTc2NS43IDQ4Ni44TDMxNC45IDEzNC43QTcuOTcgNy45NyAwIDAwMzAyIDE0MXY3Ny4zYzAgNC45IDIuMyA5LjYgNi4xIDEyLjZsMzYwIDI4MS4xLTM2MCAyODEuMWMtMy45IDMtNi4xIDcuNy02LjEgMTIuNlY4ODNjMCA2LjcgNy43IDEwLjQgMTIuOSA2LjNsNDUwLjgtMzUyLjFhMzEuOTYgMzEuOTYgMCAwMDAtNTAuNHoiIC8+PC9zdmc+) */
-var RefIcon$a = /*#__PURE__*/React$E.forwardRef(RightOutlined);
+var RefIcon$9 = /*#__PURE__*/React$E.forwardRef(RightOutlined);
 if (process.env.NODE_ENV !== 'production') {
-  RefIcon$a.displayName = 'RightOutlined';
+  RefIcon$9.displayName = 'RightOutlined';
 }
-RightOutlined$3.default = RefIcon$a;
+RightOutlined$3.default = RefIcon$9;
 
 (function (module, exports) {
 	Object.defineProperty(exports, "__esModule", {
@@ -24282,11 +24288,11 @@ var BarsOutlined = function BarsOutlined(props, ref) {
 };
 
 /**![bars](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTkxMiAxOTJIMzI4Yy00LjQgMC04IDMuNi04IDh2NTZjMCA0LjQgMy42IDggOCA4aDU4NGM0LjQgMCA4LTMuNiA4LTh2LTU2YzAtNC40LTMuNi04LTgtOHptMCAyODRIMzI4Yy00LjQgMC04IDMuNi04IDh2NTZjMCA0LjQgMy42IDggOCA4aDU4NGM0LjQgMCA4LTMuNiA4LTh2LTU2YzAtNC40LTMuNi04LTgtOHptMCAyODRIMzI4Yy00LjQgMC04IDMuNi04IDh2NTZjMCA0LjQgMy42IDggOCA4aDU4NGM0LjQgMCA4LTMuNiA4LTh2LTU2YzAtNC40LTMuNi04LTgtOHpNMTA0IDIyOGE1NiA1NiAwIDEwMTEyIDAgNTYgNTYgMCAxMC0xMTIgMHptMCAyODRhNTYgNTYgMCAxMDExMiAwIDU2IDU2IDAgMTAtMTEyIDB6bTAgMjg0YTU2IDU2IDAgMTAxMTIgMCA1NiA1NiAwIDEwLTExMiAweiIgLz48L3N2Zz4=) */
-var RefIcon$9 = /*#__PURE__*/React$z.forwardRef(BarsOutlined);
+var RefIcon$8 = /*#__PURE__*/React$z.forwardRef(BarsOutlined);
 if (process.env.NODE_ENV !== 'production') {
-  RefIcon$9.displayName = 'BarsOutlined';
+  RefIcon$8.displayName = 'BarsOutlined';
 }
-BarsOutlined$3.default = RefIcon$9;
+BarsOutlined$3.default = RefIcon$8;
 
 (function (module, exports) {
 	Object.defineProperty(exports, "__esModule", {
@@ -24337,11 +24343,11 @@ var LeftOutlined = function LeftOutlined(props, ref) {
 };
 
 /**![left](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTcyNCAyMTguM1YxNDFjMC02LjctNy43LTEwLjQtMTIuOS02LjNMMjYwLjMgNDg2LjhhMzEuODYgMzEuODYgMCAwMDAgNTAuM2w0NTAuOCAzNTIuMWM1LjMgNC4xIDEyLjkuNCAxMi45LTYuM3YtNzcuM2MwLTQuOS0yLjMtOS42LTYuMS0xMi42bC0zNjAtMjgxIDM2MC0yODEuMWMzLjgtMyA2LjEtNy43IDYuMS0xMi42eiIgLz48L3N2Zz4=) */
-var RefIcon$8 = /*#__PURE__*/React$y.forwardRef(LeftOutlined);
+var RefIcon$7 = /*#__PURE__*/React$y.forwardRef(LeftOutlined);
 if (process.env.NODE_ENV !== 'production') {
-  RefIcon$8.displayName = 'LeftOutlined';
+  RefIcon$7.displayName = 'LeftOutlined';
 }
-LeftOutlined$3.default = RefIcon$8;
+LeftOutlined$3.default = RefIcon$7;
 
 (function (module, exports) {
 	Object.defineProperty(exports, "__esModule", {
@@ -24599,11 +24605,11 @@ var EllipsisOutlined = function EllipsisOutlined(props, ref) {
 };
 
 /**![ellipsis](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE3NiA1MTFhNTYgNTYgMCAxMDExMiAwIDU2IDU2IDAgMTAtMTEyIDB6bTI4MCAwYTU2IDU2IDAgMTAxMTIgMCA1NiA1NiAwIDEwLTExMiAwem0yODAgMGE1NiA1NiAwIDEwMTEyIDAgNTYgNTYgMCAxMC0xMTIgMHoiIC8+PC9zdmc+) */
-var RefIcon$7 = /*#__PURE__*/React$v.forwardRef(EllipsisOutlined);
+var RefIcon$6 = /*#__PURE__*/React$v.forwardRef(EllipsisOutlined);
 if (process.env.NODE_ENV !== 'production') {
-  RefIcon$7.displayName = 'EllipsisOutlined';
+  RefIcon$6.displayName = 'EllipsisOutlined';
 }
-EllipsisOutlined$3.default = RefIcon$7;
+EllipsisOutlined$3.default = RefIcon$6;
 
 (function (module, exports) {
 	Object.defineProperty(exports, "__esModule", {
@@ -32248,11 +32254,11 @@ var LoadingOutlined = function LoadingOutlined(props, ref) {
 };
 
 /**![loading](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTk4OCA1NDhjLTE5LjkgMC0zNi0xNi4xLTM2LTM2IDAtNTkuNC0xMS42LTExNy0zNC42LTE3MS4zYTQ0MC40NSA0NDAuNDUgMCAwMC05NC4zLTEzOS45IDQzNy43MSA0MzcuNzEgMCAwMC0xMzkuOS05NC4zQzYyOSA4My42IDU3MS40IDcyIDUxMiA3MmMtMTkuOSAwLTM2LTE2LjEtMzYtMzZzMTYuMS0zNiAzNi0zNmM2OS4xIDAgMTM2LjIgMTMuNSAxOTkuMyA0MC4zQzc3Mi4zIDY2IDgyNyAxMDMgODc0IDE1MGM0NyA0NyA4My45IDEwMS44IDEwOS43IDE2Mi43IDI2LjcgNjMuMSA0MC4yIDEzMC4yIDQwLjIgMTk5LjMuMSAxOS45LTE2IDM2LTM1LjkgMzZ6IiAvPjwvc3ZnPg==) */
-var RefIcon$6 = /*#__PURE__*/React$h.forwardRef(LoadingOutlined);
+var RefIcon$5 = /*#__PURE__*/React$h.forwardRef(LoadingOutlined);
 if (process.env.NODE_ENV !== 'production') {
-  RefIcon$6.displayName = 'LoadingOutlined';
+  RefIcon$5.displayName = 'LoadingOutlined';
 }
-LoadingOutlined$3.default = RefIcon$6;
+LoadingOutlined$3.default = RefIcon$5;
 
 (function (module, exports) {
 	Object.defineProperty(exports, "__esModule", {
@@ -33621,31 +33627,44 @@ var MoreOutlined = function MoreOutlined(props, ref) {
 };
 
 /**![more](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTQ1NiAyMzFhNTYgNTYgMCAxMDExMiAwIDU2IDU2IDAgMTAtMTEyIDB6bTAgMjgwYTU2IDU2IDAgMTAxMTIgMCA1NiA1NiAwIDEwLTExMiAwem0wIDI4MGE1NiA1NiAwIDEwMTEyIDAgNTYgNTYgMCAxMC0xMTIgMHoiIC8+PC9zdmc+) */
-var RefIcon$5 = /*#__PURE__*/React__namespace.forwardRef(MoreOutlined);
+var RefIcon$4 = /*#__PURE__*/React__namespace.forwardRef(MoreOutlined);
 if (process.env.NODE_ENV !== 'production') {
-  RefIcon$5.displayName = 'MoreOutlined';
+  RefIcon$4.displayName = 'MoreOutlined';
 }
 
-// This icon file is generated automatically.
-var UserOutlined$1 = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z" } }] }, "name": "user", "theme": "outlined" };
-
-var UserOutlined = function UserOutlined(props, ref) {
-  return /*#__PURE__*/React__namespace.createElement(Icon, _extends$1({}, props, {
-    ref: ref,
-    icon: UserOutlined$1
-  }));
+var PhoneContext = /*#__PURE__*/React$S.createContext({
+  number: "",
+  // Default value for the number
+  setNumber: function setNumber() {} // No-op function as a placeholder
+});
+var PhoneProvider = function PhoneProvider(_ref) {
+  var children = _ref.children;
+  var _useState = React$S.useState(null),
+    _useState2 = _slicedToArray$1(_useState, 2),
+    number = _useState2[0],
+    setNumber = _useState2[1];
+  return /*#__PURE__*/React$S.createElement(PhoneContext.Provider, {
+    value: {
+      number: number,
+      setNumber: setNumber
+    }
+  }, children);
+};
+var usePhoneContext = function usePhoneContext() {
+  var context = React$S.useContext(PhoneContext);
+  if (!context) {
+    throw new Error("usePhoneContext must be used within a PhoneProvider");
+  }
+  return context;
 };
 
-/**![user](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTg1OC41IDc2My42YTM3NCAzNzQgMCAwMC04MC42LTExOS41IDM3NS42MyAzNzUuNjMgMCAwMC0xMTkuNS04MC42Yy0uNC0uMi0uOC0uMy0xLjItLjVDNzE5LjUgNTE4IDc2MCA0NDQuNyA3NjAgMzYyYzAtMTM3LTExMS0yNDgtMjQ4LTI0OFMyNjQgMjI1IDI2NCAzNjJjMCA4Mi43IDQwLjUgMTU2IDEwMi44IDIwMS4xLS40LjItLjguMy0xLjIuNS00NC44IDE4LjktODUgNDYtMTE5LjUgODAuNmEzNzUuNjMgMzc1LjYzIDAgMDAtODAuNiAxMTkuNUEzNzEuNyAzNzEuNyAwIDAwMTM2IDkwMS44YTggOCAwIDAwOCA4LjJoNjBjNC40IDAgNy45LTMuNSA4LTcuOCAyLTc3LjIgMzMtMTQ5LjUgODcuOC0yMDQuMyA1Ni43LTU2LjcgMTMyLTg3LjkgMjEyLjItODcuOXMxNTUuNSAzMS4yIDIxMi4yIDg3LjlDNzc5IDc1Mi43IDgxMCA4MjUgODEyIDkwMi4yYy4xIDQuNCAzLjYgNy44IDggNy44aDYwYTggOCAwIDAwOC04LjJjLTEtNDcuOC0xMC45LTk0LjMtMjkuNS0xMzguMnpNNTEyIDUzNGMtNDUuOSAwLTg5LjEtMTcuOS0xMjEuNi01MC40UzM0MCA0MDcuOSAzNDAgMzYyYzAtNDUuOSAxNy45LTg5LjEgNTAuNC0xMjEuNlM0NjYuMSAxOTAgNTEyIDE5MHM4OS4xIDE3LjkgMTIxLjYgNTAuNFM2ODQgMzE2LjEgNjg0IDM2MmMwIDQ1LjktMTcuOSA4OS4xLTUwLjQgMTIxLjZTNTU3LjkgNTM0IDUxMiA1MzR6IiAvPjwvc3ZnPg==) */
-var RefIcon$4 = /*#__PURE__*/React__namespace.forwardRef(UserOutlined);
-if (process.env.NODE_ENV !== 'production') {
-  RefIcon$4.displayName = 'UserOutlined';
-}
-
 var ChatUi = function ChatUi() {
+  var _usePhoneContext = usePhoneContext(),
+    number = _usePhoneContext.number;
+    _usePhoneContext.setNumber;
   var location = useLocation();
-  var params = new URLSearchParams(location.search);
-  var number = params.get("number");
+  new URLSearchParams(location.search);
+  // const number = params.get("number");
   var _useState = React$S.useState(""),
     _useState2 = _slicedToArray$1(_useState, 2),
     theme = _useState2[0],
@@ -33653,22 +33672,22 @@ var ChatUi = function ChatUi() {
   var items = [{
     label: ( /*#__PURE__*/React$S.createElement("button", {
       onClick: function onClick() {
-        setTheme("black");
+        setTheme("#17a589");
       },
       style: {
-        backgroundColor: "black"
+        backgroundColor: "#17a589 "
       }
-    }, "black")),
+    })),
     key: "0"
   }, {
     label: ( /*#__PURE__*/React$S.createElement("button", {
       onClick: function onClick() {
-        setTheme("blue");
+        setTheme("#8e44ad");
       },
       style: {
-        backgroundColor: "blue"
+        backgroundColor: "#8e44ad"
       }
-    }, "blue")),
+    })),
     key: "1"
   }];
   return /*#__PURE__*/React$S.createElement(ChatWrapper, {
@@ -33693,7 +33712,7 @@ var ChatUi = function ChatUi() {
     onClick: function onClick(e) {
       return e.preventDefault();
     }
-  }, /*#__PURE__*/React$S.createElement(_Space, null, /*#__PURE__*/React$S.createElement(RefIcon$5, {
+  }, /*#__PURE__*/React$S.createElement(_Space, null, /*#__PURE__*/React$S.createElement(RefIcon$4, {
     style: {
       color: "white"
     },
@@ -33711,6 +33730,7 @@ var ChatUi = function ChatUi() {
       padding: "8px"
     }
   }, /*#__PURE__*/React$S.createElement(ChatText, {
+    width: "80%",
     placeholder: "enter the message"
   }), /*#__PURE__*/React$S.createElement("div", {
     style: {
@@ -33727,6 +33747,143 @@ var ChatUi = function ChatUi() {
     color: "#480b65",
     size: 30
   }))));
+};
+
+var PhoneBook = function PhoneBook() {
+  var _useState = React$S.useState(""),
+    _useState2 = _slicedToArray$1(_useState, 2),
+    searchName = _useState2[0],
+    setSearchName = _useState2[1];
+  var _usePhoneContext = usePhoneContext();
+    _usePhoneContext.number;
+    var setNumber = _usePhoneContext.setNumber;
+  var array = [{
+    id: 1,
+    number: "98123456789",
+    contactName: "Shah Rukh Khan"
+  }, {
+    id: 2,
+    number: "98123456782",
+    contactName: "Sallmon Bhai"
+  }, {
+    id: 3,
+    number: "98123456781",
+    contactName: "Srivallli"
+  }, {
+    id: 4,
+    number: "98123456734",
+    contactName: "Kriti sanon"
+  }, {
+    id: 5,
+    number: "98123456732",
+    contactName: "Kritika sanon"
+  }, {
+    id: 6,
+    number: "98123456776",
+    contactName: "Tom Cruis"
+  }, {
+    id: 7,
+    number: "98123456076",
+    contactName: "Tyla"
+  }];
+  var navigate = useNavigate();
+  var numberCall = function numberCall(number) {
+    console.log("number", number);
+  };
+  var numberChat = function numberChat(number) {
+    navigate("/chat");
+    setNumber(number);
+  };
+  console.log("searchname>>.", searchName);
+  var ascendingArray = array.sort(function (a, b) {
+    return a.contactName.localeCompare(b.contactName);
+  });
+  console.log("ascending>>>", ascendingArray);
+  var searchedContacts = array.filter(function (item) {
+    var _a;
+    if (item.contactName) {
+      return (_a = item === null || item === void 0 ? void 0 : item.contactName) === null || _a === void 0 ? void 0 : _a.toLowerCase().startsWith(searchName === null || searchName === void 0 ? void 0 : searchName.toLocaleLowerCase());
+    } else {
+      return /*#__PURE__*/React$S.createElement("p", null, "No contact Details");
+    }
+  });
+  return /*#__PURE__*/React$S.createElement(ContactWrapper, null, /*#__PURE__*/React$S.createElement("div", {
+    style: {
+      padding: "20px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      borderBottomRightRadius: "8px",
+      borderBottomLeftRadius: "8px",
+      backgroundColor: "orange"
+    }
+  }, /*#__PURE__*/React$S.createElement("p", {
+    style: {
+      margin: 0,
+      textAlign: "center",
+      fontWeight: 600,
+      fontSize: "18px"
+    }
+  }, "Phone Book List"), /*#__PURE__*/React$S.createElement(PhoneInput, {
+    placeholder: "search contact list",
+    value: searchName,
+    onChange: function onChange(e) {
+      setSearchName(e.target.value);
+    },
+    type: "text"
+  })), /*#__PURE__*/React$S.createElement("div", {
+    style: {
+      height: "70%",
+      padding: "8px",
+      display: "flex",
+      flexDirection: "column",
+      gap: "8px",
+      overflow: "scroll",
+      scrollBehavior: "smooth"
+    }
+  }, searchedContacts.length > 0 ? searchedContacts === null || searchedContacts === void 0 ? void 0 : searchedContacts.map(function (item, index) {
+    return /*#__PURE__*/React$S.createElement("span", {
+      key: index,
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "8px",
+        border: "1px solid gray",
+        boxShadow: "3px 3px 24px 0px rgba(66, 68, 90, 1)",
+        borderRadius: "8px",
+        backgroundColor: "#a49e9e9d"
+      }
+    }, /*#__PURE__*/React$S.createElement("p", {
+      onClick: function onClick() {
+        navigate("/phoneDetail/".concat(item.id, "?item=").concat(encodeURIComponent(JSON.stringify(item))));
+      },
+      style: {
+        margin: 0,
+        padding: 0,
+        width: "4rem",
+        textOverflow: "ellipsis",
+        overflow: "hidden",
+        whiteSpace: "nowrap"
+      }
+    }, item.contactName), /*#__PURE__*/React$S.createElement(FaRocketchat, {
+      onClick: function onClick() {
+        numberChat(item.number);
+      },
+      color: "purple",
+      size: 30
+    }), /*#__PURE__*/React$S.createElement(IoIosCall, {
+      size: 30,
+      color: "blue",
+      onClick: function onClick() {
+        numberCall(item.number);
+      }
+    }));
+  }) : ( /*#__PURE__*/React$S.createElement("p", {
+    style: {
+      color: "blue"
+    }
+  }, "not found"))));
 };
 
 var style$2 = {};
@@ -35269,143 +35426,109 @@ group.default = Group$2;
 
 var _Avatar = /*@__PURE__*/getDefaultExportFromCjs(avatar$1);
 
-var PhoneBook = function PhoneBook() {
-  var _useState = React$S.useState(""),
-    _useState2 = _slicedToArray$1(_useState, 2),
-    searchName = _useState2[0],
-    setSearchName = _useState2[1];
-  var _useState3 = React$S.useState(),
-    _useState4 = _slicedToArray$1(_useState3, 2);
-    _useState4[0];
-    _useState4[1];
-  var array = [{
-    number: "98123456789",
-    contactName: "Shah Rukh Khan"
-  }, {
-    number: "98123456782",
-    contactName: "Sallmon Bhai"
-  }, {
-    number: "98123456781",
-    contactName: "Srivallli"
-  }, {
-    number: "98123456734",
-    contactName: "Kriti sanon"
-  }, {
-    number: "98123456732",
-    contactName: "Kritika sanon"
-  }, {
-    number: "98123456776",
-    contactName: "Tom Cruis"
-  }, {
-    number: "98123456076",
-    contactName: "Tyla"
-  }];
-  var navigate = useNavigate();
-  var numberCall = function numberCall(number) {
-    console.log("number", number);
-  };
-  var numberChat = function numberChat(number) {
-    navigate("/chat?number=".concat(encodeURIComponent(number)));
-  };
-  console.log("searchname>>.", searchName);
-  var ascendingArray = array.sort(function (a, b) {
-    return a.contactName.localeCompare(b.contactName);
-  });
-  console.log("ascending>>>", ascendingArray);
-  var searchedContacts = array.filter(function (item) {
-    var _a;
-    if (item.contactName) {
-      return (_a = item === null || item === void 0 ? void 0 : item.contactName) === null || _a === void 0 ? void 0 : _a.toLowerCase().startsWith(searchName === null || searchName === void 0 ? void 0 : searchName.toLocaleLowerCase());
-    } else {
-      return /*#__PURE__*/React$S.createElement("p", null, "No contact Details");
-    }
-  });
-  return /*#__PURE__*/React$S.createElement(ContactWrapper, null, /*#__PURE__*/React$S.createElement("p", {
+// THIS FILE IS AUTO GENERATED
+function BsChat (props) {
+  return GenIcon({"tag":"svg","attr":{"fill":"currentColor","viewBox":"0 0 16 16"},"child":[{"tag":"path","attr":{"d":"M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105"},"child":[]}]})(props);
+}
+
+// THIS FILE IS AUTO GENERATED
+function IoCall (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M391 480c-19.52 0-46.94-7.06-88-30-49.93-28-88.55-53.85-138.21-103.38C116.91 298.77 93.61 267.79 61 208.45c-36.84-67-30.56-102.12-23.54-117.13C45.82 73.38 58.16 62.65 74.11 52a176.3 176.3 0 0 1 28.64-15.2c1-.43 1.93-.84 2.76-1.21 4.95-2.23 12.45-5.6 21.95-2 6.34 2.38 12 7.25 20.86 16 18.17 17.92 43 57.83 52.16 77.43 6.15 13.21 10.22 21.93 10.23 31.71 0 11.45-5.76 20.28-12.75 29.81-1.31 1.79-2.61 3.5-3.87 5.16-7.61 10-9.28 12.89-8.18 18.05 2.23 10.37 18.86 41.24 46.19 68.51s57.31 42.85 67.72 45.07c5.38 1.15 8.33-.59 18.65-8.47 1.48-1.13 3-2.3 4.59-3.47 10.66-7.93 19.08-13.54 30.26-13.54h.06c9.73 0 18.06 4.22 31.86 11.18 18 9.08 59.11 33.59 77.14 51.78 8.77 8.84 13.66 14.48 16.05 20.81 3.6 9.53.21 17-2 22-.37.83-.78 1.74-1.21 2.75a176.49 176.49 0 0 1-15.29 28.58c-10.63 15.9-21.4 28.21-39.38 36.58A67.42 67.42 0 0 1 391 480z"},"child":[]}]})(props);
+}
+
+var SinglePhoneDetails = function SinglePhoneDetails() {
+  var location = useLocation();
+  var params = new URLSearchParams(location.search);
+  var item = params.get("item");
+  var PhoneDetails;
+  if (item) {
+    PhoneDetails = JSON.parse(item);
+  } else {
+    PhoneDetails = undefined;
+  }
+  console.log("phone>>>", PhoneDetails.contactName);
+  return /*#__PURE__*/React$S.createElement("div", {
     style: {
-      margin: 0,
-      textAlign: "center"
+      height: "89%",
+      color: "white",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "10px"
     }
-  }, "Phone Book List"), /*#__PURE__*/React$S.createElement("div", {
+  }, /*#__PURE__*/React$S.createElement("div", {
+    className: "avatar",
     style: {
+      width: "100%",
+      height: "45%",
+      position: "relative",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      backgroundColor: "#326071",
+      boxSizing: "border-box",
       padding: "10px",
+      gap: "10px"
+    }
+  }, /*#__PURE__*/React$S.createElement("div", {
+    style: {
+      width: "6rem",
+      height: "6rem",
+      borderRadius: "50%",
+      backgroundColor: "#746b6ba5",
       display: "flex",
       justifyContent: "center",
       alignItems: "center"
     }
-  }, /*#__PURE__*/React$S.createElement(PhoneInput, {
-    placeholder: "search contact list",
-    value: searchName,
-    onChange: function onChange(e) {
-      setSearchName(e.target.value);
-    },
-    type: "text"
-  })), /*#__PURE__*/React$S.createElement("div", {
-    style: {
-      height: "80%",
-      padding: "8px",
-      display: "flex",
-      flexDirection: "column",
-      gap: "8px",
-      overflow: "scroll",
-      scrollBehavior: "smooth"
-    }
-  }, searchedContacts.length > 0 ? searchedContacts === null || searchedContacts === void 0 ? void 0 : searchedContacts.map(function (item, index) {
-    return /*#__PURE__*/React$S.createElement("span", {
-      key: index,
-      style: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "8px",
-        border: "1px solid gray",
-        boxShadow: "3px 3px 24px 0px rgba(66, 68, 90, 1)",
-        borderRadius: "8px",
-        backgroundColor: "#a49e9e9d"
-      }
-    }, /*#__PURE__*/React$S.createElement("p", {
-      style: {
-        width: "4rem",
-        textOverflow: "ellipsis",
-        overflow: "hidden",
-        whiteSpace: "nowrap"
-      }
-    }, item.contactName), /*#__PURE__*/React$S.createElement(_Avatar, {
-      onClick: function onClick() {
-        navigate("/phoneDetail");
-      },
-      icon: /*#__PURE__*/React$S.createElement(RefIcon$4, null)
-    }), /*#__PURE__*/React$S.createElement(FaRocketchat, {
-      onClick: function onClick() {
-        numberChat(item.number);
-      },
-      color: "purple",
-      size: 30
-    }), /*#__PURE__*/React$S.createElement(IoIosCall, {
-      size: 30,
-      color: "blue",
-      onClick: function onClick() {
-        numberCall(item.number);
-      }
-    }));
-  }) : ( /*#__PURE__*/React$S.createElement("p", {
-    style: {
-      color: "blue"
-    }
-  }, "not found"))));
-};
-
-var SinglePhoneDetails = function SinglePhoneDetails() {
-  return /*#__PURE__*/React$S.createElement("div", {
-    style: {
-      height: "89%",
-      backgroundColor: "#56216b",
-      color: "white"
-    }
-  }, /*#__PURE__*/React$S.createElement("p", {
+  }, /*#__PURE__*/React$S.createElement(_Avatar, {
+    src: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+    size: 50
+  })), /*#__PURE__*/React$S.createElement("p", {
     style: {
       margin: 0
     }
-  }, "Nirajan Thapa"), /*#__PURE__*/React$S.createElement("p", null, "+9779823567304"));
+  }, PhoneDetails.contactName), /*#__PURE__*/React$S.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "space-around",
+      alignItems: "center",
+      width: "100%"
+    }
+  }, " ", /*#__PURE__*/React$S.createElement("button", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "4rem",
+      backgroundColor: "purple"
+    }
+  }, /*#__PURE__*/React$S.createElement(BsChat, null), /*#__PURE__*/React$S.createElement("p", {
+    style: {
+      fontSize: "12px",
+      margin: 0,
+      padding: 0
+    }
+  }, "chat")), /*#__PURE__*/React$S.createElement("button", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "4rem",
+      backgroundColor: "purple"
+    }
+  }, /*#__PURE__*/React$S.createElement(IoCall, null), /*#__PURE__*/React$S.createElement("p", {
+    style: {
+      fontSize: "12px",
+      margin: 0,
+      padding: 0
+    }
+  }, "call")))), /*#__PURE__*/React$S.createElement("div", {
+    style: {
+      marginTop: "2rem"
+    }
+  }, /*#__PURE__*/React$S.createElement("p", null, PhoneDetails.number)));
 };
 
 var BabalDialer = function BabalDialer(_ref) {
@@ -35463,7 +35586,7 @@ var BabalDialer = function BabalDialer(_ref) {
     path: "keypad",
     element: /*#__PURE__*/React$S.createElement(Keypad, null)
   }), /*#__PURE__*/React$S.createElement(Route, {
-    path: "phoneDetail",
+    path: "phoneDetail/:id",
     element: /*#__PURE__*/React$S.createElement(SinglePhoneDetails, null)
   }))));
 };
@@ -38938,11 +39061,11 @@ var BabalUi = /*#__PURE__*/function () {
         // <TwilioProvider>
         React$S.createElement(BrowserRouter, null, /*#__PURE__*/React$S.createElement(nt, {
           theme: theme
-        }, /*#__PURE__*/React$S.createElement(NumberProvider, null, /*#__PURE__*/React$S.createElement(BabalDialer, {
+        }, /*#__PURE__*/React$S.createElement(NumberProvider, null, /*#__PURE__*/React$S.createElement(PhoneProvider, null, /*#__PURE__*/React$S.createElement(BabalDialer, {
           width: width,
           logo: logo,
           digitColor: digitColor
-        }))))
+        })))))
         // </TwilioProvider>
       );
     }

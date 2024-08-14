@@ -6,11 +6,13 @@ import { ChatText, ChatWrapper } from "../styled/StyledComponents";
 import { MoreOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Button, Dropdown, Space } from "antd";
+import { usePhoneContext } from "../../context/PhoneContext";
 
 const ChatUi = () => {
+  const { number, setNumber } = usePhoneContext();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const number = params.get("number");
+  // const number = params.get("number");
   const [theme, setTheme] = useState<string>("");
 
   const items: MenuProps["items"] = [
@@ -18,12 +20,10 @@ const ChatUi = () => {
       label: (
         <button
           onClick={() => {
-            setTheme("black");
+            setTheme("#17a589");
           }}
-          style={{ backgroundColor: "black" }}
-        >
-          black
-        </button>
+          style={{ backgroundColor: "#17a589 " }}
+        ></button>
       ),
       key: "0",
     },
@@ -31,12 +31,10 @@ const ChatUi = () => {
       label: (
         <button
           onClick={() => {
-            setTheme("blue");
+            setTheme("#8e44ad");
           }}
-          style={{ backgroundColor: "blue" }}
-        >
-          blue
-        </button>
+          style={{ backgroundColor: "#8e44ad" }}
+        ></button>
       ),
       key: "1",
     },
@@ -76,7 +74,7 @@ const ChatUi = () => {
           padding: "8px",
         }}
       >
-        <ChatText placeholder="enter the message" />
+        <ChatText width="80%" placeholder="enter the message" />
 
         <div
           style={{

@@ -1,40 +1,46 @@
 import React, { useState } from "react";
 import { IoIosCall } from "react-icons/io";
 import { FaRocketchat } from "react-icons/fa";
-import { Avatar } from "antd";
-import { UserOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { ContactWrapper, PhoneInput } from "../styled/StyledComponents";
+import { usePhoneContext } from "../../context/PhoneContext";
 
 const PhoneBook = () => {
   const [searchName, setSearchName] = useState<string>("");
-  const [contactData, setContactData] = useState();
+  const { number, setNumber } = usePhoneContext();
   const array = [
     {
+      id: 1,
       number: "98123456789",
       contactName: "Shah Rukh Khan",
     },
     {
+      id: 2,
       number: "98123456782",
       contactName: "Sallmon Bhai",
     },
     {
+      id: 3,
       number: "98123456781",
       contactName: "Srivallli",
     },
     {
+      id: 4,
       number: "98123456734",
       contactName: "Kriti sanon",
     },
     {
+      id: 5,
       number: "98123456732",
       contactName: "Kritika sanon",
     },
     {
+      id: 6,
       number: "98123456776",
       contactName: "Tom Cruis",
     },
     {
+      id: 7,
       number: "98123456076",
       contactName: "Tyla",
     },
@@ -46,7 +52,8 @@ const PhoneBook = () => {
     console.log("number", number);
   };
   const numberChat = (number: string) => {
-    navigate(`/chat?number=${encodeURIComponent(number)}`);
+    navigate(`/chat`);
+    setNumber(number);
   };
   console.log("searchname>>.", searchName);
 
@@ -67,15 +74,27 @@ const PhoneBook = () => {
 
   return (
     <ContactWrapper>
-      <p style={{ margin: 0, textAlign: "center" }}>Phone Book List</p>
       <div
         style={{
-          padding: "10px",
+          padding: "20px",
           display: "flex",
-          justifyContent: "center",
+          flexDirection: "column",
           alignItems: "center",
+          borderBottomRightRadius: "8px",
+          borderBottomLeftRadius: "8px",
+          backgroundColor: "orange",
         }}
       >
+        <p
+          style={{
+            margin: 0,
+            textAlign: "center",
+            fontWeight: 600,
+            fontSize: "18px",
+          }}
+        >
+          Phone Book List
+        </p>
         <PhoneInput
           placeholder="search contact list"
           value={searchName}
@@ -88,7 +107,7 @@ const PhoneBook = () => {
 
       <div
         style={{
-          height: "80%",
+          height: "70%",
           padding: "8px",
           display: "flex",
           flexDirection: "column",
@@ -113,7 +132,16 @@ const PhoneBook = () => {
               }}
             >
               <p
+                onClick={() => {
+                  navigate(
+                    `/phoneDetail/${item.id}?item=${encodeURIComponent(
+                      JSON.stringify(item)
+                    )}`
+                  );
+                }}
                 style={{
+                  margin: 0,
+                  padding: 0,
                   width: "4rem",
                   textOverflow: "ellipsis",
                   overflow: "hidden",
@@ -122,12 +150,7 @@ const PhoneBook = () => {
               >
                 {item.contactName}
               </p>
-              <Avatar
-                onClick={() => {
-                  navigate("/phoneDetail");
-                }}
-                icon={<UserOutlined />}
-              />
+
               <FaRocketchat
                 onClick={() => {
                   numberChat(item.number);

@@ -47,9 +47,11 @@ const BabalHeader = ({ menus, logo, height, width, type }: headerProps) => {
           <p>Dialer</p>
         )}
 
-        <ThemeToggleBtn onClick={toggleFun}>
-          {toggle ? <FaMoon /> : <FaSun />}
-        </ThemeToggleBtn>
+        {toggle ? (
+          <FaMoon onClick={toggleFun} />
+        ) : (
+          <FaSun onClick={toggleFun} />
+        )}
       </HeaderWrapper>
     </>
   );

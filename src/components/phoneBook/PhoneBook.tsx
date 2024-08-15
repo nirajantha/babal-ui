@@ -3,48 +3,16 @@ import { IoIosCall } from "react-icons/io";
 import { FaRocketchat } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { ContactWrapper, PhoneInput } from "../styled/StyledComponents";
-import { usePhoneContext } from "../../context/PhoneContext";
+import {
+  usePhoneContext,
+  useSideMenuContext,
+} from "../../context/PhoneContext";
+import { phoneContact } from "../data/Data";
 
 const PhoneBook = () => {
   const [searchName, setSearchName] = useState<string>("");
-  const { number, setNumber } = usePhoneContext();
-  const array = [
-    {
-      id: 1,
-      number: "98123456789",
-      contactName: "Shah Rukh Khan",
-    },
-    {
-      id: 2,
-      number: "98123456782",
-      contactName: "Sallmon Bhai",
-    },
-    {
-      id: 3,
-      number: "98123456781",
-      contactName: "Srivallli",
-    },
-    {
-      id: 4,
-      number: "98123456734",
-      contactName: "Kriti sanon",
-    },
-    {
-      id: 5,
-      number: "98123456732",
-      contactName: "Kritika sanon",
-    },
-    {
-      id: 6,
-      number: "98123456776",
-      contactName: "Tom Cruis",
-    },
-    {
-      id: 7,
-      number: "98123456076",
-      contactName: "Tyla",
-    },
-  ];
+  const { setNumber } = usePhoneContext();
+  const { setPath } = useSideMenuContext();
 
   const navigate = useNavigate();
 
@@ -54,21 +22,22 @@ const PhoneBook = () => {
   const numberChat = (number: string) => {
     navigate(`/chat`);
     setNumber(number);
+    setPath("chat");
   };
   console.log("searchname>>.", searchName);
 
-  const ascendingArray = array.sort((a, b) =>
+  const ascendingArray = phoneContact.sort((a, b) =>
     a.contactName.localeCompare(b.contactName)
   );
   console.log("ascending>>>", ascendingArray);
 
-  const searchedContacts = array.filter((item) => {
+  const searchedContacts = phoneContact.filter((item) => {
     if (item.contactName) {
       return item?.contactName
         ?.toLowerCase()
         .startsWith(searchName?.toLocaleLowerCase());
     } else {
-      return <p>No contact Details</p>;
+      return null;
     }
   });
 
@@ -82,7 +51,7 @@ const PhoneBook = () => {
           alignItems: "center",
           borderBottomRightRadius: "8px",
           borderBottomLeftRadius: "8px",
-          backgroundColor: "orange",
+          // backgroundColor: "orange",
         }}
       >
         <p
@@ -126,9 +95,9 @@ const PhoneBook = () => {
                 alignItems: "center",
                 padding: "8px",
                 border: "1px solid gray",
-                boxShadow: "3px 3px 24px 0px rgba(66, 68, 90, 1)",
+                boxShadow: "0px 0px 8px 2px rgba(159, 159, 174, 1);",
                 borderRadius: "8px",
-                backgroundColor: "#a49e9e9d",
+                backgroundColor: "#d5d3d39d",
               }}
             >
               <p
@@ -168,7 +137,17 @@ const PhoneBook = () => {
             </span>
           ))
         ) : (
-          <p style={{ color: "blue" }}>not found</p>
+          <p
+            style={{
+              color: "white",
+              textAlign: "center",
+              fontSize: "18px",
+              fontWeight: 600,
+            }}
+          >
+            {" "}
+            Contact Number Not Found
+          </p>
         )}
       </div>
     </ContactWrapper>

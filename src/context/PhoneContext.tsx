@@ -29,3 +29,38 @@ export const usePhoneContext = () => {
   }
   return context;
 };
+
+///
+
+type sideMenuContextType = {
+  path: string;
+  setPath: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export const SideMenuContext = createContext<sideMenuContextType>({
+  path: "", // Default value for the number
+  setPath: () => {}, // No-op function as a placeholder
+});
+
+interface phoneProviderProps {
+  children: React.ReactNode;
+}
+export const SideMenuProvider: React.FC<phoneProviderProps> = ({
+  children,
+}) => {
+  const [path, setPath] = useState<any>(null);
+
+  return (
+    <SideMenuContext.Provider value={{ path, setPath }}>
+      {children}
+    </SideMenuContext.Provider>
+  );
+};
+
+export const useSideMenuContext = () => {
+  const context = useContext(SideMenuContext);
+  if (!context) {
+    throw new Error("usePhoneContext must be used within a PhoneProvider");
+  }
+  return context;
+};

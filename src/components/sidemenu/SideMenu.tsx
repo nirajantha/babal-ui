@@ -5,6 +5,7 @@ import { IoIosKeypad } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
 import { MenuDiv, MenuIcon, SideMenuWrapper } from "../styled/StyledComponents";
 import { split } from "@apollo/client";
+import { useSideMenuContext } from "../../context/PhoneContext";
 // interface sideMenuProps {
 //   showChat: () => void;
 //   showKeyPad: () => void;
@@ -12,22 +13,20 @@ import { split } from "@apollo/client";
 // }
 
 const SideMenu = () => {
-  const [activeItem, setActiveItem] = useState(null);
-  const location = useLocation();
-  console.log("location>>", location.pathname);
-  const sideName = location.pathname.split(`/`)[1];
-  console.log("sideName", sideName);
+  const { path, setPath } = useSideMenuContext();
 
-  const handleClick = (index: any) => {
-    setActiveItem(index);
+  const handleClick = (nav: any) => {
+    setPath(nav);
   };
+
+  console.log(path);
 
   return (
     <>
       <SideMenuWrapper>
         <MenuDiv>
           <Link to="keypad">
-            <MenuIcon active={activeItem === "keypad"}>
+            <MenuIcon active={path === "keypad"}>
               <IoIosKeypad
                 color="purple"
                 size={30}
@@ -39,7 +38,7 @@ const SideMenu = () => {
           </Link>
           <Link to="contact">
             <MenuIcon
-              active={activeItem === "contact"}
+              active={path === "contact"}
               onClick={() => {
                 handleClick("contact");
               }}
@@ -50,7 +49,7 @@ const SideMenu = () => {
 
           <Link to="chat">
             <MenuIcon
-              active={activeItem === "chat"}
+              active={path === "chat"}
               onClick={() => {
                 handleClick("chat");
               }}

@@ -13,6 +13,20 @@ import { useNumberContext } from "../context/CreateContext";
 interface keypadprops {
   digitColor?: string;
 }
+const digitToLettersMap = {
+  "1": "",
+  "2": "ABC",
+  "3": "DEF",
+  "4": "GHI",
+  "5": "JKL",
+  "6": "MNO",
+  "7": "PQRS",
+  "8": "TUV",
+  "9": "WXYZ",
+  "*": "",
+  "0": "+",
+  "#": "",
+};
 const Keypad = ({ digitColor }: keypadprops) => {
   const { state, dispatch } = useNumberContext();
   const [showUi, setShowUi] = useState<boolean>(false);
@@ -51,14 +65,14 @@ const Keypad = ({ digitColor }: keypadprops) => {
                     onClick={() => handleClick(digit)}
                   >
                     {digit}
-                    {digit !== "*" && digit !== "0" && digit !== "#" && (
-                      <TextSpan>
-                        {String.fromCharCode(65 + (parseInt(digit) - 1) * 3) +
-                          String.fromCharCode(
-                            65 + (parseInt(digit) - 1) * 3 + 2
-                          )}
-                      </TextSpan>
-                    )}
+
+                    <TextSpan>
+                      {
+                        digitToLettersMap[
+                          digit as keyof typeof digitToLettersMap
+                        ]
+                      }
+                    </TextSpan>
                   </StyledNumber>
                 ))}
               </BabalContainer>

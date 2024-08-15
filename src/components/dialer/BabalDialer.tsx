@@ -187,53 +187,12 @@ interface DialerProps {
   width: string | number;
 }
 
-const BabalDialer: React.FC<DialerProps> = ({
-  logo,
-  digitColor,
-  inputOnChange,
-  width,
-}) => {
-  // const { connect, disconnect } = useTwilio();
-  const { state, dispatch } = useNumberContext();
-  const [showUi, setShowUi] = useState<boolean>(false);
-  const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
-  const [isKeypadOpen, setIsKeypadOpen] = useState<boolean>(false);
-  const [isPhoneBookOpen, setIsPhoneBookOpen] = useState<boolean>(false);
-
-  const handleCall = () => {
-    setShowUi(!showUi);
-    // connect(state.number);
-  };
-
-  const handleHangUp = () => {
-    // disconnect();
-    setShowUi(!showUi);
-  };
-
-  const handleClick = (digit: string) => {
-    dispatch({ type: "PressNumber", payload: digit });
-  };
-
-  // const handleCancelCall = () => {
-  //   alert("call cancel");
-  // };
-  // const showChat = () => {
-  //   setIsChatOpen(true);
-  // };
-  // const showKeypad = () => {
-  //   setIsKeypadOpen(true);
-  // };
-  // const showPhoneBook = () => {
-  //   setIsPhoneBookOpen(true);
-  // };
-
-  // console.log("showChatui", isChatOpen);
-
+const BabalDialer: React.FC<DialerProps> = ({ logo, width }) => {
   return (
     <DialerMainWrapper width={width}>
       <SideMenu />
       <DialerWrapper>
-        <BabalHeader height="60px" width="inherit" logo={logo} type={false} />
+        <BabalHeader height="50px" width="inherit" logo={logo} type={false} />
         <Routes>
           <Route path="contact" element={<PhoneBook />} />
           <Route path="chat" element={<ChatUi />} />

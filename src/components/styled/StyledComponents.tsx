@@ -14,7 +14,7 @@ export const HeaderWrapper = styled.header<styleHeaderProps>`
   height: ${(props) => props.height};
   border-top-right-radius: 8px;
   /* border-top-left-radius: 8px; */
-  background: red;
+  background: #428d73;
 `;
 export const BabalMenu = styled.ul`
   display: flex;
@@ -61,7 +61,7 @@ export const StyledNumber = styled.div<styledNumberProps>`
   -webkit-backdrop-filter: blur(2.5px);
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  font-size: large;
+  font-size: 2rem;
   font-weight: 600;
   text-align: center;
   align-items: center;
@@ -94,7 +94,8 @@ export const DialerWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding-bottom: 20px;
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) =>
+    theme.background ? theme.background : "#9d6f19"};
   color: ${({ theme }) => theme.color};
 `;
 export const NumberGrid = styled.div`
@@ -108,7 +109,7 @@ export const Display = styled.div`
   width: inherit;
   height: 10vh;
   background-color: white;
-  color: ${({ theme }) => theme.textColor};
+  color: ${({ theme }) => (theme.textColor ? theme.textColor : "black")};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -208,7 +209,7 @@ export const PhoneInput = styled.input`
   border-radius: 8px;
   background: transparent;
   width: 100%;
-  border: 2px solid #6620de;
+  border: 2px solid #adacb0ce;
   color: white;
   font-weight: 500;
 
@@ -229,7 +230,7 @@ interface chatProps {
 }
 export const ChatWrapper = styled.section<chatProps>`
   position: relative;
-  height: 89%;
+  height: 90.55%;
   background: ${(props) => props.color};
 `;
 interface chatTextProps {
@@ -240,7 +241,7 @@ export const ChatText = styled.textarea<chatTextProps>`
   border-radius: 8px;
   background: transparent;
   width: ${(props) => props.width};
-  border: 2px solid #3e1c79da;
+  border: 2px solid #adacb0ce;
   color: white;
 
   &::placeholder {

@@ -172,7 +172,7 @@ import { useNumberContext } from "../context/CreateContext";
 
 import { DialerMainWrapper, DialerWrapper } from "../styled/StyledComponents";
 
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Keypad from "../keypad/Keypad";
 import SideMenu from "../sidemenu/SideMenu";
 import ChatUi from "../chatUI/ChatUi";
@@ -187,16 +187,17 @@ interface DialerProps {
   width: string | number;
 }
 
-const BabalDialer: React.FC<DialerProps> = ({ logo, width }) => {
+const BabalDialer: React.FC<DialerProps> = ({ logo, width, digitColor }) => {
   return (
     <DialerMainWrapper width={width}>
-      <SideMenu />
+      <SideMenu logo={logo} />
       <DialerWrapper>
         <BabalHeader height="50px" width="inherit" logo={logo} type={false} />
         <Routes>
+          <Route path="/" element={<Keypad digitColor={digitColor} />} />
           <Route path="contact" element={<PhoneBook />} />
           <Route path="chat" element={<ChatUi />} />
-          <Route path="keypad" element={<Keypad />} />
+          <Route path="keypad" element={<Keypad digitColor={digitColor} />} />
           <Route path="phoneDetail/:id" element={<SinglePhoneDetails />} />
         </Routes>
       </DialerWrapper>

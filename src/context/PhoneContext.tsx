@@ -38,7 +38,7 @@ type sideMenuContextType = {
 };
 
 export const SideMenuContext = createContext<sideMenuContextType>({
-  path: "", // Default value for the number
+  path: "", // Default value for the path
   setPath: () => {}, // No-op function as a placeholder
 });
 
@@ -48,7 +48,7 @@ interface phoneProviderProps {
 export const SideMenuProvider: React.FC<phoneProviderProps> = ({
   children,
 }) => {
-  const [path, setPath] = useState<any>(null);
+  const [path, setPath] = useState("keypad");
 
   return (
     <SideMenuContext.Provider value={{ path, setPath }}>

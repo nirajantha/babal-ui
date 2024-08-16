@@ -1,1 +1,1 @@
-export { default } from "./BabalFooter";
+export { default } from "./DialerFooter";

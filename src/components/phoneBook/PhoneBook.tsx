@@ -2,34 +2,17 @@ import React, { useState } from "react";
 import { IoIosCall } from "react-icons/io";
 import { FaRocketchat } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { ContactWrapper, PhoneInput } from "../styled/StyledComponents";
-import {
-  usePhoneContext,
-  useSideMenuContext,
-} from "../../context/PhoneContext";
+import { ContactWrapper, PhoneInput, Span } from "../styled/StyledComponents";
 import { phoneContact } from "../data/Data";
 
 const PhoneBook = () => {
   const [searchName, setSearchName] = useState<string>("");
-  const { setNumber } = usePhoneContext();
-  const { setPath } = useSideMenuContext();
 
   const navigate = useNavigate();
-
-  const numberCall = (number: string) => {
-    console.log("number", number);
-  };
-  const numberChat = (number: string) => {
-    navigate(`/chat`);
-    setNumber(number);
-    setPath("chat");
-  };
-  console.log("searchname>>.", searchName);
 
   const ascendingArray = phoneContact.sort((a, b) =>
     a.contactName.localeCompare(b.contactName)
   );
-  console.log("ascending>>>", ascendingArray);
 
   const searchedContacts = phoneContact.filter((item) => {
     if (item.contactName) {
@@ -87,19 +70,7 @@ const PhoneBook = () => {
       >
         {searchedContacts.length > 0 ? (
           searchedContacts?.map((item, index) => (
-            <span
-              key={index}
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                padding: "8px",
-                border: "1px solid gray",
-                boxShadow: "0px 0px 8px 2px rgba(159, 159, 174, 1);",
-                borderRadius: "8px",
-                backgroundColor: "#d5d3d39d",
-              }}
-            >
+            <Span key={index}>
               <p
                 onClick={() => {
                   navigate(
@@ -111,43 +82,33 @@ const PhoneBook = () => {
                 style={{
                   margin: 0,
                   padding: 0,
-                  width: "4rem",
-                  textOverflow: "ellipsis",
-                  overflow: "hidden",
-                  whiteSpace: "nowrap",
+                  width: "10rem",
+                  // textOverflow: "ellipsis",
+                  // overflow: "hidden",
+                  // whiteSpace: "nowrap",
                 }}
               >
                 {item.contactName}
               </p>
 
-              <FaRocketchat
+              {/* <FaRocketchat
                 onClick={() => {
                   numberChat(item.number);
                 }}
                 color="purple"
                 size={30}
-              />
-              <IoIosCall
+              /> */}
+              {/* <IoIosCall
                 size={30}
                 color="blue"
                 onClick={() => {
                   numberCall(item.number);
                 }}
-              />
-            </span>
+              /> */}
+            </Span>
           ))
         ) : (
-          <p
-            style={{
-              color: "white",
-              textAlign: "center",
-              fontSize: "18px",
-              fontWeight: 600,
-            }}
-          >
-            {" "}
-            Contact Number Not Found
-          </p>
+          <Span> Contact Number Not Found</Span>
         )}
       </div>
     </ContactWrapper>

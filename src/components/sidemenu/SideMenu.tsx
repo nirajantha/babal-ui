@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 import { FaRocketchat } from "react-icons/fa";
+import { BiMessageRounded } from "react-icons/bi";
 import { MdContactPhone } from "react-icons/md";
 import { IoIosKeypad } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
-import { MenuDiv, MenuIcon, SideMenuWrapper } from "../styled/StyledComponents";
-import { split } from "@apollo/client";
+
+import {
+  Logo,
+  MenuDiv,
+  MenuIcon,
+  SideMenuWrapper,
+} from "../styled/StyledComponents";
 import { useSideMenuContext } from "../../context/PhoneContext";
 // interface sideMenuProps {
 //   showChat: () => void;
 //   showKeyPad: () => void;
 //   showPhoneBook: () => void;
 // }
-
-const SideMenu = () => {
+interface sideMenuProps {
+  logo?: string;
+}
+const SideMenu = ({ logo }: sideMenuProps) => {
   const { path, setPath } = useSideMenuContext();
 
   const handleClick = (nav: any) => {
@@ -25,6 +33,9 @@ const SideMenu = () => {
     <>
       <SideMenuWrapper>
         <MenuDiv>
+          <MenuIcon>
+            <Logo src={logo} />
+          </MenuIcon>
           <Link to="keypad">
             <MenuIcon active={path === "keypad"}>
               <IoIosKeypad
@@ -46,7 +57,6 @@ const SideMenu = () => {
               <MdContactPhone color="purple" size={30} />
             </MenuIcon>
           </Link>
-
           <Link to="chat">
             <MenuIcon
               active={path === "chat"}
@@ -54,7 +64,7 @@ const SideMenu = () => {
                 handleClick("chat");
               }}
             >
-              <FaRocketchat color="purple" size={30} />
+              <BiMessageRounded color="purple" size={30} />
             </MenuIcon>
           </Link>
         </MenuDiv>

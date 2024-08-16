@@ -8,7 +8,7 @@ import {
 } from "../styled/StyledComponents";
 import { IoIosCall } from "react-icons/io";
 import BabalContainer from "../container/BabalContainer";
-import BabalFooter from "../footer/BabalFooter";
+import BabalFooter from "../footer/DialerFooter";
 import { useNumberContext } from "../context/CreateContext";
 interface keypadprops {
   digitColor?: string;
@@ -29,6 +29,7 @@ const digitToLettersMap = {
 };
 const Keypad = ({ digitColor }: keypadprops) => {
   const { state, dispatch } = useNumberContext();
+  const [english, setEnglish] = useState(false);
   const [showUi, setShowUi] = useState<boolean>(false);
 
   const handleCall = () => {
@@ -48,8 +49,8 @@ const Keypad = ({ digitColor }: keypadprops) => {
     <>
       {showUi ? (
         <CalledUi>
-          <StyledNumber onClick={handleHangUp}>
-            <IoIosCall size={40} color="red" />
+          <StyledNumber digitColor="red" onClick={handleHangUp}>
+            <IoIosCall size={40} color="white" />
           </StyledNumber>
         </CalledUi>
       ) : (

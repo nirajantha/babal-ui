@@ -14,7 +14,8 @@ export const HeaderWrapper = styled.header<styleHeaderProps>`
   height: ${(props) => props.height};
   border-top-right-radius: 8px;
   /* border-top-left-radius: 8px; */
-  background: #428d73;
+  background: #380179;
+  color: white;
 `;
 export const BabalMenu = styled.ul`
   display: flex;
@@ -61,7 +62,7 @@ export const StyledNumber = styled.div<styledNumberProps>`
   -webkit-backdrop-filter: blur(2.5px);
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
   align-items: center;
@@ -108,13 +109,14 @@ export const NumberGrid = styled.div`
 export const Display = styled.div`
   width: inherit;
   height: 10vh;
-  background-color: white;
+  background-color: #9d9999;
   color: ${({ theme }) => (theme.textColor ? theme.textColor : "black")};
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 600;
   font-size: medium;
+  box-shadow: inset 20px 20px 60px #cbcbcbe3, inset -20px -20px 60px #ffffff;
 `;
 export const CalledUi = styled.div`
   display: flex;
@@ -125,8 +127,8 @@ export const CalledUi = styled.div`
 `;
 
 export const TextSpan = styled.span`
-  font-size: 15px;
-  color: ${({ theme }) => theme.color};
+  font-size: 13px;
+  color: #868686;
 `;
 
 export const StyledSpinner = styled.div`
@@ -154,7 +156,7 @@ interface sideMenuProps {
 export const SideMenuWrapper = styled.section`
   box-sizing: border-box;
   width: 80px;
-  background-color: white;
+  background-color: #d7d3d3;
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px;
   display: flex;
@@ -184,10 +186,10 @@ export const MenuDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
 `;
 interface menuProps {
-  active: boolean;
+  active?: boolean;
 }
 export const MenuIcon = styled.div<menuProps>`
   display: flex;
@@ -196,7 +198,7 @@ export const MenuIcon = styled.div<menuProps>`
   padding: 8px;
   border-radius: 8px;
   background-color: ${(props) => (props.active ? "#79b0f2" : "transparent")};
-  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #6d6666;
+  box-shadow: -3px 1px 43px -3px rgba(150, 144, 144, 1);
 `;
 
 export const ContactWrapper = styled.section`
@@ -209,12 +211,13 @@ export const PhoneInput = styled.input`
   border-radius: 8px;
   background: transparent;
   width: 100%;
-  border: 2px solid #adacb0ce;
-  color: white;
+  border: 2px solid #b9b6b69c;
+  color: ${({ theme }) => theme.color};
   font-weight: 500;
 
   &::placeholder {
-    color: white; /* Change this to your desired color */
+    color: ${({ theme }) =>
+      theme.color}; /* Change this to your desired color */
     font-weight: 500;
   }
 
@@ -224,6 +227,16 @@ export const PhoneInput = styled.input`
       opacity: 0;
     }
   }
+`;
+export const Span = styled.span`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #c6c4c459;
+  box-shadow: 0px 0px 8px 2px rgba(159, 159, 174, 1);
+  border-radius: 8px;
+  background-color: #d5d3d39d;
 `;
 interface chatProps {
   color: string;
@@ -242,7 +255,7 @@ export const ChatText = styled.textarea<chatTextProps>`
   background: transparent;
   width: ${(props) => props.width};
   border: 2px solid #adacb0ce;
-  color: white;
+  color: ${({ theme }) => theme.color};
 
   &::placeholder {
     color: white; /* Change this to your desired color */

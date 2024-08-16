@@ -1,3 +1,6 @@
 import React from "react";
-declare const SideMenu: () => React.JSX.Element;
+interface sideMenuProps {
+    logo?: string;
+}
+declare const SideMenu: ({ logo }: sideMenuProps) => React.JSX.Element;
 export default SideMenu;

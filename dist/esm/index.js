@@ -1784,8 +1784,8 @@ A.forEach(function (e) {
 var gt = "__sc-".concat(f, "__");
 "production" !== process.env.NODE_ENV && "test" !== process.env.NODE_ENV && "undefined" != typeof window && (window[gt] || (window[gt] = 0), 1 === window[gt] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window[gt] += 1);
 
-var _templateObject$2, _templateObject2$1, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22;
-var HeaderWrapper = pt.header(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  box-sizing: border-box;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem;\n  height: ", ";\n  border-top-right-radius: 8px;\n  /* border-top-left-radius: 8px; */\n  background: #428d73;\n"])), function (props) {
+var _templateObject$2, _templateObject2$1, _templateObject3, _templateObject4, _templateObject5, _templateObject6, _templateObject7, _templateObject8, _templateObject9, _templateObject10, _templateObject11, _templateObject12, _templateObject13, _templateObject14, _templateObject15, _templateObject16, _templateObject17, _templateObject18, _templateObject19, _templateObject20, _templateObject21, _templateObject22, _templateObject23;
+var HeaderWrapper = pt.header(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  box-sizing: border-box;\n  display: flex;\n  width: ", ";\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem;\n  height: ", ";\n  border-top-right-radius: 8px;\n  /* border-top-left-radius: 8px; */\n  background: #380179;\n  color: white;\n"])), function (props) {
   return props.width;
 }, function (props) {
   return props.height;
@@ -1795,7 +1795,7 @@ var MenuItem$4 = pt.li(_templateObject3 || (_templateObject3 = _taggedTemplateLi
 var Logo = pt.img(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  height: 2rem;\n  width: 2rem;\n  mix-blend-mode: multiply;\n"])));
 var ItemLink = pt.a(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  cursor: pointer;\n  color: black;\n  text-decoration: none;\n  &:hover {\n    color: yellow;\n  }\n"])));
 pt.button(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n  background: none;\n  border: none;\n  cursor: pointer;\n  color: inherit;\n"])));
-var StyledNumber = pt.div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  width: 4rem;\n  height: 4rem;\n  background: ", ";\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\n  backdrop-filter: blur(2.5px);\n  -webkit-backdrop-filter: blur(2.5px);\n  border-radius: 50%;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  font-size: 2rem;\n  font-weight: 600;\n  text-align: center;\n  align-items: center;\n  display: flex;\n  gap: 0;\n  flex-direction: column;\n  justify-content: center;\n"])), function (props) {
+var StyledNumber = pt.div(_templateObject7 || (_templateObject7 = _taggedTemplateLiteral(["\n  width: 4rem;\n  height: 4rem;\n  background: ", ";\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\n  backdrop-filter: blur(2.5px);\n  -webkit-backdrop-filter: blur(2.5px);\n  border-radius: 50%;\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  font-size: 1.5rem;\n  font-weight: 600;\n  text-align: center;\n  align-items: center;\n  display: flex;\n  gap: 0;\n  flex-direction: column;\n  justify-content: center;\n"])), function (props) {
   return props.digitColor ? props.digitColor : "rgba(255, 255, 255, 0.25)";
 });
 pt.div(_templateObject8 || (_templateObject8 = _taggedTemplateLiteral(["\n  width: 350px;\n  background: ", ";\n  padding: 1rem;\n"])), function (_ref) {
@@ -1813,17 +1813,14 @@ var DialerWrapper = pt.div(_templateObject10 || (_templateObject10 = _taggedTemp
   return theme.color;
 });
 var NumberGrid = pt.div(_templateObject11 || (_templateObject11 = _taggedTemplateLiteral(["\n  display: flex;\n  gap: 10px;\n  flex-direction: column;\n  margin-top: 10px;\n"])));
-var Display = pt.div(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n  width: inherit;\n  height: 10vh;\n  background-color: white;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 600;\n  font-size: medium;\n"])), function (_ref4) {
+var Display = pt.div(_templateObject12 || (_templateObject12 = _taggedTemplateLiteral(["\n  width: inherit;\n  height: 10vh;\n  background-color: #9d9999;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 600;\n  font-size: medium;\n  box-shadow: inset 20px 20px 60px #cbcbcbe3, inset -20px -20px 60px #ffffff;\n"])), function (_ref4) {
   var theme = _ref4.theme;
   return theme.textColor ? theme.textColor : "black";
 });
 var CalledUi = pt.div(_templateObject13 || (_templateObject13 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 20vh;\n  width: 350px;\n"])));
-var TextSpan = pt.span(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["\n  font-size: 15px;\n  color: ", ";\n"])), function (_ref5) {
-  var theme = _ref5.theme;
-  return theme.color;
-});
+var TextSpan = pt.span(_templateObject14 || (_templateObject14 = _taggedTemplateLiteral(["\n  font-size: 13px;\n  color: #868686;\n"])));
 var StyledSpinner = pt.div(_templateObject15 || (_templateObject15 = _taggedTemplateLiteral(["\n  height: 10px;\n  width: 10px;\n  border-radius: 50%;\n  border: 4px solid;\n  border-color: white white white black;\n  animation: spin 1.5s linear infinite;\n\n  @keyframes spin {\n    from {\n      transform: rotate(0deg);\n    }\n    to {\n      transform: rotate(360deg);\n    }\n  }\n"])));
-var SideMenuWrapper = pt.section(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral(["\n  box-sizing: border-box;\n  width: 80px;\n  background-color: white;\n  border-bottom-left-radius: 8px;\n  border-top-left-radius: 8px;\n  display: flex;\n  justify-content: center;\n  padding: 4px;\n"])));
+var SideMenuWrapper = pt.section(_templateObject16 || (_templateObject16 = _taggedTemplateLiteral(["\n  box-sizing: border-box;\n  width: 80px;\n  background-color: #d7d3d3;\n  border-bottom-left-radius: 8px;\n  border-top-left-radius: 8px;\n  display: flex;\n  justify-content: center;\n  padding: 4px;\n"])));
 // export const SlideDiv = styled.div<sideMenuProps>`
 //   position: absolute;
 //   top: 0;
@@ -1841,17 +1838,27 @@ var SideMenuWrapper = pt.section(_templateObject16 || (_templateObject16 = _tagg
 //   transition: transform 0.5s ease-in-out;
 //   padding: 4px;
 // `;
-var MenuDiv = pt.div(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 5px;\n"])));
-var MenuIcon = pt.div(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 8px;\n  border-radius: 8px;\n  background-color: ", ";\n  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #6d6666;\n"])), function (props) {
+var MenuDiv = pt.div(_templateObject17 || (_templateObject17 = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n"])));
+var MenuIcon = pt.div(_templateObject18 || (_templateObject18 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 8px;\n  border-radius: 8px;\n  background-color: ", ";\n  box-shadow: -3px 1px 43px -3px rgba(150, 144, 144, 1);\n"])), function (props) {
   return props.active ? "#79b0f2" : "transparent";
 });
 var ContactWrapper = pt.section(_templateObject19 || (_templateObject19 = _taggedTemplateLiteral(["\n  height: 89%;\n  margin: 0;\n"])));
-var PhoneInput = pt.input(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral(["\n  padding: 8px;\n  border-radius: 8px;\n  background: transparent;\n  width: 100%;\n  border: 2px solid #adacb0ce;\n  color: white;\n  font-weight: 500;\n\n  &::placeholder {\n    color: white; /* Change this to your desired color */\n    font-weight: 500;\n  }\n\n  &:focus {\n    outline: none;\n    &::placeholder {\n      opacity: 0;\n    }\n  }\n"])));
-var ChatWrapper = pt.section(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral(["\n  position: relative;\n  height: 90.55%;\n  background: ", ";\n"])), function (props) {
+var PhoneInput = pt.input(_templateObject20 || (_templateObject20 = _taggedTemplateLiteral(["\n  padding: 8px;\n  border-radius: 8px;\n  background: transparent;\n  width: 100%;\n  border: 2px solid #b9b6b69c;\n  color: ", ";\n  font-weight: 500;\n\n  &::placeholder {\n    color: ", "; /* Change this to your desired color */\n    font-weight: 500;\n  }\n\n  &:focus {\n    outline: none;\n    &::placeholder {\n      opacity: 0;\n    }\n  }\n"])), function (_ref5) {
+  var theme = _ref5.theme;
+  return theme.color;
+}, function (_ref6) {
+  var theme = _ref6.theme;
+  return theme.color;
+});
+var Span = pt.span(_templateObject21 || (_templateObject21 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 8px;\n  border: 1px solid #c6c4c459;\n  box-shadow: 0px 0px 8px 2px rgba(159, 159, 174, 1);\n  border-radius: 8px;\n  background-color: #d5d3d39d;\n"])));
+var ChatWrapper = pt.section(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral(["\n  position: relative;\n  height: 90.55%;\n  background: ", ";\n"])), function (props) {
   return props.color;
 });
-var ChatText = pt.textarea(_templateObject22 || (_templateObject22 = _taggedTemplateLiteral(["\n  padding: 6px;\n  border-radius: 8px;\n  background: transparent;\n  width: ", ";\n  border: 2px solid #adacb0ce;\n  color: white;\n\n  &::placeholder {\n    color: white; /* Change this to your desired color */\n  }\n\n  &:focus {\n    outline: none;\n    &::placeholder {\n      opacity: 0;\n    }\n  }\n"])), function (props) {
+var ChatText = pt.textarea(_templateObject23 || (_templateObject23 = _taggedTemplateLiteral(["\n  padding: 6px;\n  border-radius: 8px;\n  background: transparent;\n  width: ", ";\n  border: 2px solid #adacb0ce;\n  color: ", ";\n\n  &::placeholder {\n    color: white; /* Change this to your desired color */\n  }\n\n  &:focus {\n    outline: none;\n    &::placeholder {\n      opacity: 0;\n    }\n  }\n"])), function (props) {
   return props.width;
+}, function (_ref7) {
+  var theme = _ref7.theme;
+  return theme.color;
 });
 
 var BabalButton = function BabalButton(_ref) {
@@ -1965,9 +1972,7 @@ function IconBase$3(props) {
 }
 
 // THIS FILE IS AUTO GENERATED
-function FaRocketchat (props) {
-  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 576 512"},"child":[{"tag":"path","attr":{"d":"M284.046,224.8a34.114,34.114,0,1,0,34.317,34.113A34.217,34.217,0,0,0,284.046,224.8Zm-110.45,0a34.114,34.114,0,1,0,34.317,34.113A34.217,34.217,0,0,0,173.6,224.8Zm220.923,0a34.114,34.114,0,1,0,34.317,34.113A34.215,34.215,0,0,0,394.519,224.8Zm153.807-55.319c-15.535-24.172-37.31-45.57-64.681-63.618-52.886-34.817-122.374-54-195.666-54a405.975,405.975,0,0,0-72.032,6.357,238.524,238.524,0,0,0-49.51-36.588C99.684-11.7,40.859.711,11.135,11.421A14.291,14.291,0,0,0,5.58,34.782C26.542,56.458,61.222,99.3,52.7,138.252c-33.142,33.9-51.112,74.776-51.112,117.337,0,43.372,17.97,84.248,51.112,118.148,8.526,38.956-26.154,81.816-47.116,103.491a14.284,14.284,0,0,0,5.555,23.34c29.724,10.709,88.549,23.147,155.324-10.2a238.679,238.679,0,0,0,49.51-36.589A405.972,405.972,0,0,0,288,460.14c73.313,0,142.8-19.159,195.667-53.975,27.371-18.049,49.145-39.426,64.679-63.619,17.309-26.923,26.07-55.916,26.07-86.125C574.394,225.4,565.634,196.43,548.326,169.485ZM284.987,409.9a345.65,345.65,0,0,1-89.446-11.5l-20.129,19.393a184.366,184.366,0,0,1-37.138,27.585,145.767,145.767,0,0,1-52.522,14.87c.983-1.771,1.881-3.563,2.842-5.356q30.258-55.68,16.325-100.078c-32.992-25.962-52.778-59.2-52.778-95.4,0-83.1,104.254-150.469,232.846-150.469s232.867,67.373,232.867,150.469C517.854,342.525,413.6,409.9,284.987,409.9Z"},"child":[]}]})(props);
-}function FaMoon (props) {
+function FaMoon (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"},"child":[]}]})(props);
 }function FaSun (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"},"child":[]}]})(props);
@@ -4344,19 +4349,19 @@ function useViewTransitionState(to, opts) {
 // THIS FILE IS AUTO GENERATED
 function IoIosCall (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M436.9 364.8c-14.7-14.7-50-36.8-67.4-45.1-20.2-9.7-27.6-9.5-41.9.8-11.9 8.6-19.6 16.6-33.3 13.6-13.7-2.9-40.7-23.4-66.9-49.5-26.2-26.2-46.6-53.2-49.5-66.9-2.9-13.8 5.1-21.4 13.6-33.3 10.3-14.3 10.6-21.7.8-41.9C184 125 162 89.8 147.2 75.1c-14.7-14.7-18-11.5-26.1-8.6 0 0-12 4.8-23.9 12.7-14.7 9.8-22.9 18-28.7 30.3-5.7 12.3-12.3 35.2 21.3 95 27.1 48.3 53.7 84.9 93.2 124.3l.1.1.1.1c39.5 39.5 76 66.1 124.3 93.2 59.8 33.6 82.7 27 95 21.3 12.3-5.7 20.5-13.9 30.3-28.7 7.9-11.9 12.7-23.9 12.7-23.9 2.9-8.1 6.2-11.4-8.6-26.1z"},"child":[]}]})(props);
-}function IoIosContact (props) {
-  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M256 48C148.5 48 60.1 129.5 49.2 234.1c-.8 7.2-1.2 14.5-1.2 21.9 0 7.4.4 14.7 1.2 21.9C60.1 382.5 148.5 464 256 464c114.9 0 208-93.1 208-208S370.9 48 256 48zm135.8 326.1c-22.7-8.6-59.5-21.2-82.4-28-2.4-.7-2.7-.9-2.7-10.7 0-8.1 3.3-16.3 6.6-23.3 3.6-7.5 7.7-20.2 9.2-31.6 4.2-4.9 10-14.5 13.6-32.9 3.2-16.2 1.7-22.1-.4-27.6-.2-.6-.5-1.2-.6-1.7-.8-3.8.3-23.5 3.1-38.8 1.9-10.5-.5-32.8-14.9-51.3-9.1-11.7-26.6-26-58.5-28h-17.5c-31.4 2-48.8 16.3-58 28-14.5 18.5-16.9 40.8-15 51.3 2.8 15.3 3.9 35 3.1 38.8-.2.7-.4 1.2-.6 1.8-2.1 5.5-3.7 11.4-.4 27.6 3.7 18.4 9.4 28 13.6 32.9 1.5 11.4 5.7 24 9.2 31.6 2.6 5.5 3.8 13 3.8 23.6 0 9.9-.4 10-2.6 10.7-23.7 7-58.9 19.4-80 27.8C91.6 341.4 76 299.9 76 256c0-48.1 18.7-93.3 52.7-127.3S207.9 76 256 76c48.1 0 93.3 18.7 127.3 52.7S436 207.9 436 256c0 43.9-15.6 85.4-44.2 118.1z"},"child":[]}]})(props);
 }function IoIosKeypad (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M394.6 341.2c-29.5 0-53.4 23.9-53.4 53.4s23.9 53.4 53.4 53.4 53.4-23.9 53.4-53.4-23.9-53.4-53.4-53.4zM256 341.2c-29.5 0-53.4 23.9-53.4 53.4S226.5 448 256 448s53.4-23.9 53.4-53.4-23.9-53.4-53.4-53.4zM117.4 341.2c-29.5 0-53.4 23.9-53.4 53.4S87.9 448 117.4 448s53.4-23.9 53.4-53.4-23.9-53.4-53.4-53.4zM394.6 202.6c-29.5 0-53.4 23.9-53.4 53.4s23.9 53.4 53.4 53.4S448 285.5 448 256s-23.9-53.4-53.4-53.4zM256 202.6c-29.5 0-53.4 23.9-53.4 53.4s23.9 53.4 53.4 53.4 53.4-23.9 53.4-53.4-23.9-53.4-53.4-53.4zM117.4 202.6C87.9 202.6 64 226.5 64 256s23.9 53.4 53.4 53.4 53.4-23.9 53.4-53.4-23.9-53.4-53.4-53.4zM394.6 64c-29.5 0-53.4 23.9-53.4 53.4s23.9 53.4 53.4 53.4 53.4-23.9 53.4-53.4S424.1 64 394.6 64zM256 64c-29.5 0-53.4 23.9-53.4 53.4s23.9 53.4 53.4 53.4 53.4-23.9 53.4-53.4S285.5 64 256 64zM117.4 64C87.9 64 64 87.9 64 117.4s23.9 53.4 53.4 53.4 53.4-23.9 53.4-53.4S146.9 64 117.4 64z"},"child":[]}]})(props);
 }function IoIosSend (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M435.9 64.9l-367.1 160c-6.5 3.1-6.3 12.4.3 15.3l99.3 56.1c5.9 3.3 13.2 2.6 18.3-1.8l195.8-168.8c1.3-1.1 4.4-3.2 5.6-2 1.3 1.3-.7 4.3-1.8 5.6L216.9 320.1c-4.7 5.3-5.4 13.1-1.6 19.1l64.9 104.1c3.2 6.3 12.3 6.2 15.2-.2L447.2 76c3.3-7.2-4.2-14.5-11.3-11.1z"},"child":[]}]})(props);
+}function IoMdPersonAdd (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 512 512"},"child":[{"tag":"path","attr":{"d":"M304 256c52.805 0 96-43.201 96-96s-43.195-96-96-96-96 43.201-96 96 43.195 96 96 96zm0 48c-63.598 0-192 32.402-192 96v48h384v-48c0-63.598-128.402-96-192-96zM112 224v-64H80v64H16v32h64v64h32v-64h64v-32h-64z"},"child":[]}]})(props);
 }
 
 // THIS FILE IS AUTO GENERATED
-function MdContactPhone (props) {
-  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"fill":"none","d":"M0 0h24v24H0z"},"child":[]},{"tag":"path","attr":{"d":"M22 3H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 1.99-.9 1.99-2L24 5c0-1.1-.9-2-2-2zM8 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H2v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1zm3.85-4h1.64L21 16l-1.99 1.99A7.512 7.512 0 0 1 16.28 14c-.18-.64-.28-1.31-.28-2s.1-1.36.28-2a7.474 7.474 0 0 1 2.73-3.99L21 8l-1.51 2h-1.64c-.22.63-.35 1.3-.35 2s.13 1.37.35 2z"},"child":[]}]})(props);
-}function MdCancel (props) {
-  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"fill":"none","d":"M0 0h24v24H0z"},"child":[]},{"tag":"path","attr":{"d":"M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"},"child":[]}]})(props);
+function BiMessageRounded (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"d":"M12 2C6.486 2 2 5.589 2 10c0 2.908 1.898 5.516 5 6.934V22l5.34-4.005C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm0 14h-.333L9 18v-2.417l-.641-.247C5.67 14.301 4 12.256 4 10c0-3.309 3.589-6 8-6s8 2.691 8 6-3.589 6-8 6z"},"child":[]}]})(props);
+}function BiMessageSquareX (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"d":"M16 2H8C4.691 2 2 4.691 2 8v13a1 1 0 0 0 1 1h13c3.309 0 6-2.691 6-6V8c0-3.309-2.691-6-6-6zm4 14c0 2.206-1.794 4-4 4H4V8c0-2.206 1.794-4 4-4h8c2.206 0 4 1.794 4 4v8z"},"child":[]},{"tag":"path","attr":{"d":"M15.292 7.295 12 10.587 8.708 7.295 7.294 8.709l3.292 3.292-3.292 3.292 1.414 1.414L12 13.415l3.292 3.292 1.414-1.414-3.292-3.292 3.292-3.292z"},"child":[]}]})(props);
 }
 
 var initialValue = {
@@ -4385,15 +4390,16 @@ var BabalFooter = function BabalFooter(_ref) {
       type: "ClearNumber"
     });
   };
-  return /*#__PURE__*/React__default.createElement(FooterContainer, null, /*#__PURE__*/React__default.createElement(BabalContainer, null, /*#__PURE__*/React__default.createElement(IoIosContact, {
-    size: 40
+  return /*#__PURE__*/React__default.createElement(FooterContainer, null, /*#__PURE__*/React__default.createElement(BabalContainer, null, /*#__PURE__*/React__default.createElement(IoMdPersonAdd, {
+    size: 30
   }), /*#__PURE__*/React__default.createElement(StyledNumber, {
     onClick: handleCall,
     digitColor: "green"
   }, /*#__PURE__*/React__default.createElement(IoIosCall, {
-    size: 40
-  })), /*#__PURE__*/React__default.createElement(MdCancel, {
     size: 40,
+    color: "white"
+  })), /*#__PURE__*/React__default.createElement(BiMessageSquareX, {
+    size: 30,
     onClick: function onClick(e) {
       return editNumber(e);
     }
@@ -4420,9 +4426,13 @@ var Keypad = function Keypad(_ref) {
     state = _useNumberContext.state,
     dispatch = _useNumberContext.dispatch;
   var _useState = useState$1(false),
-    _useState2 = _slicedToArray$1(_useState, 2),
-    showUi = _useState2[0],
-    setShowUi = _useState2[1];
+    _useState2 = _slicedToArray$1(_useState, 2);
+    _useState2[0];
+    _useState2[1];
+  var _useState3 = useState$1(false),
+    _useState4 = _slicedToArray$1(_useState3, 2),
+    showUi = _useState4[0],
+    setShowUi = _useState4[1];
   var handleCall = function handleCall() {
     setShowUi(!showUi);
     // connect(state.number);
@@ -4438,10 +4448,11 @@ var Keypad = function Keypad(_ref) {
     });
   };
   return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, showUi ? ( /*#__PURE__*/React__default.createElement(CalledUi, null, /*#__PURE__*/React__default.createElement(StyledNumber, {
+    digitColor: "red",
     onClick: handleHangUp
   }, /*#__PURE__*/React__default.createElement(IoIosCall, {
     size: 40,
-    color: "red"
+    color: "white"
   })))) : ( /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement(Display, null, state.number), /*#__PURE__*/React__default.createElement(NumberGrid, null, ["123", "456", "789", "*0#"].map(function (row, rowIndex) {
     return /*#__PURE__*/React__default.createElement(BabalContainer, {
       key: rowIndex
@@ -4458,6 +4469,11 @@ var Keypad = function Keypad(_ref) {
     handleCall: handleCall
   }))));
 };
+
+// THIS FILE IS AUTO GENERATED
+function MdContactPhone (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"fill":"none","d":"M0 0h24v24H0z"},"child":[]},{"tag":"path","attr":{"d":"M22 3H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 1.99-.9 1.99-2L24 5c0-1.1-.9-2-2-2zM8 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H2v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1zm3.85-4h1.64L21 16l-1.99 1.99A7.512 7.512 0 0 1 16.28 14c-.18-.64-.28-1.31-.28-2s.1-1.36.28-2a7.474 7.474 0 0 1 2.73-3.99L21 8l-1.51 2h-1.64c-.22.63-.35 1.3-.35 2s.13 1.37.35 2z"},"child":[]}]})(props);
+}
 
 var PhoneContext = /*#__PURE__*/createContext({
   number: "",
@@ -4486,12 +4502,12 @@ var usePhoneContext = function usePhoneContext() {
 };
 var SideMenuContext = /*#__PURE__*/createContext({
   path: "",
-  // Default value for the number
+  // Default value for the path
   setPath: function setPath() {} // No-op function as a placeholder
 });
 var SideMenuProvider = function SideMenuProvider(_ref2) {
   var children = _ref2.children;
-  var _useState3 = useState$1(null),
+  var _useState3 = useState$1("keypad"),
     _useState4 = _slicedToArray$1(_useState3, 2),
     path = _useState4[0],
     setPath = _useState4[1];
@@ -4510,12 +4526,8 @@ var useSideMenuContext = function useSideMenuContext() {
   return context;
 };
 
-// interface sideMenuProps {
-//   showChat: () => void;
-//   showKeyPad: () => void;
-//   showPhoneBook: () => void;
-// }
-var SideMenu = function SideMenu() {
+var SideMenu = function SideMenu(_ref) {
+  var logo = _ref.logo;
   var _useSideMenuContext = useSideMenuContext(),
     path = _useSideMenuContext.path,
     setPath = _useSideMenuContext.setPath;
@@ -4523,7 +4535,9 @@ var SideMenu = function SideMenu() {
     setPath(nav);
   };
   console.log(path);
-  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement(SideMenuWrapper, null, /*#__PURE__*/React__default.createElement(MenuDiv, null, /*#__PURE__*/React__default.createElement(Link, {
+  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement(SideMenuWrapper, null, /*#__PURE__*/React__default.createElement(MenuDiv, null, /*#__PURE__*/React__default.createElement(MenuIcon, null, /*#__PURE__*/React__default.createElement(Logo, {
+    src: logo
+  })), /*#__PURE__*/React__default.createElement(Link, {
     to: "keypad"
   }, /*#__PURE__*/React__default.createElement(MenuIcon, {
     active: path === "keypad"
@@ -4550,7 +4564,7 @@ var SideMenu = function SideMenu() {
     onClick: function onClick() {
       handleClick("chat");
     }
-  }, /*#__PURE__*/React__default.createElement(FaRocketchat, {
+  }, /*#__PURE__*/React__default.createElement(BiMessageRounded, {
     color: "purple",
     size: 30
   }))))));
@@ -39993,6 +40007,10 @@ var phoneContact = [{
   id: 7,
   number: "98123456076",
   contactName: "Tyla"
+}, {
+  id: 8,
+  number: "98123456098",
+  contactName: "suman"
 }];
 
 var ChatUi = function ChatUi() {
@@ -40000,17 +40018,30 @@ var ChatUi = function ChatUi() {
     number = _usePhoneContext.number;
     _usePhoneContext.setNumber;
   var _useState = useState$1(""),
-    _useState2 = _slicedToArray$1(_useState, 2);
-    _useState2[0];
-    _useState2[1];
+    _useState2 = _slicedToArray$1(_useState, 2),
+    message = _useState2[0],
+    setMessage = _useState2[1];
+  var _useState3 = useState$1(),
+    _useState4 = _slicedToArray$1(_useState3, 2);
+    _useState4[0];
+    _useState4[1];
+  var _useState5 = useState$1(null),
+    _useState6 = _slicedToArray$1(_useState5, 2),
+    selectedItemId = _useState6[0],
+    setSelectedItemId = _useState6[1];
   var location = useLocation();
   new URLSearchParams(location.search);
   // const number = params.get("number");
-  var _useState3 = useState$1(""),
-    _useState4 = _slicedToArray$1(_useState3, 2),
-    theme = _useState4[0],
-    setTheme = _useState4[1];
+  var _useState7 = useState$1(""),
+    _useState8 = _slicedToArray$1(_useState7, 2),
+    theme = _useState8[0],
+    setTheme = _useState8[1];
   var Option = default_1$1.Option;
+  var messageArray = JSON.parse(localStorage.getItem("MessageArray") || "[]");
+  var filteredMessage = messageArray.filter(function (item) {
+    return item.contactId === selectedItemId;
+  });
+  console.log("filte>>", filteredMessage);
   var items = [{
     label: ( /*#__PURE__*/React__default.createElement("button", {
       onClick: function onClick() {
@@ -40032,6 +40063,32 @@ var ChatUi = function ChatUi() {
     })),
     key: "1"
   }];
+  //getting details of contact while selecting
+  var handleSelectChange = function handleSelectChange(number, option) {
+    setSelectedItemId(option.id);
+  };
+  //Message send function
+  var send = function send() {
+    // Get the existing message array from local storage
+    var existingMessages = JSON.parse(localStorage.getItem("MessageArray") || "[]");
+    // Check if there's already an entry for the selected contactId
+    var contactMessages = existingMessages.find(function (item) {
+      return item.contactId === selectedItemId;
+    });
+    if (contactMessages) {
+      // If the contactId exists, push the new message into the existing array
+      contactMessages.message.push(message);
+    } else {
+      // If the contactId doesn't exist, create a new entry
+      existingMessages.push({
+        contactId: selectedItemId,
+        message: [message]
+      });
+    }
+    // Store the updated array back in local storage
+    localStorage.setItem("MessageArray", JSON.stringify(existingMessages));
+    setMessage("");
+  };
   return /*#__PURE__*/React__default.createElement(ChatWrapper, {
     color: theme
   }, /*#__PURE__*/React__default.createElement("div", {
@@ -40047,6 +40104,9 @@ var ChatUi = function ChatUi() {
   }, /*#__PURE__*/React__default.createElement(default_1$1, {
     defaultValue: number,
     showSearch: true,
+    onChange: function onChange(value, option) {
+      return handleSelectChange(value, option);
+    },
     placeholder: "Select a contact number",
     optionFilterProp: "children",
     filterOption: function filterOption(input, option) {
@@ -40060,6 +40120,7 @@ var ChatUi = function ChatUi() {
   }, phoneContact.map(function (option) {
     return /*#__PURE__*/React__default.createElement(Option, {
       key: option.id,
+      id: option.id,
       value: option.number,
       label: option.contactName
     }, option.contactName);
@@ -40074,10 +40135,31 @@ var ChatUi = function ChatUi() {
     }
   }, /*#__PURE__*/React__default.createElement(_Space, null, /*#__PURE__*/React__default.createElement(RefIcon$2, {
     style: {
-      color: "white"
+      color: "black"
     },
     size: 50
-  }))))), /*#__PURE__*/React__default.createElement("div", {
+  }))))), selectedItemId || filteredMessage != null || number ? ( /*#__PURE__*/React__default.createElement("div", null, filteredMessage.map(function (item, index) {
+    return /*#__PURE__*/React__default.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "flex-end",
+        flexDirection: "column",
+        gap: "2px",
+        backgroundColor: "red"
+      },
+      key: index
+    }, item.message.map(function (messageItem, subIndex) {
+      return /*#__PURE__*/React__default.createElement("p", {
+        style: {
+          width: "fit-content",
+          border: "1px solid purple",
+          borderRadius: "8px",
+          padding: "8px"
+        },
+        key: subIndex
+      }, messageItem);
+    }));
+  }))) : null, /*#__PURE__*/React__default.createElement("div", {
     style: {
       position: "absolute",
       bottom: 0,
@@ -40091,7 +40173,11 @@ var ChatUi = function ChatUi() {
     }
   }, /*#__PURE__*/React__default.createElement(ChatText, {
     width: "80%",
-    placeholder: "enter the message"
+    placeholder: "enter the message",
+    onChange: function onChange(e) {
+      return setMessage(e.target.value);
+    },
+    value: message
   }), /*#__PURE__*/React__default.createElement("div", {
     style: {
       display: "flex",
@@ -40100,11 +40186,12 @@ var ChatUi = function ChatUi() {
       width: "2rem",
       height: "2rem",
       borderRadius: "50%",
-      border: "2px solid blue",
+      // border: "2px solid ",
       right: 0
     }
   }, /*#__PURE__*/React__default.createElement(IoIosSend, {
     color: "#480b65",
+    onClick: send,
     size: 30
   }))));
 };
@@ -40114,24 +40201,10 @@ var PhoneBook = function PhoneBook() {
     _useState2 = _slicedToArray$1(_useState, 2),
     searchName = _useState2[0],
     setSearchName = _useState2[1];
-  var _usePhoneContext = usePhoneContext(),
-    setNumber = _usePhoneContext.setNumber;
-  var _useSideMenuContext = useSideMenuContext(),
-    setPath = _useSideMenuContext.setPath;
   var navigate = useNavigate();
-  var numberCall = function numberCall(number) {
-    console.log("number", number);
-  };
-  var numberChat = function numberChat(number) {
-    navigate("/chat");
-    setNumber(number);
-    setPath("chat");
-  };
-  console.log("searchname>>.", searchName);
-  var ascendingArray = phoneContact.sort(function (a, b) {
+  phoneContact.sort(function (a, b) {
     return a.contactName.localeCompare(b.contactName);
   });
-  console.log("ascending>>>", ascendingArray);
   var searchedContacts = phoneContact.filter(function (item) {
     var _a;
     if (item.contactName) {
@@ -40175,18 +40248,8 @@ var PhoneBook = function PhoneBook() {
       scrollBehavior: "smooth"
     }
   }, searchedContacts.length > 0 ? searchedContacts === null || searchedContacts === void 0 ? void 0 : searchedContacts.map(function (item, index) {
-    return /*#__PURE__*/React__default.createElement("span", {
-      key: index,
-      style: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "8px",
-        border: "1px solid gray",
-        boxShadow: "0px 0px 8px 2px rgba(159, 159, 174, 1);",
-        borderRadius: "8px",
-        backgroundColor: "#d5d3d39d"
-      }
+    return /*#__PURE__*/React__default.createElement(Span, {
+      key: index
     }, /*#__PURE__*/React__default.createElement("p", {
       onClick: function onClick() {
         navigate("/phoneDetail/".concat(item.id, "?item=").concat(encodeURIComponent(JSON.stringify(item))));
@@ -40194,32 +40257,13 @@ var PhoneBook = function PhoneBook() {
       style: {
         margin: 0,
         padding: 0,
-        width: "4rem",
-        textOverflow: "ellipsis",
-        overflow: "hidden",
-        whiteSpace: "nowrap"
+        width: "10rem"
+        // textOverflow: "ellipsis",
+        // overflow: "hidden",
+        // whiteSpace: "nowrap",
       }
-    }, item.contactName), /*#__PURE__*/React__default.createElement(FaRocketchat, {
-      onClick: function onClick() {
-        numberChat(item.number);
-      },
-      color: "purple",
-      size: 30
-    }), /*#__PURE__*/React__default.createElement(IoIosCall, {
-      size: 30,
-      color: "blue",
-      onClick: function onClick() {
-        numberCall(item.number);
-      }
-    }));
-  }) : ( /*#__PURE__*/React__default.createElement("p", {
-    style: {
-      color: "white",
-      textAlign: "center",
-      fontSize: "18px",
-      fontWeight: 600
-    }
-  }, " ", "Contact Number Not Found"))));
+    }, item.contactName));
+  }) : ( /*#__PURE__*/React__default.createElement(Span, null, " Contact Number Not Found"))));
 };
 
 var style$2 = {};
@@ -41773,6 +41817,11 @@ function IoCall (props) {
 }
 
 var SinglePhoneDetails = function SinglePhoneDetails() {
+  var _usePhoneContext = usePhoneContext(),
+    setNumber = _usePhoneContext.setNumber;
+  var _useSideMenuContext = useSideMenuContext(),
+    setPath = _useSideMenuContext.setPath;
+  var navigate = useNavigate();
   var location = useLocation();
   var params = new URLSearchParams(location.search);
   var item = params.get("item");
@@ -41782,6 +41831,14 @@ var SinglePhoneDetails = function SinglePhoneDetails() {
   } else {
     PhoneDetails = undefined;
   }
+  var numberCall = function numberCall(number) {
+    console.log("number", number);
+  };
+  var numberChat = function numberChat(number) {
+    navigate("/chat");
+    setNumber(number);
+    setPath("chat");
+  };
   console.log("phone>>>", PhoneDetails.contactName);
   return /*#__PURE__*/React__default.createElement("div", {
     style: {
@@ -41839,13 +41896,17 @@ var SinglePhoneDetails = function SinglePhoneDetails() {
       width: "4rem",
       backgroundColor: "purple"
     }
-  }, /*#__PURE__*/React__default.createElement(BsChat, null), /*#__PURE__*/React__default.createElement("p", {
+  }, /*#__PURE__*/React__default.createElement(IoCall, {
+    onClick: function onClick() {
+      numberCall(PhoneDetails.number);
+    }
+  }), /*#__PURE__*/React__default.createElement("p", {
     style: {
       fontSize: "12px",
       margin: 0,
       padding: 0
     }
-  }, "chat")), /*#__PURE__*/React__default.createElement("button", {
+  }, "call")), /*#__PURE__*/React__default.createElement("button", {
     style: {
       display: "flex",
       flexDirection: "column",
@@ -41854,13 +41915,17 @@ var SinglePhoneDetails = function SinglePhoneDetails() {
       width: "4rem",
       backgroundColor: "purple"
     }
-  }, /*#__PURE__*/React__default.createElement(IoCall, null), /*#__PURE__*/React__default.createElement("p", {
+  }, /*#__PURE__*/React__default.createElement(BsChat, {
+    onClick: function onClick() {
+      numberChat(PhoneDetails.number);
+    }
+  }), /*#__PURE__*/React__default.createElement("p", {
     style: {
       fontSize: "12px",
       margin: 0,
       padding: 0
     }
-  }, "call")))), /*#__PURE__*/React__default.createElement("div", {
+  }, "chat")))), /*#__PURE__*/React__default.createElement("div", {
     style: {
       marginTop: "2rem"
     }
@@ -42027,15 +42092,23 @@ var SinglePhoneDetails = function SinglePhoneDetails() {
 // export default BabalDialer;
 var BabalDialer = function BabalDialer(_ref) {
   var logo = _ref.logo,
-    width = _ref.width;
+    width = _ref.width,
+    digitColor = _ref.digitColor;
   return /*#__PURE__*/React__default.createElement(DialerMainWrapper, {
     width: width
-  }, /*#__PURE__*/React__default.createElement(SideMenu, null), /*#__PURE__*/React__default.createElement(DialerWrapper, null, /*#__PURE__*/React__default.createElement(BabalHeader, {
+  }, /*#__PURE__*/React__default.createElement(SideMenu, {
+    logo: logo
+  }), /*#__PURE__*/React__default.createElement(DialerWrapper, null, /*#__PURE__*/React__default.createElement(BabalHeader, {
     height: "50px",
     width: "inherit",
     logo: logo,
     type: false
   }), /*#__PURE__*/React__default.createElement(Routes, null, /*#__PURE__*/React__default.createElement(Route, {
+    path: "/",
+    element: /*#__PURE__*/React__default.createElement(Keypad, {
+      digitColor: digitColor
+    })
+  }), /*#__PURE__*/React__default.createElement(Route, {
     path: "contact",
     element: /*#__PURE__*/React__default.createElement(PhoneBook, null)
   }), /*#__PURE__*/React__default.createElement(Route, {
@@ -42043,7 +42116,9 @@ var BabalDialer = function BabalDialer(_ref) {
     element: /*#__PURE__*/React__default.createElement(ChatUi, null)
   }), /*#__PURE__*/React__default.createElement(Route, {
     path: "keypad",
-    element: /*#__PURE__*/React__default.createElement(Keypad, null)
+    element: /*#__PURE__*/React__default.createElement(Keypad, {
+      digitColor: digitColor
+    })
   }), /*#__PURE__*/React__default.createElement(Route, {
     path: "phoneDetail/:id",
     element: /*#__PURE__*/React__default.createElement(SinglePhoneDetails, null)

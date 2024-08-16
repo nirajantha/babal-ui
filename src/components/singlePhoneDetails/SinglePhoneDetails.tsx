@@ -1,10 +1,17 @@
 import { Avatar } from "antd";
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { BsChat } from "react-icons/bs";
 import { IoCall } from "react-icons/io5";
+import {
+  usePhoneContext,
+  useSideMenuContext,
+} from "../../context/PhoneContext";
 
 const SinglePhoneDetails = () => {
+  const { setNumber } = usePhoneContext();
+  const { setPath } = useSideMenuContext();
+  const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const item = params.get("item");
@@ -17,6 +24,15 @@ const SinglePhoneDetails = () => {
     PhoneDetails = undefined;
   }
 
+  const numberCall = (number: string) => {
+    console.log("number", number);
+  };
+
+  const numberChat = (number: string) => {
+    navigate(`/chat?number=${encodeURIComponent(number)}`);
+    setNumber(number);
+    setPath("chat");
+  };
   console.log("phone>>>", PhoneDetails.contactName);
 
   return (
@@ -81,8 +97,12 @@ const SinglePhoneDetails = () => {
               backgroundColor: "purple",
             }}
           >
-            <BsChat />
-            <p style={{ fontSize: "12px", margin: 0, padding: 0 }}>chat</p>
+            <IoCall
+              onClick={() => {
+                numberCall(PhoneDetails.number);
+              }}
+            />
+            <p style={{ fontSize: "12px", margin: 0, padding: 0 }}>call</p>
           </button>
           <button
             style={{
@@ -94,8 +114,12 @@ const SinglePhoneDetails = () => {
               backgroundColor: "purple",
             }}
           >
-            <IoCall />
-            <p style={{ fontSize: "12px", margin: 0, padding: 0 }}>call</p>
+            <BsChat
+              onClick={() => {
+                numberChat(PhoneDetails.number);
+              }}
+            />
+            <p style={{ fontSize: "12px", margin: 0, padding: 0 }}>chat</p>
           </button>
         </div>
       </div>

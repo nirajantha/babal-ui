@@ -4362,6 +4362,8 @@ function BiMessageRounded (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"d":"M12 2C6.486 2 2 5.589 2 10c0 2.908 1.898 5.516 5 6.934V22l5.34-4.005C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm0 14h-.333L9 18v-2.417l-.641-.247C5.67 14.301 4 12.256 4 10c0-3.309 3.589-6 8-6s8 2.691 8 6-3.589 6-8 6z"},"child":[]}]})(props);
 }function BiMessageSquareX (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"d":"M16 2H8C4.691 2 2 4.691 2 8v13a1 1 0 0 0 1 1h13c3.309 0 6-2.691 6-6V8c0-3.309-2.691-6-6-6zm4 14c0 2.206-1.794 4-4 4H4V8c0-2.206 1.794-4 4-4h8c2.206 0 4 1.794 4 4v8z"},"child":[]},{"tag":"path","attr":{"d":"M15.292 7.295 12 10.587 8.708 7.295 7.294 8.709l3.292 3.292-3.292 3.292 1.414 1.414L12 13.415l3.292 3.292 1.414-1.414-3.292-3.292 3.292-3.292z"},"child":[]}]})(props);
+}function BiSolidMessageSquareEdit (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"d":"M16 2H8C4.691 2 2 4.691 2 8v13a1 1 0 0 0 1 1h13c3.309 0 6-2.691 6-6V8c0-3.309-2.691-6-6-6zM8.999 17H7v-1.999l5.53-5.522 1.999 1.999L8.999 17zm6.473-6.465-1.999-1.999 1.524-1.523 1.999 1.999-1.524 1.523z"},"child":[]}]})(props);
 }
 
 var initialValue = {
@@ -4558,7 +4560,7 @@ var SideMenu = function SideMenu(_ref) {
     color: "purple",
     size: 30
   }))), /*#__PURE__*/React__default.createElement(Link, {
-    to: "chat"
+    to: "chatList"
   }, /*#__PURE__*/React__default.createElement(MenuIcon, {
     active: path === "chat",
     onClick: function onClick() {
@@ -40011,37 +40013,47 @@ var phoneContact = [{
   id: 8,
   number: "98123456098",
   contactName: "suman"
+}, {
+  id: 9,
+  number: "9815151515",
+  contactName: "simona"
 }];
 
 var ChatUi = function ChatUi() {
-  var _usePhoneContext = usePhoneContext(),
-    number = _usePhoneContext.number;
-    _usePhoneContext.setNumber;
   var _useState = useState$1(""),
     _useState2 = _slicedToArray$1(_useState, 2),
     message = _useState2[0],
     setMessage = _useState2[1];
   var _useState3 = useState$1(),
-    _useState4 = _slicedToArray$1(_useState3, 2);
-    _useState4[0];
-    _useState4[1];
+    _useState4 = _slicedToArray$1(_useState3, 2),
+    messageNumber = _useState4[0],
+    setMessageNumber = _useState4[1];
   var _useState5 = useState$1(null),
     _useState6 = _slicedToArray$1(_useState5, 2),
     selectedItemId = _useState6[0],
     setSelectedItemId = _useState6[1];
+  var _useState7 = useState$1(null),
+    _useState8 = _slicedToArray$1(_useState7, 2),
+    selectedUsername = _useState8[0],
+    setselectedUsername = _useState8[1];
+  var _useState9 = useState$1(true),
+    _useState10 = _slicedToArray$1(_useState9, 2),
+    showSelect = _useState10[0],
+    setShowSelect = _useState10[1];
   var location = useLocation();
   new URLSearchParams(location.search);
   // const number = params.get("number");
-  var _useState7 = useState$1(""),
-    _useState8 = _slicedToArray$1(_useState7, 2),
-    theme = _useState8[0],
-    setTheme = _useState8[1];
+  var _useState11 = useState$1(""),
+    _useState12 = _slicedToArray$1(_useState11, 2),
+    theme = _useState12[0],
+    setTheme = _useState12[1];
   var Option = default_1$1.Option;
   var messageArray = JSON.parse(localStorage.getItem("MessageArray") || "[]");
   var filteredMessage = messageArray.filter(function (item) {
     return item.contactId === selectedItemId;
   });
   console.log("filte>>", filteredMessage);
+  console.log("id>>", selectedItemId);
   var items = [{
     label: ( /*#__PURE__*/React__default.createElement("button", {
       onClick: function onClick() {
@@ -40064,8 +40076,11 @@ var ChatUi = function ChatUi() {
     key: "1"
   }];
   //getting details of contact while selecting
-  var handleSelectChange = function handleSelectChange(number, option) {
+  var handleSelectChange = function handleSelectChange(value, option) {
+    console.log("option>>", option.id);
     setSelectedItemId(option.id);
+    setselectedUsername(option.label);
+    setMessageNumber(option.value);
   };
   //Message send function
   var send = function send() {
@@ -40081,13 +40096,16 @@ var ChatUi = function ChatUi() {
     } else {
       // If the contactId doesn't exist, create a new entry
       existingMessages.push({
+        username: selectedUsername,
         contactId: selectedItemId,
+        number: messageNumber,
         message: [message]
       });
     }
     // Store the updated array back in local storage
     localStorage.setItem("MessageArray", JSON.stringify(existingMessages));
     setMessage("");
+    setShowSelect(false);
   };
   return /*#__PURE__*/React__default.createElement(ChatWrapper, {
     color: theme
@@ -40101,8 +40119,7 @@ var ChatUi = function ChatUi() {
       padding: "10px",
       borderBottom: "1px solid white"
     }
-  }, /*#__PURE__*/React__default.createElement(default_1$1, {
-    defaultValue: number,
+  }, showSelect ? ( /*#__PURE__*/React__default.createElement(default_1$1, {
     showSearch: true,
     onChange: function onChange(value, option) {
       return handleSelectChange(value, option);
@@ -40124,7 +40141,7 @@ var ChatUi = function ChatUi() {
       value: option.number,
       label: option.contactName
     }, option.contactName);
-  })), /*#__PURE__*/React__default.createElement(default_1$2, {
+  }))) : ( /*#__PURE__*/React__default.createElement("p", null, selectedUsername)), /*#__PURE__*/React__default.createElement(default_1$2, {
     menu: {
       items: items
     },
@@ -40138,14 +40155,17 @@ var ChatUi = function ChatUi() {
       color: "black"
     },
     size: 50
-  }))))), selectedItemId || filteredMessage != null || number ? ( /*#__PURE__*/React__default.createElement("div", null, filteredMessage.map(function (item, index) {
+  }))))), selectedItemId && filteredMessage !== null ? ( /*#__PURE__*/React__default.createElement("div", null, filteredMessage.map(function (item, index) {
     return /*#__PURE__*/React__default.createElement("div", {
       style: {
         display: "flex",
         alignItems: "flex-end",
         flexDirection: "column",
         gap: "2px",
-        backgroundColor: "red"
+        padding: "8px",
+        height: "18rem",
+        overflow: "scroll",
+        scrollBehavior: "smooth"
       },
       key: index
     }, item.message.map(function (messageItem, subIndex) {
@@ -40154,12 +40174,19 @@ var ChatUi = function ChatUi() {
           width: "fit-content",
           border: "1px solid purple",
           borderRadius: "8px",
-          padding: "8px"
+          padding: "8px",
+          margin: 0,
+          backgroundColor: "yellowgreen"
         },
         key: subIndex
       }, messageItem);
     }));
-  }))) : null, /*#__PURE__*/React__default.createElement("div", {
+  }))) : ( /*#__PURE__*/React__default.createElement("p", {
+    style: {
+      textAlign: "center",
+      width: "100%"
+    }
+  }, "send a message")), /*#__PURE__*/React__default.createElement("div", {
     style: {
       position: "absolute",
       bottom: 0,
@@ -41824,22 +41851,17 @@ var SinglePhoneDetails = function SinglePhoneDetails() {
   var navigate = useNavigate();
   var location = useLocation();
   var params = new URLSearchParams(location.search);
-  var item = params.get("item");
-  var PhoneDetails;
-  if (item) {
-    PhoneDetails = JSON.parse(item);
-  } else {
-    PhoneDetails = undefined;
-  }
+  var item = JSON.parse(params.get("item") || "");
+  console.log("item>>", item);
   var numberCall = function numberCall(number) {
     console.log("number", number);
   };
-  var numberChat = function numberChat(number) {
-    navigate("/chat");
-    setNumber(number);
+  var numberChat = function numberChat(userItem) {
+    navigate("/chat/".concat(userItem.id, "?item=").concat(encodeURIComponent(JSON.stringify(item))));
+    setNumber(userItem.number);
     setPath("chat");
   };
-  console.log("phone>>>", PhoneDetails.contactName);
+  console.log("phone>>>", item.contactName);
   return /*#__PURE__*/React__default.createElement("div", {
     style: {
       height: "89%",
@@ -41880,7 +41902,7 @@ var SinglePhoneDetails = function SinglePhoneDetails() {
     style: {
       margin: 0
     }
-  }, PhoneDetails.contactName), /*#__PURE__*/React__default.createElement("div", {
+  }, item.contactName), /*#__PURE__*/React__default.createElement("div", {
     style: {
       display: "flex",
       justifyContent: "space-around",
@@ -41895,12 +41917,11 @@ var SinglePhoneDetails = function SinglePhoneDetails() {
       alignItems: "center",
       width: "4rem",
       backgroundColor: "purple"
-    }
-  }, /*#__PURE__*/React__default.createElement(IoCall, {
+    },
     onClick: function onClick() {
-      numberCall(PhoneDetails.number);
+      numberCall(item.number);
     }
-  }), /*#__PURE__*/React__default.createElement("p", {
+  }, /*#__PURE__*/React__default.createElement(IoCall, null), /*#__PURE__*/React__default.createElement("p", {
     style: {
       fontSize: "12px",
       margin: 0,
@@ -41914,12 +41935,11 @@ var SinglePhoneDetails = function SinglePhoneDetails() {
       alignItems: "center",
       width: "4rem",
       backgroundColor: "purple"
-    }
-  }, /*#__PURE__*/React__default.createElement(BsChat, {
+    },
     onClick: function onClick() {
-      numberChat(PhoneDetails.number);
+      numberChat(item);
     }
-  }), /*#__PURE__*/React__default.createElement("p", {
+  }, /*#__PURE__*/React__default.createElement(BsChat, null), /*#__PURE__*/React__default.createElement("p", {
     style: {
       fontSize: "12px",
       margin: 0,
@@ -41929,7 +41949,263 @@ var SinglePhoneDetails = function SinglePhoneDetails() {
     style: {
       marginTop: "2rem"
     }
-  }, /*#__PURE__*/React__default.createElement("p", null, PhoneDetails.number)));
+  }, /*#__PURE__*/React__default.createElement("p", null, item.number)));
+};
+
+var ChatListUi = function ChatListUi() {
+  var _useState = useState$1(""),
+    _useState2 = _slicedToArray$1(_useState, 2),
+    searchName = _useState2[0],
+    setSearchName = _useState2[1];
+  var chatList = JSON.parse(localStorage.getItem("MessageArray") || "[]");
+  var navigate = useNavigate();
+  var searchedChatList = chatList.filter(function (item) {
+    var _a;
+    if (item.username) {
+      return (_a = item === null || item === void 0 ? void 0 : item.username) === null || _a === void 0 ? void 0 : _a.toLowerCase().startsWith(searchName === null || searchName === void 0 ? void 0 : searchName.toLocaleLowerCase());
+    } else {
+      return null;
+    }
+  });
+  return /*#__PURE__*/React__default.createElement("div", {
+    style: {
+      width: "100%",
+      height: "90%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "1rem",
+      padding: "8px",
+      boxSizing: "border-box",
+      position: "relative"
+    }
+  }, /*#__PURE__*/React__default.createElement("div", {
+    style: {
+      position: "absolute",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      bottom: "10px",
+      right: "20px",
+      width: "3rem",
+      height: "3rem",
+      borderRadius: "50%",
+      border: "2px solid purple"
+    }
+  }, /*#__PURE__*/React__default.createElement(BiSolidMessageSquareEdit, {
+    color: "purple",
+    size: 30,
+    onClick: function onClick() {
+      return navigate("/chat");
+    }
+  })), /*#__PURE__*/React__default.createElement("div", {
+    style: {
+      width: "100%",
+      display: "flex"
+    }
+  }, /*#__PURE__*/React__default.createElement(PhoneInput, {
+    placeholder: "search Chat",
+    value: searchName,
+    onChange: function onChange(e) {
+      setSearchName(e.target.value);
+    },
+    type: "text"
+  })), /*#__PURE__*/React__default.createElement("div", {
+    style: {
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      gap: "8px",
+      height: "55vh",
+      overflow: "scroll",
+      scrollBehavior: "smooth"
+    }
+  }, searchedChatList === null || searchedChatList === void 0 ? void 0 : searchedChatList.map(function (item, index) {
+    return /*#__PURE__*/React__default.createElement("div", {
+      key: index,
+      style: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        border: "1px solid purple",
+        borderRadius: "8px",
+        padding: "6px",
+        margin: 0,
+        backgroundColor: "yellowgreen"
+      },
+      onClick: function onClick() {
+        navigate("/chat/".concat(item.contactId, "?item=").concat(encodeURIComponent(JSON.stringify(item))));
+      }
+    }, item.username, /*#__PURE__*/React__default.createElement("p", {
+      style: {
+        color: "gray",
+        margin: 0,
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap",
+        width: "12rem",
+        overflow: "hidden"
+      }
+    }, item.message.reverse()[0]));
+  })));
+};
+
+var SingleChatUi = function SingleChatUi() {
+  var _a, _b, _c, _d, _e;
+  var _useState = useState$1(""),
+    _useState2 = _slicedToArray$1(_useState, 2),
+    theme = _useState2[0],
+    setTheme = _useState2[1];
+  var _useState3 = useState$1(""),
+    _useState4 = _slicedToArray$1(_useState3, 2),
+    sendMessage = _useState4[0],
+    setSendMessage = _useState4[1];
+  var location = useLocation();
+  var params = new URLSearchParams(location.search);
+  var userItem = JSON.parse(params.get("item") || "");
+  var userMessage = JSON.parse(localStorage.getItem("MessageArray") || "");
+  var selectedUserMessage = userMessage.filter(function (item) {
+    return item.contactId === userItem.contactId;
+  });
+  var selectedUserMessagePhoneProfile = userMessage.filter(function (item) {
+    return item.contactId === userItem.id;
+  });
+  var items = [{
+    label: ( /*#__PURE__*/React__default.createElement("button", {
+      onClick: function onClick() {
+        setTheme("#17a589");
+      },
+      style: {
+        backgroundColor: "#17a589 "
+      }
+    })),
+    key: "0"
+  }, {
+    label: ( /*#__PURE__*/React__default.createElement("button", {
+      onClick: function onClick() {
+        setTheme("#8e44ad");
+      },
+      style: {
+        backgroundColor: "#8e44ad"
+      }
+    })),
+    key: "1"
+  }];
+  //Message send function
+  var send = function send() {
+    // Get the existing message array from local storage
+    var existingMessages = JSON.parse(localStorage.getItem("MessageArray") || "[]");
+    // Check if there's already an entry for the selected contactId
+    var contactMessages = existingMessages.find(function (item) {
+      return item.contactId === userItem.id || item.contactId === userItem.contactId;
+    });
+    if (contactMessages) {
+      // If the contactId exists, push the new message into the existing array
+      contactMessages.message.push(sendMessage);
+    } else {
+      existingMessages.push({
+        username: userItem.contactName,
+        contactId: userItem.id,
+        number: userItem.number,
+        message: [sendMessage]
+      });
+    }
+    // Store the updated array back in local storage
+    localStorage.setItem("MessageArray", JSON.stringify(existingMessages));
+    setSendMessage("");
+  };
+  return /*#__PURE__*/React__default.createElement(ChatWrapper, {
+    color: theme
+  }, /*#__PURE__*/React__default.createElement("div", {
+    style: {
+      margin: 0,
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      position: "relative",
+      padding: "10px",
+      borderBottom: "1px solid white"
+    }
+  }, /*#__PURE__*/React__default.createElement("div", null, userItem.id ? userItem === null || userItem === void 0 ? void 0 : userItem.contactName : userItem === null || userItem === void 0 ? void 0 : userItem.username), /*#__PURE__*/React__default.createElement(default_1$2, {
+    menu: {
+      items: items
+    },
+    trigger: ["click"]
+  }, /*#__PURE__*/React__default.createElement("a", {
+    onClick: function onClick(e) {
+      return e.preventDefault();
+    }
+  }, /*#__PURE__*/React__default.createElement(_Space, null, /*#__PURE__*/React__default.createElement(RefIcon$2, {
+    style: {
+      color: "black"
+    },
+    size: 50
+  }))))), /*#__PURE__*/React__default.createElement("div", null, /*#__PURE__*/React__default.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "flex-end",
+      flexDirection: "column",
+      gap: "2px",
+      padding: "8px"
+    }
+  }, userItem.id ? ( /*#__PURE__*/React__default.createElement(React__default.Fragment, null, ((_a = selectedUserMessagePhoneProfile[0]) === null || _a === void 0 ? void 0 : _a.message.length) > 0 ? ( /*#__PURE__*/React__default.createElement(React__default.Fragment, null, (_c = (_b = selectedUserMessagePhoneProfile[0]) === null || _b === void 0 ? void 0 : _b.message) === null || _c === void 0 ? void 0 : _c.map(function (messageItem, subIndex) {
+    return /*#__PURE__*/React__default.createElement("p", {
+      style: {
+        width: "fit-content",
+        border: "1px solid purple",
+        borderRadius: "8px",
+        padding: "8px",
+        margin: 0,
+        backgroundColor: "yellowgreen"
+      },
+      key: subIndex
+    }, messageItem);
+  }))) : ( /*#__PURE__*/React__default.createElement(React__default.Fragment, null, "Send a Message")))) : ( /*#__PURE__*/React__default.createElement(React__default.Fragment, null, (_e = (_d = selectedUserMessage[0]) === null || _d === void 0 ? void 0 : _d.message) === null || _e === void 0 ? void 0 : _e.map(function (messageItem, subIndex) {
+    return /*#__PURE__*/React__default.createElement("p", {
+      style: {
+        width: "fit-content",
+        border: "1px solid purple",
+        borderRadius: "8px",
+        padding: "8px",
+        margin: 0,
+        backgroundColor: "yellowgreen"
+      },
+      key: subIndex
+    }, messageItem);
+  }))))), /*#__PURE__*/React__default.createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: 0,
+      width: "100%",
+      display: "flex",
+      gap: "10px",
+      boxSizing: "border-box",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "8px"
+    }
+  }, /*#__PURE__*/React__default.createElement(ChatText, {
+    width: "80%",
+    placeholder: "enter the message",
+    onChange: function onChange(e) {
+      return setSendMessage(e.target.value);
+    },
+    value: sendMessage
+  }), /*#__PURE__*/React__default.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "2rem",
+      height: "2rem",
+      borderRadius: "50%",
+      // border: "2px solid ",
+      right: 0
+    }
+  }, /*#__PURE__*/React__default.createElement(IoIosSend, {
+    color: "#480b65",
+    onClick: send,
+    size: 30
+  }))));
 };
 
 // import React, { useState } from "react";
@@ -42112,8 +42388,14 @@ var BabalDialer = function BabalDialer(_ref) {
     path: "contact",
     element: /*#__PURE__*/React__default.createElement(PhoneBook, null)
   }), /*#__PURE__*/React__default.createElement(Route, {
+    path: "chatList",
+    element: /*#__PURE__*/React__default.createElement(ChatListUi, null)
+  }), /*#__PURE__*/React__default.createElement(Route, {
     path: "chat",
     element: /*#__PURE__*/React__default.createElement(ChatUi, null)
+  }), /*#__PURE__*/React__default.createElement(Route, {
+    path: "chat/:id",
+    element: /*#__PURE__*/React__default.createElement(SingleChatUi, null)
   }), /*#__PURE__*/React__default.createElement(Route, {
     path: "keypad",
     element: /*#__PURE__*/React__default.createElement(Keypad, {

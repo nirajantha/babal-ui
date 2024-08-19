@@ -6,14 +6,14 @@ import { ChatText, ChatWrapper } from "../styled/StyledComponents";
 import { MoreOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Select, Dropdown, Space, message } from "antd";
-import { usePhoneContext } from "../../context/PhoneContext";
 import { phoneContact } from "../data/Data";
 
 const ChatUi = () => {
-  const { number, setNumber } = usePhoneContext();
   const [message, setMessage] = useState<string>("");
   const [messageNumber, setMessageNumber] = useState();
   const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
+  const [selectedUsername, setselectedUsername] = useState<string | null>(null);
+  const [showSelect, setShowSelect] = useState<boolean>(true);
 
   const location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -27,6 +27,7 @@ const ChatUi = () => {
     (item) => item.contactId === selectedItemId
   );
   console.log("filte>>", filteredMessage);
+  console.log("id>>", selectedItemId);
 
   const items: MenuProps["items"] = [
     {
@@ -53,11 +54,12 @@ const ChatUi = () => {
     },
   ];
   //getting details of contact while selecting
-  const handleSelectChange = (number, option) => {
+  const handleSelectChange = (value, option) => {
+    console.log("option>>", option.id);
     setSelectedItemId(option.id);
-    setMessageNumber(number);
+    setselectedUsername(option.label);
+    setMessageNumber(option.value);
   };
-  console.log();
 
   //Message send function
 
@@ -78,8 +80,9 @@ const ChatUi = () => {
     } else {
       // If the contactId doesn't exist, create a new entry
       existingMessages.push({
+        username: selectedUsername,
         contactId: selectedItemId,
-        number: number,
+        number: messageNumber,
         message: [message],
       });
     }
@@ -87,6 +90,7 @@ const ChatUi = () => {
     // Store the updated array back in local storage
     localStorage.setItem("MessageArray", JSON.stringify(existingMessages));
     setMessage("");
+    setShowSelect(false);
   };
   return (
     <ChatWrapper color={theme}>
@@ -101,32 +105,35 @@ const ChatUi = () => {
           borderBottom: "1px solid white",
         }}
       >
-        <Select
-          defaultValue={number}
-          showSearch
-          onChange={(value, option) => handleSelectChange(value, option)}
-          placeholder="Select a contact number"
-          optionFilterProp="children"
-          filterOption={(input, option) => {
-            const label = option?.label;
-            // Ensure label is a string before calling toLowerCase
-            return typeof label === "string"
-              ? label.toLowerCase().includes(input.toLowerCase())
-              : false;
-          }}
-          style={{ width: 200 }}
-        >
-          {phoneContact.map((option) => (
-            <Option
-              key={option.id}
-              id={option.id}
-              value={option.number}
-              label={option.contactName}
-            >
-              {option.contactName}
-            </Option>
-          ))}
-        </Select>
+        {showSelect ? (
+          <Select
+            showSearch
+            onChange={(value, option) => handleSelectChange(value, option)}
+            placeholder="Select a contact number"
+            optionFilterProp="children"
+            filterOption={(input, option) => {
+              const label = option?.label;
+              // Ensure label is a string before calling toLowerCase
+              return typeof label === "string"
+                ? label.toLowerCase().includes(input.toLowerCase())
+                : false;
+            }}
+            style={{ width: 200 }}
+          >
+            {phoneContact.map((option) => (
+              <Option
+                key={option.id}
+                id={option.id}
+                value={option.number}
+                label={option.contactName}
+              >
+                {option.contactName}
+              </Option>
+            ))}
+          </Select>
+        ) : (
+          <p>{selectedUsername}</p>
+        )}
 
         <Dropdown menu={{ items }} trigger={["click"]}>
           <a onClick={(e) => e.preventDefault()}>
@@ -137,7 +144,7 @@ const ChatUi = () => {
         </Dropdown>
       </div>
 
-      {selectedItemId || filteredMessage != null || number ? (
+      {selectedItemId && filteredMessage !== null ? (
         <div>
           {filteredMessage.map((item, index) => (
             <div
@@ -146,7 +153,10 @@ const ChatUi = () => {
                 alignItems: "flex-end",
                 flexDirection: "column",
                 gap: "2px",
-                backgroundColor: "red",
+                padding: "8px",
+                height: "18rem",
+                overflow: "scroll",
+                scrollBehavior: "smooth",
               }}
               key={index}
             >
@@ -157,6 +167,8 @@ const ChatUi = () => {
                     border: "1px solid purple",
                     borderRadius: "8px",
                     padding: "8px",
+                    margin: 0,
+                    backgroundColor: "yellowgreen",
                   }}
                   key={subIndex}
                 >
@@ -166,7 +178,9 @@ const ChatUi = () => {
             </div>
           ))}
         </div>
-      ) : null}
+      ) : (
+        <p style={{ textAlign: "center", width: "100%" }}>send a message</p>
+      )}
 
       <div
         style={{

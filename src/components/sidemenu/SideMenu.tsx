@@ -57,7 +57,7 @@ const SideMenu = ({ logo }: sideMenuProps) => {
               <MdContactPhone color="purple" size={30} />
             </MenuIcon>
           </Link>
-          <Link to="chat">
+          <Link to="chatList">
             <MenuIcon
               active={path === "chat"}
               onClick={() => {

@@ -14,26 +14,21 @@ const SinglePhoneDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const item = params.get("item");
-
-  let PhoneDetails;
-
-  if (item) {
-    PhoneDetails = JSON.parse(item);
-  } else {
-    PhoneDetails = undefined;
-  }
+  const item = JSON.parse(params.get("item") || "");
+  console.log("item>>", item);
 
   const numberCall = (number: string) => {
     console.log("number", number);
   };
 
-  const numberChat = (number: string) => {
-    navigate(`/chat?number=${encodeURIComponent(number)}`);
-    setNumber(number);
+  const numberChat = (userItem) => {
+    navigate(
+      `/chat/${userItem.id}?item=${encodeURIComponent(JSON.stringify(item))}`
+    );
+    setNumber(userItem.number);
     setPath("chat");
   };
-  console.log("phone>>>", PhoneDetails.contactName);
+  console.log("phone>>>", item.contactName);
 
   return (
     <div
@@ -77,7 +72,7 @@ const SinglePhoneDetails = () => {
             size={50}
           />
         </div>
-        <p style={{ margin: 0 }}>{PhoneDetails.contactName}</p>
+        <p style={{ margin: 0 }}>{item.contactName}</p>
         <div
           style={{
             display: "flex",
@@ -96,12 +91,11 @@ const SinglePhoneDetails = () => {
               width: "4rem",
               backgroundColor: "purple",
             }}
+            onClick={() => {
+              numberCall(item.number);
+            }}
           >
-            <IoCall
-              onClick={() => {
-                numberCall(PhoneDetails.number);
-              }}
-            />
+            <IoCall />
             <p style={{ fontSize: "12px", margin: 0, padding: 0 }}>call</p>
           </button>
           <button
@@ -113,19 +107,18 @@ const SinglePhoneDetails = () => {
               width: "4rem",
               backgroundColor: "purple",
             }}
+            onClick={() => {
+              numberChat(item);
+            }}
           >
-            <BsChat
-              onClick={() => {
-                numberChat(PhoneDetails.number);
-              }}
-            />
+            <BsChat />
             <p style={{ fontSize: "12px", margin: 0, padding: 0 }}>chat</p>
           </button>
         </div>
       </div>
 
       <div style={{ marginTop: "2rem" }}>
-        <p>{PhoneDetails.number}</p>
+        <p>{item.number}</p>
       </div>
     </div>
   );

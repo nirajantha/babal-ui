@@ -43,6 +43,7 @@ export class BabalUi {
       background?: string;
       color?: string;
       textColor?: string;
+      
     },
     key: string,
     digitColor?: string,

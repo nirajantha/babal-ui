@@ -39,4 +39,9 @@ export const phoneContact = [
     number: "98123456098",
     contactName: "suman",
   },
+  {
+    id: 9,
+    number: "9815151515",
+    contactName: "simona",
+  },
 ];

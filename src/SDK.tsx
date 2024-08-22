@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import "./main.css";
 
 import {
   BabalButton,
@@ -43,7 +44,6 @@ export class BabalUi {
       background?: string;
       color?: string;
       textColor?: string;
-      
     },
     key: string,
     digitColor?: string,

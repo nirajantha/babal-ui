@@ -10,6 +10,7 @@ import { IoIosCall } from "react-icons/io";
 import BabalContainer from "../container/BabalContainer";
 import BabalFooter from "../footer/DialerFooter";
 import { useNumberContext } from "../context/CreateContext";
+import { useNavigate } from "react-router-dom";
 interface keypadprops {
   digitColor?: string;
 }
@@ -31,10 +32,9 @@ const Keypad = ({ digitColor }: keypadprops) => {
   const { state, dispatch } = useNumberContext();
   const [english, setEnglish] = useState(false);
   const [showUi, setShowUi] = useState<boolean>(false);
-
+  const navigate = useNavigate();
   const handleCall = () => {
-    setShowUi(!showUi);
-    // connect(state.number);
+    navigate("/call");
   };
 
   const handleHangUp = () => {

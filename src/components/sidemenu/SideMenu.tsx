@@ -22,6 +22,18 @@ interface sideMenuProps {
 }
 const SideMenu = ({ logo }: sideMenuProps) => {
   const { path, setPath } = useSideMenuContext();
+  const location = useLocation();
+  const way = location.pathname.split("/");
+  let lastway = way.pop();
+
+  if (lastway === "") {
+    lastway = "keypad";
+  } else if (lastway === "newchat") {
+    lastway = "chat";
+  } else {
+  }
+
+  console.log("location>>", lastway);
 
   const handleClick = (nav: any) => {
     setPath(nav);
@@ -37,7 +49,7 @@ const SideMenu = ({ logo }: sideMenuProps) => {
             <Logo src={logo} />
           </MenuIcon>
           <Link to="keypad">
-            <MenuIcon active={path === "keypad"}>
+            <MenuIcon active={lastway === "keypad"}>
               <IoIosKeypad
                 color="purple"
                 size={30}
@@ -49,7 +61,7 @@ const SideMenu = ({ logo }: sideMenuProps) => {
           </Link>
           <Link to="contact">
             <MenuIcon
-              active={path === "contact"}
+              active={lastway === "contact"}
               onClick={() => {
                 handleClick("contact");
               }}
@@ -57,9 +69,9 @@ const SideMenu = ({ logo }: sideMenuProps) => {
               <MdContactPhone color="purple" size={30} />
             </MenuIcon>
           </Link>
-          <Link to="chatList">
+          <Link to="chat">
             <MenuIcon
-              active={path === "chat"}
+              active={lastway === "chat"}
               onClick={() => {
                 handleClick("chat");
               }}

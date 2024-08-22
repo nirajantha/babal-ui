@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PhoneInput } from "../styled/StyledComponents";
+import { MessageBox, PhoneInput } from "../styled/StyledComponents";
 import { BiSolidMessageSquareEdit } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
@@ -8,15 +8,31 @@ const ChatListUi = () => {
   const chatList = JSON.parse(localStorage.getItem("MessageArray") || "[]");
   const navigate = useNavigate();
 
-  const searchedChatList = chatList.filter((item: { username: string }) => {
-    if (item.username) {
-      return item?.username
-        ?.toLowerCase()
-        .startsWith(searchName?.toLocaleLowerCase());
-    } else {
-      return null;
-    }
+  const recentChats = chatList.map((user) => {
+    const lastMessage = user?.message[user?.message?.length - 1];
+    return {
+      username: user?.username,
+      contactId: user?.contactId,
+      message: lastMessage?.message,
+      date: new Date(lastMessage?.date),
+    };
   });
+
+  const sortedRecentChats = recentChats.sort((a, b) => b.date - a.date);
+  console.log("sortedRecentChats", sortedRecentChats);
+
+  const searchedChatList = sortedRecentChats.filter(
+    (item: { username: string }) => {
+      if (item.username) {
+        return item?.username
+          ?.toLowerCase()
+          .startsWith(searchName?.toLocaleLowerCase());
+      } else {
+        return null;
+      }
+    }
+  );
+  console.log("searchedChatList", searchedChatList);
 
   return (
     <div
@@ -44,17 +60,18 @@ const ChatListUi = () => {
           height: "3rem",
           borderRadius: "50%",
           border: "2px solid purple",
+          cursor: "pointer",
         }}
       >
         <BiSolidMessageSquareEdit
           color="purple"
           size={30}
-          onClick={() => navigate("/chat")}
+          onClick={() => navigate("/newchat")}
         />
       </div>
       <div style={{ width: "100%", display: "flex" }}>
         <PhoneInput
-          placeholder="search Chat"
+          placeholder="Search Chat"
           value={searchName}
           onChange={(e) => {
             setSearchName(e.target.value);
@@ -75,18 +92,9 @@ const ChatListUi = () => {
         }}
       >
         {searchedChatList?.map((item, index) => (
-          <div
+          <MessageBox
+            width="100%"
             key={index}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              border: "1px solid purple",
-              borderRadius: "8px",
-              padding: "6px",
-              margin: 0,
-              backgroundColor: "yellowgreen",
-            }}
             onClick={() => {
               navigate(
                 `/chat/${item.contactId}?item=${encodeURIComponent(
@@ -95,11 +103,11 @@ const ChatListUi = () => {
               );
             }}
           >
-            {item.username}
+            {item?.username}
 
             <p
               style={{
-                color: "gray",
+                color: "#605f5f",
                 margin: 0,
                 textOverflow: "ellipsis",
                 whiteSpace: "nowrap",
@@ -107,9 +115,9 @@ const ChatListUi = () => {
                 overflow: "hidden",
               }}
             >
-              {item.message.reverse()[0]}
+              {item?.message}
             </p>
-          </div>
+          </MessageBox>
         ))}
       </div>
     </div>

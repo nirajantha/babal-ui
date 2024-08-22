@@ -3,6 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import babel from "@rollup/plugin-babel";
+import postcss from "rollup-plugin-postcss";
 
 import packageJson from "./package.json" assert { type: "json" };
 import json from "@rollup/plugin-json";
@@ -26,6 +27,11 @@ export default [
       resolve({
         browser: true,
         preferBuiltins: true, // Add this line
+      }),
+      postcss({
+        // Processes CSS files
+        extensions: [".css"],
+        extract: false, // Set to true if you want to extract CSS to a separate file
       }),
       commonjs(),
       babel({

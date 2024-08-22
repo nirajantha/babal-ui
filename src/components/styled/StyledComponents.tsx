@@ -1,11 +1,10 @@
-import styled from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 interface styleHeaderProps {
   width: string | number;
   height: string | number;
 }
 
 export const HeaderWrapper = styled.header<styleHeaderProps>`
-  box-sizing: border-box;
   display: flex;
   width: ${(props) => props.width};
   justify-content: space-between;
@@ -52,15 +51,17 @@ interface styledNumberProps {
   digitColor?: string;
 }
 
-export const StyledNumber = styled.div<styledNumberProps>`
+export const StyledNumber = styled.div<
+  styledNumberProps & { rounded?: boolean }
+>`
   width: 4rem;
   height: 4rem;
   background: ${(props) =>
-    props.digitColor ? props.digitColor : "rgba(255, 255, 255, 0.25)"};
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    props.digitColor ? props.digitColor : "rgba(255, 255, 255, 0.747)"};
+  box-shadow: 0 8px 32px 0 rgba(174, 175, 195, 0.37);
   backdrop-filter: blur(2.5px);
   -webkit-backdrop-filter: blur(2.5px);
-  border-radius: 50%;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   font-size: 1.5rem;
   font-weight: 600;
@@ -70,6 +71,14 @@ export const StyledNumber = styled.div<styledNumberProps>`
   gap: 0;
   flex-direction: column;
   justify-content: center;
+  ${({ rounded }) =>
+    rounded &&
+    css`
+      border-radius: 50%;
+    `}
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const InputStyledDiv = styled.div`
@@ -154,7 +163,6 @@ interface sideMenuProps {
   isOpen: boolean;
 }
 export const SideMenuWrapper = styled.section`
-  box-sizing: border-box;
   width: 80px;
   background-color: #d7d3d3;
   border-bottom-left-radius: 8px;
@@ -211,7 +219,7 @@ export const PhoneInput = styled.input`
   border-radius: 8px;
   background: transparent;
   width: 100%;
-  border: 2px solid #b9b6b69c;
+  border: 2px solid #4140409c;
   color: ${({ theme }) => theme.color};
   font-weight: 500;
 
@@ -219,6 +227,7 @@ export const PhoneInput = styled.input`
     color: ${({ theme }) =>
       theme.color}; /* Change this to your desired color */
     font-weight: 500;
+    font-size: 14px;
   }
 
   &:focus {
@@ -228,6 +237,44 @@ export const PhoneInput = styled.input`
     }
   }
 `;
+const scaleUp = keyframes`
+  0% {
+    transform: scale(0.5);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
+interface messageProps {
+  width: number | string;
+}
+export const MessageBox = styled.div<messageProps & { isNew?: boolean }>`
+  width: ${(props) => props.width};
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid purple;
+  border-radius: 8px;
+  padding: 6px;
+  margin: 0;
+  background-color: #f0ddff;
+  ${({ isNew }) =>
+    isNew &&
+    css`
+      animation: ${scaleUp} 0.3s ease-out;
+    `}
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 export const Span = styled.span`
   display: flex;
   justify-content: space-between;
@@ -237,14 +284,33 @@ export const Span = styled.span`
   box-shadow: 0px 0px 8px 2px rgba(159, 159, 174, 1);
   border-radius: 8px;
   background-color: #d5d3d39d;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 interface chatProps {
   color: string;
 }
+
 export const ChatWrapper = styled.section<chatProps>`
   position: relative;
-  height: 90.55%;
+  height: 94%;
   background: ${(props) => props.color};
+`;
+export const PressDiv = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 1000;
 `;
 interface chatTextProps {
   width: number | string;
@@ -252,6 +318,7 @@ interface chatTextProps {
 export const ChatText = styled.textarea<chatTextProps>`
   padding: 6px;
   border-radius: 8px;
+  height: 3rem;
   background: transparent;
   width: ${(props) => props.width};
   border: 2px solid #adacb0ce;

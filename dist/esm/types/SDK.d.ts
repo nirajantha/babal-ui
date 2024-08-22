@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import "./main.css";
 import { BabalButton, BabalContainer, BabalDialer, BabalHeader, BabalInput } from "./components";
 import { menuItems } from "./components/header/BabalHeader";
 export declare class BabalUi {

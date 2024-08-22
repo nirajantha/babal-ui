@@ -6,7 +6,7 @@ import { ContactWrapper, PhoneInput, Span } from "../styled/StyledComponents";
 import { phoneContact } from "../data/Data";
 
 const PhoneBook = () => {
-  const [searchName, setSearchName] = useState<string>("");
+  const [searchValue, setSearchValue] = useState<string>("");
 
   const navigate = useNavigate();
 
@@ -14,27 +14,35 @@ const PhoneBook = () => {
     a.contactName.localeCompare(b.contactName)
   );
 
-  const searchedContacts = phoneContact.filter((item) => {
-    if (item.contactName) {
-      return item?.contactName
-        ?.toLowerCase()
-        .startsWith(searchName?.toLocaleLowerCase());
-    } else {
-      return null;
-    }
+  // const searchedContacts = ascendingArray.filter((item) => {
+  //   if (item.contactName) {
+  //     return item?.contactName
+  //       ?.toLowerCase()
+  //       .startsWith(searchValue?.toLocaleLowerCase());
+  //   } else {
+  //     return null;
+  //   }
+  // });
+  const searchedContacts = ascendingArray.filter((item) => {
+    const searchLower = searchValue?.toLocaleLowerCase();
+    // the contact name or contact number matches the search value
+    const nameMatch = item.contactName?.toLowerCase().startsWith(searchLower);
+    const numberMatch = item.number?.startsWith(searchValue);
+
+    return nameMatch || numberMatch;
   });
 
   return (
     <ContactWrapper>
       <div
         style={{
-          padding: "20px",
+          padding: "10px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           borderBottomRightRadius: "8px",
           borderBottomLeftRadius: "8px",
-          // backgroundColor: "orange",
+          backgroundColor: "#f0ddff",
         }}
       >
         <p
@@ -47,11 +55,12 @@ const PhoneBook = () => {
         >
           Phone Book List
         </p>
+
         <PhoneInput
-          placeholder="search contact list"
-          value={searchName}
+          placeholder="Search Contact Name... "
+          value={searchValue}
           onChange={(e) => {
-            setSearchName(e.target.value);
+            setSearchValue(e.target.value);
           }}
           type="text"
         />
@@ -59,7 +68,7 @@ const PhoneBook = () => {
 
       <div
         style={{
-          height: "70%",
+          height: "80%",
           padding: "8px",
           display: "flex",
           flexDirection: "column",

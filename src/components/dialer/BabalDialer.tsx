@@ -175,12 +175,12 @@ import { DialerMainWrapper, DialerWrapper } from "../styled/StyledComponents";
 import { Route, Routes } from "react-router-dom";
 import Keypad from "../keypad/Keypad";
 import SideMenu from "../sidemenu/SideMenu";
-import ChatUi from "../chatUI/ChatUi";
-import PhoneBook from "../phoneBook/PhoneBook";
-import SinglePhoneDetails from "../singlePhoneDetails/SinglePhoneDetails";
-import ChatListUi from "../chatList/ChatListUi";
-import SingleChatUi from "../chatUI/SingleChatUi";
-import PhoneCallUi from "../phoneCallUi/PhoneCallUi";
+import ChatListUi from "../pages/chatList/ChatListUi";
+import PhoneCallUi from "../pages/phoneCallUi/PhoneCallUi";
+import SingleChatUi from "../pages/chatUI/SingleChatUi";
+import SinglePhoneDetails from "../pages/phoneBook/SinglePhoneDetails";
+import ChatUi from "../pages/chatUI/ChatUi";
+import PhoneBook from "../pages/phoneBook/PhoneBook";
 // import { TwilioProvider, useTwilio } from "../../context/TwilioContext";
 
 interface DialerProps {

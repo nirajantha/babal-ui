@@ -10,10 +10,9 @@ export declare const ItemLink: import("styled-components/dist/types").IStyledCom
 export declare const ThemeToggleBtn: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").DetailedHTMLProps<import("react").ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, never>> & string;
 interface styledNumberProps {
     digitColor?: string;
-}
-export declare const StyledNumber: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components/dist/types").Substitute<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, styledNumberProps & {
     rounded?: boolean;
-}>> & string;
+}
+export declare const StyledNumber: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components/dist/types").Substitute<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, styledNumberProps>> & string;
 export declare const InputStyledDiv: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
 interface dialerProps {
     width: string | number;
@@ -49,4 +48,12 @@ interface chatTextProps {
     width: number | string;
 }
 export declare const ChatText: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components/dist/types").Substitute<import("react").DetailedHTMLProps<import("react").TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>, chatTextProps>> & string;
+export declare const ChatListWrapper: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLElement>, HTMLElement>, never>> & string;
+export declare const CallWrapper: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLElement>, HTMLElement>, never>> & string;
+export declare const StyledModal: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("antd").ModalProps, never>> & string & Omit<import("react").FC<import("antd").ModalProps> & import("antd/es/modal/confirm").ModalStaticFunctions & {
+    useModal: typeof import("antd/es/modal/useModal").default;
+    destroyAll: () => void;
+    config: typeof import("antd/es/modal/confirm").modalGlobalConfig;
+    _InternalPanelDoNotUseOrYouWillBeFired: (props: import("antd/es/modal/PurePanel").PurePanelProps) => import("react").JSX.Element;
+}, keyof import("react").Component<any, {}, any>>;
 export {};

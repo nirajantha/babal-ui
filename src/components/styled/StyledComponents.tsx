@@ -1,3 +1,4 @@
+import { Modal } from "antd";
 import styled, { css, keyframes } from "styled-components";
 interface styleHeaderProps {
   width: string | number;
@@ -49,26 +50,24 @@ export const ThemeToggleBtn = styled.button`
 
 interface styledNumberProps {
   digitColor?: string;
+  rounded?: boolean;
 }
 
-export const StyledNumber = styled.div<
-  styledNumberProps & { rounded?: boolean }
->`
+export const StyledNumber = styled.div<styledNumberProps>`
   width: 4rem;
   height: 4rem;
-  background: ${(props) =>
-    props.digitColor ? props.digitColor : "rgba(255, 255, 255, 0.747)"};
-  box-shadow: 0 8px 32px 0 rgba(174, 175, 195, 0.37);
+  background-color: ${(props) =>
+    props.digitColor ? props.digitColor : "rgba(255, 255, 255, 0.939)"};
+  box-shadow: 0 8px 32px 0 rgba(120, 117, 117, 0.37);
   backdrop-filter: blur(2.5px);
   -webkit-backdrop-filter: blur(2.5px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 15px;
+  border: 1px solid rgba(107, 70, 215, 0.18);
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
   align-items: center;
   display: flex;
-  gap: 0;
   flex-direction: column;
   justify-content: center;
   ${({ rounded }) =>
@@ -118,7 +117,7 @@ export const NumberGrid = styled.div`
 export const Display = styled.div`
   width: inherit;
   height: 10vh;
-  background-color: #9d9999;
+  background-color: #d9d5d5;
   color: ${({ theme }) => (theme.textColor ? theme.textColor : "black")};
   display: flex;
   justify-content: center;
@@ -277,13 +276,13 @@ export const MessageBox = styled.div<messageProps & { isNew?: boolean }>`
 
 export const Span = styled.span`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 8px;
   border: 1px solid #c6c4c459;
-  box-shadow: 0px 0px 8px 2px rgba(159, 159, 174, 1);
+  box-shadow: 0px 0px 8px 2px #c8c8dc;
   border-radius: 8px;
-  background-color: #d5d3d39d;
+  background-color: #f5f3f39d;
   &:hover {
     cursor: pointer;
   }
@@ -321,7 +320,7 @@ export const ChatText = styled.textarea<chatTextProps>`
   height: 3rem;
   background: transparent;
   width: ${(props) => props.width};
-  border: 2px solid #adacb0ce;
+  border: 2px solid purple;
   color: ${({ theme }) => theme.color};
 
   &::placeholder {
@@ -333,5 +332,83 @@ export const ChatText = styled.textarea<chatTextProps>`
     &::placeholder {
       opacity: 0;
     }
+  }
+`;
+
+//chat list
+export const ChatListWrapper = styled.section`
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 8px;
+  box-sizing: border-box;
+  position: relative;
+
+  & > .newChatdiv {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 10px;
+    right: 20px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 2px solid purple;
+    cursor: pointer;
+  }
+  & > .messageListDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 55vh;
+    overflow: scroll;
+    scroll-behavior: smooth;
+  }
+  & > p {
+    color: #605f5f;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 12rem;
+    overflow: hidden;
+  }
+`;
+
+//calling ui
+export const CallWrapper = styled.section`
+  position: relative;
+  width: 100%;
+  height: 93%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+`;
+
+//ant desing custom modal
+
+export const StyledModal = styled(Modal)`
+  .ant-modal-content {
+    width: 17rem !important;
+    height: 10rem !important;
+    position: absolute;
+    top: 700%;
+    left: 30%;
+    padding: 10px !important;
+  }
+
+  .ant-modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2rem;
+    height: calc(100% - 96px); /* Adjust for the header height */
   }
 `;

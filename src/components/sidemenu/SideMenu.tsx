@@ -28,12 +28,13 @@ const SideMenu = ({ logo }: sideMenuProps) => {
 
   if (lastway === "") {
     lastway = "keypad";
+  } else if (lastway === "call") {
+    lastway = "keypad";
   } else if (lastway === "newchat") {
     lastway = "chat";
   } else {
+    lastway = lastway;
   }
-
-  console.log("location>>", lastway);
 
   const handleClick = (nav: any) => {
     setPath(nav);

@@ -16,6 +16,7 @@ import { TwilioProvider } from "./context/TwilioContext";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import { PhoneProvider, SideMenuProvider } from "./context/PhoneContext";
+import { ConfigProvider } from "antd";
 
 export class BabalUi {
   constructor() {}
@@ -54,17 +55,25 @@ export class BabalUi {
       // <TwilioProvider>
       <BrowserRouter>
         <ThemeProvider theme={theme}>
-          <NumberProvider>
-            <PhoneProvider>
-              <SideMenuProvider>
-                <BabalDialer
-                  width={width}
-                  logo={logo}
-                  digitColor={digitColor}
-                />
-              </SideMenuProvider>
-            </PhoneProvider>
-          </NumberProvider>
+          <ConfigProvider
+            theme={{
+              components: {
+                Drawer: { paddingLG: 0, colorPrimaryBorder: "none" },
+              },
+            }}
+          >
+            <NumberProvider>
+              <PhoneProvider>
+                <SideMenuProvider>
+                  <BabalDialer
+                    width={width}
+                    logo={logo}
+                    digitColor={digitColor}
+                  />
+                </SideMenuProvider>
+              </PhoneProvider>
+            </NumberProvider>
+          </ConfigProvider>
         </ThemeProvider>
       </BrowserRouter>
 

@@ -30,8 +30,8 @@ const BabalFooter = ({ handleCall }: footerProps) => {
     <FooterContainer>
       <BabalContainer>
         <IoMdPersonAdd size={30} />
-        <StyledNumber onClick={handleCall} digitColor="green">
-          <IoIosCall size={40} color="white" />
+        <StyledNumber onClick={handleCall} rounded={true} digitColor="green">
+          <IoIosCall size={30} color="white" />
         </StyledNumber>
         <BiMessageSquareX size={30} onClick={(e) => editNumber(e)} />
       </BabalContainer>

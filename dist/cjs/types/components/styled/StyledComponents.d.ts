@@ -1,3 +1,4 @@
+export declare const HeaderDiv: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLElement>, HTMLElement>, never>> & string;
 interface styleHeaderProps {
     width: string | number;
     height: string | number;
@@ -50,6 +51,8 @@ interface chatTextProps {
 export declare const ChatText: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components/dist/types").Substitute<import("react").DetailedHTMLProps<import("react").TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>, chatTextProps>> & string;
 export declare const ChatListWrapper: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLElement>, HTMLElement>, never>> & string;
 export declare const CallWrapper: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLElement>, HTMLElement>, never>> & string;
+export declare const CallHead: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
+export declare const CallFeatureDiv: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, never>> & string;
 export declare const StyledModal: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("antd").ModalProps, never>> & string & Omit<import("react").FC<import("antd").ModalProps> & import("antd/es/modal/confirm").ModalStaticFunctions & {
     useModal: typeof import("antd/es/modal/useModal").default;
     destroyAll: () => void;

@@ -49,14 +49,7 @@ const PhoneBook = () => {
           backgroundColor: "#f0ddff",
         }}
       >
-        <p
-          style={{
-            margin: 0,
-            textAlign: "center",
-            fontWeight: 600,
-            fontSize: "18px",
-          }}
-        >
+        <p className="m-0 text-center font-[600] text-[18px]">
           Phone Book List
         </p>
 

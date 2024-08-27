@@ -1,6 +1,6 @@
 import { Avatar } from "antd";
 import React from "react";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { BsChat } from "react-icons/bs";
 import { IoCall } from "react-icons/io5";
 import {

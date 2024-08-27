@@ -1,5 +1,12 @@
-import { Modal } from "antd";
+import { Modal, Select } from "antd";
 import styled, { css, keyframes } from "styled-components";
+
+export const HeaderDiv = styled.header`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
 interface styleHeaderProps {
   width: string | number;
   height: string | number;
@@ -211,6 +218,15 @@ export const MenuIcon = styled.div<menuProps>`
 export const ContactWrapper = styled.section`
   height: 89%;
   margin: 0;
+  & > .search-contact-head {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: #f0ddff;
+  }
 `;
 
 export const PhoneInput = styled.input`
@@ -293,7 +309,7 @@ interface chatProps {
 
 export const ChatWrapper = styled.section<chatProps>`
   position: relative;
-  height: 94%;
+  height: 97%;
   background: ${(props) => props.color};
 `;
 export const PressDiv = styled.div`
@@ -302,6 +318,7 @@ export const PressDiv = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  gap: 0.8rem;
   align-items: flex-end;
   justify-content: center;
   background: rgba(0, 0, 0, 0.4);
@@ -310,6 +327,32 @@ export const PressDiv = styled.div`
   -webkit-backdrop-filter: blur(5.5px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   z-index: 1000;
+  & > .more-feature {
+    background-color: #4241417f;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 8px;
+    width: 10rem;
+    animation: scale-in-tr 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+    @keyframes scale-in-tr {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 100% 0%;
+        transform-origin: 100% 0%;
+        opacity: 1;
+      }
+      100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: 100% 0%;
+        transform-origin: 100% 0%;
+        opacity: 1;
+      }
+    }
+  }
 `;
 interface chatTextProps {
   width: number | string;
@@ -389,6 +432,74 @@ export const CallWrapper = styled.section`
   align-items: center;
   gap: 1rem;
   overflow: hidden;
+`;
+export const CallHead = styled.div`
+  width: 100%;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  & > .call-user-img {
+    background-color: #676666a2;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+`;
+
+export const CallFeatureDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 15rem;
+
+  & > .featureDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > .feature-icon-div {
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: transparent;
+      &:hover {
+        background-color: #acacacaf;
+      }
+    }
+  }
+
+  & > .nta-feature {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0px 0px 52px 30px rgba(0, 0, 0, 0.1);
+  }
+  & > .feature-footer {
+    display: flex;
+    flex-direction: column;
+    width: 4rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
 `;
 
 //ant desing custom modal

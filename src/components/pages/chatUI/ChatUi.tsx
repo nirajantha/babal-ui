@@ -39,9 +39,6 @@ const ChatUi = () => {
   //   };
   // }, [arrow]);
 
-  const location = useLocation();
-  const params = new URLSearchParams(location.search);
-  // const number = params.get("number");
   const [theme, setTheme] = useState<string>("");
   const { Option } = Select;
 
@@ -57,7 +54,6 @@ const ChatUi = () => {
   const filteredMessage = messageArray.filter(
     (item: { contactId: number | null }) => item.contactId === selectedItemId
   );
-  console.log("filteredMEssage", filteredMessage);
 
   const items: MenuProps["items"] = [
     {
@@ -66,7 +62,7 @@ const ChatUi = () => {
           onClick={() => {
             setTheme("#17a589");
           }}
-          style={{ backgroundColor: "#17a589 ", width: "1rem", height: "1rem" }}
+          className="bg-[#17a589] w-4 h-4"
         ></button>
       ),
       key: "0",
@@ -74,10 +70,10 @@ const ChatUi = () => {
     {
       label: (
         <button
+          className="bg-[#8e44ad] h-4 w-4"
           onClick={() => {
             setTheme("#8e44ad");
           }}
-          style={{ backgroundColor: "#8e44ad", width: "1rem", height: "1rem" }}
         ></button>
       ),
       key: "1",

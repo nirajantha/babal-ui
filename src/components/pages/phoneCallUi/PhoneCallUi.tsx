@@ -10,7 +10,10 @@ import { MdOutlineNoteAdd } from "react-icons/md";
 import { TbUserSquareRounded } from "react-icons/tb";
 import { TiTags } from "react-icons/ti";
 import { Button, Divider, Drawer, Select, Space } from "antd";
+const { Option } = Select;
 import {
+  CallFeatureDiv,
+  CallHead,
   CallWrapper,
   ChatText,
   Display,
@@ -20,6 +23,10 @@ import {
 import { useLocation } from "react-router-dom";
 import Numbers from "../../keypad/Numbers";
 import { useNumberContext } from "../../context/CreateContext";
+import ChatUi from "../chatUI/ChatUi";
+import SingleChatUi from "../chatUI/SingleChatUi";
+import { phoneContact } from "../../data/Data";
+import { CloseOutlined } from "@ant-design/icons";
 
 const options = [
   {
@@ -49,6 +56,13 @@ const options = [
 ];
 
 const PhoneCallUi = () => {
+  const [open, setOpen] = useState(false);
+  const [tagOpen, setTagOpen] = useState(false);
+  const [convoOpen, setConvoOpen] = useState(false);
+  const [transferCallOpen, setTransferCallOpen] = useState(false);
+  const [selectedItemId, setSelectedItemId] = useState<number>();
+  const [selectedUsername, setselectedUsername] = useState<string>("");
+  const [Number, setNumber] = useState<number>();
   const handleChange = (value: string[]) => {
     console.log(`selected ${value}`);
   };
@@ -58,6 +72,7 @@ const PhoneCallUi = () => {
   const [holdCall, setHoldCall] = useState(false);
   const params = new URLSearchParams(location.search);
   const item = params.get("item");
+
   let userCallInfo = {};
 
   if (item) {
@@ -71,8 +86,8 @@ const PhoneCallUi = () => {
     console.warn("No 'item' found in URL parameters");
     // Assign a default value if needed
   }
-  console.log("userinfo>>>", userCallInfo?.contactName);
-  const { state, dispatch } = useNumberContext();
+
+  const { state } = useNumberContext();
 
   const handleCancel = () => {
     setIsModalOpen(false);
@@ -84,12 +99,15 @@ const PhoneCallUi = () => {
   const showTagDrawer = () => {
     setTagOpen(true);
   };
-  const [open, setOpen] = useState(false);
-  const [tagOpen, setTagOpen] = useState(false);
+  const showConvoDrawer = () => {
+    setConvoOpen(true);
+  };
 
   const onClose = () => {
     setOpen(false);
     setTagOpen(false);
+    setConvoOpen(false);
+    setTransferCallOpen(false);
   };
   const mute = () => {
     setMuteMike(!muteMike);
@@ -105,7 +123,15 @@ const PhoneCallUi = () => {
   const handleOk = () => {
     setIsModalOpen(false);
   };
-  console.log("modal open>>", isModalOpen);
+  const transferCall = () => {
+    setTransferCallOpen(true);
+  };
+
+  const handleSelectChange = (value, option) => {
+    setSelectedItemId(option.id);
+    setselectedUsername(option.label);
+    setNumber(option.value);
+  };
 
   return (
     <CallWrapper>
@@ -126,14 +152,18 @@ const PhoneCallUi = () => {
       </StyledModal>
 
       <Drawer
-        title="Tags"
         placement="top"
         width={350}
+        closable={false}
         height="60%"
         onClose={onClose}
         open={tagOpen}
         getContainer={false}
       >
+        <Space className="flex justify-between p-2">
+          <h3 className="text-left font-[600] text-[18px]">Tags</h3>
+          <CloseOutlined onClick={onClose} />
+        </Space>
         <Select
           mode="multiple"
           style={{ width: "100%" }}
@@ -153,7 +183,7 @@ const PhoneCallUi = () => {
       </Drawer>
 
       <Drawer
-        title="Keypad"
+        closable={false}
         placement="bottom"
         width={350}
         height="95%"
@@ -161,99 +191,140 @@ const PhoneCallUi = () => {
         open={open}
         getContainer={false}
       >
+        <Space className="flex justify-between p-2">
+          <h3 className="text-left font-[600] text-[18px]">Keypad</h3>
+          <CloseOutlined onClick={onClose} />
+        </Space>
         <Display>{state?.number}</Display>
         <Numbers />
       </Drawer>
-      <div className="w-full h-[12rem] flex flex-col gap-3 justify-center items-center">
-        <div className="bg-[#676666a2] h-[3rem] w-[3rem] flex justify-center items-end rounded-[15px] overflow-hidden">
+
+      <Drawer
+        placement="bottom"
+        width={350}
+        height="100%"
+        onClose={onClose}
+        open={convoOpen}
+        getContainer={false}
+        closable={false}
+      >
+        <Space className="flex justify-between p-2">
+          <h3 className="text-left font-[600] text-[18px]">Chat</h3>
+          <CloseOutlined onClick={onClose} />
+        </Space>
+        <SingleChatUi />
+      </Drawer>
+
+      <Drawer
+        placement="top"
+        width={350}
+        height="60%"
+        closable={false}
+        onClose={onClose}
+        open={transferCallOpen}
+        getContainer={false}
+      >
+        <Space className="flex justify-between p-2">
+          <h3 className="text-left font-[600] text-[18px]">Transfer Call</h3>
+          <CloseOutlined onClick={onClose} />
+        </Space>
+        <Select
+          className="w-[100%]"
+          showSearch
+          onChange={(value, option) => handleSelectChange(value, option)}
+          placeholder="Select a contact number"
+          optionFilterProp="children"
+          filterOption={(input, option) => {
+            const label = option?.label;
+            // Ensure label is a string before calling toLowerCase
+            return typeof label === "string"
+              ? label.toLowerCase().includes(input.toLowerCase())
+              : false;
+          }}
+        >
+          {phoneContact.map((option) => (
+            <Option
+              key={option?.id}
+              id={option?.id}
+              value={option?.number}
+              label={option?.contactName}
+            >
+              {option?.contactName}
+            </Option>
+          ))}
+        </Select>
+      </Drawer>
+
+      <CallHead>
+        <div className="call-user-img">
           {" "}
           <ImUser size={40} />
         </div>
-        <div className="">
+        <div className="call-head-content">
           {" "}
           <h2 className="text-[20px] font-bold text-center">
-            {userCallInfo.contactName != undefined
+            {userCallInfo?.contactName != undefined
               ? userCallInfo?.contactName
               : "Nirajan"}
           </h2>
           <p className="text-center text-[13px]">Calling...</p>
         </div>
-      </div>
+      </CallHead>
 
-      <div className="flex justify-center items-center gap-3 w-[15rem] ">
-        <div className="flex flex-col items-center">
-          <div className="w-[3rem] h-[3rem] bg-transparent flex flex-col justify-center items-center rounded-[8px] cursor-pointer hover:bg-[#9b98986a]">
+      <CallFeatureDiv>
+        <div className="featureDiv">
+          <div className="feature-icon-div">
             <BsFillRecordCircleFill color="red" />
           </div>
           <p className="text-[13px]">Record</p>
         </div>
 
-        <div className="flex flex-col items-center">
-          <div
-            className="w-[3rem] h-[3rem] flex flex-col justify-center items-center rounded-[8px] cursor-pointer hover:bg-[#9b98986a]"
-            onClick={hold}
-          >
+        <div className="featureDiv">
+          <div className="feature-icon-div" onClick={hold}>
             <FaPause color={holdCall ? "green" : ""} />
           </div>
           <p className="text-[13px]">{holdCall ? `Resume` : `Hold`}</p>
         </div>
 
-        <div className="flex flex-col items-center">
-          <div
-            className="w-[3rem] h-[3rem] flex flex-col justify-center items-center rounded-[8px] cursor-pointer hover:bg-[#9b98986a]"
-            onClick={mute}
-          >
+        <div className="featureDiv">
+          <div className="feature-icon-div" onClick={mute}>
             <BsFillMicMuteFill color={muteMike ? "red" : ""} />
           </div>
           <p className="text-[13px]">Mute</p>
         </div>
-        <div className="flex flex-col items-center">
-          <div
-            className="w-[3rem] h-[3rem] flex flex-col justify-center items-center rounded-[8px] cursor-pointer hover:bg-[#9b98986a]"
-            onClick={showDrawer}
-          >
+        <div className="featureDiv">
+          <div className="feature-icon-div" onClick={showDrawer}>
             <IoMdKeypad />
           </div>
           <p className="text-[13px]">Keypad</p>
         </div>
-      </div>
+      </CallFeatureDiv>
 
       <div className="w-[15rem]">
         <Divider style={{ margin: 0 }} />
       </div>
 
-      <div className="flex justify-between items-center w-[15rem] ">
-        <div
-          style={{ boxShadow: "0px 0px 52px 30px rgba(0,0,0,0.1)" }}
-          className="w-[4rem] h-[4rem] flex flex-col justify-center items-center cursor-pointer rounded-[8px] bg-[white]"
-          onClick={showModal}
-        >
+      <CallFeatureDiv>
+        <div className="nta-feature" onClick={showModal}>
           <MdOutlineNoteAdd size={25} />
           <p className="m-0 font-[500]">Notes</p>
         </div>
-        <div
-          onClick={showTagDrawer}
-          style={{ boxShadow: "0px 0px 52px 30px rgba(0,0,0,0.1)" }}
-          className="w-[4rem] h-[4rem] flex flex-col justify-center items-center cursor-pointer rounded-[8px] bg-[white] "
-        >
+        <div onClick={showTagDrawer} className="nta-feature ">
           <TiTags size={25} />
           <p className="m-0 font-[500] ">Tags</p>
         </div>
-        <div
-          style={{ boxShadow: "0px 0px 52px 30px rgba(0,0,0,0.1)" }}
-          className="w-[4rem] h-[4rem] flex flex-col justify-center items-center cursor-pointer rounded-[8px] bg-[white]"
-        >
+        <div className="nta-feature">
           <TbUserSquareRounded size={25} />
           <p className="m-0 font-[500]">Add</p>
         </div>
-      </div>
+      </CallFeatureDiv>
 
       <div className="w-[15rem]">
         <Divider style={{ margin: 0 }} />
       </div>
 
-      <div className="flex justify-between items-center w-[15rem] ">
-        <div className="flex w-[4rem] flex-col justify-center items-center cursor-pointer">
+      <CallFeatureDiv>
+        <div className=" feature-footer " onClick={showConvoDrawer}>
           <BsChatSquareTextFill size={20} />
           <p className="m-0 text-[12px]">Conversation</p>
         </div>
@@ -262,11 +333,11 @@ const PhoneCallUi = () => {
           <IoIosCall size={20} color="white" />
         </StyledNumber>
 
-        <div className="flex w-[4rem] flex-col justify-center items-center cursor-pointer">
+        <div className=" feature-footer " onClick={transferCall}>
           <BiSolidPhoneCall size={20} />
           <p className="m-0 text-[12px]">Transfer</p>
         </div>
-      </div>
+      </CallFeatureDiv>
     </CallWrapper>
   );
 };

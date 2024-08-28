@@ -140,8 +140,13 @@ const PhoneCallUi = () => {
         open={isModalOpen}
         onCancel={handleCancel}
         footer={null}
+        direction="column"
       >
-        <ChatText width={100} placeholder="Write notes" />
+        <ChatText
+          width="100%"
+          placeholder="Write notes"
+          placeholderColor="black"
+        />
         <Button
           className="bg-[green] text-[white]"
           size="middle"
@@ -228,31 +233,34 @@ const PhoneCallUi = () => {
           <h3 className="text-left font-[600] text-[18px]">Transfer Call</h3>
           <CloseOutlined onClick={onClose} />
         </Space>
-        <Select
-          className="w-[100%]"
-          showSearch
-          onChange={(value, option) => handleSelectChange(value, option)}
-          placeholder="Select a contact number"
-          optionFilterProp="children"
-          filterOption={(input, option) => {
-            const label = option?.label;
-            // Ensure label is a string before calling toLowerCase
-            return typeof label === "string"
-              ? label.toLowerCase().includes(input.toLowerCase())
-              : false;
-          }}
-        >
-          {phoneContact.map((option) => (
-            <Option
-              key={option?.id}
-              id={option?.id}
-              value={option?.number}
-              label={option?.contactName}
-            >
-              {option?.contactName}
-            </Option>
-          ))}
-        </Select>
+        <Space className="w-full p-2" direction="vertical">
+          <Select
+            className="w-[100%]"
+            showSearch
+            onChange={(value, option) => handleSelectChange(value, option)}
+            placeholder="Select a contact number"
+            optionFilterProp="children"
+            filterOption={(input, option) => {
+              const label = option?.label;
+              // Ensure label is a string before calling toLowerCase
+              return typeof label === "string"
+                ? label.toLowerCase().includes(input.toLowerCase())
+                : false;
+            }}
+          >
+            {phoneContact.map((option) => (
+              <Option
+                key={option?.id}
+                id={option?.id}
+                value={option?.number}
+                label={option?.contactName}
+              >
+                {option?.contactName}
+              </Option>
+            ))}
+          </Select>
+          <Button>Transfer call</Button>
+        </Space>
       </Drawer>
 
       <CallHead>

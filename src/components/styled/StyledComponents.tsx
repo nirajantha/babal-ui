@@ -331,7 +331,6 @@ export const PressDiv = styled.div`
     background-color: #4241417f;
     display: flex;
     flex-direction: column;
-    gap: 8px;
     border-radius: 8px;
     width: 10rem;
     animation: scale-in-tr 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -352,11 +351,58 @@ export const PressDiv = styled.div`
         opacity: 1;
       }
     }
+    & > span {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem;
+      color: #fff;
+      cursor: pointer;
+      &:hover {
+        color: purple;
+      }
+    }
+  }
+  & > button {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    color: white;
+    background-color: #351f77ba;
+    font-size: 20px;
+    animation: roll-in-right 0.6s ease-out both;
+    &:focus {
+      outline: none;
+      border: none;
+    }
+    &:hover {
+      outline: none;
+      border: none;
+    }
+    @keyframes roll-in-right {
+      0% {
+        transform: translateX(800px) rotate(540deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+      }
+    }
   }
 `;
 interface chatTextProps {
   width: number | string;
+  placeholderColor?: string;
 }
+
 export const ChatText = styled.textarea<chatTextProps>`
   padding: 6px;
   border-radius: 8px;
@@ -367,7 +413,10 @@ export const ChatText = styled.textarea<chatTextProps>`
   color: ${({ theme }) => theme.color};
 
   &::placeholder {
-    color: white; /* Change this to your desired color */
+    color: ${(props) =>
+      props.placeholderColor
+        ? props.placeholderColor
+        : "white"}; /* Change this to your desired color */
   }
 
   &:focus {
@@ -503,23 +552,74 @@ export const CallFeatureDiv = styled.div`
 `;
 
 //ant desing custom modal
+interface modalProps {
+  direction?: string;
+  Bodyheight?: number | string;
+  bgColor?: string;
+}
 
-export const StyledModal = styled(Modal)`
+export const StyledModal = styled(Modal)<modalProps>`
+  .footer-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    & > .delete-btn {
+      width: 112px;
+      border: 1px solid #d45d38;
+      color: white;
+      border-radius: 8px;
+      background-color: #d45d38;
+      padding: 0.5rem;
+      &:hover {
+        border: 1px solid #d45d38;
+        color: #d45d38;
+        background: transparent;
+      }
+    }
+    & > .cancel-btn {
+      width: 112px;
+      border: 1px solid white;
+      color: black;
+      border-radius: 8px;
+      background-color: white;
+      padding: 0.5rem;
+      &:hover {
+        border: 1px solid #fff;
+        color: #fff;
+        background: transparent;
+      }
+    }
+  }
   .ant-modal-content {
-    width: 17rem !important;
-    height: 10rem !important;
+    width: 17rem;
+    height: 15rem;
     position: absolute;
     top: 700%;
-    left: 30%;
+    left: 30.2%;
     padding: 10px !important;
+    background-color: ${(props) => (props.bgColor ? props.bgColor : "white")};
   }
 
   .ant-modal-body {
     display: flex;
+    flex-direction: ${(props) => (props.direction ? props.direction : "row")};
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 12px;
     margin-top: 2rem;
-    height: calc(100% - 96px); /* Adjust for the header height */
+    height: calc(
+      100% - ${(props) => (props.Bodyheight ? props.Bodyheight : "96px")}
+    ); /* Adjust for the header height */
+    & > .bin-div {
+      width: 40px;
+      height: 40px;
+      color: #d45d38;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #d45d38;
+    }
   }
 `;

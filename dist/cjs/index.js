@@ -10705,7 +10705,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = "/*\n! tailwindcss v3.4.10 | MIT License | https://tailwindcss.com\n*//*\n1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)\n2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)\n*/\n\n*,\n::before,\n::after {\n  box-sizing: border-box; /* 1 */\n  border-width: 0; /* 2 */\n  border-style: solid; /* 2 */\n  border-color: #e5e7eb; /* 2 */\n}\n\n::before,\n::after {\n  --tw-content: '';\n}\n\n/*\n1. Use a consistent sensible line-height in all browsers.\n2. Prevent adjustments of font size after orientation changes in iOS.\n3. Use a more readable tab size.\n4. Use the user's configured `sans` font-family by default.\n5. Use the user's configured `sans` font-feature-settings by default.\n6. Use the user's configured `sans` font-variation-settings by default.\n7. Disable tap highlights on iOS\n*/\n\nhtml,\n:host {\n  line-height: 1.5; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n  -moz-tab-size: 4; /* 3 */\n  -o-tab-size: 4;\n     tab-size: 4; /* 3 */\n  font-family: ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; /* 4 */\n  font-feature-settings: normal; /* 5 */\n  font-variation-settings: normal; /* 6 */\n  -webkit-tap-highlight-color: transparent; /* 7 */\n}\n\n/*\n1. Remove the margin in all browsers.\n2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.\n*/\n\nbody {\n  margin: 0; /* 1 */\n  line-height: inherit; /* 2 */\n}\n\n/*\n1. Add the correct height in Firefox.\n2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\n3. Ensure horizontal rules are visible by default.\n*/\n\nhr {\n  height: 0; /* 1 */\n  color: inherit; /* 2 */\n  border-top-width: 1px; /* 3 */\n}\n\n/*\nAdd the correct text decoration in Chrome, Edge, and Safari.\n*/\n\nabbr:where([title]) {\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n}\n\n/*\nRemove the default font size and weight for headings.\n*/\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: inherit;\n  font-weight: inherit;\n}\n\n/*\nReset links to optimize for opt-in styling instead of opt-out.\n*/\n\na {\n  color: inherit;\n  text-decoration: inherit;\n}\n\n/*\nAdd the correct font weight in Edge and Safari.\n*/\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/*\n1. Use the user's configured `mono` font-family by default.\n2. Use the user's configured `mono` font-feature-settings by default.\n3. Use the user's configured `mono` font-variation-settings by default.\n4. Correct the odd `em` font sizing in all browsers.\n*/\n\ncode,\nkbd,\nsamp,\npre {\n  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace; /* 1 */\n  font-feature-settings: normal; /* 2 */\n  font-variation-settings: normal; /* 3 */\n  font-size: 1em; /* 4 */\n}\n\n/*\nAdd the correct font size in all browsers.\n*/\n\nsmall {\n  font-size: 80%;\n}\n\n/*\nPrevent `sub` and `sup` elements from affecting the line height in all browsers.\n*/\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/*\n1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\n2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\n3. Remove gaps between table borders by default.\n*/\n\ntable {\n  text-indent: 0; /* 1 */\n  border-color: inherit; /* 2 */\n  border-collapse: collapse; /* 3 */\n}\n\n/*\n1. Change the font styles in all browsers.\n2. Remove the margin in Firefox and Safari.\n3. Remove default padding in all browsers.\n*/\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-feature-settings: inherit; /* 1 */\n  font-variation-settings: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  font-weight: inherit; /* 1 */\n  line-height: inherit; /* 1 */\n  letter-spacing: inherit; /* 1 */\n  color: inherit; /* 1 */\n  margin: 0; /* 2 */\n  padding: 0; /* 3 */\n}\n\n/*\nRemove the inheritance of text transform in Edge and Firefox.\n*/\n\nbutton,\nselect {\n  text-transform: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Remove default button styles.\n*/\n\nbutton,\ninput:where([type='button']),\ninput:where([type='reset']),\ninput:where([type='submit']) {\n  -webkit-appearance: button; /* 1 */\n  background-color: transparent; /* 2 */\n  background-image: none; /* 2 */\n}\n\n/*\nUse the modern Firefox focus style for all focusable elements.\n*/\n\n:-moz-focusring {\n  outline: auto;\n}\n\n/*\nRemove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)\n*/\n\n:-moz-ui-invalid {\n  box-shadow: none;\n}\n\n/*\nAdd the correct vertical alignment in Chrome and Firefox.\n*/\n\nprogress {\n  vertical-align: baseline;\n}\n\n/*\nCorrect the cursor style of increment and decrement buttons in Safari.\n*/\n\n::-webkit-inner-spin-button,\n::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/*\n1. Correct the odd appearance in Chrome and Safari.\n2. Correct the outline style in Safari.\n*/\n\n[type='search'] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/*\nRemove the inner padding in Chrome and Safari on macOS.\n*/\n\n::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Change font properties to `inherit` in Safari.\n*/\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/*\nAdd the correct display in Chrome and Safari.\n*/\n\nsummary {\n  display: list-item;\n}\n\n/*\nRemoves the default spacing and border for appropriate elements.\n*/\n\nblockquote,\ndl,\ndd,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nhr,\nfigure,\np,\npre {\n  margin: 0;\n}\n\nfieldset {\n  margin: 0;\n  padding: 0;\n}\n\nlegend {\n  padding: 0;\n}\n\nol,\nul,\nmenu {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n/*\nReset default styling for dialogs.\n*/\ndialog {\n  padding: 0;\n}\n\n/*\nPrevent resizing textareas horizontally by default.\n*/\n\ntextarea {\n  resize: vertical;\n}\n\n/*\n1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)\n2. Set the default placeholder color to the user's configured gray 400 color.\n*/\n\ninput::-moz-placeholder, textarea::-moz-placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\ninput::placeholder,\ntextarea::placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\n/*\nSet the default cursor for buttons.\n*/\n\nbutton,\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n/*\nMake sure disabled buttons don't get the pointer cursor.\n*/\n:disabled {\n  cursor: default;\n}\n\n/*\n1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)\n2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)\n   This can trigger a poorly considered lint error in some tools but is included by design.\n*/\n\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block; /* 1 */\n  vertical-align: middle; /* 2 */\n}\n\n/*\nConstrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)\n*/\n\nimg,\nvideo {\n  max-width: 100%;\n  height: auto;\n}\n\n/* Make elements with the HTML hidden attribute stay hidden by default */\n[hidden] {\n  display: none;\n}\n  body {\n    box-sizing: border-box;\n    font-family: sans-serif;\n  }\n\n*, ::before, ::after {\n  --tw-border-spacing-x: 0;\n  --tw-border-spacing-y: 0;\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-gradient-from-position:  ;\n  --tw-gradient-via-position:  ;\n  --tw-gradient-to-position:  ;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgb(59 130 246 / 0.5);\n  --tw-ring-offset-shadow: 0 0 #0000;\n  --tw-ring-shadow: 0 0 #0000;\n  --tw-shadow: 0 0 #0000;\n  --tw-shadow-colored: 0 0 #0000;\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n  --tw-contain-size:  ;\n  --tw-contain-layout:  ;\n  --tw-contain-paint:  ;\n  --tw-contain-style:  ;\n}\n\n::backdrop {\n  --tw-border-spacing-x: 0;\n  --tw-border-spacing-y: 0;\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-gradient-from-position:  ;\n  --tw-gradient-via-position:  ;\n  --tw-gradient-to-position:  ;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgb(59 130 246 / 0.5);\n  --tw-ring-offset-shadow: 0 0 #0000;\n  --tw-ring-shadow: 0 0 #0000;\n  --tw-shadow: 0 0 #0000;\n  --tw-shadow-colored: 0 0 #0000;\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n  --tw-contain-size:  ;\n  --tw-contain-layout:  ;\n  --tw-contain-paint:  ;\n  --tw-contain-style:  ;\n}\n.container {\n  width: 100%;\n}\n@media (min-width: 640px) {\n\n  .container {\n    max-width: 640px;\n  }\n}\n@media (min-width: 768px) {\n\n  .container {\n    max-width: 768px;\n  }\n}\n@media (min-width: 1024px) {\n\n  .container {\n    max-width: 1024px;\n  }\n}\n@media (min-width: 1280px) {\n\n  .container {\n    max-width: 1280px;\n  }\n}\n@media (min-width: 1536px) {\n\n  .container {\n    max-width: 1536px;\n  }\n}\n.static {\n  position: static;\n}\n.absolute {\n  position: absolute;\n}\n.relative {\n  position: relative;\n}\n.bottom-0 {\n  bottom: 0px;\n}\n.bottom-5 {\n  bottom: 1.25rem;\n}\n.left-5 {\n  left: 1.25rem;\n}\n.m-0 {\n  margin: 0px;\n}\n.mt-\\[2rem\\] {\n  margin-top: 2rem;\n}\n.flex {\n  display: flex;\n}\n.hidden {\n  display: none;\n}\n.h-4 {\n  height: 1rem;\n}\n.h-\\[18rem\\] {\n  height: 18rem;\n}\n.h-\\[2rem\\] {\n  height: 2rem;\n}\n.h-\\[45\\%\\] {\n  height: 45%;\n}\n.h-\\[6rem\\] {\n  height: 6rem;\n}\n.h-\\[78\\%\\] {\n  height: 78%;\n}\n.h-\\[89\\%\\] {\n  height: 89%;\n}\n.w-4 {\n  width: 1rem;\n}\n.w-\\[100\\%\\] {\n  width: 100%;\n}\n.w-\\[10rem\\] {\n  width: 10rem;\n}\n.w-\\[15rem\\] {\n  width: 15rem;\n}\n.w-\\[2rem\\] {\n  width: 2rem;\n}\n.w-\\[4rem\\] {\n  width: 4rem;\n}\n.w-\\[6rem\\] {\n  width: 6rem;\n}\n.w-full {\n  width: 100%;\n}\n.transform {\n  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n.cursor-pointer {\n  cursor: pointer;\n}\n.flex-col {\n  flex-direction: column;\n}\n.flex-wrap {\n  flex-wrap: wrap;\n}\n.items-end {\n  align-items: flex-end;\n}\n.items-center {\n  align-items: center;\n}\n.justify-end {\n  justify-content: flex-end;\n}\n.justify-center {\n  justify-content: center;\n}\n.justify-between {\n  justify-content: space-between;\n}\n.gap-4 {\n  gap: 1rem;\n}\n.gap-\\[10px\\] {\n  gap: 10px;\n}\n.gap-\\[2px\\] {\n  gap: 2px;\n}\n.overflow-scroll {\n  overflow: scroll;\n}\n.scroll-smooth {\n  scroll-behavior: smooth;\n}\n.rounded {\n  border-radius: 0.25rem;\n}\n.rounded-full {\n  border-radius: 9999px;\n}\n.border {\n  border-width: 1px;\n}\n.border-b-2 {\n  border-bottom-width: 2px;\n}\n.border-solid {\n  border-style: solid;\n}\n.border-none {\n  border-style: none;\n}\n.border-\\[white\\] {\n  --tw-border-opacity: 1;\n  border-color: rgb(255 255 255 / var(--tw-border-opacity));\n}\n.bg-\\[\\#17a589\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(23 165 137 / var(--tw-bg-opacity));\n}\n.bg-\\[\\#326071\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(50 96 113 / var(--tw-bg-opacity));\n}\n.bg-\\[\\#746b6ba5\\] {\n  background-color: #746b6ba5;\n}\n.bg-\\[\\#8e44ad\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(142 68 173 / var(--tw-bg-opacity));\n}\n.bg-\\[green\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(0 128 0 / var(--tw-bg-opacity));\n}\n.bg-\\[purple\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(128 0 128 / var(--tw-bg-opacity));\n}\n.bg-\\[red\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(255 0 0 / var(--tw-bg-opacity));\n}\n.p-0 {\n  padding: 0px;\n}\n.p-1 {\n  padding: 0.25rem;\n}\n.p-2 {\n  padding: 0.5rem;\n}\n.p-\\[10px\\] {\n  padding: 10px;\n}\n.p-\\[8px\\] {\n  padding: 8px;\n}\n.text-left {\n  text-align: left;\n}\n.text-center {\n  text-align: center;\n}\n.text-\\[12px\\] {\n  font-size: 12px;\n}\n.text-\\[13px\\] {\n  font-size: 13px;\n}\n.text-\\[18px\\] {\n  font-size: 18px;\n}\n.text-\\[20px\\] {\n  font-size: 20px;\n}\n.font-\\[500\\] {\n  font-weight: 500;\n}\n.font-\\[600\\] {\n  font-weight: 600;\n}\n.font-bold {\n  font-weight: 700;\n}\n.text-\\[\\#fff\\] {\n  --tw-text-opacity: 1;\n  color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.text-\\[black\\] {\n  --tw-text-opacity: 1;\n  color: rgb(0 0 0 / var(--tw-text-opacity));\n}\n.text-\\[red\\] {\n  --tw-text-opacity: 1;\n  color: rgb(255 0 0 / var(--tw-text-opacity));\n}\n.text-\\[white\\] {\n  --tw-text-opacity: 1;\n  color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.outline {\n  outline-style: solid;\n}\n.blur {\n  --tw-blur: blur(8px);\n  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);\n}\n.filter {\n  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);\n}\n.backdrop-filter {\n  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);\n  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);\n}\n.transition {\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-duration: 150ms;\n}\n";
+var css_248z = "/*\n! tailwindcss v3.4.10 | MIT License | https://tailwindcss.com\n*//*\n1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)\n2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)\n*/\n\n*,\n::before,\n::after {\n  box-sizing: border-box; /* 1 */\n  border-width: 0; /* 2 */\n  border-style: solid; /* 2 */\n  border-color: #e5e7eb; /* 2 */\n}\n\n::before,\n::after {\n  --tw-content: '';\n}\n\n/*\n1. Use a consistent sensible line-height in all browsers.\n2. Prevent adjustments of font size after orientation changes in iOS.\n3. Use a more readable tab size.\n4. Use the user's configured `sans` font-family by default.\n5. Use the user's configured `sans` font-feature-settings by default.\n6. Use the user's configured `sans` font-variation-settings by default.\n7. Disable tap highlights on iOS\n*/\n\nhtml,\n:host {\n  line-height: 1.5; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n  -moz-tab-size: 4; /* 3 */\n  -o-tab-size: 4;\n     tab-size: 4; /* 3 */\n  font-family: ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; /* 4 */\n  font-feature-settings: normal; /* 5 */\n  font-variation-settings: normal; /* 6 */\n  -webkit-tap-highlight-color: transparent; /* 7 */\n}\n\n/*\n1. Remove the margin in all browsers.\n2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.\n*/\n\nbody {\n  margin: 0; /* 1 */\n  line-height: inherit; /* 2 */\n}\n\n/*\n1. Add the correct height in Firefox.\n2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\n3. Ensure horizontal rules are visible by default.\n*/\n\nhr {\n  height: 0; /* 1 */\n  color: inherit; /* 2 */\n  border-top-width: 1px; /* 3 */\n}\n\n/*\nAdd the correct text decoration in Chrome, Edge, and Safari.\n*/\n\nabbr:where([title]) {\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n}\n\n/*\nRemove the default font size and weight for headings.\n*/\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: inherit;\n  font-weight: inherit;\n}\n\n/*\nReset links to optimize for opt-in styling instead of opt-out.\n*/\n\na {\n  color: inherit;\n  text-decoration: inherit;\n}\n\n/*\nAdd the correct font weight in Edge and Safari.\n*/\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/*\n1. Use the user's configured `mono` font-family by default.\n2. Use the user's configured `mono` font-feature-settings by default.\n3. Use the user's configured `mono` font-variation-settings by default.\n4. Correct the odd `em` font sizing in all browsers.\n*/\n\ncode,\nkbd,\nsamp,\npre {\n  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace; /* 1 */\n  font-feature-settings: normal; /* 2 */\n  font-variation-settings: normal; /* 3 */\n  font-size: 1em; /* 4 */\n}\n\n/*\nAdd the correct font size in all browsers.\n*/\n\nsmall {\n  font-size: 80%;\n}\n\n/*\nPrevent `sub` and `sup` elements from affecting the line height in all browsers.\n*/\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/*\n1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\n2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\n3. Remove gaps between table borders by default.\n*/\n\ntable {\n  text-indent: 0; /* 1 */\n  border-color: inherit; /* 2 */\n  border-collapse: collapse; /* 3 */\n}\n\n/*\n1. Change the font styles in all browsers.\n2. Remove the margin in Firefox and Safari.\n3. Remove default padding in all browsers.\n*/\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-feature-settings: inherit; /* 1 */\n  font-variation-settings: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  font-weight: inherit; /* 1 */\n  line-height: inherit; /* 1 */\n  letter-spacing: inherit; /* 1 */\n  color: inherit; /* 1 */\n  margin: 0; /* 2 */\n  padding: 0; /* 3 */\n}\n\n/*\nRemove the inheritance of text transform in Edge and Firefox.\n*/\n\nbutton,\nselect {\n  text-transform: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Remove default button styles.\n*/\n\nbutton,\ninput:where([type='button']),\ninput:where([type='reset']),\ninput:where([type='submit']) {\n  -webkit-appearance: button; /* 1 */\n  background-color: transparent; /* 2 */\n  background-image: none; /* 2 */\n}\n\n/*\nUse the modern Firefox focus style for all focusable elements.\n*/\n\n:-moz-focusring {\n  outline: auto;\n}\n\n/*\nRemove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)\n*/\n\n:-moz-ui-invalid {\n  box-shadow: none;\n}\n\n/*\nAdd the correct vertical alignment in Chrome and Firefox.\n*/\n\nprogress {\n  vertical-align: baseline;\n}\n\n/*\nCorrect the cursor style of increment and decrement buttons in Safari.\n*/\n\n::-webkit-inner-spin-button,\n::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/*\n1. Correct the odd appearance in Chrome and Safari.\n2. Correct the outline style in Safari.\n*/\n\n[type='search'] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/*\nRemove the inner padding in Chrome and Safari on macOS.\n*/\n\n::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Change font properties to `inherit` in Safari.\n*/\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/*\nAdd the correct display in Chrome and Safari.\n*/\n\nsummary {\n  display: list-item;\n}\n\n/*\nRemoves the default spacing and border for appropriate elements.\n*/\n\nblockquote,\ndl,\ndd,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nhr,\nfigure,\np,\npre {\n  margin: 0;\n}\n\nfieldset {\n  margin: 0;\n  padding: 0;\n}\n\nlegend {\n  padding: 0;\n}\n\nol,\nul,\nmenu {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n/*\nReset default styling for dialogs.\n*/\ndialog {\n  padding: 0;\n}\n\n/*\nPrevent resizing textareas horizontally by default.\n*/\n\ntextarea {\n  resize: vertical;\n}\n\n/*\n1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)\n2. Set the default placeholder color to the user's configured gray 400 color.\n*/\n\ninput::-moz-placeholder, textarea::-moz-placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\ninput::placeholder,\ntextarea::placeholder {\n  opacity: 1; /* 1 */\n  color: #9ca3af; /* 2 */\n}\n\n/*\nSet the default cursor for buttons.\n*/\n\nbutton,\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n/*\nMake sure disabled buttons don't get the pointer cursor.\n*/\n:disabled {\n  cursor: default;\n}\n\n/*\n1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)\n2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)\n   This can trigger a poorly considered lint error in some tools but is included by design.\n*/\n\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block; /* 1 */\n  vertical-align: middle; /* 2 */\n}\n\n/*\nConstrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)\n*/\n\nimg,\nvideo {\n  max-width: 100%;\n  height: auto;\n}\n\n/* Make elements with the HTML hidden attribute stay hidden by default */\n[hidden] {\n  display: none;\n}\n  body {\n    box-sizing: border-box;\n    font-family: sans-serif;\n  }\n\n*, ::before, ::after {\n  --tw-border-spacing-x: 0;\n  --tw-border-spacing-y: 0;\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-gradient-from-position:  ;\n  --tw-gradient-via-position:  ;\n  --tw-gradient-to-position:  ;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgb(59 130 246 / 0.5);\n  --tw-ring-offset-shadow: 0 0 #0000;\n  --tw-ring-shadow: 0 0 #0000;\n  --tw-shadow: 0 0 #0000;\n  --tw-shadow-colored: 0 0 #0000;\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n  --tw-contain-size:  ;\n  --tw-contain-layout:  ;\n  --tw-contain-paint:  ;\n  --tw-contain-style:  ;\n}\n\n::backdrop {\n  --tw-border-spacing-x: 0;\n  --tw-border-spacing-y: 0;\n  --tw-translate-x: 0;\n  --tw-translate-y: 0;\n  --tw-rotate: 0;\n  --tw-skew-x: 0;\n  --tw-skew-y: 0;\n  --tw-scale-x: 1;\n  --tw-scale-y: 1;\n  --tw-pan-x:  ;\n  --tw-pan-y:  ;\n  --tw-pinch-zoom:  ;\n  --tw-scroll-snap-strictness: proximity;\n  --tw-gradient-from-position:  ;\n  --tw-gradient-via-position:  ;\n  --tw-gradient-to-position:  ;\n  --tw-ordinal:  ;\n  --tw-slashed-zero:  ;\n  --tw-numeric-figure:  ;\n  --tw-numeric-spacing:  ;\n  --tw-numeric-fraction:  ;\n  --tw-ring-inset:  ;\n  --tw-ring-offset-width: 0px;\n  --tw-ring-offset-color: #fff;\n  --tw-ring-color: rgb(59 130 246 / 0.5);\n  --tw-ring-offset-shadow: 0 0 #0000;\n  --tw-ring-shadow: 0 0 #0000;\n  --tw-shadow: 0 0 #0000;\n  --tw-shadow-colored: 0 0 #0000;\n  --tw-blur:  ;\n  --tw-brightness:  ;\n  --tw-contrast:  ;\n  --tw-grayscale:  ;\n  --tw-hue-rotate:  ;\n  --tw-invert:  ;\n  --tw-saturate:  ;\n  --tw-sepia:  ;\n  --tw-drop-shadow:  ;\n  --tw-backdrop-blur:  ;\n  --tw-backdrop-brightness:  ;\n  --tw-backdrop-contrast:  ;\n  --tw-backdrop-grayscale:  ;\n  --tw-backdrop-hue-rotate:  ;\n  --tw-backdrop-invert:  ;\n  --tw-backdrop-opacity:  ;\n  --tw-backdrop-saturate:  ;\n  --tw-backdrop-sepia:  ;\n  --tw-contain-size:  ;\n  --tw-contain-layout:  ;\n  --tw-contain-paint:  ;\n  --tw-contain-style:  ;\n}\n.container {\n  width: 100%;\n}\n@media (min-width: 640px) {\n\n  .container {\n    max-width: 640px;\n  }\n}\n@media (min-width: 768px) {\n\n  .container {\n    max-width: 768px;\n  }\n}\n@media (min-width: 1024px) {\n\n  .container {\n    max-width: 1024px;\n  }\n}\n@media (min-width: 1280px) {\n\n  .container {\n    max-width: 1280px;\n  }\n}\n@media (min-width: 1536px) {\n\n  .container {\n    max-width: 1536px;\n  }\n}\n.static {\n  position: static;\n}\n.absolute {\n  position: absolute;\n}\n.relative {\n  position: relative;\n}\n.bottom-0 {\n  bottom: 0px;\n}\n.bottom-5 {\n  bottom: 1.25rem;\n}\n.left-\\[35\\%\\] {\n  left: 35%;\n}\n.top-0 {\n  top: 0px;\n}\n.m-0 {\n  margin: 0px;\n}\n.mt-\\[2rem\\] {\n  margin-top: 2rem;\n}\n.flex {\n  display: flex;\n}\n.hidden {\n  display: none;\n}\n.h-4 {\n  height: 1rem;\n}\n.h-\\[18rem\\] {\n  height: 18rem;\n}\n.h-\\[2rem\\] {\n  height: 2rem;\n}\n.h-\\[45\\%\\] {\n  height: 45%;\n}\n.h-\\[6rem\\] {\n  height: 6rem;\n}\n.h-\\[78\\%\\] {\n  height: 78%;\n}\n.h-\\[89\\%\\] {\n  height: 89%;\n}\n.w-4 {\n  width: 1rem;\n}\n.w-\\[100\\%\\] {\n  width: 100%;\n}\n.w-\\[10rem\\] {\n  width: 10rem;\n}\n.w-\\[15rem\\] {\n  width: 15rem;\n}\n.w-\\[2rem\\] {\n  width: 2rem;\n}\n.w-\\[4rem\\] {\n  width: 4rem;\n}\n.w-\\[6rem\\] {\n  width: 6rem;\n}\n.w-\\[7rem\\] {\n  width: 7rem;\n}\n.w-full {\n  width: 100%;\n}\n.transform {\n  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));\n}\n.cursor-pointer {\n  cursor: pointer;\n}\n.flex-col {\n  flex-direction: column;\n}\n.flex-wrap {\n  flex-wrap: wrap;\n}\n.items-end {\n  align-items: flex-end;\n}\n.items-center {\n  align-items: center;\n}\n.justify-end {\n  justify-content: flex-end;\n}\n.justify-center {\n  justify-content: center;\n}\n.justify-between {\n  justify-content: space-between;\n}\n.gap-4 {\n  gap: 1rem;\n}\n.gap-\\[10px\\] {\n  gap: 10px;\n}\n.gap-\\[2px\\] {\n  gap: 2px;\n}\n.overflow-scroll {\n  overflow: scroll;\n}\n.scroll-smooth {\n  scroll-behavior: smooth;\n}\n.rounded {\n  border-radius: 0.25rem;\n}\n.rounded-\\[10px\\] {\n  border-radius: 10px;\n}\n.rounded-full {\n  border-radius: 9999px;\n}\n.border {\n  border-width: 1px;\n}\n.border-b-2 {\n  border-bottom-width: 2px;\n}\n.border-solid {\n  border-style: solid;\n}\n.border-none {\n  border-style: none;\n}\n.border-\\[white\\] {\n  --tw-border-opacity: 1;\n  border-color: rgb(255 255 255 / var(--tw-border-opacity));\n}\n.bg-\\[\\#17a589\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(23 165 137 / var(--tw-bg-opacity));\n}\n.bg-\\[\\#326071\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(50 96 113 / var(--tw-bg-opacity));\n}\n.bg-\\[\\#746b6ba5\\] {\n  background-color: #746b6ba5;\n}\n.bg-\\[\\#8e44ad\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(142 68 173 / var(--tw-bg-opacity));\n}\n.bg-\\[\\#d45d38\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(212 93 56 / var(--tw-bg-opacity));\n}\n.bg-\\[green\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(0 128 0 / var(--tw-bg-opacity));\n}\n.bg-\\[purple\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(128 0 128 / var(--tw-bg-opacity));\n}\n.bg-\\[red\\] {\n  --tw-bg-opacity: 1;\n  background-color: rgb(255 0 0 / var(--tw-bg-opacity));\n}\n.p-0 {\n  padding: 0px;\n}\n.p-1 {\n  padding: 0.25rem;\n}\n.p-2 {\n  padding: 0.5rem;\n}\n.p-\\[10px\\] {\n  padding: 10px;\n}\n.p-\\[8px\\] {\n  padding: 8px;\n}\n.text-left {\n  text-align: left;\n}\n.text-center {\n  text-align: center;\n}\n.text-\\[12px\\] {\n  font-size: 12px;\n}\n.text-\\[13px\\] {\n  font-size: 13px;\n}\n.text-\\[18px\\] {\n  font-size: 18px;\n}\n.text-\\[20px\\] {\n  font-size: 20px;\n}\n.font-\\[500\\] {\n  font-weight: 500;\n}\n.font-\\[600\\] {\n  font-weight: 600;\n}\n.font-bold {\n  font-weight: 700;\n}\n.text-\\[\\#fff\\] {\n  --tw-text-opacity: 1;\n  color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.text-\\[black\\] {\n  --tw-text-opacity: 1;\n  color: rgb(0 0 0 / var(--tw-text-opacity));\n}\n.text-\\[red\\] {\n  --tw-text-opacity: 1;\n  color: rgb(255 0 0 / var(--tw-text-opacity));\n}\n.text-\\[white\\] {\n  --tw-text-opacity: 1;\n  color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.text-white {\n  --tw-text-opacity: 1;\n  color: rgb(255 255 255 / var(--tw-text-opacity));\n}\n.outline {\n  outline-style: solid;\n}\n.blur {\n  --tw-blur: blur(8px);\n  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);\n}\n.filter {\n  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);\n}\n.backdrop-filter {\n  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);\n  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);\n}\n.transition {\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;\n  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;\n  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n  transition-duration: 150ms;\n}\n.ease-out {\n  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);\n}\n";
 styleInject(css_248z);
 
 var style$f = {};
@@ -25126,12 +25126,14 @@ var Span = pt.span(_templateObject26 || (_templateObject26 = _taggedTemplateLite
 var ChatWrapper = pt.section(_templateObject27 || (_templateObject27 = _taggedTemplateLiteral(["\n  position: relative;\n  height: 97%;\n  background: ", ";\n"])), function (props) {
   return props.color;
 });
-var PressDiv = pt.div(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0.8rem;\n  align-items: flex-end;\n  justify-content: center;\n  background: rgba(0, 0, 0, 0.4);\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\n  backdrop-filter: blur(5.5px);\n  -webkit-backdrop-filter: blur(5.5px);\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  z-index: 1000;\n  & > .more-feature {\n    background-color: #4241417f;\n    display: flex;\n    flex-direction: column;\n    gap: 8px;\n    border-radius: 8px;\n    width: 10rem;\n    animation: scale-in-tr 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;\n\n    @keyframes scale-in-tr {\n      0% {\n        -webkit-transform: scale(0);\n        transform: scale(0);\n        -webkit-transform-origin: 100% 0%;\n        transform-origin: 100% 0%;\n        opacity: 1;\n      }\n      100% {\n        -webkit-transform: scale(1);\n        transform: scale(1);\n        -webkit-transform-origin: 100% 0%;\n        transform-origin: 100% 0%;\n        opacity: 1;\n      }\n    }\n  }\n"])));
-var ChatText = pt.textarea(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral(["\n  padding: 6px;\n  border-radius: 8px;\n  height: 3rem;\n  background: transparent;\n  width: ", ";\n  border: 2px solid purple;\n  color: ", ";\n\n  &::placeholder {\n    color: white; /* Change this to your desired color */\n  }\n\n  &:focus {\n    outline: none;\n    &::placeholder {\n      opacity: 0;\n    }\n  }\n"])), function (props) {
+var PressDiv = pt.div(_templateObject28 || (_templateObject28 = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0.8rem;\n  align-items: flex-end;\n  justify-content: center;\n  background: rgba(0, 0, 0, 0.4);\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\n  backdrop-filter: blur(5.5px);\n  -webkit-backdrop-filter: blur(5.5px);\n  border: 1px solid rgba(255, 255, 255, 0.18);\n  z-index: 1000;\n  & > .more-feature {\n    background-color: #4241417f;\n    display: flex;\n    flex-direction: column;\n    border-radius: 8px;\n    width: 10rem;\n    animation: scale-in-tr 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;\n\n    @keyframes scale-in-tr {\n      0% {\n        -webkit-transform: scale(0);\n        transform: scale(0);\n        -webkit-transform-origin: 100% 0%;\n        transform-origin: 100% 0%;\n        opacity: 1;\n      }\n      100% {\n        -webkit-transform: scale(1);\n        transform: scale(1);\n        -webkit-transform-origin: 100% 0%;\n        transform-origin: 100% 0%;\n        opacity: 1;\n      }\n    }\n    & > span {\n      display: flex;\n      justify-content: space-between;\n      align-items: center;\n      padding: 0.5rem;\n      color: #fff;\n      cursor: pointer;\n      &:hover {\n        color: purple;\n      }\n    }\n  }\n  & > button {\n    position: absolute;\n    bottom: 1.25rem;\n    left: 1.25rem;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 2.5rem;\n    height: 2.5rem;\n    border-radius: 50%;\n    padding: 0.5rem;\n    color: white;\n    background-color: #351f77ba;\n    font-size: 20px;\n    animation: roll-in-right 0.6s ease-out both;\n    &:focus {\n      outline: none;\n      border: none;\n    }\n    &:hover {\n      outline: none;\n      border: none;\n    }\n    @keyframes roll-in-right {\n      0% {\n        transform: translateX(800px) rotate(540deg);\n        opacity: 0;\n      }\n      100% {\n        transform: translateX(0) rotate(0deg);\n        opacity: 1;\n      }\n    }\n  }\n"])));
+var ChatText = pt.textarea(_templateObject29 || (_templateObject29 = _taggedTemplateLiteral(["\n  padding: 6px;\n  border-radius: 8px;\n  height: 3rem;\n  background: transparent;\n  width: ", ";\n  border: 2px solid purple;\n  color: ", ";\n\n  &::placeholder {\n    color: ", "; /* Change this to your desired color */\n  }\n\n  &:focus {\n    outline: none;\n    &::placeholder {\n      opacity: 0;\n    }\n  }\n"])), function (props) {
   return props.width;
 }, function (_ref9) {
   var theme = _ref9.theme;
   return theme.color;
+}, function (props) {
+  return props.placeholderColor ? props.placeholderColor : "white";
 });
 //chat list
 var ChatListWrapper = pt.section(_templateObject30 || (_templateObject30 = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 90%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 1rem;\n  padding: 8px;\n  box-sizing: border-box;\n  position: relative;\n\n  & > .newChatdiv {\n    position: absolute;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    bottom: 10px;\n    right: 20px;\n    width: 3rem;\n    height: 3rem;\n    border-radius: 50%;\n    border: 2px solid purple;\n    cursor: pointer;\n  }\n  & > .messageListDiv {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    gap: 8px;\n    height: 55vh;\n    overflow: scroll;\n    scroll-behavior: smooth;\n  }\n  & > p {\n    color: #605f5f;\n    margin: 0;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    width: 12rem;\n    overflow: hidden;\n  }\n"])));
@@ -25139,8 +25141,13 @@ var ChatListWrapper = pt.section(_templateObject30 || (_templateObject30 = _tagg
 var CallWrapper = pt.section(_templateObject31 || (_templateObject31 = _taggedTemplateLiteral(["\n  position: relative;\n  width: 100%;\n  height: 93%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 1rem;\n  overflow: hidden;\n"])));
 var CallHead = pt.div(_templateObject32 || (_templateObject32 = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 12rem;\n  display: flex;\n  flex-direction: column;\n  gap: 0.75rem;\n  justify-content: center;\n  align-items: center;\n  & > .call-user-img {\n    background-color: #676666a2;\n    height: 3rem;\n    width: 3rem;\n    display: flex;\n    justify-content: center;\n    align-items: end;\n    border-radius: 15px;\n    overflow: hidden;\n  }\n"])));
 var CallFeatureDiv = pt.div(_templateObject33 || (_templateObject33 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 15rem;\n\n  & > .featureDiv {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    & > .feature-icon-div {\n      width: 3rem;\n      height: 3rem;\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n      align-items: center;\n      border-radius: 8px;\n      cursor: pointer;\n      background-color: transparent;\n      &:hover {\n        background-color: #acacacaf;\n      }\n    }\n  }\n\n  & > .nta-feature {\n    width: 4rem;\n    height: 4rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    border-radius: 8px;\n    background-color: white;\n    box-shadow: 0px 0px 52px 30px rgba(0, 0, 0, 0.1);\n  }\n  & > .feature-footer {\n    display: flex;\n    flex-direction: column;\n    width: 4rem;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n  }\n"])));
-//ant desing custom modal
-var StyledModal = pt(default_1$7)(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral(["\n  .ant-modal-content {\n    width: 17rem !important;\n    height: 10rem !important;\n    position: absolute;\n    top: 700%;\n    left: 30%;\n    padding: 10px !important;\n  }\n\n  .ant-modal-body {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 4px;\n    margin-top: 2rem;\n    height: calc(100% - 96px); /* Adjust for the header height */\n  }\n"])));
+var StyledModal = pt(default_1$7)(_templateObject34 || (_templateObject34 = _taggedTemplateLiteral(["\n  .footer-div {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 100%;\n    & > .delete-btn {\n      width: 112px;\n      border: 1px solid #d45d38;\n      color: white;\n      border-radius: 8px;\n      background-color: #d45d38;\n      padding: 0.5rem;\n      &:hover {\n        border: 1px solid #d45d38;\n        color: #d45d38;\n        background: transparent;\n      }\n    }\n    & > .cancel-btn {\n      width: 112px;\n      border: 1px solid white;\n      color: black;\n      border-radius: 8px;\n      background-color: white;\n      padding: 0.5rem;\n      &:hover {\n        border: 1px solid #fff;\n        color: #fff;\n        background: transparent;\n      }\n    }\n  }\n  .ant-modal-content {\n    width: 17rem;\n    height: 15rem;\n    position: absolute;\n    top: 700%;\n    left: 30.2%;\n    padding: 10px !important;\n    background-color: ", ";\n  }\n\n  .ant-modal-body {\n    display: flex;\n    flex-direction: ", ";\n    justify-content: center;\n    align-items: center;\n    gap: 12px;\n    margin-top: 2rem;\n    height: calc(\n      100% - ", "\n    ); /* Adjust for the header height */\n    & > .bin-div {\n      width: 40px;\n      height: 40px;\n      color: #d45d38;\n      border-radius: 50%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      border: 1px solid #d45d38;\n    }\n  }\n"])), function (props) {
+  return props.bgColor ? props.bgColor : "white";
+}, function (props) {
+  return props.direction ? props.direction : "row";
+}, function (props) {
+  return props.Bodyheight ? props.Bodyheight : "96px";
+});
 
 var BabalButton = function BabalButton(_ref) {
   var title = _ref.title;
@@ -27872,75 +27879,6 @@ var SideMenu = function SideMenu(_ref) {
   }))))));
 };
 
-var ChatListUi = function ChatListUi() {
-  var _useState = React$1n.useState(""),
-    _useState2 = _slicedToArray(_useState, 2),
-    searchName = _useState2[0],
-    setSearchName = _useState2[1];
-  var chatList = JSON.parse(localStorage.getItem("MessageArray") || "[]");
-  var navigate = useNavigate();
-  var recentChats = chatList.map(function (user) {
-    var _a;
-    var lastMessage = user === null || user === void 0 ? void 0 : user.message[((_a = user === null || user === void 0 ? void 0 : user.message) === null || _a === void 0 ? void 0 : _a.length) - 1];
-    return {
-      username: user === null || user === void 0 ? void 0 : user.username,
-      contactId: user === null || user === void 0 ? void 0 : user.contactId,
-      message: lastMessage === null || lastMessage === void 0 ? void 0 : lastMessage.message,
-      date: new Date(lastMessage === null || lastMessage === void 0 ? void 0 : lastMessage.date)
-    };
-  });
-  var sortedRecentChats = recentChats.sort(function (a, b) {
-    return b.date - a.date;
-  });
-  console.log("sortedRecentChats", sortedRecentChats);
-  var searchedChatList = sortedRecentChats.filter(function (item) {
-    var _a;
-    if (item.username) {
-      return (_a = item === null || item === void 0 ? void 0 : item.username) === null || _a === void 0 ? void 0 : _a.toLowerCase().startsWith(searchName === null || searchName === void 0 ? void 0 : searchName.toLocaleLowerCase());
-    } else {
-      return null;
-    }
-  });
-  console.log("searchedChatList", searchedChatList);
-  return /*#__PURE__*/React$1n.createElement(ChatListWrapper, null, /*#__PURE__*/React$1n.createElement("div", {
-    className: "newChatdiv"
-  }, /*#__PURE__*/React$1n.createElement(BiSolidMessageSquareEdit, {
-    color: "purple",
-    size: 30,
-    onClick: function onClick() {
-      return navigate("/newchat");
-    }
-  })), /*#__PURE__*/React$1n.createElement("div", {
-    className: "w-full flex"
-  }, /*#__PURE__*/React$1n.createElement(PhoneInput, {
-    placeholder: "Search Chat",
-    value: searchName,
-    onChange: function onChange(e) {
-      setSearchName(e.target.value);
-    },
-    type: "text"
-  })), /*#__PURE__*/React$1n.createElement("div", {
-    className: "messageListDiv"
-  }, searchedChatList === null || searchedChatList === void 0 ? void 0 : searchedChatList.map(function (item, index) {
-    return /*#__PURE__*/React$1n.createElement(MessageBox, {
-      width: "100%",
-      key: index,
-      onClick: function onClick() {
-        navigate("/chat/".concat(item.contactId, "?item=").concat(encodeURIComponent(JSON.stringify(item))));
-      }
-    }, item === null || item === void 0 ? void 0 : item.username, /*#__PURE__*/React$1n.createElement("p", {
-      style: {
-        color: "#605f5f",
-        margin: 0,
-        textOverflow: "ellipsis",
-        whiteSpace: "nowrap",
-        width: "12rem",
-        overflow: "hidden"
-      }
-    }, item === null || item === void 0 ? void 0 : item.message));
-  })));
-};
-
 var style$a = {};
 
 Object.defineProperty(style$a, "__esModule", {
@@ -28200,6 +28138,207 @@ if (process.env.NODE_ENV !== 'production') {
   Divider$1.displayName = 'Divider';
 }
 default_1$6 = divider.default = Divider$1;
+
+// THIS FILE IS AUTO GENERATED
+function TiPinOutline (props) {
+  return GenIcon({"tag":"svg","attr":{"version":"1.2","baseProfile":"tiny","viewBox":"0 0 24 24"},"child":[{"tag":"path","attr":{"d":"M21.436 7.586l-3.998-4.02c-.752-.756-2.063-.764-2.83-.006-.196.196-.35.436-.418.629-.653 1.362-1.354 2.215-2.254 2.727l-.217.105c-.968.485-2.285.979-4.719.979-.266 0-.521.052-.766.152-.484.202-.879.595-1.082 1.084-.199.484-.199 1.041 0 1.525.104.249.25.471.435.651l3.235 3.235-3.822 5.353 5.352-3.822 3.227 3.227c.186.189.406.339.656.441.247.103.503.154.766.154s.519-.052.765-.154c.498-.205.883-.592 1.08-1.078.103-.242.155-.507.155-.768 0-2.436.494-3.752.978-4.721.496-.992 1.369-1.748 2.754-2.414.271-.104.51-.256.711-.457.772-.782.768-2.051-.008-2.822zm-5.248 4.801c-.819 1.643-1.188 3.37-1.195 5.604l-7.993-7.991c2.139 0 3.814-.335 5.396-1.084l.235-.105c1.399-.699 2.468-1.893 3.388-3.834l3.924 4.051c-1.863.893-3.056 1.96-3.755 3.359z"},"child":[]}]})(props);
+}function TiTags (props) {
+  return GenIcon({"tag":"svg","attr":{"version":"1.2","baseProfile":"tiny","viewBox":"0 0 24 24"},"child":[{"tag":"g","attr":{},"child":[{"tag":"path","attr":{"d":"M21.422 9.594l-6.465-6.535c-1.329-1.33-3.087-2.059-4.957-2.059s-3.628.729-4.95 2.051c-1.416 1.414-2.127 3.356-2.027 5.314-.662 1.085-1.023 2.33-1.023 3.634 0 1.87.729 3.628 2.051 4.95l3.053 2.984 3.482 3.48c.391.392.902.587 1.414.587s1.023-.195 1.414-.586l7-7c.778-.778.782-2.038.008-2.82l-.093-.094 1.085-1.086c.778-.778.782-2.038.008-2.82zm-9.422 12.406l-3.498-3.497-3.037-2.968c-1.953-1.953-1.953-5.119 0-7.07.976-.977 2.256-1.465 3.535-1.465s2.559.488 3.535 1.465l6.465 6.535-7 7zm1.957-14.941c-1.329-1.33-3.087-2.059-4.957-2.059-1.276 0-2.497.347-3.565.982.241-.55.579-1.067 1.03-1.518.976-.976 2.256-1.464 3.535-1.464s2.559.488 3.535 1.465l6.465 6.535-1.078 1.078-4.965-5.019zM9 10.499c.83 0 1.5.672 1.5 1.501 0 .83-.67 1.499-1.5 1.499s-1.5-.669-1.5-1.499c0-.829.67-1.501 1.5-1.501m0-1c-1.378 0-2.5 1.122-2.5 2.501 0 1.378 1.122 2.499 2.5 2.499s2.5-1.121 2.5-2.499c0-1.379-1.122-2.501-2.5-2.501z"},"child":[]}]}]})(props);
+}
+
+// THIS FILE IS AUTO GENERATED
+function RiWechatPayLine (props) {
+  return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"currentColor"},"child":[{"tag":"path","attr":{"d":"M19.1458 8.99325L9.34705 14.6006L9.27753 14.6465C9.18483 14.6925 9.09213 14.7154 8.97625 14.7154C8.72133 14.7154 8.51275 14.5776 8.39688 14.3709L8.35053 14.2791L6.51971 10.329C6.49653 10.283 6.49653 10.2371 6.49653 10.1912C6.49653 10.0074 6.63558 9.86964 6.82098 9.86964C6.8905 9.86964 6.96003 9.8926 7.02955 9.93853L9.18483 11.4543C9.34705 11.5461 9.53245 11.615 9.74103 11.615C9.8569 11.615 9.97278 11.5921 10.0887 11.5461L18.3634 7.89746C16.9347 6.27313 14.6348 5.19995 12.0006 5.19995C7.57986 5.19995 4.10059 8.22235 4.10059 11.8C4.10059 13.1655 4.60024 14.4728 5.53227 15.5809C5.58056 15.6383 5.65277 15.7177 5.74666 15.8155C6.54199 16.6438 6.94301 17.7739 6.84765 18.9182L6.82289 19.2153L7.53841 18.7789C8.34812 18.2851 9.30697 18.095 10.2438 18.2426C10.4553 18.2759 10.6292 18.3015 10.7634 18.3192C11.1696 18.3728 11.5828 18.4 12.0006 18.4C16.4213 18.4 19.9006 15.3776 19.9006 11.8C19.9006 10.8036 19.6307 9.85022 19.1458 8.99325ZM6.19286 21.9423C6.00989 22.0566 5.79484 22.1087 5.57981 22.0908C5.02944 22.045 4.62045 21.5616 4.66631 21.0112L4.85456 18.7521C4.90224 18.1799 4.70173 17.6149 4.30407 17.2008C4.1819 17.0735 4.08111 16.9627 4.0017 16.8683C2.80622 15.447 2.10059 13.6951 2.10059 11.8C2.10059 7.0503 6.53297 3.19995 12.0006 3.19995C17.4682 3.19995 21.9006 7.0503 21.9006 11.8C21.9006 16.5496 17.4682 20.4 12.0006 20.4C11.4911 20.4 10.9906 20.3665 10.5018 20.302C10.3491 20.2819 10.1593 20.254 9.93256 20.2182C9.46412 20.1444 8.9847 20.2395 8.57985 20.4864L6.19286 21.9423Z"},"child":[]}]})(props);
+}
+
+// THIS FILE IS AUTO GENERATED
+function ImUser (props) {
+  return GenIcon({"tag":"svg","attr":{"version":"1.1","viewBox":"0 0 16 16"},"child":[{"tag":"path","attr":{"d":"M9 11.041v-0.825c1.102-0.621 2-2.168 2-3.716 0-2.485 0-4.5-3-4.5s-3 2.015-3 4.5c0 1.548 0.898 3.095 2 3.716v0.825c-3.392 0.277-6 1.944-6 3.959h14c0-2.015-2.608-3.682-6-3.959z"},"child":[]}]})(props);
+}function ImBin (props) {
+  return GenIcon({"tag":"svg","attr":{"version":"1.1","viewBox":"0 0 16 16"},"child":[{"tag":"path","attr":{"d":"M2 5v10c0 0.55 0.45 1 1 1h9c0.55 0 1-0.45 1-1v-10h-11zM5 14h-1v-7h1v7zM7 14h-1v-7h1v7zM9 14h-1v-7h1v7zM11 14h-1v-7h1v7z"},"child":[]},{"tag":"path","attr":{"d":"M13.25 2h-3.25v-1.25c0-0.412-0.338-0.75-0.75-0.75h-3.5c-0.412 0-0.75 0.338-0.75 0.75v1.25h-3.25c-0.413 0-0.75 0.337-0.75 0.75v1.25h13v-1.25c0-0.413-0.338-0.75-0.75-0.75zM9 2h-3v-0.987h3v0.987z"},"child":[]}]})(props);
+}
+
+var ChatListUi = function ChatListUi() {
+  var _useState = React$1n.useState(""),
+    _useState2 = _slicedToArray(_useState, 2),
+    searchName = _useState2[0],
+    setSearchName = _useState2[1];
+  var chatList = JSON.parse(localStorage.getItem("MessageArray") || "[]");
+  var navigate = useNavigate();
+  var longPressTimer = React$1n.useRef(null);
+  var _useState3 = React$1n.useState(),
+    _useState4 = _slicedToArray(_useState3, 2),
+    chatInfo = _useState4[0],
+    setChatInfo = _useState4[1];
+  var _useState5 = React$1n.useState(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    isLongPress = _useState6[0],
+    setIsLongPress = _useState6[1];
+  var _useState7 = React$1n.useState(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    isVisible = _useState8[0],
+    setIsVisible = _useState8[1];
+  var _useState9 = React$1n.useState(false),
+    _useState10 = _slicedToArray(_useState9, 2),
+    isDeleteModelOpen = _useState10[0],
+    setIsDeleteModalOpen = _useState10[1];
+  var recentChats = chatList.map(function (user) {
+    var _a;
+    var lastMessage = user === null || user === void 0 ? void 0 : user.message[((_a = user === null || user === void 0 ? void 0 : user.message) === null || _a === void 0 ? void 0 : _a.length) - 1];
+    return {
+      username: user === null || user === void 0 ? void 0 : user.username,
+      contactId: user === null || user === void 0 ? void 0 : user.contactId,
+      message: lastMessage === null || lastMessage === void 0 ? void 0 : lastMessage.message,
+      date: new Date(lastMessage === null || lastMessage === void 0 ? void 0 : lastMessage.date)
+    };
+  });
+  var sortedRecentChats = recentChats.sort(function (a, b) {
+    return b.date - a.date;
+  });
+  console.log("sortedRecentChats", sortedRecentChats);
+  var searchedChatList = sortedRecentChats.filter(function (item) {
+    var _a;
+    if (item.username) {
+      return (_a = item === null || item === void 0 ? void 0 : item.username) === null || _a === void 0 ? void 0 : _a.toLowerCase().startsWith(searchName === null || searchName === void 0 ? void 0 : searchName.toLocaleLowerCase());
+    } else {
+      return null;
+    }
+  });
+  console.log("searchedChatList", searchedChatList);
+  var handleMouseDown = function handleMouseDown(chat) {
+    // Start the timer for the long press
+    longPressTimer.current = window.setTimeout(function () {
+      setIsLongPress(true);
+      setIsVisible(true); // Show the div on long press
+    }, 500); // Set the long press duration (500ms in this case)
+    setChatInfo(chat);
+  };
+  console.log("chat>>>", chatInfo);
+  var handleMouseUp = function handleMouseUp(item) {
+    // Clear the timer if the mouse is released before the long press is completed
+    clearTimeout(longPressTimer.current);
+    if (!longPressTimer) {
+      navigate("/chat/".concat(item.contactId, "?item=").concat(encodeURIComponent(JSON.stringify(item))));
+    }
+  };
+  var handleMouseLeave = function handleMouseLeave() {
+    // Clear the timer if the mouse leaves the div before the long press is completed
+    clearTimeout(longPressTimer.current);
+  };
+  var handleClosePressDiv = function handleClosePressDiv() {
+    setIsVisible(false);
+    setIsLongPress(false);
+  };
+  var handleDeleteChat = function handleDeleteChat() {
+    var existingMessages = JSON.parse(localStorage.getItem("MessageArray") || "[]");
+    existingMessages = existingMessages.filter(function (item) {
+      return item.contactId !== (chatInfo === null || chatInfo === void 0 ? void 0 : chatInfo.contactId);
+    });
+    localStorage.setItem("MessageArray", JSON.stringify(existingMessages));
+    setIsDeleteModalOpen(false);
+  };
+  var handlePinChat = function handlePinChat() {};
+  var handleCancel = function handleCancel() {
+    setIsDeleteModalOpen(false);
+  };
+  var handleOk = function handleOk() {
+    setIsDeleteModalOpen(false);
+  };
+  return /*#__PURE__*/React$1n.createElement(ChatListWrapper, null, /*#__PURE__*/React$1n.createElement(StyledModal, {
+    direction: "column",
+    open: isDeleteModelOpen,
+    onOk: handleOk,
+    onCancel: handleCancel,
+    closable: false,
+    Bodyheight: 30,
+    bgColor: "black",
+    footer: [/*#__PURE__*/React$1n.createElement("div", {
+      className: " footer-div"
+    }, /*#__PURE__*/React$1n.createElement("button", {
+      key: "cancel",
+      className: " cancel-btn ",
+      onClick: handleCancel
+    }, "Cancel"), /*#__PURE__*/React$1n.createElement("button", {
+      key: "delete",
+      className: " delete-btn w-[7rem] border-none text-[white] rounded-[10px] bg-[#d45d38] p-2",
+      onClick: handleDeleteChat
+    }, "Delete"))]
+  }, /*#__PURE__*/React$1n.createElement("div", {
+    className: "bin-div"
+  }, /*#__PURE__*/React$1n.createElement(ImBin, null)), /*#__PURE__*/React$1n.createElement("p", {
+    className: "text-[white] text-center"
+  }, "Are You Sure! You Want To Delete This Conversation")), isLongPress && isVisible && ( /*#__PURE__*/React$1n.createElement(PressDiv, {
+    onClick: handleClosePressDiv
+  }, /*#__PURE__*/React$1n.createElement("h3", {
+    className: "absolute top-0 left-[35%]  text-white font-[600]"
+  }, chatInfo === null || chatInfo === void 0 ? void 0 : chatInfo.username), /*#__PURE__*/React$1n.createElement("div", {
+    className: "flex flex-col justify-end items-end"
+  }, /*#__PURE__*/React$1n.createElement(MessageBox, {
+    width: "fit-content"
+  }, chatInfo === null || chatInfo === void 0 ? void 0 : chatInfo.message), /*#__PURE__*/React$1n.createElement("span", {
+    className: "text-[13px] text-[white]"
+  }, new Date(chatInfo === null || chatInfo === void 0 ? void 0 : chatInfo.date).toLocaleString())), /*#__PURE__*/React$1n.createElement("div", {
+    className: "more-feature "
+  }, /*#__PURE__*/React$1n.createElement("span", {
+    className: "",
+    onClick: handlePinChat
+  }, "Pin ", /*#__PURE__*/React$1n.createElement(TiPinOutline, null)), /*#__PURE__*/React$1n.createElement(default_1$6, {
+    className: "m-0 p-0 border-[white]"
+  }), /*#__PURE__*/React$1n.createElement("span", {
+    className: "",
+    onClick: handlePinChat
+  }, "Mark as Read ", /*#__PURE__*/React$1n.createElement(RiWechatPayLine, null)), /*#__PURE__*/React$1n.createElement(default_1$6, {
+    className: "m-0 p-0 border-[white]"
+  }), /*#__PURE__*/React$1n.createElement("span", {
+    className: " p-1 text-[white] cursor-pointer",
+    onClick: function onClick() {
+      setIsDeleteModalOpen(true);
+    }
+  }, "Delete ", /*#__PURE__*/React$1n.createElement(ImBin, null))))), /*#__PURE__*/React$1n.createElement("div", {
+    className: "newChatdiv"
+  }, /*#__PURE__*/React$1n.createElement(BiSolidMessageSquareEdit, {
+    color: "purple",
+    size: 30,
+    onClick: function onClick() {
+      return navigate("/newchat");
+    }
+  })), /*#__PURE__*/React$1n.createElement("div", {
+    className: "w-full flex"
+  }, /*#__PURE__*/React$1n.createElement(PhoneInput, {
+    placeholder: "Search Chat",
+    value: searchName,
+    onChange: function onChange(e) {
+      setSearchName(e.target.value);
+    },
+    type: "text"
+  })), /*#__PURE__*/React$1n.createElement("div", {
+    className: "messageListDiv"
+  }, searchedChatList === null || searchedChatList === void 0 ? void 0 : searchedChatList.map(function (item, index) {
+    return /*#__PURE__*/React$1n.createElement(MessageBox, {
+      onMouseDown: function onMouseDown() {
+        return handleMouseDown(item);
+      },
+      onMouseUp: function onMouseUp() {
+        handleMouseUp(item);
+      },
+      onMouseLeave: handleMouseLeave,
+      width: "100%",
+      key: index,
+      onClick: function onClick() {
+        navigate("/chat/".concat(item.contactId, "?item=").concat(encodeURIComponent(JSON.stringify(item))));
+      }
+    }, item === null || item === void 0 ? void 0 : item.username, /*#__PURE__*/React$1n.createElement("p", {
+      style: {
+        color: "#605f5f",
+        margin: 0,
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap",
+        width: "12rem",
+        overflow: "hidden"
+      }
+    }, item === null || item === void 0 ? void 0 : item.message));
+  })));
+};
 
 var space = {};
 
@@ -38710,13 +38849,6 @@ if (process.env.NODE_ENV !== 'production') {
 default_1$4 = select.default = Select;
 
 // THIS FILE IS AUTO GENERATED
-function ImUser (props) {
-  return GenIcon({"tag":"svg","attr":{"version":"1.1","viewBox":"0 0 16 16"},"child":[{"tag":"path","attr":{"d":"M9 11.041v-0.825c1.102-0.621 2-2.168 2-3.716 0-2.485 0-4.5-3-4.5s-3 2.015-3 4.5c0 1.548 0.898 3.095 2 3.716v0.825c-3.392 0.277-6 1.944-6 3.959h14c0-2.015-2.608-3.682-6-3.959z"},"child":[]}]})(props);
-}function ImBin (props) {
-  return GenIcon({"tag":"svg","attr":{"version":"1.1","viewBox":"0 0 16 16"},"child":[{"tag":"path","attr":{"d":"M2 5v10c0 0.55 0.45 1 1 1h9c0.55 0 1-0.45 1-1v-10h-11zM5 14h-1v-7h1v7zM7 14h-1v-7h1v7zM9 14h-1v-7h1v7zM11 14h-1v-7h1v7z"},"child":[]},{"tag":"path","attr":{"d":"M13.25 2h-3.25v-1.25c0-0.412-0.338-0.75-0.75-0.75h-3.5c-0.412 0-0.75 0.338-0.75 0.75v1.25h-3.25c-0.413 0-0.75 0.337-0.75 0.75v1.25h13v-1.25c0-0.413-0.338-0.75-0.75-0.75zM9 2h-3v-0.987h3v0.987z"},"child":[]}]})(props);
-}
-
-// THIS FILE IS AUTO GENERATED
 function BsFillMicMuteFill (props) {
   return GenIcon({"tag":"svg","attr":{"fill":"currentColor","viewBox":"0 0 16 16"},"child":[{"tag":"path","attr":{"d":"M13 8c0 .564-.094 1.107-.266 1.613l-.814-.814A4 4 0 0 0 12 8V7a.5.5 0 0 1 1 0zm-5 4c.818 0 1.578-.245 2.212-.667l.718.719a5 5 0 0 1-2.43.923V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 1 0v1a4 4 0 0 0 4 4m3-9v4.879L5.158 2.037A3.001 3.001 0 0 1 11 3"},"child":[]},{"tag":"path","attr":{"d":"M9.486 10.607 5 6.12V8a3 3 0 0 0 4.486 2.607m-7.84-9.253 12 12 .708-.708-12-12z"},"child":[]}]})(props);
 }function BsFillRecordCircleFill (props) {
@@ -38730,11 +38862,6 @@ function BsFillMicMuteFill (props) {
 // THIS FILE IS AUTO GENERATED
 function TbUserSquareRounded (props) {
   return GenIcon({"tag":"svg","attr":{"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"},"child":[{"tag":"path","attr":{"d":"M12 13a3 3 0 1 0 0 -6a3 3 0 0 0 0 6z"},"child":[]},{"tag":"path","attr":{"d":"M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"},"child":[]},{"tag":"path","attr":{"d":"M6 20.05v-.05a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v.05"},"child":[]}]})(props);
-}
-
-// THIS FILE IS AUTO GENERATED
-function TiTags (props) {
-  return GenIcon({"tag":"svg","attr":{"version":"1.2","baseProfile":"tiny","viewBox":"0 0 24 24"},"child":[{"tag":"g","attr":{},"child":[{"tag":"path","attr":{"d":"M21.422 9.594l-6.465-6.535c-1.329-1.33-3.087-2.059-4.957-2.059s-3.628.729-4.95 2.051c-1.416 1.414-2.127 3.356-2.027 5.314-.662 1.085-1.023 2.33-1.023 3.634 0 1.87.729 3.628 2.051 4.95l3.053 2.984 3.482 3.48c.391.392.902.587 1.414.587s1.023-.195 1.414-.586l7-7c.778-.778.782-2.038.008-2.82l-.093-.094 1.085-1.086c.778-.778.782-2.038.008-2.82zm-9.422 12.406l-3.498-3.497-3.037-2.968c-1.953-1.953-1.953-5.119 0-7.07.976-.977 2.256-1.465 3.535-1.465s2.559.488 3.535 1.465l6.465 6.535-7 7zm1.957-14.941c-1.329-1.33-3.087-2.059-4.957-2.059-1.276 0-2.497.347-3.565.982.241-.55.579-1.067 1.03-1.518.976-.976 2.256-1.464 3.535-1.464s2.559.488 3.535 1.465l6.465 6.535-1.078 1.078-4.965-5.019zM9 10.499c.83 0 1.5.672 1.5 1.501 0 .83-.67 1.499-1.5 1.499s-1.5-.669-1.5-1.499c0-.829.67-1.501 1.5-1.501m0-1c-1.378 0-2.5 1.122-2.5 2.501 0 1.378 1.122 2.499 2.5 2.499s2.5-1.121 2.5-2.499c0-1.379-1.122-2.501-2.5-2.501z"},"child":[]}]}]})(props);
 }
 
 var style$6 = {};
@@ -44867,7 +44994,6 @@ var SingleChatUi = function SingleChatUi() {
     _useState12 = _slicedToArray(_useState11, 2),
     pressMsg = _useState12[0],
     setPressMsg = _useState12[1];
-  console.log("pressMsg>>", pressMsg);
   var _useState13 = React$1n.useState(null),
     _useState14 = _slicedToArray(_useState13, 2),
     newMessageId = _useState14[0],
@@ -44999,8 +45125,7 @@ var SingleChatUi = function SingleChatUi() {
     localStorage.setItem("MessageArray", JSON.stringify(existingMessages));
     setSendMessage("");
   };
-  var date = new Date(pressMsg.date);
-  console.log("data<<>>", date);
+  new Date(pressMsg.date);
   return /*#__PURE__*/React$1n.createElement(ChatWrapper, {
     color: theme
   }, isLongPress && isVisible && ( /*#__PURE__*/React$1n.createElement(PressDiv, {
@@ -45010,11 +45135,11 @@ var SingleChatUi = function SingleChatUi() {
   }, /*#__PURE__*/React$1n.createElement(MessageBox, {
     width: "fit-content"
   }, pressMsg === null || pressMsg === void 0 ? void 0 : pressMsg.message), /*#__PURE__*/React$1n.createElement("span", {
-    className: "text-[13px]"
-  }, new Date(pressMsg.date).toLocaleString())), /*#__PURE__*/React$1n.createElement("div", {
-    className: " more-feature "
+    className: "text-[13px] text-[white]"
+  }, new Date(pressMsg === null || pressMsg === void 0 ? void 0 : pressMsg.date).toLocaleString())), /*#__PURE__*/React$1n.createElement("div", {
+    className: "more-feature "
   }, /*#__PURE__*/React$1n.createElement("span", {
-    className: " p-1 text-[white] cursor-pointer",
+    className: "",
     onClick: handleCopy
   }, "Text copy"), /*#__PURE__*/React$1n.createElement(default_1$6, {
     className: "m-0 p-0 border-[white]"
@@ -45022,7 +45147,7 @@ var SingleChatUi = function SingleChatUi() {
     className: " p-1 text-[white] cursor-pointer",
     onClick: handleCopy
   }, "Text Translate")), /*#__PURE__*/React$1n.createElement("button", {
-    className: "bg-[red] p-1 text-[white] absolute bottom-5 left-5",
+    className: "bottom-5",
     onClick: deleteMessage
   }, /*#__PURE__*/React$1n.createElement(ImBin, null)))), /*#__PURE__*/React$1n.createElement("div", {
     style: {
@@ -45258,10 +45383,12 @@ var PhoneCallUi = function PhoneCallUi() {
     title: "Notes",
     open: isModalOpen,
     onCancel: handleCancel,
-    footer: null
+    footer: null,
+    direction: "column"
   }, /*#__PURE__*/React$1n.createElement(ChatText, {
-    width: 100,
-    placeholder: "Write notes"
+    width: "100%",
+    placeholder: "Write notes",
+    placeholderColor: "black"
   }), /*#__PURE__*/React$1n.createElement(_Button$1, {
     className: "bg-[green] text-[white]",
     size: "middle",
@@ -45337,7 +45464,10 @@ var PhoneCallUi = function PhoneCallUi() {
     className: "text-left font-[600] text-[18px]"
   }, "Transfer Call"), /*#__PURE__*/React$1n.createElement(RefIcon$3, {
     onClick: onClose
-  })), /*#__PURE__*/React$1n.createElement(default_1$4, {
+  })), /*#__PURE__*/React$1n.createElement(_Space, {
+    className: "w-full p-2",
+    direction: "vertical"
+  }, /*#__PURE__*/React$1n.createElement(default_1$4, {
     className: "w-[100%]",
     showSearch: true,
     onChange: function onChange(value, option) {
@@ -45357,7 +45487,7 @@ var PhoneCallUi = function PhoneCallUi() {
       value: option === null || option === void 0 ? void 0 : option.number,
       label: option === null || option === void 0 ? void 0 : option.contactName
     }, option === null || option === void 0 ? void 0 : option.contactName);
-  }))), /*#__PURE__*/React$1n.createElement(CallHead, null, /*#__PURE__*/React$1n.createElement("div", {
+  })), /*#__PURE__*/React$1n.createElement(_Button$1, null, "Transfer call"))), /*#__PURE__*/React$1n.createElement(CallHead, null, /*#__PURE__*/React$1n.createElement("div", {
     className: "call-user-img"
   }, " ", /*#__PURE__*/React$1n.createElement(ImUser, {
     size: 40
@@ -47329,6 +47459,7 @@ var PhoneBook = function PhoneBook() {
     return nameMatch || numberMatch;
   });
   return /*#__PURE__*/React$1n.createElement(ContactWrapper, null, /*#__PURE__*/React$1n.createElement("div", {
+    className: "search-contact-head",
     style: {
       padding: "10px",
       display: "flex",

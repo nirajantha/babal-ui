@@ -38,7 +38,7 @@ const PhoneBook = () => {
 
   return (
     <ContactWrapper>
-      <div
+      <div className="search-contact-head"
         style={{
           padding: "10px",
           display: "flex",

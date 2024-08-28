@@ -25,7 +25,6 @@ const SingleChatUi = () => {
   const [isVisible, setIsVisible] = useState(false);
   const longPressTimer = useRef<number | null>(null);
   const [pressMsg, setPressMsg] = useState([]);
-  console.log("pressMsg>>", pressMsg);
   const [newMessageId, setNewMessageId] = useState<number | null>(null);
 
   const currentDate = new Date();
@@ -180,7 +179,6 @@ const SingleChatUi = () => {
     setSendMessage("");
   };
   const date = new Date(pressMsg.date);
-  console.log("data<<>>", date);
 
   return (
     <ChatWrapper color={theme}>
@@ -188,16 +186,13 @@ const SingleChatUi = () => {
         <PressDiv onClick={handleCloseDiv}>
           <div className="flex flex-col justify-end items-end">
             <MessageBox width="fit-content">{pressMsg?.message}</MessageBox>
-            <span className="text-[13px]">
-              {new Date(pressMsg.date).toLocaleString()}
+            <span className="text-[13px] text-[white]">
+              {new Date(pressMsg?.date).toLocaleString()}
             </span>
           </div>
 
-          <div className=" more-feature ">
-            <span
-              className=" p-1 text-[white] cursor-pointer"
-              onClick={handleCopy}
-            >
+          <div className="more-feature ">
+            <span className="" onClick={handleCopy}>
               Text copy
             </span>
             <Divider className="m-0 p-0 border-[white]" />
@@ -209,10 +204,7 @@ const SingleChatUi = () => {
             </span>
           </div>
 
-          <button
-            className="bg-[red] p-1 text-[white] absolute bottom-5 left-5"
-            onClick={deleteMessage}
-          >
+          <button className="bottom-5" onClick={deleteMessage}>
             <ImBin />
           </button>
         </PressDiv>

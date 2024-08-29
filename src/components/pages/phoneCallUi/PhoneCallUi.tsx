@@ -17,16 +17,18 @@ import {
   CallWrapper,
   ChatText,
   Display,
+  StyledDrawer,
   StyledModal,
   StyledNumber,
 } from "../../styled/StyledComponents";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Numbers from "../../keypad/Numbers";
 import { useNumberContext } from "../../context/CreateContext";
 import ChatUi from "../chatUI/ChatUi";
 import SingleChatUi from "../chatUI/SingleChatUi";
 import { phoneContact } from "../../data/Data";
 import { CloseOutlined } from "@ant-design/icons";
+import { BiMessageSquareX } from "react-icons/bi";
 
 const options = [
   {
@@ -56,38 +58,54 @@ const options = [
 ];
 
 const PhoneCallUi = () => {
+  const { id } = useParams();
   const [open, setOpen] = useState(false);
   const [tagOpen, setTagOpen] = useState(false);
   const [convoOpen, setConvoOpen] = useState(false);
   const [transferCallOpen, setTransferCallOpen] = useState(false);
   const [selectedItemId, setSelectedItemId] = useState<number>();
   const [selectedUsername, setselectedUsername] = useState<string>("");
-  const [Number, setNumber] = useState<number>();
-  const handleChange = (value: string[]) => {
-    console.log(`selected ${value}`);
-  };
+  const [number, setNumber] = useState<number>();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const location = useLocation();
   const [muteMike, setMuteMike] = useState(false);
   const [holdCall, setHoldCall] = useState(false);
-  const params = new URLSearchParams(location.search);
-  const item = params.get("item");
 
-  let userCallInfo = {};
+  const handleChange = (value: string[]) => {};
 
-  if (item) {
-    try {
-      userCallInfo = JSON.parse(item);
-    } catch (error) {
-      console.error("Failed to parse JSON:", error);
-      // Handle the error or assign a default value
+  // let userCallInfo = {};
+
+  // if (item) {
+  //   try {
+  //     userCallInfo = JSON.parse(item);
+  //   } catch (error) {
+  //     console.error("Failed to parse JSON:", error);
+  //     // Handle the error or assign a default value
+  //   }
+  // } else {
+  //   console.warn("No 'item' found in URL parameters");
+  //   // Assign a default value if needed
+  // }
+
+  let messageArray = [];
+  try {
+    const storedMessages = localStorage.getItem("MessageArray");
+    if (storedMessages) {
+      messageArray = JSON.parse(storedMessages);
     }
-  } else {
-    console.warn("No 'item' found in URL parameters");
-    // Assign a default value if needed
+  } catch (error) {
+    console.error("Failed to parse userMessage from localStorage:", error);
   }
 
-  const { state } = useNumberContext();
+  const FilteredArray = messageArray.find(
+    (item) => item.contactId === Number(id)
+  );
+
+  const { state, dispatch } = useNumberContext();
+
+  const editNumber = (e: React.MouseEvent) => {
+    e.preventDefault();
+    dispatch({ type: "ClearNumber" });
+  };
 
   const handleCancel = () => {
     setIsModalOpen(false);
@@ -196,15 +214,26 @@ const PhoneCallUi = () => {
         open={open}
         getContainer={false}
       >
-        <Space className="flex justify-between p-2">
+        <Space className="flex justify-between p-2 relative">
           <h3 className="text-left font-[600] text-[18px]">Keypad</h3>
           <CloseOutlined onClick={onClose} />
         </Space>
         <Display>{state?.number}</Display>
+        {state?.number ? (
+          <div className="absolute top-[5.5rem] right-2">
+            {" "}
+            <BiMessageSquareX
+              className="cursor-pointer text-center"
+              size={30}
+              onClick={(e) => editNumber(e)}
+            />
+          </div>
+        ) : null}
+
         <Numbers />
       </Drawer>
 
-      <Drawer
+      <StyledDrawer
         placement="bottom"
         width={350}
         height="100%"
@@ -218,7 +247,7 @@ const PhoneCallUi = () => {
           <CloseOutlined onClick={onClose} />
         </Space>
         <SingleChatUi />
-      </Drawer>
+      </StyledDrawer>
 
       <Drawer
         placement="top"
@@ -271,9 +300,7 @@ const PhoneCallUi = () => {
         <div className="call-head-content">
           {" "}
           <h2 className="text-[20px] font-bold text-center">
-            {userCallInfo?.contactName != undefined
-              ? userCallInfo?.contactName
-              : "Nirajan"}
+            {FilteredArray ? FilteredArray.username : "Nirajan"}
           </h2>
           <p className="text-center text-[13px]">Calling...</p>
         </div>

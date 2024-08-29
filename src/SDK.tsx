@@ -58,7 +58,10 @@ export class BabalUi {
           <ConfigProvider
             theme={{
               components: {
-                Drawer: { paddingLG: 0, colorPrimaryBorder: "none" },
+                Drawer: {
+                  paddingLG: 0,
+                  colorPrimaryBorder: "none",
+                },
               },
             }}
           >

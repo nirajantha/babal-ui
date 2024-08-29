@@ -38,7 +38,8 @@ const PhoneBook = () => {
 
   return (
     <ContactWrapper>
-      <div className="search-contact-head"
+      <div
+        className="search-contact-head"
         style={{
           padding: "10px",
           display: "flex",
@@ -79,9 +80,8 @@ const PhoneBook = () => {
             <Span
               onClick={() => {
                 navigate(
-                  `/phoneDetail/${item.id}?item=${encodeURIComponent(
-                    JSON.stringify(item)
-                  )}`
+                  `/phoneDetail/${item.id}
+                  `
                 );
               }}
               key={index}

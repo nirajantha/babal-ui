@@ -1,4 +1,4 @@
-import { Modal, Select } from "antd";
+import { Drawer, Modal, Select } from "antd";
 import styled, { css, keyframes } from "styled-components";
 
 export const HeaderDiv = styled.header`
@@ -272,10 +272,10 @@ interface messageProps {
 export const MessageBox = styled.div<messageProps & { isNew?: boolean }>`
   width: ${(props) => props.width};
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border: 1px solid purple;
-  border-radius: 8px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(107, 70, 215, 0.18);
+  border-radius: 10px;
   padding: 6px;
   margin: 0;
   background-color: #f0ddff;
@@ -427,6 +427,12 @@ export const ChatText = styled.textarea<chatTextProps>`
   }
 `;
 
+export const StyledDrawer = styled(Drawer)`
+  .ant-drawer-body {
+    overflow: hidden;
+  }
+`;
+
 //chat list
 export const ChatListWrapper = styled.section`
   width: 100%;
@@ -557,6 +563,10 @@ interface modalProps {
   Bodyheight?: number | string;
   bgColor?: string;
 }
+
+export const StyledSelect = styled(Select)`
+  width: 100% !important;
+`;
 
 export const StyledModal = styled(Modal)<modalProps>`
   .footer-div {

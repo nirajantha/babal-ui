@@ -1,6 +1,6 @@
 import { Avatar } from "antd";
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { BsChat } from "react-icons/bs";
 import { IoCall } from "react-icons/io5";
 import {
@@ -12,22 +12,32 @@ const SinglePhoneDetails = () => {
   const { setNumber } = usePhoneContext();
   const { setPath } = useSideMenuContext();
   const navigate = useNavigate();
-  const location = useLocation();
-  const params = new URLSearchParams(location.search);
-  const item = JSON.parse(params.get("item") || "");
+  const { id } = useParams();
 
-  const numberCall = (userItem: { id: number }) => {
-    navigate(`/call/?item=${encodeURIComponent(JSON.stringify(item))}`);
+  const numberCall = () => {
+    navigate(`/call/${Number(id)}`);
   };
 
-  const numberChat = (userItem: {
-    id: number;
-    number: React.SetStateAction<string>;
-  }) => {
-    navigate(
-      `/chat/${userItem.id}?item=${encodeURIComponent(JSON.stringify(item))}`
-    );
-    setNumber(userItem.number);
+  let messageArray = [];
+  try {
+    const storedMessages = localStorage.getItem("MessageArray");
+    if (storedMessages) {
+      messageArray = JSON.parse(storedMessages);
+    }
+  } catch (error) {
+    console.error("Failed to parse userMessage from localStorage:", error);
+  }
+
+  const FilteredArray = messageArray.find(
+    (item) => item.contactId === Number(id)
+  );
+  console.log("filterArray>>>", FilteredArray);
+
+  console.log("phone");
+
+  const numberChat = () => {
+    navigate(`/chat/${Number(id)}`);
+    setNumber(FilteredArray?.number);
     setPath("chat");
   };
 
@@ -40,7 +50,7 @@ const SinglePhoneDetails = () => {
             size={50}
           />
         </div>
-        <p style={{ margin: 0 }}>{item.contactName}</p>
+        <p style={{ margin: 0 }}>{FilteredArray?.username}</p>
         <div
           style={{
             display: "flex",
@@ -52,18 +62,14 @@ const SinglePhoneDetails = () => {
           {" "}
           <button
             className="flex flex-col justify-center items-center w-[4rem] bg-[purple] p-1"
-            onClick={() => {
-              numberCall(item);
-            }}
+            onClick={numberCall}
           >
             <IoCall />
             <p className="text-[12px] m-0 p-0">call</p>
           </button>
           <button
             className="flex flex-col justify-center items-center w-[4rem] bg-[purple] p-1"
-            onClick={() => {
-              numberChat(item);
-            }}
+            onClick={numberChat}
           >
             <BsChat />
             <p className="text-[12px] m-0 p-0">chat</p>
@@ -72,7 +78,7 @@ const SinglePhoneDetails = () => {
       </div>
 
       <div className="mt-[2rem]">
-        <p>{item.number}</p>
+        <p>{FilteredArray?.number}</p>
       </div>
     </div>
   );

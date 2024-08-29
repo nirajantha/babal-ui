@@ -8,23 +8,24 @@ import {
 } from "../../styled/StyledComponents";
 import { BiSolidMessageSquareEdit } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-import { Divider } from "antd";
+import { Divider, notification } from "antd";
 import { TiPinOutline } from "react-icons/ti";
 import { RiWechatPayLine } from "react-icons/ri";
-
 import { ImBin } from "react-icons/im";
 
 const ChatListUi = () => {
   const [searchName, setSearchName] = useState<string>("");
   const chatList = JSON.parse(localStorage.getItem("MessageArray") || "[]");
+
   const navigate = useNavigate();
   const longPressTimer = useRef<number | null>(null);
   const [chatInfo, setChatInfo] = useState();
+  const [index, setIndex] = useState<number>();
   const [isLongPress, setIsLongPress] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isDeleteModelOpen, setIsDeleteModalOpen] = useState<boolean>(false);
 
-  const recentChats = chatList.map((user) => {
+  let recentChats = chatList.map((user) => {
     const lastMessage = user?.message[user?.message?.length - 1];
     return {
       username: user?.username,
@@ -48,28 +49,24 @@ const ChatListUi = () => {
       }
     }
   );
-  console.log("searchedChatList", searchedChatList);
 
-  const handleMouseDown = (chat) => {
+  const handleMouseDown = (chat, index) => {
     // Start the timer for the long press
     longPressTimer.current = window.setTimeout(() => {
       setIsLongPress(true);
       setIsVisible(true); // Show the div on long press
     }, 500); // Set the long press duration (500ms in this case)
     setChatInfo(chat);
+    setIndex(index);
   };
   console.log("chat>>>", chatInfo);
 
-  const handleMouseUp = (item) => {
+  const handleMouseUp = (item: { contactId: any }) => {
     // Clear the timer if the mouse is released before the long press is completed
     clearTimeout(longPressTimer.current!);
-    if (!longPressTimer) {
-      navigate(
-        `/chat/${item.contactId}?item=${encodeURIComponent(
-          JSON.stringify(item)
-        )}`
-      );
-    }
+    // if (!longPressTimer) {
+    //   navigate(`/chat/${item.contactId}`);
+    // }
   };
 
   const handleMouseLeave = () => {
@@ -189,35 +186,33 @@ const ChatListUi = () => {
       <div className="messageListDiv">
         {searchedChatList?.map((item, index) => (
           <MessageBox
-            onMouseDown={() => handleMouseDown(item)}
+            onMouseDown={() => handleMouseDown(item, index)}
             onMouseUp={() => {
               handleMouseUp(item);
             }}
             onMouseLeave={handleMouseLeave}
+            onClick={() => {
+              navigate(`/chat/${item.contactId}`);
+            }}
             width="100%"
             key={index}
-            onClick={() => {
-              navigate(
-                `/chat/${item.contactId}?item=${encodeURIComponent(
-                  JSON.stringify(item)
-                )}`
-              );
-            }}
           >
-            {item?.username}
+            <div>
+              {item?.username}
 
-            <p
-              style={{
-                color: "#605f5f",
-                margin: 0,
-                textOverflow: "ellipsis",
-                whiteSpace: "nowrap",
-                width: "12rem",
-                overflow: "hidden",
-              }}
-            >
-              {item?.message}
-            </p>
+              <p
+                style={{
+                  color: "#605f5f",
+                  margin: 0,
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  width: "12rem",
+                  overflow: "hidden",
+                }}
+              >
+                {item?.message}
+              </p>
+            </div>
           </MessageBox>
         ))}
       </div>

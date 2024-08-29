@@ -4,7 +4,6 @@ import { IoIosCall, IoIosContact } from "react-icons/io";
 import styled from "styled-components";
 import { IoMdPersonAdd } from "react-icons/io";
 import { BiMessageSquareX } from "react-icons/bi";
-import { CgBackspace } from "react-icons/cg";
 import { useNumberContext } from "../context/CreateContext";
 import { StyledNumber } from "../styled/StyledComponents";
 

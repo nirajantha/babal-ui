@@ -1,7 +1,7 @@
-import { MoreOutlined } from "@ant-design/icons";
-import { Divider, Dropdown, MenuProps, Space } from "antd";
+import { CloseOutlined, MoreOutlined } from "@ant-design/icons";
+import { Divider, Drawer, Dropdown, MenuProps, Select, Space } from "antd";
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { ImBin } from "react-icons/im";
 import {
   ChatText,
@@ -9,11 +9,17 @@ import {
   MessageBox,
   PressDiv,
   Span,
+  StyledSelect,
 } from "../../styled/StyledComponents";
 import { IoIosSend } from "react-icons/io";
-import { error } from "console";
+import { phoneContact } from "../../data/Data";
+import { Language } from "./Language";
+const { Option } = Select;
 
 const SingleChatUi = () => {
+  const { id } = useParams();
+  console.log("id>>>", Number(id));
+  const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const [tags, setTags] = useState<[]>();
   const tagsContainerRef = useRef(null);
   const [theme, setTheme] = useState<string>("");
@@ -25,32 +31,19 @@ const SingleChatUi = () => {
   const [isVisible, setIsVisible] = useState(false);
   const longPressTimer = useRef<number | null>(null);
   const [pressMsg, setPressMsg] = useState([]);
+  const [pressMsgIndex, setPressMsgIndex] = useState<number>();
   const [newMessageId, setNewMessageId] = useState<number | null>(null);
 
   const currentDate = new Date();
-  console.log("currdate>>", currentDate);
-  // const userItem = JSON.parse(params.get("item") || "");
-  let userItem = {};
 
-  if (paramsItem) {
-    try {
-      userItem = JSON.parse(paramsItem);
-    } catch (error) {
-      console.error("Failed to parse JSON:", error);
-      // Handle the error or assign a default value
-    }
-  } else {
-    console.warn("No 'item' found in URL parameters");
-    // Assign a default value if needed
-  }
-
-  const handleMouseDown = (msg) => {
+  const handleMouseDown = (msg, Index) => {
     // Start the timer for the long press
     longPressTimer.current = window.setTimeout(() => {
       setIsLongPress(true);
       setIsVisible(true); // Show the div on long press
     }, 500); // Set the long press duration (500ms in this case)
     setPressMsg(msg);
+    setPressMsgIndex(Index);
   };
 
   //auto scroll
@@ -83,14 +76,13 @@ const SingleChatUi = () => {
 
     // Find the contact's messages by contactId
     let contactMessages = existingMessages.find(
-      (item: { contactId: any }) =>
-        item.contactId === userItem.id || item.contactId === userItem.contactId
+      (item: { contactId: any }) => item.contactId === Number(id)
     );
 
     if (contactMessages) {
       // Filter out the message you want to delete
       contactMessages.message = contactMessages.message.filter(
-        (msg: { message: any }) => msg.message !== pressMsg?.message
+        (msg: any, index: number | undefined) => index !== pressMsgIndex
       );
 
       // Update the array in local storage
@@ -113,11 +105,10 @@ const SingleChatUi = () => {
   }
 
   const selectedUserMessage = userMessage?.filter(
-    (item) => item.contactId === userItem.contactId
+    (item) => item.contactId === Number(id)
   );
-  const selectedUserMessagePhoneProfile = userMessage?.filter(
-    (item) => item.contactId === userItem.id
-  );
+
+  console.log("chatlist bata aako >>>", selectedUserMessage);
 
   const items: MenuProps["items"] = [
     {
@@ -154,8 +145,7 @@ const SingleChatUi = () => {
 
     // Check if there's already an entry for the selected contactId
     let contactMessages = existingMessages.find(
-      (item) =>
-        item.contactId === userItem.id || item.contactId === userItem.contactId
+      (item) => item.contactId === Number(id)
     );
 
     if (contactMessages) {
@@ -165,9 +155,9 @@ const SingleChatUi = () => {
       setTags(contactMessages.message.map((msg, index) => `Tag${index + 1}`));
     } else {
       existingMessages.push({
-        username: userItem.contactName,
-        contactId: userItem.id,
-        number: userItem.number,
+        username: selectedUserMessage[0].username,
+        contactId: selectedUserMessage[0].contactId,
+        number: selectedUserMessage[0].number,
         message: [{ message: sendMessage, date: currentDate }],
       });
       setNewMessageId(0); // First message, so ID is 0
@@ -178,10 +168,56 @@ const SingleChatUi = () => {
     localStorage.setItem("MessageArray", JSON.stringify(existingMessages));
     setSendMessage("");
   };
-  const date = new Date(pressMsg.date);
 
+  const onClose = () => {
+    setOpenDrawer(false);
+  };
+
+  // language choose
+  const handleSelectChange = (value, option) => {};
   return (
     <ChatWrapper color={theme}>
+      <Drawer
+        closable={false}
+        placement="bottom"
+        width={350}
+        height="80%"
+        onClose={onClose}
+        open={openDrawer}
+        getContainer={false}
+      >
+        <Space className="flex justify-between p-2">
+          <h3 className="text-center font-[600] text-[18px]">Translate</h3>
+          <CloseOutlined onClick={onClose} />
+        </Space>
+        {/* <Space className="w-full bg-red-500 flex justify-center items-center p-2"> */}
+        <div className="w-full p-2">
+          <StyledSelect
+            showSearch
+            onChange={(value, option) => handleSelectChange(value, option)}
+            placeholder="Select a language"
+            optionFilterProp="children"
+            filterOption={(input, option) => {
+              const label = option?.label;
+              // Ensure label is a string before calling toLowerCase
+              return typeof label === "string"
+                ? label.toLowerCase().includes(input.toLowerCase())
+                : false;
+            }}
+          >
+            {Language.map((option) => (
+              <Option
+                id={option.id}
+                value={option.country}
+                label={option.language}
+              >
+                {option.language}
+              </Option>
+            ))}
+          </StyledSelect>
+        </div>
+        {/* </Space> */}
+      </Drawer>
       {isLongPress && isVisible && (
         <PressDiv onClick={handleCloseDiv}>
           <div className="flex flex-col justify-end items-end">
@@ -198,7 +234,9 @@ const SingleChatUi = () => {
             <Divider className="m-0 p-0 border-[white]" />
             <span
               className=" p-1 text-[white] cursor-pointer"
-              onClick={handleCopy}
+              onClick={() => {
+                setOpenDrawer(!openDrawer);
+              }}
             >
               Text Translate
             </span>
@@ -220,7 +258,7 @@ const SingleChatUi = () => {
           borderBottom: "1px solid white",
         }}
       >
-        <div>{userItem.id ? userItem?.contactName : userItem?.username}</div>
+        <div>{selectedUserMessage[0]?.username}</div>
         <Dropdown menu={{ items }} trigger={["click"]}>
           <a onClick={(e) => e.preventDefault()}>
             <Space>
@@ -232,58 +270,31 @@ const SingleChatUi = () => {
 
       <div
         ref={tagsContainerRef}
-        className="flex flex-col items-end gap-[2px] p-[8px] h-[78%] overflow-scroll scroll-smooth"
+        className="flex flex-col items-end gap-[2px] p-[8px] h-[60%] overflow-scroll scroll-smooth"
       >
-        {userItem.id ? (
-          <>
-            {selectedUserMessagePhoneProfile[0]?.message.length > 0 ? (
-              <>
-                {selectedUserMessagePhoneProfile[0]?.message?.map(
-                  (messageItem1, Index) => (
-                    <MessageBox
-                      onMouseDown={() => handleMouseDown(messageItem1)}
-                      onMouseUp={handleMouseUp}
-                      onMouseLeave={handleMouseLeave}
-                      width="fit-content"
-                      key={Index}
-                      isNew={Index === newMessageId}
-                    >
-                      {messageItem1?.message}
-                    </MessageBox>
-                  )
-                )}
-              </>
-            ) : (
-              <Span>Send a Message</Span>
-            )}
-          </>
-        ) : (
-          <>
-            {selectedUserMessage[0]?.message.length > 0 ? (
-              <>
-                {selectedUserMessage[0]?.message?.map(
-                  (messageItem, indexMsg) => (
-                    <MessageBox
-                      onMouseDown={() => handleMouseDown(messageItem)}
-                      onMouseUp={handleMouseUp}
-                      onMouseLeave={handleMouseLeave}
-                      width="fit-content"
-                      key={indexMsg}
-                      isNew={indexMsg === newMessageId}
-                    >
-                      {messageItem?.message}
-                    </MessageBox>
-                  )
-                )}
-              </>
-            ) : (
-              <Span>No message</Span>
-            )}
-          </>
-        )}
+        <>
+          {selectedUserMessage[0]?.message.length > 0 ? (
+            <>
+              {selectedUserMessage[0]?.message?.map((messageItem, indexMsg) => (
+                <MessageBox
+                  onMouseDown={() => handleMouseDown(messageItem, indexMsg)}
+                  onMouseUp={handleMouseUp}
+                  onMouseLeave={handleMouseLeave}
+                  width="fit-content"
+                  key={indexMsg}
+                  isNew={indexMsg === newMessageId}
+                >
+                  {messageItem?.message}
+                </MessageBox>
+              ))}
+            </>
+          ) : (
+            <Span>No message</Span>
+          )}
+        </>
       </div>
 
-      <div className="absolute bottom-0 w-[100%]  flex gap-[10px] border-box justify-center items-center p-[8px]">
+      <div className="absolute bottom-10 w-[100%]   flex gap-[10px] border-box justify-center items-center p-[8px]">
         <ChatText
           width="80%"
           placeholder="enter the message"
@@ -291,7 +302,7 @@ const SingleChatUi = () => {
           value={sendMessage}
         />
 
-        <div className="flex justify-center items-center w-[2rem] h-[2rem] rounded-full">
+        <div className="flex justify-center items-center w-[2rem] h-[2rem]  rounded-full">
           <IoIosSend color="#480b65" onClick={send} size={30} />
         </div>
       </div>

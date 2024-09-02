@@ -1,9 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import {
   ChatListWrapper,
   MessageBox,
   PhoneInput,
   PressDiv,
+  SearchIcon,
   StyledModal,
 } from "../../styled/StyledComponents";
 import { BiSolidMessageSquareEdit } from "react-icons/bi";
@@ -15,6 +16,7 @@ import { ImBin } from "react-icons/im";
 
 const ChatListUi = () => {
   const [searchName, setSearchName] = useState<string>("");
+  const [isFocused, setIsFocused] = useState(false);
   const chatList = JSON.parse(localStorage.getItem("MessageArray") || "[]");
 
   const navigate = useNavigate();
@@ -25,21 +27,24 @@ const ChatListUi = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDeleteModelOpen, setIsDeleteModalOpen] = useState<boolean>(false);
 
-  let recentChats = chatList.map((user) => {
-    const lastMessage = user?.message[user?.message?.length - 1];
-    return {
-      username: user?.username,
-      contactId: user?.contactId,
-      message: lastMessage?.message,
-      date: new Date(lastMessage?.date),
-    };
-  });
+  const recentChats = useMemo(() => {
+    return chatList.map((user) => {
+      const lastMessage = user?.message[user?.message?.length - 1];
+      return {
+        username: user?.username,
+        contactId: user?.contactId,
+        message: lastMessage?.message,
+        date: new Date(lastMessage?.date),
+      };
+    });
+  }, [chatList]);
 
-  const sortedRecentChats = recentChats.sort((a, b) => b.date - a.date);
-  console.log("sortedRecentChats", sortedRecentChats);
+  const sortedRecentChats = useMemo(() => {
+    return recentChats.sort((a, b) => b.date - a.date);
+  }, [recentChats]);
 
-  const searchedChatList = sortedRecentChats.filter(
-    (item: { username: string }) => {
+  const searchedChatList = useMemo(() => {
+    return sortedRecentChats.filter((item: { username: string }) => {
       if (item.username) {
         return item?.username
           ?.toLowerCase()
@@ -47,8 +52,8 @@ const ChatListUi = () => {
       } else {
         return null;
       }
-    }
-  );
+    });
+  }, [sortedRecentChats, searchName]);
 
   const handleMouseDown = (chat, index) => {
     // Start the timer for the long press
@@ -59,7 +64,6 @@ const ChatListUi = () => {
     setChatInfo(chat);
     setIndex(index);
   };
-  console.log("chat>>>", chatInfo);
 
   const handleMouseUp = (item: { contactId: any }) => {
     // Clear the timer if the mouse is released before the long press is completed
@@ -172,8 +176,12 @@ const ChatListUi = () => {
         />
       </div>
 
-      <div className="w-full flex">
+      <div className="w-full flex justify-center items-center relative">
         <PhoneInput
+          onFocus={() => {
+            setIsFocused(true);
+          }}
+          onBlur={() => setIsFocused(false)}
           placeholder="Search Chat"
           value={searchName}
           onChange={(e) => {
@@ -181,6 +189,7 @@ const ChatListUi = () => {
           }}
           type="text"
         />
+        <SearchIcon isFocused={isFocused} />
       </div>
 
       <div className="messageListDiv">

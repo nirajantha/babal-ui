@@ -1,5 +1,5 @@
 import { Avatar } from "antd";
-import React from "react";
+import React, { useMemo } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { BsChat } from "react-icons/bs";
 import { IoCall } from "react-icons/io5";
@@ -14,9 +14,13 @@ const SinglePhoneDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
+  console.log("id>>>", typeof Number(id));
+
   const numberCall = () => {
     navigate(`/call/${Number(id)}`);
   };
+
+  let phoneContacts = JSON.parse(localStorage.getItem("phoneContacts") || "[]");
 
   let messageArray = [];
   try {
@@ -28,12 +32,11 @@ const SinglePhoneDetails = () => {
     console.error("Failed to parse userMessage from localStorage:", error);
   }
 
-  const FilteredArray = messageArray.find(
-    (item) => item.contactId === Number(id)
-  );
-  console.log("filterArray>>>", FilteredArray);
+  const FilteredArray = useMemo(() => {
+    return phoneContacts.find((item) => item.id == Number(id));
+  }, [id, phoneContacts]);
 
-  console.log("phone");
+  console.log("filter array>>>", FilteredArray);
 
   const numberChat = () => {
     navigate(`/chat/${Number(id)}`);
@@ -50,7 +53,8 @@ const SinglePhoneDetails = () => {
             size={50}
           />
         </div>
-        <p style={{ margin: 0 }}>{FilteredArray?.username}</p>
+        <p style={{ margin: 0 }}>{FilteredArray?.contactName}</p>
+
         <div
           style={{
             display: "flex",
@@ -77,8 +81,8 @@ const SinglePhoneDetails = () => {
         </div>
       </div>
 
-      <div className="mt-[2rem]">
-        <p>{FilteredArray?.number}</p>
+      <div className="mt-[2rem] ">
+        <p className="text-[black]">{FilteredArray?.number}</p>
       </div>
     </div>
   );

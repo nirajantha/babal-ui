@@ -1,3 +1,4 @@
+import { SearchOutlined } from "@ant-design/icons";
 import { Drawer, Modal, Select } from "antd";
 import styled, { css, keyframes } from "styled-components";
 
@@ -6,7 +7,10 @@ export const HeaderDiv = styled.header`
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 50px;
+  background-color: #dfdbe3;
 `;
+
 interface styleHeaderProps {
   width: string | number;
   height: string | number;
@@ -87,6 +91,21 @@ export const StyledNumber = styled.div<styledNumberProps>`
   }
 `;
 
+export const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 8px;
+  gap: 10px;
+`;
+export const StyledLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+  font-weight: 600;
+`;
+
 export const InputStyledDiv = styled.div`
   width: 350px;
   background: ${({ theme }) => theme.background};
@@ -101,8 +120,8 @@ export const DialerMainWrapper = styled.section<dialerProps>`
   border-radius: 8px;
   border: 1px solid #a6a4a4;
   position: relative;
+  height: 520px;
   overflow: hidden;
-  height: 68vh;
 `;
 
 export const DialerWrapper = styled.div`
@@ -163,6 +182,26 @@ export const StyledSpinner = styled.div`
     }
   }
 `;
+//error modal
+export const StyledErrorModal = styled(Modal)`
+  .ant-modal-content {
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 800%;
+    left: 30.2%;
+    padding: 10px !important;
+  }
+
+  .ant-modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 2rem;
+    background-color: red;
+  }
+`;
 
 //side menu
 interface sideMenuProps {
@@ -170,7 +209,7 @@ interface sideMenuProps {
 }
 export const SideMenuWrapper = styled.section`
   width: 80px;
-  background-color: #d7d3d3;
+  background-color: #dfdbe3;
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px;
   display: flex;
@@ -216,9 +255,9 @@ export const MenuIcon = styled.div<menuProps>`
 `;
 
 export const ContactWrapper = styled.section`
-  height: 89%;
+  height: 94%;
   margin: 0;
-  & > .search-contact-head {
+  & > .search-head {
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -227,6 +266,35 @@ export const ContactWrapper = styled.section`
     border-bottom-left-radius: 8px;
     background-color: #f0ddff;
   }
+`;
+
+export const SearchIcon = styled(SearchOutlined)<{ isFocused?: boolean }>`
+  position: absolute;
+  top: 30%;
+  left: 10px;
+  transform: translateY(0);
+  font-size: 20px;
+  color: #000000;
+  transition: transform 0.3s ease-in-out;
+
+  ${({ isFocused }) =>
+    isFocused
+      ? `
+          transform: translate(220px, 0);
+        `
+      : `
+          transform: translate(0, 0);
+        `}
+`;
+
+export const ContactBody = styled.div`
+  height: 80%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: scroll;
+  scroll-behavior: smooth;
 `;
 
 export const PhoneInput = styled.input`
@@ -243,6 +311,7 @@ export const PhoneInput = styled.input`
       theme.color}; /* Change this to your desired color */
     font-weight: 500;
     font-size: 14px;
+    padding-left: 20px;
   }
 
   &:focus {
@@ -314,6 +383,7 @@ export const ChatWrapper = styled.section<chatProps>`
 `;
 export const PressDiv = styled.div`
   position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -375,7 +445,7 @@ export const PressDiv = styled.div`
     border-radius: 50%;
     padding: 0.5rem;
     color: white;
-    background-color: #351f77ba;
+    background-color: #2b0c89;
     font-size: 20px;
     animation: roll-in-right 0.6s ease-out both;
     &:focus {
@@ -436,7 +506,7 @@ export const StyledDrawer = styled(Drawer)`
 //chat list
 export const ChatListWrapper = styled.section`
   width: 100%;
-  height: 90%;
+  height: 94%;
   display: flex;
   flex-direction: column;
   align-items: center;

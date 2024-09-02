@@ -1,7 +1,7 @@
 import { CloseOutlined, MoreOutlined } from "@ant-design/icons";
 import { Divider, Drawer, Dropdown, MenuProps, Select, Space } from "antd";
-import React, { useEffect, useRef, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
 import { ImBin } from "react-icons/im";
 import {
   ChatText,
@@ -18,21 +18,19 @@ const { Option } = Select;
 
 const SingleChatUi = () => {
   const { id } = useParams();
-  console.log("id>>>", Number(id));
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const [tags, setTags] = useState<[]>();
   const tagsContainerRef = useRef(null);
   const [theme, setTheme] = useState<string>("");
   const [sendMessage, setSendMessage] = useState<string>("");
-  const location = useLocation();
-  const params = new URLSearchParams(location.search);
-  const paramsItem = params.get("item");
   const [isLongPress, setIsLongPress] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const longPressTimer = useRef<number | null>(null);
   const [pressMsg, setPressMsg] = useState([]);
   const [pressMsgIndex, setPressMsgIndex] = useState<number>();
   const [newMessageId, setNewMessageId] = useState<number | null>(null);
+
+  let phoneContacts = JSON.parse(localStorage.getItem("phoneContacts") || "[]");
 
   const currentDate = new Date();
 
@@ -104,69 +102,84 @@ const SingleChatUi = () => {
     console.error("Failed to parse userMessage from localStorage:", error);
   }
 
-  const selectedUserMessage = userMessage?.filter(
-    (item) => item.contactId === Number(id)
+  const selectedUser = useMemo(() => {
+    return phoneContacts?.find((item) => item?.id == Number(id));
+  }, [id, phoneContacts]);
+
+  const selectedUserMessage = useMemo(() => {
+    return userMessage?.find((item) => item?.contactId == Number(id));
+  }, [id, userMessage]);
+
+  console.log("selectedUserMessage>>>", selectedUserMessage);
+
+  console.log("selectedUserMessage>>>", selectedUserMessage);
+
+  const items: MenuProps["items"] = useMemo(
+    () => [
+      {
+        label: (
+          <button
+            onClick={() => {
+              setTheme("#17a589");
+            }}
+            className="bg-[#17a589] w-4 h-4"
+          ></button>
+        ),
+        key: "0",
+      },
+      {
+        label: (
+          <button
+            className="bg-[#8e44ad] w-4 h-4"
+            onClick={() => {
+              setTheme("#8e44ad");
+            }}
+          ></button>
+        ),
+        key: "1",
+      },
+    ],
+    []
   );
-
-  console.log("chatlist bata aako >>>", selectedUserMessage);
-
-  const items: MenuProps["items"] = [
-    {
-      label: (
-        <button
-          onClick={() => {
-            setTheme("#17a589");
-          }}
-          className="bg-[#17a589] w-4 h-4"
-        ></button>
-      ),
-      key: "0",
-    },
-    {
-      label: (
-        <button
-          className="bg-[#8e44ad] w-4 h-4"
-          onClick={() => {
-            setTheme("#8e44ad");
-          }}
-        ></button>
-      ),
-      key: "1",
-    },
-  ];
 
   //Message send function
 
   const send = () => {
-    // Get the existing message array from local storage
-    let existingMessages = JSON.parse(
-      localStorage.getItem("MessageArray") || "[]"
-    );
+    if (sendMessage.length > 0) {
+      // Get the existing message array from local storage
+      let existingMessages = JSON.parse(
+        localStorage.getItem("MessageArray") || "[]"
+      );
 
-    // Check if there's already an entry for the selected contactId
-    let contactMessages = existingMessages.find(
-      (item) => item.contactId === Number(id)
-    );
+      // Check if there's already an entry for the selected contactId
+      let contactMessages = existingMessages.find(
+        (item) => item.contactId == Number(id)
+      );
 
-    if (contactMessages) {
-      // If the contactId exists, push the new message into the existing array
-      contactMessages.message.push({ message: sendMessage, date: currentDate });
-      setNewMessageId(contactMessages.message.length - 1);
-      setTags(contactMessages.message.map((msg, index) => `Tag${index + 1}`));
-    } else {
-      existingMessages.push({
-        username: selectedUserMessage[0].username,
-        contactId: selectedUserMessage[0].contactId,
-        number: selectedUserMessage[0].number,
-        message: [{ message: sendMessage, date: currentDate }],
-      });
-      setNewMessageId(0); // First message, so ID is 0
-      setTags([]);
+      if (contactMessages) {
+        // If the contactId exists, push the new message into the existing array
+        contactMessages.message.push({
+          message: sendMessage,
+          date: currentDate,
+        });
+        setNewMessageId(contactMessages.message.length - 1);
+        setTags(contactMessages.message.map((msg, index) => `Tag${index + 1}`));
+      } else {
+        existingMessages.push({
+          username: selectedUser?.contactName,
+          contactId: selectedUser?.id,
+          number: selectedUser?.number,
+          message: [{ message: sendMessage, date: currentDate }],
+        });
+        setNewMessageId(0); // First message, so ID is 0
+        setTags([]);
+      }
+      console.log("existttt>>>msg", existingMessages);
+
+      // Store the updated array back in local storage
+      localStorage.setItem("MessageArray", JSON.stringify(existingMessages));
+      setSendMessage("");
     }
-
-    // Store the updated array back in local storage
-    localStorage.setItem("MessageArray", JSON.stringify(existingMessages));
-    setSendMessage("");
   };
 
   const onClose = () => {
@@ -258,7 +271,7 @@ const SingleChatUi = () => {
           borderBottom: "1px solid white",
         }}
       >
-        <div>{selectedUserMessage[0]?.username}</div>
+        <div>{selectedUser?.contactName}</div>
         <Dropdown menu={{ items }} trigger={["click"]}>
           <a onClick={(e) => e.preventDefault()}>
             <Space>
@@ -273,9 +286,9 @@ const SingleChatUi = () => {
         className="flex flex-col items-end gap-[2px] p-[8px] h-[60%] overflow-scroll scroll-smooth"
       >
         <>
-          {selectedUserMessage[0]?.message.length > 0 ? (
+          {selectedUserMessage?.message.length > 0 ? (
             <>
-              {selectedUserMessage[0]?.message?.map((messageItem, indexMsg) => (
+              {selectedUserMessage?.message?.map((messageItem, indexMsg) => (
                 <MessageBox
                   onMouseDown={() => handleMouseDown(messageItem, indexMsg)}
                   onMouseUp={handleMouseUp}

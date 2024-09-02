@@ -10,8 +10,33 @@ import {
 
 import { MoreOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Select, Dropdown, Space, Tooltip } from "antd";
+import { Select, Dropdown, Space, Tooltip, Modal, Button } from "antd";
 import { phoneContact } from "../../data/Data";
+
+const error = (message: string) => {
+  Modal.error({
+    width: 250,
+    content: message,
+    style: { top: 300, left: 34, width: "10rem" },
+    bodyStyle: { display: "flex", height: 50 },
+    closable: false,
+    footer: (
+      <Button
+        type="primary"
+        onClick={() => Modal.destroyAll()} // Close the modal on click
+        style={{
+          backgroundColor: "red",
+          borderColor: "red",
+          position: "absolute",
+          bottom: "10px",
+          right: "60px",
+        }} // Custom styles for your button
+      >
+        OK
+      </Button>
+    ),
+  });
+};
 
 const ChatUi = () => {
   const [message, setMessage] = useState<string>("");
@@ -19,6 +44,8 @@ const ChatUi = () => {
   const [selectedItemId, setSelectedItemId] = useState<number | null>(null);
   const [selectedUsername, setselectedUsername] = useState<string | null>(null);
   const navigate = useNavigate();
+
+  let phoneContacts = JSON.parse(localStorage.getItem("phoneContacts") || "[]");
 
   const [theme, setTheme] = useState<string>("");
   const { Option } = Select;
@@ -32,34 +59,39 @@ const ChatUi = () => {
     console.error("Failed to parse userMessage from localStorage:", error);
   }
 
-  const filteredMessage = messageArray.filter(
-    (item: { contactId: number | null }) => item.contactId === selectedItemId
-  );
+  const filteredMessage = useMemo(() => {
+    return messageArray.filter(
+      (item: { contactId: number | null }) => item.contactId === selectedItemId
+    );
+  }, [messageArray, selectedItemId]);
 
-  const items: MenuProps["items"] = [
-    {
-      label: (
-        <button
-          onClick={() => {
-            setTheme("#17a589");
-          }}
-          className="bg-[#17a589] w-4 h-4"
-        ></button>
-      ),
-      key: "0",
-    },
-    {
-      label: (
-        <button
-          className="bg-[#8e44ad] h-4 w-4"
-          onClick={() => {
-            setTheme("#8e44ad");
-          }}
-        ></button>
-      ),
-      key: "1",
-    },
-  ];
+  const items: MenuProps["items"] = useMemo(
+    () => [
+      {
+        label: (
+          <button
+            onClick={() => {
+              setTheme("#17a589");
+            }}
+            className="bg-[#17a589] w-4 h-4"
+          ></button>
+        ),
+        key: "0",
+      },
+      {
+        label: (
+          <button
+            className="bg-[#8e44ad] w-4 h-4"
+            onClick={() => {
+              setTheme("#8e44ad");
+            }}
+          ></button>
+        ),
+        key: "1",
+      },
+    ],
+    []
+  );
   //getting details of contact while selecting
   const handleSelectChange = (value, option) => {
     setSelectedItemId(option.id);
@@ -70,38 +102,42 @@ const ChatUi = () => {
   //Message send function
 
   const send = () => {
-    // Get the existing message array from local storage
-    let existingMessages = JSON.parse(
-      localStorage.getItem("MessageArray") || "[]"
-    );
+    if (selectedItemId) {
+      // Get the existing message array from local storage
+      let existingMessages = JSON.parse(
+        localStorage.getItem("MessageArray") || "[]"
+      );
 
-    // Check if there's already an entry for the selected contactId
-    let contactMessages = existingMessages.find(
-      (item: { contactId: number | null }) => item.contactId === selectedItemId
-    );
+      // Check if there's already an entry for the selected contactId
+      let contactMessages = existingMessages.find(
+        (item: { contactId: number | null }) =>
+          item.contactId === selectedItemId
+      );
 
-    if (contactMessages) {
-      // If the contactId exists, push the new message into the existing array
-      contactMessages.message.push({ message: message, date: currentDate });
+      if (contactMessages) {
+        // If the contactId exists, push the new message into the existing array
+        contactMessages.message.push({ message: message, date: currentDate });
+      } else {
+        // If the contactId doesn't exist, create a new entry
+        existingMessages.push({
+          username: selectedUsername,
+          contactId: selectedItemId,
+          number: messageNumber,
+          message: [
+            {
+              message: message,
+              date: currentDate,
+            },
+          ],
+        });
+      }
+      // Store the updated array back in local storage
+      localStorage.setItem("MessageArray", JSON.stringify(existingMessages));
+      setMessage("");
+      navigate(`/chat/${selectedItemId}`);
     } else {
-      // If the contactId doesn't exist, create a new entry
-      existingMessages.push({
-        username: selectedUsername,
-        contactId: selectedItemId,
-        number: messageNumber,
-        message: [
-          {
-            message: message,
-            date: currentDate,
-          },
-        ],
-      });
+      error("First select the number");
     }
-
-    // Store the updated array back in local storage
-    localStorage.setItem("MessageArray", JSON.stringify(existingMessages));
-    setMessage("");
-    navigate(`/chat/${selectedItemId}`);
   };
   return (
     <ChatWrapper color={theme}>
@@ -120,7 +156,7 @@ const ChatUi = () => {
           }}
           style={{ width: 200 }}
         >
-          {phoneContact.map((option) => (
+          {phoneContacts.map((option) => (
             <Option
               key={option.id}
               id={option.id}
@@ -175,23 +211,13 @@ const ChatUi = () => {
                       | string
                       | number
                       | boolean
-                      | React.ReactElement<
-                          any,
-                          string | React.JSXElementConstructor<any>
-                        >
+                      | React.ReactElement
                       | Iterable<React.ReactNode>
-                      | React.ReactPortal
                       | null
                       | undefined,
                     subIndex: React.Key | null | undefined
                   ) => (
-                    <MessageBox
-                      onMouseDown={() => handleMouseDown(messageItem)}
-                      onMouseUp={handleMouseUp}
-                      onMouseLeave={handleMouseLeave}
-                      width="fit-content"
-                      key={subIndex}
-                    >
+                    <MessageBox width="fit-content" key={subIndex}>
                       {messageItem?.message}
                     </MessageBox>
                   )
@@ -207,7 +233,7 @@ const ChatUi = () => {
         </div>
       )}
 
-      <div className="absolute bottom-0 w-full flex gap-[10px] justify-center items-center p-[8px] ">
+      <div className="absolute bottom-4 w-full flex gap-[10px] justify-center items-center p-[8px] ">
         <ChatText
           width="80%"
           placeholder="enter the message"

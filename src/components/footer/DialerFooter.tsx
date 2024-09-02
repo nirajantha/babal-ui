@@ -16,9 +16,10 @@ const FooterContainer = styled.section`
 
 interface footerProps {
   handleCall: () => void;
+  handleAddCotact: () => void;
 }
 
-const BabalFooter = ({ handleCall }: footerProps) => {
+const BabalFooter = ({ handleCall, handleAddCotact }: footerProps) => {
   const { state, dispatch } = useNumberContext();
 
   const editNumber = (e: React.MouseEvent) => {
@@ -28,7 +29,11 @@ const BabalFooter = ({ handleCall }: footerProps) => {
   return (
     <FooterContainer>
       <BabalContainer>
-        <IoMdPersonAdd size={30} className="cursor-pointer text-center" />
+        <IoMdPersonAdd
+          size={30}
+          className="cursor-pointer text-center"
+          onClick={handleAddCotact}
+        />
         <StyledNumber onClick={handleCall} rounded={true} digitColor="green">
           <IoIosCall size={30} color="white" />
         </StyledNumber>

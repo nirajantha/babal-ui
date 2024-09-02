@@ -1,20 +1,23 @@
-import React, { useState } from "react";
-import { IoIosCall } from "react-icons/io";
-import { FaRocketchat } from "react-icons/fa";
+import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import {
+  ContactBody,
   ContactWrapper,
   PhoneInput,
+  SearchIcon,
   Span,
 } from "../../styled/StyledComponents";
-import { phoneContact } from "../../data/Data";
+// import { phoneContact } from "../../data/Data";
 
 const PhoneBook = () => {
   const [searchValue, setSearchValue] = useState<string>("");
+  const [isFocused, setIsFocused] = useState(false);
+  let phoneContacts = JSON.parse(localStorage.getItem("phoneContacts") || "[]");
 
   const navigate = useNavigate();
 
-  const ascendingArray = phoneContact.sort((a, b) =>
+  const ascendingArray = phoneContacts?.sort((a, b) =>
     a.contactName.localeCompare(b.contactName)
   );
 
@@ -27,60 +30,43 @@ const PhoneBook = () => {
   //     return null;
   //   }
   // });
-  const searchedContacts = ascendingArray.filter((item) => {
-    const searchLower = searchValue?.toLocaleLowerCase();
-    // the contact name or contact number matches the search value
-    const nameMatch = item.contactName?.toLowerCase().startsWith(searchLower);
-    const numberMatch = item.number?.startsWith(searchValue);
+  const searchedContacts = useMemo(() => {
+    return ascendingArray.filter((item) => {
+      const searchLower = searchValue?.toLocaleLowerCase();
+      // the contact name or contact number matches the search value
+      const nameMatch = item.contactName?.toLowerCase().startsWith(searchLower);
+      const numberMatch = item.number?.startsWith(searchValue);
 
-    return nameMatch || numberMatch;
-  });
+      return nameMatch || numberMatch;
+    });
+  }, [searchValue, phoneContacts]);
 
   return (
     <ContactWrapper>
-      <div
-        className="search-contact-head"
-        style={{
-          padding: "10px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          borderBottomRightRadius: "8px",
-          borderBottomLeftRadius: "8px",
-          backgroundColor: "#f0ddff",
-        }}
-      >
-        <p className="m-0 text-center font-[600] text-[18px]">
-          Phone Book List
-        </p>
-
-        <PhoneInput
-          placeholder="Search Contact Name... "
-          value={searchValue}
-          onChange={(e) => {
-            setSearchValue(e.target.value);
-          }}
-          type="text"
-        />
+      <div className="search-head">
+        <p className="m-0 text-center font-[600] text-[18px]">Contact List</p>
+        <div className="relative w-full">
+          <PhoneInput
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            placeholder="Search Contact Name... "
+            value={searchValue}
+            onChange={(e) => {
+              setSearchValue(e.target.value);
+            }}
+            type="text"
+          />
+          <SearchIcon isFocused={isFocused} />
+        </div>
       </div>
 
-      <div
-        style={{
-          height: "80%",
-          padding: "8px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "8px",
-          overflow: "scroll",
-          scrollBehavior: "smooth",
-        }}
-      >
+      <ContactBody>
         {searchedContacts.length > 0 ? (
           searchedContacts?.map((item, index) => (
             <Span
               onClick={() => {
                 navigate(
-                  `/phoneDetail/${item.id}
+                  `/contact/${item.id}
                   `
                 );
               }}
@@ -92,7 +78,7 @@ const PhoneBook = () => {
         ) : (
           <Span> Contact Number Not Found</Span>
         )}
-      </div>
+      </ContactBody>
     </ContactWrapper>
   );
 };

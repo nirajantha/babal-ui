@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { ImUser } from "react-icons/im";
 import { BsFillRecordCircleFill } from "react-icons/bs";
 import { FaPause } from "react-icons/fa";
@@ -86,6 +86,8 @@ const PhoneCallUi = () => {
   //   // Assign a default value if needed
   // }
 
+  let phoneContacts = JSON.parse(localStorage.getItem("phoneContacts") || "[]");
+
   let messageArray = [];
   try {
     const storedMessages = localStorage.getItem("MessageArray");
@@ -96,9 +98,9 @@ const PhoneCallUi = () => {
     console.error("Failed to parse userMessage from localStorage:", error);
   }
 
-  const FilteredArray = messageArray.find(
-    (item) => item.contactId === Number(id)
-  );
+  const FilteredArray = useMemo(() => {
+    return phoneContacts.find((item) => item.id == Number(id));
+  }, [id]);
 
   const { state, dispatch } = useNumberContext();
 
@@ -300,7 +302,7 @@ const PhoneCallUi = () => {
         <div className="call-head-content">
           {" "}
           <h2 className="text-[20px] font-bold text-center">
-            {FilteredArray ? FilteredArray.username : "Nirajan"}
+            {FilteredArray ? FilteredArray.contactName : "Nirajan"}
           </h2>
           <p className="text-center text-[13px]">Calling...</p>
         </div>

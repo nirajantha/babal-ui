@@ -207,7 +207,7 @@ const BabalDialer: React.FC<DialerProps> = ({ logo, width, digitColor }) => {
           <Route path="newchat" element={<ChatUi />} />
           <Route path="chat/:id" element={<SingleChatUi />} />
           <Route path="keypad" element={<Keypad digitColor={digitColor} />} />
-          <Route path="phoneDetail/:id" element={<SinglePhoneDetails />} />
+          <Route path="contact/:id" element={<SinglePhoneDetails />} />
         </Routes>
       </DialerWrapper>
     </DialerMainWrapper>

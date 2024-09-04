@@ -13,12 +13,13 @@ import { NumberProvider } from "./components/context/NumberProvider";
 import { menuItems } from "./components/header/BabalHeader";
 import { MY_KEY } from "./constant/Constant";
 import { TwilioProvider } from "./context/TwilioContext";
-import { DefaultTheme, ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import { PhoneProvider, SideMenuProvider } from "./context/PhoneContext";
 import { ConfigProvider } from "antd";
 import { defaultTheme } from "antd/es/theme/context";
 import { CustomTheme } from "./theme";
+import ErrorBoundary from "./components/error/ErrorBoundry";
 
 export class BabalUi {
   constructor() {}
@@ -31,10 +32,11 @@ export class BabalUi {
     return key === MY_KEY;
   }
 
-  private static initialize(key: string): void {
+  private static initialize(key: string): boolean {
     if (!BabalUi.isValidKey(key)) {
-      throw new Error("Invalid license key. Please contact support.");
+      return false;
     }
+    return true;
   }
 
   toMakeCall(number1: string, number2: string, key: string) {
@@ -54,7 +56,16 @@ export class BabalUi {
     key: string;
     digitColor?: string;
   }) {
-    BabalUi.initialize(key);
+    const isValid = BabalUi.initialize(key);
+
+    if (!isValid) {
+      return (
+        <div className="bg-re">
+          {" "}
+          Invalid license key. Please contact support. dialerSDK@krispcall.com{" "}
+        </div>
+      );
+    }
 
     const DefaultTheme: CustomTheme = {
       color: "#000",

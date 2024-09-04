@@ -51946,8 +51946,9 @@ var BabalUi = /*#__PURE__*/function () {
     key: "initialize",
     value: function initialize(key) {
       if (!BabalUi.isValidKey(key)) {
-        throw new Error("Invalid license key. Please contact support.");
+        return false;
       }
+      return true;
     }
   }, {
     key: "Dialer",
@@ -51957,7 +51958,12 @@ var BabalUi = /*#__PURE__*/function () {
         theme = _ref.theme,
         key = _ref.key,
         digitColor = _ref.digitColor;
-      BabalUi.initialize(key);
+      var isValid = BabalUi.initialize(key);
+      if (!isValid) {
+        return /*#__PURE__*/React__default.createElement("div", {
+          className: "bg-re"
+        }, " ", "Invalid license key. Please contact support. dialerSDK@krispcall.com", " ");
+      }
       var DefaultTheme = {
         color: "#000",
         background: "#fff",

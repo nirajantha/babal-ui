@@ -1,0 +1,65 @@
+{
+  "name": "babal-sdk",
+  "version": "1.0.32",
+  "description": "this ui provides the awesome elements and hooks",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nirajantha/babal-ui.git"
+  },
+  "author": "nirajan thapa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nirajantha/babal-ui/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.9",
+    "@babel/preset-env": "^7.24.8",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "^18.3.3",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "postcss-less": "^6.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rollup": "^4.19.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "tailwindcss": "^3.4.10",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.2"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@ant-design/icons": "^5.3.7",
+    "@apollo/client": "^3.11.1",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@hookform/resolvers": "^3.9.0",
+    "@rollup/plugin-replace": "^5.0.7",
+    "@twilio/voice-sdk": "^2.11.2",
+    "antd": "^5.19.3",
+    "axios": "^1.7.5",
+    "babel-plugin-import": "^1.13.8",
+    "react-hook-form": "^7.52.1",
+    "react-router-dom": "^6.26.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "yup": "^1.4.0"
+  }
+}

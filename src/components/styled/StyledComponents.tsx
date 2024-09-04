@@ -129,8 +129,7 @@ export const DialerWrapper = styled.div`
   width: 100%;
   height: 100%;
   padding-bottom: 20px;
-  background-color: ${({ theme }) =>
-    theme.background ? theme.background : "#9d6f19"};
+  background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.color};
 `;
 export const NumberGrid = styled.div`
@@ -143,8 +142,8 @@ export const NumberGrid = styled.div`
 export const Display = styled.div`
   width: inherit;
   height: 10vh;
-  background-color: #d9d5d5;
-  color: ${({ theme }) => (theme.textColor ? theme.textColor : "black")};
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.color};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -267,6 +266,15 @@ export const ContactWrapper = styled.section`
     background-color: #f0ddff;
   }
 `;
+export const StyledButton = styled.button`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: "center";
+  width: 3rem;
+  background-color: purple;
+  padding: 4px;
+`;
 
 export const SearchIcon = styled(SearchOutlined)<{ isFocused?: boolean }>`
   position: absolute;
@@ -295,6 +303,17 @@ export const ContactBody = styled.div`
   gap: 8px;
   overflow: scroll;
   scroll-behavior: smooth;
+`;
+
+export const ContactShowDiv = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #686869;
+  padding-left: 10px;
 `;
 
 export const PhoneInput = styled.input`
@@ -337,6 +356,7 @@ const scaleUp = keyframes`
 `;
 interface messageProps {
   width: number | string;
+  messageBg?: string;
 }
 export const MessageBox = styled.div<messageProps & { isNew?: boolean }>`
   width: ${(props) => props.width};
@@ -347,7 +367,8 @@ export const MessageBox = styled.div<messageProps & { isNew?: boolean }>`
   border-radius: 10px;
   padding: 6px;
   margin: 0;
-  background-color: #f0ddff;
+  background-color: ${(props) =>
+    props.messageBg ? props.messageBg : "#e3cbec"};
   ${({ isNew }) =>
     isNew &&
     css`
@@ -365,9 +386,10 @@ export const Span = styled.span`
   align-items: center;
   padding: 8px;
   border: 1px solid #c6c4c459;
-  box-shadow: 0px 0px 8px 2px #c8c8dc;
+  box-shadow: 0px 0px 8px 2px #8c8c8e;
   border-radius: 8px;
-  background-color: #f5f3f39d;
+  background-color: ${({ theme }) =>
+    theme.background ? theme.background : "#f5f3f39d"};
   &:hover {
     cursor: pointer;
   }
@@ -381,6 +403,7 @@ export const ChatWrapper = styled.section<chatProps>`
   height: 97%;
   background: ${(props) => props.color};
 `;
+
 export const PressDiv = styled.div`
   position: absolute;
   top: 0;
@@ -483,10 +506,7 @@ export const ChatText = styled.textarea<chatTextProps>`
   color: ${({ theme }) => theme.color};
 
   &::placeholder {
-    color: ${(props) =>
-      props.placeholderColor
-        ? props.placeholderColor
-        : "white"}; /* Change this to your desired color */
+    color: ${({ theme }) => theme.placeholderColor};
   }
 
   &:focus {
@@ -632,6 +652,8 @@ interface modalProps {
   direction?: string;
   Bodyheight?: number | string;
   bgColor?: string;
+  top?: number | string;
+  left?: number | string;
 }
 
 export const StyledSelect = styled(Select)`
@@ -675,8 +697,8 @@ export const StyledModal = styled(Modal)<modalProps>`
     width: 17rem;
     height: 15rem;
     position: absolute;
-    top: 700%;
-    left: 30.2%;
+    top: ${(props) => (props.top ? props.top : "700%")};
+    left: ${(props) => (props.left ? props.left : "30.2%")};
     padding: 10px !important;
     background-color: ${(props) => (props.bgColor ? props.bgColor : "white")};
   }

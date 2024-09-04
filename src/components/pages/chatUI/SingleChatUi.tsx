@@ -74,7 +74,7 @@ const SingleChatUi = () => {
 
     // Find the contact's messages by contactId
     let contactMessages = existingMessages.find(
-      (item: { contactId: any }) => item.contactId === Number(id)
+      (item: { contactId: any }) => item.contactId == Number(id)
     );
 
     if (contactMessages) {

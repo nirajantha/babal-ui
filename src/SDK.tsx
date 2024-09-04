@@ -13,10 +13,12 @@ import { NumberProvider } from "./components/context/NumberProvider";
 import { menuItems } from "./components/header/BabalHeader";
 import { MY_KEY } from "./constant/Constant";
 import { TwilioProvider } from "./context/TwilioContext";
-import { ThemeProvider } from "styled-components";
+import { DefaultTheme, ThemeProvider } from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import { PhoneProvider, SideMenuProvider } from "./context/PhoneContext";
 import { ConfigProvider } from "antd";
+import { defaultTheme } from "antd/es/theme/context";
+import { CustomTheme } from "./theme";
 
 export class BabalUi {
   constructor() {}
@@ -24,6 +26,7 @@ export class BabalUi {
   //   const res = await axios.post("http://localhost:3000/verify",key)
   //   console.log("res>>>",res)
   // }
+
   private static isValidKey(key: string): boolean {
     return key === MY_KEY;
   }
@@ -38,23 +41,35 @@ export class BabalUi {
     BabalUi.initialize(key);
   }
 
-  static Dialer(
-    width: string | number,
-    logo: string,
-    theme: {
-      background?: string;
-      color?: string;
-      textColor?: string;
-    },
-    key: string,
-    digitColor?: string,
-    inputOnChange?: void
-  ) {
+  static Dialer({
+    DialerWidth, // DialerWidth instead of width
+    DialerLogo, // DialerLogo instead of logo
+    theme,
+    key,
+    digitColor, // digitbg instead of digitColor
+  }: {
+    DialerWidth: string | number;
+    DialerLogo: string;
+    theme?: CustomTheme;
+    key: string;
+    digitColor?: string;
+  }) {
     BabalUi.initialize(key);
+
+    const DefaultTheme: CustomTheme = {
+      color: "#000",
+      background: "#fff",
+      textColor: "#000",
+    };
+    const mergeThemes: CustomTheme = {
+      ...DefaultTheme,
+      ...theme,
+    };
+
     return (
       // <TwilioProvider>
       <BrowserRouter>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={mergeThemes}>
           <ConfigProvider
             theme={{
               components: {
@@ -69,8 +84,8 @@ export class BabalUi {
               <PhoneProvider>
                 <SideMenuProvider>
                   <BabalDialer
-                    width={width}
-                    logo={logo}
+                    width={DialerWidth}
+                    logo={DialerLogo}
                     digitColor={digitColor}
                   />
                 </SideMenuProvider>

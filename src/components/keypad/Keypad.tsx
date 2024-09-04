@@ -156,7 +156,7 @@ const Keypad = ({ digitColor }: keypadprops) => {
               />
             </StyledLabel>
             <button type="submit" className="p-2 bg-[#6a4984] text-[#fff]">
-              Add
+              Add To Contacts
             </button>
           </StyledForm>
         </div>
